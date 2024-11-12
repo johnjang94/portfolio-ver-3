@@ -5,10 +5,9 @@ import vercel from "vite-plugin-vercel";
 export default defineConfig({
   plugins: [react(), vercel()],
   server: {
-    port: process.env.PORT || 3000,
     proxy: {
       "/api": {
-        target: import.meta.env.VITE_BACKEND_URL || "http://localhost:5000",
+        target: process.env.VITE_BACKEND_URL || "http://localhost:5000",
         changeOrigin: true,
       },
     },
