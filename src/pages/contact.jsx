@@ -16,14 +16,14 @@ export default function Contact() {
     });
   };
 
-  const SERVER = import.meta.env.VITE_BACKEND_URL;
+  // const SERVER = import.meta.env.VITE_BACKEND_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted", formData);
 
     try {
-      const response = await fetch(`${SERVER}/api/send-email`, {
+      const response = await fetch(`/api/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
