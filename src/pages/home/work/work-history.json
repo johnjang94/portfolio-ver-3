@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "position": "Associate UX Designer",
+    "company": "TuGo Travel Insurance",
+    "dates": "January 2024 ~ Present",
+    "missionObjective": "Redesign the insurance website to be friendly and intuitive to the users",
+    "responsibilities": [
+      "use Figma, Figjam, Spreadsheet or Word doc to deliver the design and notes",
+      "discovered the pain points from research, redesigned 20+ screens, and created 5 prototypes",
+      "increased the traffic up to 85%"
+    ]
+  },
+  {
+    "id": 2,
+    "position": "Lead Software Developer",
+    "company": "Ruminate",
+    "dates": "October 2023 ~ December 2023",
+    "missionObjective": "Build a redesigned community-donation web pages and member-portals for a non-profit organization called Ruminate.",
+    "responsibilities": [
+      "used JavaScript, TypeScript, React, Tailwind CSS, Firebase, REST API, etc. for production and deployment",
+      "actively participated in UX cross-team meetings (i.e. crazy 8s, wireframing, prototyping, etc.) to understand the design share insights with them as a developer",
+      "increased the user engagement up to 30% and maintained 95% of satisfaction ratio from stakeholders"
+    ]
+  },
+  {
+    "id": 3,
+    "position": "Associate Software Developer",
+    "company": "Tech Fleet Professional Association",
+    "dates": "August 2023 ~ October 2023",
+    "missionObjective": "Mission Objective: build an intuitive and competitive Web3 application, named Kadena Web Blockchain, for novice and prospective NFT users",
+    "responsibilities": [
+      "use JavaScript, React, Tailwind CSS to build the friendly user interface for the NFT users (26 desktop web pages that are responsive, AODA-respectful, and 8 mobile pages specialized for technical UI difference)",
+      "liaised with the UX Design team to find out in what ways the blockchain web application can be educational and friendly to use to the prospective NFT users while taking opinions from the UX Design team and the UX Research team",
+      "actively participated in UX team and cross-team meetings to ensure that the new blockchain project can be well-launched (i.e. observed in Crazy-8 workshops, sharing opinions on low-fidelity and mid-fidelity wire-frame sketches, initiated to build the interface designs on VS Code Program based on the high-fidelity concept designs)"
+    ]
+  },
+  {
+    "id": 4,
+    "position": "Associate UX Designer",
+    "company": "Food Distro",
+    "dates": "April 2023 ~ July 2023",
+    "missionObjective": "Mission Objective: create a mobile app that connects the food donators and the food takers to reduce the food waste",
+    "responsibilities": [
+      "I was a shadower in this project",
+      "used Figma and Figjam for ideas and project iteration, used Slack for communication",
+      "collaborated with colleague designers and UX researchers to find out issues in regards to the food waste",
+      "the team created 42+ mobile app screens, 7 user flows for the mobile application"
+    ]
+  },
+  {
+    "id": 5,
+    "position": "UX Design Apprentice",
+    "company": "TeleVU Innovation Inc.",
+    "dates": "June 2022 ~ August 2022",
+    "missionObjective": "Mission Objective: redesign the employee portal for the medical professionals to improve the user experience of remote clinic sessions.",
+    "responsibilities": [
+      "redesigned web portal interface using Figma and Figjam, which led to a 95% boost in user engagement",
+      "developed an easy-to-use UI for a new web application that led to a 50% rise in the re-use among the users"
+    ]
+  }
+]

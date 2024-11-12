@@ -1,0 +1,29 @@
+.contact-animate {
+  animation: slide-up 1.5s ease-in-out forwards;
+}
+
+.contact-animate-out {
+  animation: slide-down 1.5s ease-in-out forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(500px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1000px);
+    opacity: 0.3;
+  }
+}

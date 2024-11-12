@@ -1,0 +1,46 @@
+#redirect {
+  height: 100vh;
+}
+
+.overflow-y-scroll {
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    transform: translateY(500px);
+    opacity: 0;
+  }
+  0% {
+    transform: translateY(250px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-bottom {
+  animation: fade-in-bottom 2.5s ease-in forwards;
+}
+
+.fade-out {
+  animation: fade-out ease-in-out forwards;
+  animation-duration: 2s;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(-250px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+}
