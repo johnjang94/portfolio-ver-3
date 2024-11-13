@@ -1,13 +1,15 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdOutlineSend } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
   const navigate = useNavigate();
+  const [submitError, setSubmitError] = useState(null);
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, reset },
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -24,6 +26,7 @@ export default function Contact() {
       );
 
       if (response.ok) {
+        reset();
         navigate("/received");
       } else {
         const errorData = await response.json();
@@ -31,6 +34,10 @@ export default function Contact() {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+      setSubmitError(
+        "Something went wrong. Please try again later. Otherwise, please send your inquiry to jscolbe9675@gmail.com via a separate email application!"
+      );
+      reset();
     }
   };
 
@@ -39,6 +46,9 @@ export default function Contact() {
       <h1 className="md:text-3xl text-lg md:my-5 my-20 text-center">
         Stay in touch with me!
       </h1>
+      {submitError && (
+        <p className="text-red-500 text-center mb-4">{submitError}</p>
+      )}
       <div className="w-full max-w-lg mx-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
