@@ -67,6 +67,16 @@ export default function OPERATE() {
     <div>
       <section className="my-10 mx-auto">
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
+          <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
+            <h1>
+              Up to{" "}
+              <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
+                30% increase
+              </span>{" "}
+              in operation efficiency
+            </h1>
+            <h1>what is this hotel management software?!</h1>
+          </div>
           <img
             src={OperateEase.Demo}
             alt="Demo showcase"
@@ -86,6 +96,21 @@ export default function OPERATE() {
           <div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
             <p>My role</p>
             <p className="font-bold">Associate Product Designer</p>
+          </div>
+          <div className="space-y-10">
+            <div className="flex gap-10 md:mx-52 mx-8">
+              <p>Team</p>
+              <ul>
+                <li>6 UX Designers</li>
+                <li>6 UX Researchers</li>
+                <li>6 Product Strategists</li>
+                <li>3 Project Management Associates</li>
+              </ul>
+            </div>
+            <div className="flex gap-3 md:mx-52 mx-8">
+              <p>Timeline</p>
+              <p>8 weeks</p>
+            </div>
           </div>
         </div>
       </section>

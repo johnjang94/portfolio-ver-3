@@ -17,24 +17,29 @@ export default function InitialSketch() {
           category. Some examples are shown as below:
         </p>
       </div>
-      <img
-        src={sakhi.HomeVersionOne}
-        alt="Home Version 1"
-        width={800}
-        className="rounded-2xl mx-auto"
-      />
-      <img
-        src={sakhi.HomeVersionTwo}
-        alt="Home Version 1"
-        width={800}
-        className="rounded-2xl mx-auto"
-      />
-      <img
-        src={sakhi.HomeVersionThree}
-        alt="Home Version 1"
-        width={800}
-        className="rounded-2xl mx-auto"
-      />
+      <div className="md:mx-20 space-y-5">
+        <div className="p-5 bg-white rounded-2xl">
+          <img
+            src={sakhi.HomeVersionOne}
+            alt="Home Version 1"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+        <div className="p-5 bg-white rounded-2xl">
+          <img
+            src={sakhi.HomeVersionTwo}
+            alt="Home Version 1"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+        <div className="p-5 bg-white rounded-2xl">
+          <img
+            src={sakhi.HomeVersionThree}
+            alt="Home Version 1"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+      </div>
       <div className="md:mx-20 my-5 space-y-5">
         <p>
           While taking the input from the stakeholder, I also worked on
@@ -42,30 +47,34 @@ export default function InitialSketch() {
           can come up with a simple menu that has consistency in categorization
           and being relevant to the products.
         </p>
-        <img
-          src={sakhi.Stakeholder}
-          alt="Stakeholder"
-          width={800}
-          className="rounded-2xl mx-auto"
-        />
-        <img
-          src={sakhi.Navigation}
-          alt="Navigation"
-          width={800}
-          className="rounded-2xl mx-auto"
-        />
-        <img
-          src={sakhi.Navigation2}
-          alt="Navigation 2"
-          width={800}
-          className="rounded-2xl mx-auto"
-        />
-        <img
-          src={sakhi.Navigation3}
-          alt="Navigation 3"
-          width={800}
-          className="rounded-2xl mx-auto"
-        />
+        <div className="p-5 bg-white rounded-2xl">
+          <img
+            src={sakhi.Stakeholder}
+            alt="Stakeholder"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+        <div className="p-5 bg-white rounded-2xl">
+          <img
+            src={sakhi.Navigation}
+            alt="Navigation"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+        <div className="p-5 bg-white rounded-2xl">
+          <img
+            src={sakhi.Navigation2}
+            alt="Navigation 2"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+        <div className="p-5 bg-white rounded-2xl">
+          <img
+            src={sakhi.Navigation3}
+            alt="Navigation 3"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
       </div>
     </div>
   );

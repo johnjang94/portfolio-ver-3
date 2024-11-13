@@ -10,13 +10,13 @@ export default function About() {
     <div>
       <div className="md:flex md:space-x-2 md:my-20 md:items-center md:justify-center text-center"></div>
       <div>
-        <div className="md:flex md:items-start md:w-4/6 md:mx-auto md:my-10 xl:gap-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6]">
+        <div className="xl:flex xl:items-start md:w-4/6 md:mx-auto md:my-10 xl:gap-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6]">
           <img
             src={MyIntroduction.About}
             alt="My profile"
             className="mx-auto rounded-2xl 2xl:w-[500px] w-[350px]"
           />
-          <div className="px-5 md:space-y-10 space-y-2">
+          <div className="px-5 md:space-y-10 space-y-2 md:py-10 xl:py-0 md:mx-10 xl:mx-0">
             <h1 className="2xl:text-5xl md:text-3xl text-2xl 2xl:py-10 xl:py-5">
               Who is John Jang?
             </h1>
@@ -68,8 +68,8 @@ export default function About() {
             <h2 className="font-bold py-3 md:text-2xl text-xl">
               How did my JOURNEY begin?
             </h2>
-            <div className="md:flex md:items-end xl:items-center md:gap-5">
-              <div className="w-5/6">
+            <div className="xl:flex lg:items-end xl:items-center lg:gap-5">
+              <div className="xl:w-5/6">
                 <h3 className="py-3">As an undergrad...</h3>
                 <p>
                   I was a lab assistant for a neuroscience research team in
@@ -84,13 +84,14 @@ export default function About() {
                   way we make decisions.
                 </p>
               </div>
-              <div className="md:w-[800px] w-full md:p-5 p-2 md:m-3 my-2 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] text-center">
+              <div className="w-full md:p-5 p-2 md:m-3 my-2 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] text-center">
                 <span className="text-xs md:text-base">
                   sample photo - not real from the lab
                 </span>
                 <img
                   src={MyIntroduction.Neuroscience}
                   alt="Neuroscience"
+                  width={800}
                   className="rounded-2xl float-image pt-3"
                 />
               </div>
@@ -103,8 +104,8 @@ export default function About() {
         <div className="md:flex md:items-center md:gap-5">
           <div className="md:w-full">
             <h3 className="font-bold py-3 text-xl">The Turning Point</h3>
-            <div className="md:flex md:items-start md:gap-5">
-              <div className="md:w-[800px] w-full md:p-5 p-2 md:m-3 my-2 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] text-center">
+            <div className="xl:flex lg:items-end xl:items-center lg:gap-5">
+              <div className="w-full md:p-5 p-2 md:m-3 my-2 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] text-center">
                 <img
                   src={MyIntroduction.Teacher}
                   alt="Teacher"
@@ -112,7 +113,7 @@ export default function About() {
                   className="rounded-2xl float-image"
                 />
               </div>
-              <div className="w-5/6">
+              <div className="xl:w-5/6">
                 <h3 className="py-3">Opportunity as an ESL teacher...</h3>
                 <p>
                   After I graduated in UNB, I had an opportunity to teach
@@ -124,27 +125,17 @@ export default function About() {
                   find ways to keep my students entertained and engaged in
                   lessons. I started to look for lots of interactive visual
                   resources including the materials that were provided by the
-                  academic institution that
-                </p>
-                <p className="2xl:block hidden">
-                  I was working for. I was constantly contemplating on what kind
-                  of visual materials (the product) would keep up with high
-                  engagement rate. Basically, I was conducting heavy level of
-                  research and was redesigning the presentation to keep the
-                  students engaged which were basically the steps for UX Design.
-                  In fact, I was gaining my experience in learning design (or
-                  educational, experiential design).
+                  academic institution that I was working for.
                 </p>
               </div>
             </div>
-            <p className="block 2xl:hidden ">
-              I was working for. I was constantly contemplating on what kind of
-              visual materials (the product) would keep up with high engagement
-              rate. Basically, I was conducting heavy level of research and was
-              redesigning the presentation to keep the students engaged which
-              were basically the steps for UX Design. In fact, I was gaining my
-              experience in learning design (or educational, experiential
-              design).
+            <p>
+              I was constantly contemplating on what kind of visual materials
+              (the product) would keep up with high engagement rate. Basically,
+              I was conducting heavy level of research and was redesigning the
+              presentation to keep the students engaged which were basically the
+              steps for UX Design. In fact, I was gaining my experience in
+              learning design (or educational, experiential design).
             </p>
           </div>
         </div>
@@ -239,8 +230,8 @@ export default function About() {
                   <a href="http://www.johnjang.dev" className="text-blue-500">
                     here
                   </a>
+                  .
                 </span>
-                .
               </p>
               <div className="hidden md:flex md:items-end">
                 <a href="http://www.johnjang.dev" className="text-blue-500">

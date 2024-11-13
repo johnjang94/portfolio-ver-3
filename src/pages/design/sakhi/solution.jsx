@@ -14,16 +14,17 @@ export default function Solutions() {
               the brand&#39;s colors.
             </p>
           </ul>
-          <div className="p-3 bg-white rounded-3xl w-fit mx-auto space-y-5">
+          <div className="p-5 bg-white rounded-3xl mx-auto">
             <img
               src={sakhi.Solution1}
               alt="Re-imagined home page"
-              width={800}
+              className="rounded-2xl"
             />
+          </div>
+          <div className="p-5 bg-white rounded-3xl mx-auto">
             <img
               src={sakhi.NavigationSolution}
               alt="Navigation on home page"
-              width={800}
               className="rounded-2xl"
             />
           </div>
@@ -34,7 +35,7 @@ export default function Solutions() {
             Since we are inviting shoppers unfamiliar with Indian products as
             well, we tried to implement simple layouts that is easy-to-follow.
           </p>
-          <div className="p-3 bg-white rounded-3xl w-fit mx-auto">
+          <div className="p-5 bg-white rounded-3xl mx-auto">
             <img src={sakhi.Solution2} alt="Re-imagined home page" />
           </div>
         </div>

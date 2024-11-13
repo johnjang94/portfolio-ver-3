@@ -72,6 +72,21 @@ export default function Food() {
               <p>My role</p>
               <p className="font-bold">Associate UX/UI Designer</p>
             </div>
+            <div className="space-y-10">
+              <div className="flex gap-10 mx-8 md:mx-56">
+                <p>Team</p>
+                <ul>
+                  <li>5 UX Designers</li>
+                  <li>5 UX Researchers</li>
+                  <li>3 Product Strategist</li>
+                  <li>2 Project Management</li>
+                </ul>
+              </div>
+              <div className="flex gap-3 mx-8 md:mx-56">
+                <p>Timeline</p>
+                <p>12 weeks</p>
+              </div>
+            </div>
           </div>
           <div className="md:mx-44 space-y-5">
             <img

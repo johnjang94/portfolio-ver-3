@@ -10,24 +10,32 @@ export default function Collaboration() {
         initiated development environment setup. In fact, we also used Zeplin to
         indicate the specifications for the development team.
       </p>
-      <img
-        src={OperateEase.Zeplin}
-        alt="Zeplin"
-        width={800}
-        className="rounded-3xl mx-auto my-5"
-      />
-      <img
-        src={OperateEase.Color}
-        alt="Color to CSS"
-        width={800}
-        className="rounded-3xl mx-auto"
-      />
-      <img
-        src={OperateEase.Developers}
-        alt="CSS Example"
-        width={800}
-        className="rounded-3xl mx-auto my-5"
-      />
+      <div className="md:mx-20 space-y-5">
+        <div className="bg-slate-300 rounded-2xl p-5">
+          <img
+            src={OperateEase.Zeplin}
+            alt="Zeplin"
+            width={800}
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+        <div className="bg-slate-300 rounded-2xl p-5">
+          <img
+            src={OperateEase.Color}
+            alt="Color to CSS"
+            width={800}
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+        <div className="bg-slate-300 rounded-2xl p-5">
+          <img
+            src={OperateEase.Developers}
+            alt="CSS Example"
+            width={800}
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+      </div>
     </div>
   );
 }

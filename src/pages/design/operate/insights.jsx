@@ -22,11 +22,13 @@ export default function Insight() {
           According to surveys, most hoteliers prefer an integrative Property
           Management System (PMS).
         </p>
-        <img
-          src={OperateEase.Insights}
-          alt="Insights"
-          className="text-3xl rounded-3xl"
-        />
+        <div className="bg-slate-300 p-5 rounded-2xl">
+          <img
+            src={OperateEase.Insights}
+            alt="Insights"
+            className="text-2xl rounded-3xl"
+          />
+        </div>
       </div>
     </div>
   );

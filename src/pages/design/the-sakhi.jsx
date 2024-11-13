@@ -72,9 +72,24 @@ export default function SAKHI() {
                 extraordinary life events such as wedding, festival, etc.
               </p>
             </div>
-            <div className="md:mx-10 my-10">
+            <div className="md:mx-10 my-10 text-black">
               <p>My role</p>
               <p className="font-bold">Associate Product Designer</p>
+            </div>
+            <div className="space-y-10">
+              <div className="flex gap-10 mx-8 text-black">
+                <p>Team</p>
+                <ul>
+                  <li>2 UX Designers</li>
+                  <li>2 UX Researchers</li>
+                  <li>1 Product Strategist</li>
+                  <li>1 Project Management</li>
+                </ul>
+              </div>
+              <div className="flex gap-3 mx-8 text-black">
+                <p>Timeline</p>
+                <p>14 weeks</p>
+              </div>
             </div>
           </div>
           <img

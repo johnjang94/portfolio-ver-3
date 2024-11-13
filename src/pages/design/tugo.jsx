@@ -55,6 +55,15 @@ export default function TuGo() {
     <div>
       <section className="my-10 mx-auto">
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
+          <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
+            <h1>
+              Reducing the bounce-off rate{" "}
+              <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
+                down to 30%
+              </span>
+            </h1>
+            <h1>what is up with this travel insurance?</h1>
+          </div>
           <img
             src={tugoInsurance.Demo}
             alt="Demo showcase"

@@ -11,18 +11,20 @@ export default function InitialSketch() {
           able to quickly track the activities.
         </p>
         <div className="md:grid md:grid-cols-2 items-center gap-5">
-          <img
-            src={OperateEase.InitialDrawing}
-            alt="Initial Sketch"
-            width={500}
-            className="rounded-2xl"
-          />
-          <img
-            src={OperateEase.Pricing}
-            alt="Initial Sketch"
-            width={500}
-            className="rounded-2xl"
-          />
+          <div className="bg-slate-300 p-5 rounded-2xl">
+            <img
+              src={OperateEase.InitialDrawing}
+              alt="Initial Sketch"
+              className="rounded-2xl"
+            />
+          </div>
+          <div className="bg-slate-300 p-5 rounded-2xl">
+            <img
+              src={OperateEase.Pricing}
+              alt="Initial Sketch"
+              className="rounded-2xl"
+            />
+          </div>
         </div>
       </div>
     </div>

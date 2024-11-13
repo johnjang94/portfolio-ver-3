@@ -14,18 +14,20 @@ export default function MidFi() {
           <FaArrowDown className="mx-auto" />
           <p>multiple dashboards to specialize in each type of service</p>
         </div>
-        <img
-          src={OperateEase.RoomDashboard}
-          alt="Room Dashboard"
-          width={800}
-          className="rounded-2xl"
-        />
-        <img
-          src={OperateEase.FoodDashboard}
-          alt="Food Dashboard"
-          width={800}
-          className="rounded-2xl"
-        />
+        <div className="bg-slate-300 p-5 rounded-2xl">
+          <img
+            src={OperateEase.RoomDashboard}
+            alt="Room Dashboard"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
+        <div className="bg-slate-300 p-5 rounded-2xl">
+          <img
+            src={OperateEase.FoodDashboard}
+            alt="Food Dashboard"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
       </div>
     </div>
   );

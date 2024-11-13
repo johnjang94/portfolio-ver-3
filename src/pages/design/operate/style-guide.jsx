@@ -9,12 +9,13 @@ export default function StyleGuide() {
           We created the fonts, the colors, the buttons and other interactive
           assets for OperateEase.
         </p>
-        <img
-          src={OperateEase.STYLE_GUIDE}
-          alt="OperateEase Style Guide"
-          width={600}
-          className="rounded-2xl mx-auto"
-        />
+        <div className="p-5 bg-slate-300 rounded-2xl">
+          <img
+            src={OperateEase.STYLE_GUIDE}
+            alt="OperateEase Style Guide"
+            className="rounded-2xl mx-auto"
+          />
+        </div>
       </ul>
     </div>
   );

@@ -10,12 +10,14 @@ export default function UserPersona() {
       <p className="my-5 text-center text-red-500">
         &#34;Inventory management is difficult to control.&#34;
       </p>
-      <img
-        src={OperateEase.Persona}
-        width={800}
-        alt="User Persona Example"
-        className="text-3xl rounded-3xl mx-auto"
-      />
+      <div className="bg-slate-300 md:mx-20 p-5 rounded-2xl">
+        <img
+          src={OperateEase.Persona}
+          width={800}
+          alt="User Persona Example"
+          className="text-2xl rounded-3xl mx-auto"
+        />
+      </div>
     </div>
   );
 }

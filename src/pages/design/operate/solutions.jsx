@@ -14,12 +14,12 @@ export default function Solutions() {
           <img
             src={OperateEase.Occupancy}
             alt="Room occupancy dashboard sketch"
-            className="mx-auto"
+            className="mx-auto rounded-2xl"
           />
           <img
             src={OperateEase.Food}
             alt="Food dashboard sketch"
-            className="mx-auto"
+            className="mx-auto rounded-2xl"
           />
         </div>
         <p className="font-bold">
