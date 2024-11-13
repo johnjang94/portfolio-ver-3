@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@formspree/react':
-        specifier: ^2.5.1
-        version: 2.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query':
         specifier: ^5.28.6
         version: 5.59.20(react@18.3.1)
@@ -29,6 +26,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      react-hook-form:
+        specifier: ^7.53.2
+        version: 7.53.2(react@18.3.1)
       react-icons:
         specifier: ^5.0.1
         version: 5.3.0(react@18.3.1)
@@ -322,15 +322,6 @@ packages:
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@formspree/core@3.0.1':
-    resolution: {integrity: sha512-jGNgrEtL8mx8k1kkmeNfyeoP1a+H2kci8TMG7CT3R5k3ssqr0Sl1j10SIKo74CFZVewMW4JjMYwcunWUPfutSQ==}
-
-  '@formspree/react@2.5.1':
-    resolution: {integrity: sha512-Yhxyn32m3zH63i0DNpnBq55zargDlbihqC0wlK18dqU7GOUqJXKY+WywLXuTRGfqo79/hT+Qx6eFS6M0J6eh0A==}
-    peerDependencies:
-      react: ^16.8 || ^17.0 || ^18.0
-      react-dom: ^16.8 || ^17.0 || ^18.0
-
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
     engines: {node: '>=10.10.0'}
@@ -475,16 +466,6 @@ packages:
     resolution: {integrity: sha512-/RqrIFtLB926frMhZD0a5oDa4eFIbyNEwLLloMTEjmqfwZWXywwVVOVmwTsuyhC9HKkVEZcOOi+KV4U9wmOdlg==}
     cpu: [x64]
     os: [win32]
-
-  '@stripe/react-stripe-js@1.16.5':
-    resolution: {integrity: sha512-lVPW3IfwdacyS22pP+nBB6/GNFRRhT/4jfgAK6T2guQmtzPwJV1DogiGGaBNhiKtSY18+yS8KlHSu+PvZNclvQ==}
-    peerDependencies:
-      '@stripe/stripe-js': ^1.44.1
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-
-  '@stripe/stripe-js@1.54.2':
-    resolution: {integrity: sha512-R1PwtDvUfs99cAjfuQ/WpwJ3c92+DAMy9xGApjqlWQMj0FKQabUAys2swfTRNzuYAYJh7NqK2dzcYVNkKLEKUg==}
 
   '@tanstack/query-core@5.59.20':
     resolution: {integrity: sha512-e8vw0lf7KwfGe1if4uPFhvZRWULqHjFcz3K8AebtieXvnMOz5FSzlZe3mTLlPuUBcydCnBRqYs2YJ5ys68wwLg==}
@@ -1412,6 +1393,12 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
+  react-hook-form@7.53.2:
+    resolution: {integrity: sha512-YVel6fW5sOeedd1524pltpHX+jgU2u3DSDtXEaBORNdqiNrsX/nUI/iGXONegttg0mJVnfrIkiV0cmTU6Oo2xw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+
   react-icons@5.3.0:
     resolution: {integrity: sha512-DnUk8aFbTyQPSkCfF8dbX6kQjXA9DktMeJqfjrg6cK9vwQVMxmcA3BfP4QoiztVmEHtwlTgLFsPuH2NskKT6eg==}
     peerDependencies:
@@ -1968,18 +1955,6 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
-  '@formspree/core@3.0.1':
-    dependencies:
-      '@stripe/stripe-js': 1.54.2
-
-  '@formspree/react@2.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@formspree/core': 3.0.1
-      '@stripe/react-stripe-js': 1.16.5(@stripe/stripe-js@1.54.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@stripe/stripe-js': 1.54.2
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -2088,15 +2063,6 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.25.0':
     optional: true
-
-  '@stripe/react-stripe-js@1.16.5(@stripe/stripe-js@1.54.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@stripe/stripe-js': 1.54.2
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@stripe/stripe-js@1.54.2': {}
 
   '@tanstack/query-core@5.59.20': {}
 
@@ -3164,6 +3130,10 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
+
+  react-hook-form@7.53.2(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   react-icons@5.3.0(react@18.3.1):
     dependencies:

@@ -1,72 +1,118 @@
-import { useForm, ValidationError } from "@formspree/react";
+import { useForm } from "react-hook-form";
 import { MdOutlineSend } from "react-icons/md";
-import { Link } from "react-router-dom";
-import Received from "./received";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
-  const [state, handleSubmit] = useForm("mqakbdwj");
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
 
-  if (state.succeeded) {
-    return <Received />;
-  }
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("http://localhost:3001/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        navigate("/received");
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+
   return (
     <div className="md:my-5 my-28 md:py-4 px-10">
       <h1 className="md:text-3xl text-lg md:my-5 my-20 text-center">
         Stay in touch with me!
       </h1>
       <div className="w-full max-w-lg mx-auto">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label htmlFor="name">Name</label>
             <br />
             <input
+              {...register("name", { required: "Name is required" })}
               id="name"
               type="text"
-              name="name"
               className="w-full rounded-lg p-1"
             />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+            )}
           </div>
-          <ValidationError prefix="Name" field="name" errors={state.errors} />
+
           <div className="mb-4">
             <label htmlFor="email">Email</label>
             <br />
             <input
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Invalid email address",
+                },
+              })}
               id="email"
               type="email"
-              name="email"
               className="w-full rounded-lg p-1"
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
           </div>
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
+
           <div className="mb-4">
             <label htmlFor="inquiry">What would you like to talk about?</label>
             <br />
-            <input type="text" id="inquiry" className="w-full rounded-lg p-1" />
+            <input
+              {...register("inquiry", { required: "This field is required" })}
+              type="text"
+              id="inquiry"
+              className="w-full rounded-lg p-1"
+            />
+            {errors.inquiry && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.inquiry.message}
+              </p>
+            )}
           </div>
+
           <div className="mb-4">
             <label htmlFor="message">Your Message</label>
             <br />
             <textarea
+              {...register("message", { required: "Message is required" })}
               id="message"
-              name="message"
               className="w-full h-[30vh] rounded-lg p-1"
             />
+            {errors.message && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.message.message}
+              </p>
+            )}
           </div>
-          <ValidationError
-            prefix="Message"
-            field="message"
-            errors={state.errors}
-          />
+
           <div className="flex justify-end">
-            <Link to="/received">
-              <button
-                type="submit"
-                disabled={state.submitting}
-                className="p-2 bg-blue-400 rounded-xl text-center flex items-center gap-2"
-              >
-                Send <MdOutlineSend />
-              </button>
-            </Link>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="p-2 bg-blue-400 rounded-xl text-center flex items-center gap-2"
+            >
+              Send <MdOutlineSend />
+            </button>
           </div>
         </form>
       </div>
