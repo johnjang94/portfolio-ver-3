@@ -9,11 +9,13 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, reset },
+    reset,
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const onSubmit = async (data) => {
     try {
+      setSubmitError(null);
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_URL}/api/contact`,
         {
@@ -25,17 +27,21 @@ export default function Contact() {
         }
       );
 
+      const responseData = await response.json();
+
       if (response.ok) {
         reset();
         navigate("/received");
       } else {
-        const errorData = await response.json();
-        throw new Error(errorData.error);
+        setSubmitError(
+          responseData.error || "Failed to send message. Please try again."
+        );
+        reset();
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitError(
-        "Something went wrong. Please try again later. Otherwise, please send your inquiry to jscolbe9675@gmail.com via a separate email application!"
+        "Something went wrong. Please email me directly at jscolbe9675@gmail.com"
       );
       reset();
     }
@@ -50,7 +56,7 @@ export default function Contact() {
         <p className="text-red-500 text-center mb-4">{submitError}</p>
       )}
       <div className="w-full max-w-lg mx-auto">
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="mb-4">
             <label htmlFor="name">Name</label>
             <br />
