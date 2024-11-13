@@ -4,7 +4,8 @@
 @tailwind utilities;
 
 body {
-  @apply max-w-[1440px] mx-auto text-start;
+  @apply bg-slate-100 mx-auto text-start;
   font-family: "Comfortaa", sans-serif;
   font-optical-sizing: auto;
+  max-width: 1440px;
 }

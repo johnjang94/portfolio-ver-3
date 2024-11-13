@@ -18,6 +18,7 @@ import Contact from "./pages/contact";
 // Wrong link
 import NotFound from "./pages/notfound";
 import Resume from "./pages/resume/resume";
+import Received from "./pages/received";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       { path: "/operate", element: <OPERATE /> },
       // Other
       { path: "/contact", element: <Contact /> },
+      { path: "/received", element: <Received /> },
       // For any wrong URL, redirect to:
       { path: "*", element: <NotFound /> },
     ],

@@ -29,9 +29,20 @@
     opacity: 0;
   }
 }
-
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .rotating-text-container {
-    margin-left: -14.5vw;
+    margin-left: -11.5vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .rotating-text-container {
+    margin-left: -14vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .rotating-text-container {
+    margin-left: -20.5vw;
   }
 }

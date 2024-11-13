@@ -10,15 +10,16 @@ export default function About() {
     <div>
       <div className="md:flex md:space-x-2 md:my-20 md:items-center md:justify-center text-center"></div>
       <div>
-        <div className="md:flex md:items-start md:w-4/6 md:mx-auto md:my-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6]">
+        <div className="md:flex md:items-start md:w-4/6 md:mx-auto md:my-10 xl:gap-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6]">
           <img
             src={MyIntroduction.About}
             alt="My profile"
-            width={300}
-            className="mx-auto rounded-2xl"
+            className="mx-auto rounded-2xl 2xl:w-[500px] w-[350px]"
           />
           <div className="px-5 md:space-y-10 space-y-2">
-            <h1 className="md:text-5xl text-2xl">Who is John Jang?</h1>
+            <h1 className="2xl:text-5xl md:text-3xl text-2xl 2xl:py-10 xl:py-5">
+              Who is John Jang?
+            </h1>
             <div className="space-y-3">
               <p>A Canadian Product Designer, a story-teller & a strategist</p>
               <p>
@@ -67,7 +68,7 @@ export default function About() {
             <h2 className="font-bold py-3 md:text-2xl text-xl">
               How did my JOURNEY begin?
             </h2>
-            <div className="md:flex md:items-end md:gap-5">
+            <div className="md:flex md:items-end xl:items-center md:gap-5">
               <div className="w-5/6">
                 <h3 className="py-3">As an undergrad...</h3>
                 <p>
@@ -125,9 +126,18 @@ export default function About() {
                   resources including the materials that were provided by the
                   academic institution that
                 </p>
+                <p className="2xl:block hidden">
+                  I was working for. I was constantly contemplating on what kind
+                  of visual materials (the product) would keep up with high
+                  engagement rate. Basically, I was conducting heavy level of
+                  research and was redesigning the presentation to keep the
+                  students engaged which were basically the steps for UX Design.
+                  In fact, I was gaining my experience in learning design (or
+                  educational, experiential design).
+                </p>
               </div>
             </div>
-            <p>
+            <p className="block 2xl:hidden ">
               I was working for. I was constantly contemplating on what kind of
               visual materials (the product) would keep up with high engagement
               rate. Basically, I was conducting heavy level of research and was
@@ -170,7 +180,7 @@ export default function About() {
           are diverse: from social services to blockchain, e-commerce, SaaS
           company or travel agency.
         </p>
-        <div className="md:grid md:grid-cols-2 md:m-5 gap-5 space-y-3 md:space-y-0 text-center mt-5">
+        <div className="md:grid md:grid-cols-2 gap-5 md:justify-between md:w-full space-y-3 md:space-y-0 text-center mt-5">
           <div className="bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
             <img
               src={MyIntroduction.Sakhi}
@@ -223,9 +233,16 @@ export default function About() {
             <div className="flex items-center space-x-1 my-3">
               <p>
                 Should you be interested in learning further about my journey in
-                web development, you can check it out
+                web development, you can check it out{" "}
+                <span className="block md:hidden">
+                  {" "}
+                  <a href="http://www.johnjang.dev" className="text-blue-500">
+                    here
+                  </a>
+                </span>
+                .
               </p>
-              <div className="flex items-end">
+              <div className="hidden md:flex md:items-end">
                 <a href="http://www.johnjang.dev" className="text-blue-500">
                   here
                 </a>
@@ -234,7 +251,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="md:grid md:grid-cols-2 md:m-5 gap-5 space-y-3 md:space-y-0 text-center mt-5">
+        <div className="md:grid md:grid-cols-2 gap-5 md:justify-between md:w-full space-y-3 md:space-y-0 text-center mt-5">
           <div className="bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
             <img src={MyIntroduction.SaaS} alt="SaaS" className="rounded-2xl" />
           </div>
@@ -242,7 +259,7 @@ export default function About() {
             <img
               src={MyIntroduction.PWA}
               alt="PWA"
-              width={160}
+              width={window.innerWidth >= 1680 ? 300 : 160}
               className="rounded-2xl"
             />
           </div>
@@ -274,7 +291,7 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className="md:grid md:grid-cols-2 md:m-5 gap-5 space-y-3 md:space-y-0 text-center mt-5">
+        <div className="md:grid md:grid-cols-2 gap-5 md:justify-between md:w-full space-y-3 md:space-y-0 text-center mt-5">
           <div className="bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
             <img
               src={MyIntroduction.Korea}
@@ -289,7 +306,7 @@ export default function About() {
       </div>
 
       <div className="md:w-4/6 md:mx-auto mx-10 my-20 bg-white p-5 rounded-2xl">
-        <div className="flex items-center gap-5">
+        <div className="md:flex md:items-center md:gap-5">
           <div>
             <h3 className="font-bold py-3 md:text-2xl text-base">
               Would you like to work with me?
@@ -299,29 +316,32 @@ export default function About() {
               there with you in every step of the way from ideation to launch of
               the product.
             </p>
-            <div className="flex space-x-1 items-center py-3">
-              <p>Let&#39;s</p>
-              <a
-                href="https://www.linkedin.com/in/johnjang94/"
-                className="text-blue-500"
-              >
-                stay connected
-              </a>
-              <p>!</p>
-              <p>You can also reach out to me</p>
-              <div className="flex items-end">
-                <Link to="/contact">
-                  <p className="text-blue-500">here</p>
-                </Link>
-                <p>.</p>
+            <div className="py-3">
+              <div className="flex items-center space-x-1">
+                <p>Let&#39;s</p>
+                <a
+                  href="https://www.linkedin.com/in/johnjang94/"
+                  className="text-blue-500"
+                >
+                  stay connected
+                </a>
+                <p>!</p>
+              </div>
+              <div className="md:flex md:items-center space-x-1">
+                <p>You can also reach out to me</p>
+                <div className="flex items-end">
+                  <Link to="/contact">
+                    <p className="text-blue-500">here</p>
+                  </Link>
+                  <p>.</p>
+                </div>
               </div>
             </div>
           </div>
           <img
             src={MyIntroduction.About}
             alt="My profile"
-            width={300}
-            className="mx-auto rounded-2xl"
+            className="mx-auto rounded-2xl 2xl:w-[500px] w-[350px]"
           />
         </div>
       </div>

@@ -90,21 +90,23 @@ export default function Home() {
   }, [charIndex, methodIndex]);
   return (
     <div>
-      <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-80">
+      <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
         <div className="p-6 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl">
           <h1 className="md:text-5xl text-2xl py-5">Hi, I&#39;m John Jang.</h1>
           <div className="items-center md:grid md:grid-cols-2 md:text-2xl text-base mb-3 md:mb-0">
             <h1>I&#39;m a Product Designer with</h1>
-            <div className="rotating-text-container">
-              {titles.map((title, index) => (
-                <h2
-                  key={index}
-                  className="rotating-text"
-                  style={{ animationDelay: `${index * 2}s` }}
-                >
-                  {title}.
-                </h2>
-              ))}
+            <div className="w-4/6 md:w-full ml-28 md:ml-0">
+              <div className="rotating-text-container">
+                {titles.map((title, index) => (
+                  <h2
+                    key={index}
+                    className="rotating-text"
+                    style={{ animationDelay: `${index * 2}s` }}
+                  >
+                    {title}.
+                  </h2>
+                ))}
+              </div>
             </div>
           </div>
           <div className="md:text-2xl text-base md:w-[75vw]">
@@ -126,7 +128,9 @@ export default function Home() {
           <div className="md:grid md:grid-cols-2 items-start py-10 gap-40 space-y-5 md:space-y-0">
             <div className="bg-white rounded-2xl p-3 h-36">
               <h4 className="font-semibold text-center p-3">Start-ups</h4>
-              <p>I have been a Product Designer at a couple of start-ups.</p>
+              <p className="text-center">
+                I have been a Product Designer at a couple of start-ups.
+              </p>
             </div>
             <div className="bg-white rounded-2xl p-3">
               <h4 className="font-semibold text-center p-3">
