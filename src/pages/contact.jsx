@@ -94,17 +94,17 @@ export default function Contact() {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="inquiry">What would you like to talk about?</label>
+            <label htmlFor="topic">What would you like to talk about?</label>
             <br />
             <input
-              {...register("inquiry", { required: "This field is required" })}
+              {...register("topic", { required: "This field is required" })}
               type="text"
-              id="inquiry"
+              id="topic"
               className="w-full rounded-lg p-1"
             />
-            {errors.inquiry && (
+            {errors.topic && (
               <p className="text-red-500 text-sm mt-1">
-                {errors.inquiry.message}
+                {errors.topic.message}
               </p>
             )}
           </div>
