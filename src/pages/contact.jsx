@@ -97,14 +97,14 @@ export default function Contact() {
             <label htmlFor="topic">What would you like to talk about?</label>
             <br />
             <input
-              {...register("topic", { required: "This field is required" })}
+              {...register("inquiry", { required: "This field is required" })}
               type="text"
-              id="topic"
+              id="inquiry"
               className="w-full rounded-lg p-1"
             />
-            {errors.topic && (
+            {errors.inquiry && (
               <p className="text-red-500 text-sm mt-1">
-                {errors.topic.message}
+                {errors.inquiry.message}
               </p>
             )}
           </div>
