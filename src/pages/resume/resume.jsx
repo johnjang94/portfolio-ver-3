@@ -14,12 +14,18 @@ export default function Resume() {
           className="mx-auto rounded-3xl"
         />
       </div>
-      <div className="flex items-center text-center gap-1 justify-center">
+      <div className="md:flex md:items-center md:text-center md:gap-1 md:justify-center hidden">
         <p>Please reach out to me</p>
         <Link to="/contact">
           <p className="text-blue-500">here</p>
         </Link>
         <p>for the most up-to-date information.</p>
+      </div>
+      <div className="flex items-center text-center gap-1 justify-center md:hidden">
+        <p>Check out the latest version</p>
+        <Link to="/contact">
+          <p className="text-blue-500">here</p>
+        </Link>
       </div>
     </section>
   );
