@@ -75,7 +75,6 @@ export default function OPERATE() {
               </span>{" "}
               in operation efficiency
             </h1>
-            <h1>what is this hotel management software?!</h1>
           </div>
           <img
             src={OperateEase.Demo}
