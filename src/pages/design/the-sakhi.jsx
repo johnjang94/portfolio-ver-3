@@ -86,10 +86,6 @@ export default function SAKHI() {
                   <li>1 Project Management</li>
                 </ul>
               </div>
-              <div className="flex gap-3 mx-8 text-black">
-                <p>Timeline</p>
-                <p>14 weeks</p>
-              </div>
             </div>
           </div>
           <img

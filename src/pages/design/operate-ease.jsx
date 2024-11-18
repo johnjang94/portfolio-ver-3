@@ -106,10 +106,6 @@ export default function OPERATE() {
                 <li>3 Project Management Associates</li>
               </ul>
             </div>
-            <div className="flex gap-3 md:mx-52 mx-8">
-              <p>Timeline</p>
-              <p>8 weeks</p>
-            </div>
           </div>
         </div>
       </section>

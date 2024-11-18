@@ -77,6 +77,21 @@ export default function TeleVU() {
             <p>My role</p>
             <p className="font-bold">UX/UI Designer</p>
           </div>
+          <div className="space-y-10 md:mx-52 mx-8">
+            <div className="flex gap-10 text-black">
+              <p>Team</p>
+              <ul>
+                <li>2 UX Designers</li>
+                <li>2 UX Researchers</li>
+                <li>1 Product Strategist</li>
+                <li>1 Project Management</li>
+              </ul>
+            </div>
+            <div className="flex gap-3 text-black">
+              <p>Timeline</p>
+              <p>8 weeks</p>
+            </div>
+          </div>
         </div>
       </section>
       <section className="md:flex md:flex-1 gap-10">
