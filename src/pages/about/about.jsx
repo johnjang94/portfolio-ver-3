@@ -17,19 +17,24 @@ export default function About() {
             className="mx-auto rounded-2xl 2xl:w-[500px] w-[350px]"
           />
           <div>
-            <div className="px-5 md:space-y-10 space-y-2 md:py-10 xl:py-20 md:mx-10 xl:mx-0">
+            <div className="px-5 md:space-y-10 space-y-2 py-10 xl:py-12 md:mx-10 xl:mx-0">
               <div>
                 <h1 className="2xl:text-5xl md:text-3xl text-2xl 2xl:py-10 xl:py-5">
                   Who is John Jang?
                 </h1>
                 <div className="space-y-3">
                   <p>
-                    I am a hiker who enjoys road trips and flights to overseas.
+                    I am a Product Designer who brings unique solutions to
+                    challenges and with catchy stories. I am also a hiker who
+                    enjoys road trips and flights to overseas. To me, design is
+                    like hiking. It is a journey to find the right design that
+                    reflects the voices of users, the voices of the
+                    stakeholders, and can be built with computers.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="px-5 space-y-2 md:py-10 xl:py-5 md:mx-10 xl:mx-0">
+            <div className="px-5 space-y-2 md:mx-10 xl:mx-0">
               <p className="font-bold">Current Role</p>
               <p>
                 I am a Product Designer at OPERATE-EASE, a start-up that is on a
