@@ -8,23 +8,32 @@ export default function About() {
   }, []);
   return (
     <div>
-      <div className="md:flex md:space-x-2 md:my-20 md:items-center md:justify-center text-center"></div>
+      <div className="md:flex md:space-x-2 md:my-10 md:items-center md:justify-center text-center"></div>
       <div>
-        <div className="xl:flex xl:items-start md:w-4/6 md:mx-auto md:my-10 xl:gap-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6]">
+        <div className="xl:flex xl:items-start md:w-4/6 md:mx-auto md:my-10 xl:gap-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6]">
           <img
             src={MyIntroduction.About}
             alt="My profile"
             className="mx-auto rounded-2xl 2xl:w-[500px] w-[350px]"
           />
-          <div className="px-5 md:space-y-10 space-y-2 md:py-10 xl:py-0 md:mx-10 xl:mx-0">
-            <h1 className="2xl:text-5xl md:text-3xl text-2xl 2xl:py-10 xl:py-5">
-              Who is John Jang?
-            </h1>
-            <div className="space-y-3">
-              <p>A Canadian Product Designer, a story-teller & a strategist</p>
+          <div>
+            <div className="px-5 md:space-y-10 space-y-2 md:py-10 xl:py-20 md:mx-10 xl:mx-0">
+              <div>
+                <h1 className="2xl:text-5xl md:text-3xl text-2xl 2xl:py-10 xl:py-5">
+                  Who is John Jang?
+                </h1>
+                <div className="space-y-3">
+                  <p>
+                    I am a hiker who enjoys road trips and flights to overseas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="px-5 space-y-2 md:py-10 xl:py-5 md:mx-10 xl:mx-0">
+              <p className="font-bold">Current Role</p>
               <p>
-                Currently, I am a Product Designer at OPERATE-EASE, a start-up
-                that is on a mission to automate hospitality management.
+                I am a Product Designer at OPERATE-EASE, a start-up that is on a
+                mission to automate hospitality management.
               </p>
             </div>
           </div>
@@ -84,7 +93,7 @@ export default function About() {
                   way we make decisions.
                 </p>
               </div>
-              <div className="w-full md:p-5 p-2 md:m-3 my-2 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] text-center">
+              <div className="w-full md:p-5 p-2 md:m-3 my-2 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] text-center rounded-2xl">
                 <span className="text-xs md:text-base">
                   sample photo - not real from the lab
                 </span>
@@ -105,7 +114,7 @@ export default function About() {
           <div className="md:w-full">
             <h3 className="font-bold py-3 text-xl">The Turning Point</h3>
             <div className="xl:flex lg:items-end xl:items-center lg:gap-5">
-              <div className="w-full md:p-5 p-2 md:m-3 my-2 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] text-center">
+              <div className="w-full md:p-5 p-2 md:m-3 my-2 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] text-center rounded-2xl">
                 <img
                   src={MyIntroduction.Teacher}
                   alt="Teacher"
@@ -172,28 +181,28 @@ export default function About() {
           company or travel agency.
         </p>
         <div className="md:grid md:grid-cols-2 gap-5 md:justify-between md:w-full space-y-3 md:space-y-0 text-center mt-5">
-          <div className="bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img
               src={MyIntroduction.Sakhi}
               alt="E-commerce"
               className="rounded-2xl"
             />
           </div>
-          <div className="bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img
               src={MyIntroduction.Blockchain}
               alt="Blockchain"
               className="rounded-2xl"
             />
           </div>
-          <div className="bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img
               src={MyIntroduction.Ruminate}
               alt="Social Service"
               className="rounded-2xl"
             />
           </div>
-          <div className="bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img
               src={MyIntroduction.Travel}
               alt="Travel"
@@ -243,10 +252,10 @@ export default function About() {
           </div>
         </div>
         <div className="md:grid md:grid-cols-2 gap-5 md:justify-between md:w-full space-y-3 md:space-y-0 text-center mt-5">
-          <div className="bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img src={MyIntroduction.SaaS} alt="SaaS" className="rounded-2xl" />
           </div>
-          <div className="w-fit mx-auto bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="w-fit mx-auto bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img
               src={MyIntroduction.PWA}
               alt="PWA"
@@ -254,14 +263,14 @@ export default function About() {
               className="rounded-2xl"
             />
           </div>
-          <div className="md:w-[32vw] bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="md:w-[32vw] bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img
               src={MyIntroduction.NewRuminate}
               alt="New Ruminate - Social Service"
               className="rounded-2xl"
             />
           </div>
-          <div className="md:w-[24vw] mx-auto bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="md:w-[24vw] mx-auto bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img
               src={MyIntroduction.Maina}
               alt="Maina - Social service"
@@ -283,14 +292,14 @@ export default function About() {
           </div>
         </div>
         <div className="md:grid md:grid-cols-2 gap-5 md:justify-between md:w-full space-y-3 md:space-y-0 text-center mt-5">
-          <div className="bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img
               src={MyIntroduction.Korea}
               alt="Korea"
               className="rounded-2xl"
             />
           </div>
-          <div className="w-fit mx-auto bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl p-5">
+          <div className="w-fit mx-auto bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl p-5">
             <img src={MyIntroduction.Run} alt="Run" className="rounded-2xl" />
           </div>
         </div>
@@ -330,9 +339,9 @@ export default function About() {
             </div>
           </div>
           <img
-            src={MyIntroduction.About}
+            src={MyIntroduction.Challenge}
             alt="My profile"
-            className="mx-auto rounded-2xl 2xl:w-[500px] w-[350px]"
+            className="mx-auto rounded-2xl 2xl:w-[500px] w-[450px]"
           />
         </div>
       </div>

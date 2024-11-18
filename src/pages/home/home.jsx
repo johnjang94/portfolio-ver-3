@@ -1,14 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./home.css";
 import { home } from "../../utils/home";
-
-const titles = [
-  "strategic approach",
-  "innovative problem-solving skills",
-  "web / mobile development experience",
-];
 
 const methods = ["user research.", "prototyping.", "usability tests."];
 
@@ -91,30 +84,14 @@ export default function Home() {
   return (
     <div>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
-        <div className="p-6 bg-gradient-to-br from-[#e2fcea9c] via-[#e1faec81] to-[#d3fbfbb6] rounded-2xl">
+        <div className="p-6 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl">
           <h1 className="md:text-5xl text-2xl py-5">Hi, I&#39;m John Jang.</h1>
-          <div className="items-center md:grid md:grid-cols-2 md:text-2xl text-base mb-3 md:mb-0">
-            <h1>I&#39;m a Product Designer with</h1>
-            <div className="w-4/6 md:w-full ml-28 md:ml-0">
-              <div className="rotating-text-container">
-                {titles.map((title, index) => (
-                  <h2
-                    key={index}
-                    className="rotating-text"
-                    style={{ animationDelay: `${index * 2}s` }}
-                  >
-                    {title}.
-                  </h2>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="md:text-2xl text-base md:w-[75vw]">
-            <p>
-              I help companies foster soul-bond relationships with their clients
-              that attain loyalty and trust using{" "}
+          <div className="md:text-2xl text-base mb-3 md:mb-0">
+            <h1>
+              I&#39;m a Product Designer who help companies to foster strong and
+              reliable relationships with their users using{" "}
               <span className="typewriter-text">{currentMethod}</span>
-            </p>
+            </h1>
           </div>
           <div>
             <p className="my-5 text-base">
@@ -134,11 +111,12 @@ export default function Home() {
             </div>
             <div className="bg-white rounded-2xl p-3">
               <h4 className="font-semibold text-center p-3">
-                I connect dev and design
+                Web / Mobile Development
               </h4>
               <p>
-                Since I have some development experience, I know how to create
-                feasible and marketable design that suits development.
+                I have some development experience in web and mobile
+                applications, so I know how to create feasible and marketable
+                design that suits development.
               </p>
             </div>
           </div>
@@ -177,7 +155,7 @@ export default function Home() {
                 className="space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out"
               >
                 <Link to={item.link}>
-                  <div className="bg-[#c9dcffb6] md:px-40 md:py-3 rounded-xl">
+                  <div className="bg-[#f6f6f6] md:px-40 md:py-3 rounded-xl">
                     <img
                       src={item.imgSrc}
                       alt={item.imgAlt}
@@ -211,19 +189,7 @@ export default function Home() {
               key={item.id}
               className="transition-transform duration-300 ease-in-out hover:-translate-y-2 space-y-3 p-2 rounded-xl w-full border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
             >
-              <div
-                className={`p-3 rounded-xl ${
-                  item.id === 2
-                    ? "bg-[rgba(209,178,161,0.23)]"
-                    : item.id === 3
-                    ? "bg-[#ffe79e3e]"
-                    : item.id === 4
-                    ? "bg-[#e9e3e47b]"
-                    : item.id === 5
-                    ? "bg-[#cce4fa79]"
-                    : "bg-[rgba(108,122,137,0.4)]"
-                }`}
-              >
+              <div className="p-3 rounded-xl bg-[#f6f6f6]">
                 <Link to={item.link} state={{ fromId: item.id }}>
                   <img
                     src={item.imgSrc}

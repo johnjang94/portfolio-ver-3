@@ -1,7 +1,8 @@
 // DEMO
-import About from "../assets/about/introduction/my_profile.jpg";
+import About from "../assets/about/introduction/hiker.png";
 import Neuroscience from "../assets/about/introduction/eeg-testing-children.png";
 import Teacher from "../assets/about/introduction/teaching.png";
+import Challenge from "../assets/about/challenge/challenge.jpg";
 
 // PREVIOUS PROJECTS
 import Sakhi from "../assets/about/contributions/sakhi.png";
@@ -33,4 +34,5 @@ export const MyIntroduction = {
   Maina,
   Korea,
   Run,
+  Challenge,
 };
