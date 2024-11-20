@@ -151,7 +151,7 @@ export default function Home() {
                 key={item.id}
                 className="space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full"
               >
-                <div className="w-[40vw] mx-auto">
+                <div className="md:w-[40vw] md:mx-auto">
                   <Link to={item.link}>
                     <div className="bg-[#f6f6f6] md:py-3 rounded-xl">
                       <img

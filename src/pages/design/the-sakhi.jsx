@@ -62,7 +62,7 @@ export default function SAKHI() {
     <div>
       <section>
         <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 rounded-xl mx-10 md:gap-3">
-          <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
+          <div className="text-center space-y-2 md:text-3xl text-xl text-white py-10">
             <h1>
               Reaching CTR of{" "}
               <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
@@ -71,7 +71,7 @@ export default function SAKHI() {
             </h1>
           </div>
           <div className="md:flex md:items-start md:px-3">
-            <div className="text-white w-3/6">
+            <div className="text-white md:w-3/6">
               <h1 className="text-center md:text-5xl text-lg my-5">
                 THE SAKHI
               </h1>
@@ -82,7 +82,7 @@ export default function SAKHI() {
                   friendly way
                 </p>
               </div>
-              <div className="md:mx-5 my-10 text-black">
+              <div className="mx-5 my-10 text-black">
                 <p>My role</p>
                 <p className="font-bold">Associate Product Designer</p>
               </div>
