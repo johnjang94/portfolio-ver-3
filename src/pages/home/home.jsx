@@ -105,9 +105,9 @@ export default function Home() {
           <div className="md:grid md:grid-cols-2 items-start py-10 gap-40 space-y-5 md:space-y-0">
             <div className="bg-white rounded-2xl p-3">
               <p>
-                A newbie designer that delivers high-quality, user-focused
-                designs for (but not limited to) B2B products in food and
-                lodging, E-commerce or non-profit platforms.
+                I deliver high-quality, user-focused designs for (but not
+                limited to) B2B products in food and lodging, E-commerce or
+                non-profit platforms.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-24">
