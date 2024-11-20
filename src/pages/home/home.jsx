@@ -149,29 +149,31 @@ export default function Home() {
             item.id === 1 ? (
               <div
                 key={item.id}
-                className="space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out"
+                className="space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full"
               >
-                <Link to={item.link}>
-                  <div className="bg-[#f6f6f6] md:px-40 md:py-3 rounded-xl">
-                    <img
-                      src={item.imgSrc}
-                      alt={item.imgAlt}
-                      className="rounded-xl mx-auto"
-                    />
+                <div className="w-[40vw] mx-auto">
+                  <Link to={item.link}>
+                    <div className="bg-[#f6f6f6] md:py-3 rounded-xl">
+                      <img
+                        src={item.imgSrc}
+                        alt={item.imgAlt}
+                        className="rounded-xl mx-auto"
+                      />
+                    </div>
+                  </Link>
+                  <p className="font-bold">
+                    {item.icon} {item.title}
+                  </p>
+                  <div className="flex md:space-x-5 space-x-1">
+                    {item.category?.map((category, index) => (
+                      <span
+                        key={index}
+                        className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
+                      >
+                        {category}
+                      </span>
+                    ))}
                   </div>
-                </Link>
-                <p className="font-bold">
-                  {item.icon} {item.title}
-                </p>
-                <div className="flex md:space-x-5 space-x-1">
-                  {item.category?.map((category, index) => (
-                    <span
-                      key={index}
-                      className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
-                    >
-                      {category}
-                    </span>
-                  ))}
                 </div>
               </div>
             ) : null
