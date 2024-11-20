@@ -102,7 +102,7 @@ export default function Home() {
         </div>
         <div className="mt-12">
           <h3 className="text-center md:text-2xl text-xl">Fun Facts</h3>
-          <div className="md:grid md:grid-cols-2 items-start py-10 gap-40 space-y-5 md:space-y-0">
+          <div className="md:grid md:grid-cols-3 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
             <div className="bg-white rounded-2xl p-3">
               <p>
                 I deliver high-quality, user-focused designs for (but not
@@ -110,7 +110,14 @@ export default function Home() {
                 platforms.
               </p>
             </div>
-            <div className="bg-white rounded-2xl p-3 h-24">
+            <div className="bg-white rounded-2xl p-3">
+              <p>
+                I have experience in working with small-sized teams, waterfall
+                or agile, while collaborating a lot with UX Researchers and Web
+                Developers.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-3 h-full">
               <p>
                 I have development experience in web and mobile applications,
                 bringing practically usable product.
