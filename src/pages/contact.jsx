@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdOutlineSend } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const navigate = useNavigate();
   const [submitError, setSubmitError] = useState(null);
   const {
