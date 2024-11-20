@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ContentNav from "../../components/contentNav";
 import Summary from "./sakhi/summary";
-import Motive from "./sakhi/motive";
 import Password from "../../components/lock/password";
 import CompetitiveAnalysis from "./sakhi/competitive-analysis";
 import Insights from "./sakhi/insights";
@@ -62,38 +61,52 @@ export default function SAKHI() {
   return (
     <div>
       <section>
-        <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 p-10 rounded-xl mx-10 md:flex md:items-start md:gap-3">
-          <div className="text-white">
-            <h1 className="text-center md:text-5xl text-lg my-5">THE SAKHI</h1>
-            <div className="space-y-5">
-              <p className="px-10">
-                A specialized e-commerce platform (a start-up) that is built on
-                Shopify and offers unique and traditional products for
-                extraordinary life events such as wedding, festival, etc.
-              </p>
-            </div>
-            <div className="md:mx-10 my-10 text-black">
-              <p>My role</p>
-              <p className="font-bold">Associate Product Designer</p>
-            </div>
-            <div className="space-y-10">
-              <div className="flex gap-10 mx-8 text-black">
-                <p>Team</p>
-                <ul>
-                  <li>2 UX Designers</li>
-                  <li>2 UX Researchers</li>
-                  <li>1 Product Strategist</li>
-                  <li>1 Project Management</li>
-                </ul>
+        <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 rounded-xl mx-10 md:gap-3">
+          <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
+            <h1>
+              Reaching CTR of{" "}
+              <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
+                3.5%
+              </span>{" "}
+            </h1>
+          </div>
+          <div className="md:flex md:items-start md:px-3">
+            <div className="text-white w-3/6">
+              <h1 className="text-center md:text-5xl text-lg my-5">
+                THE SAKHI
+              </h1>
+              <div className="space-y-5">
+                <p className="px-5">
+                  We reintroduce unique and traditional Indian products for
+                  extraordinary life events such as wedding, festival, etc. in a
+                  friendly way
+                </p>
+              </div>
+              <div className="md:mx-5 my-10 text-black">
+                <p>My role</p>
+                <p className="font-bold">Associate Product Designer</p>
+              </div>
+              <div className="space-y-10">
+                <div className="flex gap-10 mx-5 text-black">
+                  <p>Team</p>
+                  <ul>
+                    <li>2 UX Designers</li>
+                    <li>2 UX Researchers</li>
+                    <li>1 Product Strategist</li>
+                    <li>1 Project Management</li>
+                  </ul>
+                </div>
               </div>
             </div>
+            <div className="p-5">
+              <img
+                src={sakhi.Demo}
+                alt="Demo showcase"
+                width={750}
+                className="rounded-3xl mx-auto"
+              />
+            </div>
           </div>
-          <img
-            src={sakhi.Demo}
-            alt="Demo showcase"
-            width={750}
-            className="rounded-3xl mx-auto"
-          />
         </div>
       </section>
       <section className="md:flex md:flex-1">
@@ -109,9 +122,6 @@ export default function SAKHI() {
           )}
         </div>
         <section className="md:w-4/6 mx-10 my-5 md:my-28 space-y-20">
-          <div>
-            <Motive />
-          </div>
           <div id={1}>
             <Summary />
           </div>

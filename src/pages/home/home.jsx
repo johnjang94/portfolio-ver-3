@@ -103,20 +103,17 @@ export default function Home() {
         <div className="mt-12">
           <h3 className="text-center md:text-2xl text-xl">Fun Facts</h3>
           <div className="md:grid md:grid-cols-2 items-start py-10 gap-40 space-y-5 md:space-y-0">
-            <div className="bg-white rounded-2xl p-3 h-36">
-              <h4 className="font-semibold text-center p-3">Start-ups</h4>
-              <p className="text-center">
-                I have been a Product Designer at a couple of start-ups.
+            <div className="bg-white rounded-2xl p-3">
+              <p>
+                A newbie designer that delivers high-quality, user-focused
+                designs for (but not limited to) B2B products in food and
+                lodging, E-commerce or non-profit platforms.
               </p>
             </div>
-            <div className="bg-white rounded-2xl p-3">
-              <h4 className="font-semibold text-center p-3">
-                Web / Mobile Development
-              </h4>
+            <div className="bg-white rounded-2xl p-3 h-24">
               <p>
-                I have some development experience in web and mobile
-                applications, so I know how to create feasible and marketable
-                design that suits development.
+                I have development experience in web and mobile applications,
+                bringing practically usable product.
               </p>
             </div>
           </div>
