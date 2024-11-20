@@ -23,7 +23,7 @@ export default function Desktop({ pathname }) {
         </Link>
       </div>
       <div className="flex space-x-5 items-center">
-        {["/about", "/resume", "/contact"].map((path, index) => (
+        {["/about", "/contact"].map((path, index) => (
           <div key={index} className="block">
             <Link to={path}>
               <button>{path.slice(1).replace("-", " ")}</button>

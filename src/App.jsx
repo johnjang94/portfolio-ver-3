@@ -14,11 +14,10 @@ import OPERATE from "./pages/design/operate-ease";
 
 // Contact & Extra
 import Contact from "./pages/contact";
+import Received from "./pages/received";
 
 // Wrong link
 import NotFound from "./pages/notfound";
-import Resume from "./pages/resume/resume";
-import Received from "./pages/received";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +28,6 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/home", element: <Home /> },
       { path: "/about", element: <About /> },
-      { path: "/resume", element: <Resume /> },
       // Design section
       { path: "/televu", element: <TeleVU /> },
       { path: "/food-distro", element: <Food /> },
