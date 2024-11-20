@@ -106,8 +106,8 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-3">
               <p>
                 I deliver high-quality, user-focused designs for (but not
-                limited to) B2B products in food and lodging, E-commerce or
-                non-profit platforms.
+                limited to) B2B products in SaaS, E-commerce or cloud-based PaaS
+                platforms.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-24">
