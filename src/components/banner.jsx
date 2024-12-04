@@ -21,6 +21,7 @@ export default function Banner() {
       "/sakhi",
       "/operate",
       "/contact",
+      "/resume",
       "/lock",
     ];
     return !registeredPaths.includes(location.pathname);

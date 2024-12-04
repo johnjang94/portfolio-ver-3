@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { home } from "../../utils/home";
 
-const methods = ["user research.", "prototyping.", "usability tests."];
+const methods = ["Product Designer.", "UX Designer.", "Web Designer."];
+const methods2 = ["user research.", "prototyping.", "usability tests."];
 
 const data = [
   {
@@ -11,7 +12,7 @@ const data = [
     imgSrc: home.OperateEase,
     imgAlt: "OperateEase",
     icon: "🔒",
-    title: "Reimagined Hospitality Management - OperateEase",
+    title: "Reimagined hospitality management - OperateEase",
     category: ["Product Design", "SaaS product", "start-up"],
     link: "/operate",
   },
@@ -20,7 +21,7 @@ const data = [
     imgSrc: home.Sakhi,
     imgAlt: "Sakhi",
     icon: "🔒",
-    title: "Designing a Premium Indian Luxury - The Sakhi",
+    title: "Designing a premium Indian luxury - The Sakhi",
     category: ["Product Design", "E-commerce", "start-up"],
     link: "/sakhi",
   },
@@ -29,7 +30,7 @@ const data = [
     imgSrc: home.FoodDistro,
     imgAlt: "Food Distro",
     icon: "",
-    title: "Reconnect the Communities - Food Distro",
+    title: "Reduce the food waste - Food Distro",
     category: ["UX/UI Design", "Mobile App", "Social Service"],
     link: "/food-distro",
   },
@@ -38,7 +39,7 @@ const data = [
     imgSrc: home.TuGo,
     imgAlt: "TuGo",
     icon: "",
-    title: "Envision Safety on your Travel - TuGo Travel Insurance",
+    title: "Reintroducing your travel protection - TuGo Travel Insurance",
     category: ["UX/UI Design"],
     link: "/tugo-insurance",
   },
@@ -46,7 +47,7 @@ const data = [
     id: 5,
     imgSrc: home.TeleVU,
     imgAlt: "TeleVU",
-    title: "Remote Aids - TeleVU Innovation Incorporation",
+    title: "Video-call for clinicians - TeleVU Innovation Incorporation",
     category: ["UX/UI Design", "Web App", "Mobile App"],
     link: "/televu",
   },
@@ -81,16 +82,44 @@ export default function Home() {
       }
     }
   }, [charIndex, methodIndex]);
+
+  const [currentMethod2, setCurrentMethod2] = useState("");
+  const [methodIndex2, setMethodIndex2] = useState(0);
+  const [charIndex2, setCharIndex2] = useState(0);
+
+  useEffect(() => {
+    if (methodIndex2 < methods2.length) {
+      if (charIndex2 < methods2[methodIndex2].length) {
+        const typingTimer = setTimeout(() => {
+          setCurrentMethod2(
+            (prev) => prev + methods2[methodIndex2][charIndex2]
+          );
+          setCharIndex2((prev) => prev + 1);
+        }, 100);
+
+        return () => clearTimeout(typingTimer);
+      } else {
+        const pauseTimer = setTimeout(() => {
+          setCurrentMethod2("");
+          setCharIndex2(0);
+          setMethodIndex2((prev) => (prev + 1) % methods2.length);
+        }, 2000);
+
+        return () => clearTimeout(pauseTimer);
+      }
+    }
+  }, [charIndex2, methodIndex2]);
   return (
     <div>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
-        <div className="p-6 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl">
+        <div className="p-8 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl">
           <h1 className="md:text-5xl text-2xl py-5">Hi, I&#39;m John Jang.</h1>
-          <div className="md:text-2xl text-base mb-3 md:mb-0">
+          <div className="md:text-xl text-base mb-3 md:mb-0">
+            <h1>I&#39;m a {currentMethod}</h1>
             <h1>
-              I&#39;m a Product Designer who help companies to foster strong and
-              reliable relationships with their users using{" "}
-              <span className="typewriter-text">{currentMethod}</span>
+              I help companies to foster strong and reliable relationships with
+              their users using{" "}
+              <span className="typewriter-text">{currentMethod2}</span>
             </h1>
           </div>
           <div>
@@ -139,24 +168,24 @@ export default function Home() {
         <h3 className="text-center md:text-2xl text-base py-1">
           Brief Overview of my Previous Projects
         </h3>
-        <div className="bg-black md:p-5 p-1 rounded-2xl">
-          <img
-            src={home.Contributions}
-            alt="Contribution"
-            width={1200}
-            className="mx-auto"
-          />
-        </div>
+        <img
+          src={home.Contributions}
+          alt="Contribution"
+          width={1200}
+          className="mx-auto rounded-2xl"
+        />
         <div>
           <h3 className="py-5 text-center md:text-2xl text-xl">
-            So, how do I design?
+            So, what is the story of my design portfolio?
           </h3>
 
           {data.map((item) =>
             item.id === 1 ? (
               <div
                 key={item.id}
-                className="space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full"
+                className={`space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full ${
+                  item.id === 5 ? "w-full" : "w-auto"
+                }`}
               >
                 <div className="md:w-[40vw] md:mx-auto">
                   <Link to={item.link}>

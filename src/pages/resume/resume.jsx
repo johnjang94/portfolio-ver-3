@@ -8,7 +8,7 @@ export default function Resume() {
       </p>
       <div className="my-10">
         <img
-          src="/product_designer.jpg"
+          src="/product_designer.png"
           alt="Resume"
           width={1250}
           className="mx-auto rounded-3xl"

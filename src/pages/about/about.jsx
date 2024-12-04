@@ -24,12 +24,12 @@ export default function About() {
                 </h1>
                 <div className="space-y-3">
                   <p>
-                    I am a Product Designer who brings unique solutions to
-                    challenges and with catchy stories. I am also a hiker who
-                    enjoys road trips and flights to overseas. To me, design is
-                    like hiking. It is a journey to find the right design that
-                    reflects the voices of users, the voices of the
-                    stakeholders, and can be built with computers.
+                    I am a Product Designer who carries slightly different
+                    titles like UX Designer, Web Designer or UX Engineer. I come
+                    up with unique solutions to challenges along with catchy
+                    stories. I enjoy hiking, road trips, and traveling overseas.
+                    To me, design is like hiking. It is a journey to find the
+                    right solution that helps everyone.
                   </p>
                 </div>
               </div>
@@ -49,21 +49,21 @@ export default function About() {
         <h2 className="font-bold py-3 text-2xl">My Design Principles</h2>
         <div className="md:grid md:grid-cols-3 md:gap-5 space-y-5 md:space-y-0">
           <div className="bg-white rounded-xl p-2 space-y-3">
-            <p className="font-semibold text-center underline">MVP-oriented</p>
+            <p className="font-semibold text-center underline">
+              North Star Method
+            </p>
             <p>
-              From research, I always identify what users really need and make
-              sure that every product that I participate to design meets the
-              need of the users.
+              I use North Star method to clearly identify the challenge, the
+              users, the business, the limitations, and what is possible to
+              bring together.
             </p>
           </div>
           <div className="bg-white rounded-xl p-2 space-y-3">
             <p className="font-semibold text-center underline">Collaboration</p>
             <p>
-              It is important to work together with UX Researchers to make sure
-              that I hear the voices properly and it is important to think about
-              how to bring the ideas in a way that computers can make them.
-              Therefore, I highly value collaboration with UX Researchers and
-              Web / Mobile developers.
+              Collaboration is the key to success. I believe that, in a group
+              project, UX Researchers help us to get great insights and
+              developers help us to build a good product.
             </p>
           </div>
           <div className="bg-white rounded-xl p-2 space-y-3">

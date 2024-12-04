@@ -87,9 +87,10 @@ export default function OPERATE() {
           <h1 className="text-center md:text-7xl text-lg my-5">OPERATE-EASE</h1>
           <div className="md:mx-44 space-y-5">
             <p className="px-8">
-              An innovative SaaS start-up platform that aims to automate hotel
-              management, reducing stress, and enhancing customer experiences in
-              the areas of restaurant, lodging, and finance.
+              We are bringing innovation in the management of hotel rooms and
+              hotel restaurant services. We are improving the internal
+              communication and offering a better solution on how to accommodate
+              the guests.
             </p>
           </div>
           <div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
