@@ -166,7 +166,7 @@ export default function Home() {
       </header>
       <section className="md:mx-36 mx-12 space-y-10 mt-10">
         <h3 className="text-center md:text-2xl text-base py-1">
-          Brief Overview of my Previous Projects
+          Brief Overview of my previous projects
         </h3>
         <img
           src={home.Contributions}
