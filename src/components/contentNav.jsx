@@ -21,7 +21,7 @@ export default function ContentNav({ currentSection, pathname }) {
       updatedSections = [
         { id: 1, label: "Summary" },
         { id: 2, label: "Opportunity" },
-        { id: 3, label: "Solutions" },
+        { id: 3, label: "Impact" },
       ];
     } else if (pathname === "/tugo-insurance") {
       updatedSections = [
@@ -31,15 +31,15 @@ export default function ContentNav({ currentSection, pathname }) {
       ];
     } else if (pathname === "/sakhi") {
       updatedSections = [
-        { id: 1, label: "The Motive" },
-        { id: 2, label: "Opportunity" },
-        { id: 3, label: "Solutions" },
+        { id: 1, label: "Summary" },
+        { id: 2, label: "Insights" },
+        { id: 3, label: "Testing Outcome" },
       ];
     } else if (pathname === "/operate") {
       updatedSections = [
-        { id: 1, label: "Background" },
-        { id: 2, label: "Insight" },
-        { id: 3, label: "Solutions" },
+        { id: 1, label: "Summary" },
+        { id: 2, label: "Background" },
+        { id: 3, label: "Impact" },
       ];
     } else {
       updatedSections = sections;

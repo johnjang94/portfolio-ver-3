@@ -4,6 +4,8 @@ export default function ProblemStatement() {
   return (
     <div>
       <p className="text-xl text-center mt-5 text-red-500">
+        OKAY?
+        <br />
         How come was the rate of food waste so high?
       </p>
       <div className="md:mx-20 my-5">

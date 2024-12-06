@@ -17,7 +17,7 @@ export default function InitialSketch() {
           category. Some examples are shown as below:
         </p>
       </div>
-      <div className="md:mx-20 space-y-5">
+      <div className="md:mx-20 md:grid md:grid-cols-3 md:gap-5 space-y-5 md:space-y-0">
         <div className="p-5 bg-white rounded-2xl">
           <img
             src={sakhi.HomeVersionOne}
@@ -47,33 +47,35 @@ export default function InitialSketch() {
           can come up with a simple menu that has consistency in categorization
           and being relevant to the products.
         </p>
-        <div className="p-5 bg-white rounded-2xl">
-          <img
-            src={sakhi.Stakeholder}
-            alt="Stakeholder"
-            className="rounded-2xl mx-auto"
-          />
-        </div>
-        <div className="p-5 bg-white rounded-2xl">
-          <img
-            src={sakhi.Navigation}
-            alt="Navigation"
-            className="rounded-2xl mx-auto"
-          />
-        </div>
-        <div className="p-5 bg-white rounded-2xl">
-          <img
-            src={sakhi.Navigation2}
-            alt="Navigation 2"
-            className="rounded-2xl mx-auto"
-          />
-        </div>
-        <div className="p-5 bg-white rounded-2xl">
-          <img
-            src={sakhi.Navigation3}
-            alt="Navigation 3"
-            className="rounded-2xl mx-auto"
-          />
+        <div className="md:grid md:grid-cols-2 md:gap-5 space-y-5 md:space-y-0">
+          <div className="p-5 bg-white rounded-2xl">
+            <img
+              src={sakhi.Stakeholder}
+              alt="Stakeholder"
+              className="rounded-2xl mx-auto"
+            />
+          </div>
+          <div className="p-5 bg-white rounded-2xl">
+            <img
+              src={sakhi.Navigation}
+              alt="Navigation"
+              className="rounded-2xl mx-auto"
+            />
+          </div>
+          <div className="p-5 bg-white rounded-2xl">
+            <img
+              src={sakhi.Navigation2}
+              alt="Navigation 2"
+              className="rounded-2xl mx-auto"
+            />
+          </div>
+          <div className="p-5 bg-white rounded-2xl">
+            <img
+              src={sakhi.Navigation3}
+              alt="Navigation 3"
+              className="rounded-2xl mx-auto"
+            />
+          </div>
         </div>
       </div>
     </div>

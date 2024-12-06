@@ -3,7 +3,6 @@ import { sakhi } from "../../../utils/sakhi";
 export default function Solutions() {
   return (
     <div>
-      <h3 className="text-xl uppercase">Solution</h3>
       <div className="md:mx-20 my-3 space-y-10">
         <div className="space-y-3">
           <p className="font-semibold">Iteration 1 | Re-imagined Elegance</p>

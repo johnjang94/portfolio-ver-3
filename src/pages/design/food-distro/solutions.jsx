@@ -3,7 +3,6 @@ import { foodDistro } from "../../../utils/food-distro";
 export default function Solutions() {
   return (
     <div>
-      <h3 className="text-xl">SOLUTIONS</h3>
       <div className="md:mx-20 my-3 space-y-10">
         <div className="space-y-3">
           <p className="font-semibold">Solution 1</p>
@@ -12,7 +11,7 @@ export default function Solutions() {
             the area and get some detail on the item listing that the food giver
             has.
           </p>
-          <div className="flex grid-cols-3 w-2/6">
+          <div className="md:grid md:grid-cols-3 md:w-2/6 space-y-5 md:space-y-0">
             <img
               src={foodDistro.Search}
               alt="Final design for Search function"
@@ -36,7 +35,7 @@ export default function Solutions() {
             Both food-givers and donation-receivers can easily schedule a
             meet-up.
           </p>
-          <div className="flex grid-cols-3 w-2/6">
+          <div className="md:grid md:grid-cols-3 md:w-2/6 space-y-5 md:space-y-0">
             <img
               src={foodDistro.Request}
               alt="Final design for request"
@@ -61,7 +60,7 @@ export default function Solutions() {
             other donation-receivers about the freshness and the reliability on
             the particular food-giver.
           </p>
-          <div className="flex grid-cols-3 w-2/6">
+          <div className="md:grid md:grid-cols-3 md:w-2/6 space-y-5 md:space-y-0">
             <img
               src={foodDistro.Review}
               alt="Final design for Review"

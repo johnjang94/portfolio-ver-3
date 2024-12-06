@@ -3,8 +3,7 @@ import { OperateEase } from "../../../utils/operate";
 export default function Solutions() {
   return (
     <div>
-      <h3 className="text-xl uppercase">Solutions</h3>
-      <div className="md:mx-20 my-3 space-y-5">
+      <div className="md:mx-20 space-y-5">
         <p className="font-bold">Solution 1 | Minimalistic Design</p>
         <p className="px-10">
           Users have a specialized, simple, and focused dashboard for different

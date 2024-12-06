@@ -121,31 +121,33 @@ export default function SAKHI() {
             <div className="hidden md:block"></div>
           )}
         </div>
-        <section className="md:w-4/6 mx-10 my-5 md:my-28 space-y-20">
-          <div id={1}>
-            <Summary />
+        <section className="md:w-4/6 mx-10 my-5 md:my-28">
+          <div className="space-y-5">
+            <div id={1}>
+              <Summary />
+            </div>
+            <div>
+              <Solutions />
+            </div>
           </div>
           {isPasswordCorrect && (
             <div className="my-5 md:my-28 space-y-20">
               <div>
                 <UserPersona />
               </div>
-              <div>
+              <div id={2}>
                 <Insights />
               </div>
               <div>
                 <CompetitiveAnalysis />
               </div>
-              <div id={2}>
+              <div>
                 <Opportunity />
               </div>
               <div>
                 <InitialSketch />
               </div>
-              <div>
-                <Solutions />
-              </div>
-              <div>
+              <div id={3}>
                 <Impact />
               </div>
               <div>

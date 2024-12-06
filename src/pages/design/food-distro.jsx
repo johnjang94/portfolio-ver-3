@@ -63,17 +63,17 @@ export default function Food() {
             <h1 className="text-center md:text-7xl text-lg my-5">
               Food Distro
             </h1>
-            <p className="w-4/6 mx-auto">
-              A mobile application that encourages food donations among
-              individuals / households in suburban / rural communities by
-              improving accessibility to social services.
+            <p className="md:w-4/6 mx-auto">
+              We connected the locals to donate some food to each other to
+              reduce the environmental pollution and increase social awareness
+              on genuine support.
             </p>
-            <div className="flex items-center space-x-5 my-10 w-4/6 mx-auto">
+            <div className="flex items-center space-x-5 my-10 md:w-4/6 mx-auto">
               <p>My role</p>
               <p className="font-bold">Associate UX/UI Designer</p>
             </div>
             <div className="space-y-10">
-              <div className="flex gap-10 mx-8 md:mx-56">
+              <div className="flex gap-10 md:mx-56">
                 <p>Team</p>
                 <ul>
                   <li>5 UX Designers</li>
@@ -82,7 +82,7 @@ export default function Food() {
                   <li>2 Project Management</li>
                 </ul>
               </div>
-              <div className="flex gap-3 mx-8 md:mx-56">
+              <div className="flex gap-3 md:mx-56">
                 <p>Timeline</p>
                 <p>12 weeks</p>
               </div>
@@ -107,8 +107,13 @@ export default function Food() {
           />
         </div>
         <section className="md:w-4/6 mx-10 my-5 md:my-28 space-y-20">
-          <div id={1}>
-            <Overview />
+          <div className="space-y-5">
+            <div id={1}>
+              <Overview />
+            </div>
+            <div>
+              <Solutions />
+            </div>
           </div>
           <div>
             <ProblemStatement />
@@ -135,9 +140,6 @@ export default function Food() {
             <MockUpPrototype />
           </div>
           <div id={3}>
-            <Solutions />
-          </div>
-          <div>
             <Impact />
           </div>
           <div>

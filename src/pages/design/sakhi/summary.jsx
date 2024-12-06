@@ -1,7 +1,6 @@
 export default function Summary() {
   return (
     <div>
-      <h3 className="text-xl uppercase">Summary</h3>
       <div className="md:mx-20 my-3 space-y-5">
         <div>
           <p className="font-semibold">At Issue</p>

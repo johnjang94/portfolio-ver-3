@@ -3,7 +3,9 @@ import { sakhi } from "../../../utils/sakhi";
 export default function UserPersona() {
   return (
     <div className="space-y-5">
-      <p className="text-xl font-semibold text-center">What draws them away?</p>
+      <p className="text-xl font-semibold text-center">
+        What really drew them away then?
+      </p>
       <div className="md:mx-20 space-y-5">
         <div className="space-y-3">
           <ul className="text-red-500 text-center py-10 space-y-3">

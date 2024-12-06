@@ -29,7 +29,7 @@ export default function Sketching() {
           </p>
         </ul>
       </div>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="md:grid md:grid-cols-2 md:gap-10 space-y-5 md:space-y-0">
         <img
           src={foodDistro.Filter}
           width={900}

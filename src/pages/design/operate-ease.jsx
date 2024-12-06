@@ -122,17 +122,22 @@ export default function OPERATE() {
             <div className="hidden md:block"></div>
           )}
         </div>
-        <section className="md:w-4/6 mx-10 my-5 md:my-28 space-y-20">
-          <div id={1}>
-            <TheStory />
-          </div>
-          <div>
-            <Overview />
+        <section className="md:w-4/6 mx-10 my-5 md:my-28 ">
+          <div className="space-y-5">
+            <div id={1}>
+              <Overview />
+            </div>
+            <div>
+              <Solutions />
+            </div>
           </div>
           {isPasswordCorrect && (
             <div className="my-5 md:my-28 space-y-20">
               {/* Additional content when the password is correct */}
               <div id={2}>
+                <TheStory />
+              </div>
+              <div>
                 <Insight />
               </div>
               <div>
@@ -160,9 +165,6 @@ export default function OPERATE() {
                 <StyleGuide />
               </div>
               <div id={3}>
-                <Solutions />
-              </div>
-              <div>
                 <Impact />
               </div>
               <div>

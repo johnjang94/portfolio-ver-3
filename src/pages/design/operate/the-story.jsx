@@ -13,7 +13,7 @@ export default function TheStory() {
           majority actively seeked to recover from the loss by implementing
           management software such as Hotel Management Software (HMS) and
           Property Management Software (PMS). Despite the attempts, the
-          struggles to recover seem stagnated due to the following reasons:
+          struggles to recover stagnated.
         </p>
       </div>
     </div>
