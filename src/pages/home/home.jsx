@@ -112,7 +112,7 @@ export default function Home() {
   return (
     <div>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
-        <div className="p-8 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl">
+        <div className="p-10 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl">
           <h1 className="md:text-5xl text-2xl py-5">Hi, I&#39;m John Jang.</h1>
           <div className="md:text-xl text-base mb-3 md:mb-0">
             <h1>I&#39;m a {currentMethod}</h1>

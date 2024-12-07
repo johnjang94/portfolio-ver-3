@@ -13,7 +13,7 @@ import Solutions from "./operate/solutions";
 import Collaboration from "./operate/collaboration";
 import Impact from "./operate/impact";
 import Retrospective from "./operate/retrospective";
-import StyleGuide from "./operate/style-guide";
+// import StyleGuide from "./operate/style-guide";
 import OtherMenu from "../../components/footer2";
 import InitialSketch from "./operate/initial-sketch";
 import TheStory from "./operate/the-story";
@@ -88,9 +88,9 @@ export default function OPERATE() {
           <div className="md:mx-44 space-y-5">
             <p className="px-8">
               We are bringing innovation in the management of hotel rooms and
-              hotel restaurant services. We are improving the internal
-              communication and offering a better solution on how to accommodate
-              the guests.
+              hotel restaurant services. The attempt to improve the internal
+              communication and to offer a better solution on how to accommodate
+              the guests is currently in-progress.
             </p>
           </div>
           <div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
@@ -161,9 +161,9 @@ export default function OPERATE() {
               <div>
                 <MidFi />
               </div>
-              <div>
+              {/* <div>
                 <StyleGuide />
-              </div>
+              </div> */}
               <div id={3}>
                 <Impact />
               </div>

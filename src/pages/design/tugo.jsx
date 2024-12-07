@@ -3,10 +3,10 @@ import { tugoInsurance } from "../../utils/tugo-insurance";
 import ContentNav from "../../components/contentNav";
 import Overview from "./tugo-insurance/overview";
 import DataMetrics from "./tugo-insurance/data-metrics";
-import Assumption from "./tugo-insurance/assumption";
-import Opportunities from "./tugo-insurance/opportunities";
-import CompetitiveAnalysis from "./tugo-insurance/competitive-analysis";
-import Surveys from "./tugo-insurance/surveys";
+// import Assumption from "./tugo-insurance/assumption";
+// import Opportunities from "./tugo-insurance/opportunities";
+// import CompetitiveAnalysis from "./tugo-insurance/competitive-analysis";
+// import Surveys from "./tugo-insurance/surveys";
 import Solutions from "./tugo-insurance/solutions";
 import Impact from "./tugo-insurance/impact";
 import NextSteps from "./tugo-insurance/next-steps";
@@ -77,8 +77,7 @@ export default function TuGo() {
           </h1>
           <div className="md:mx-44 space-y-5 md:px-5">
             <p className="px-12">
-              An insurance brokerage that offers the most optimized travel
-              insurance packages to travelers.
+              Check out how I redesigned the travel assurance.
             </p>
             <div className="flex items-center space-x-5 px-12">
               <p>My role</p>
@@ -96,8 +95,13 @@ export default function TuGo() {
           />
         </div>
         <section className="md:w-4/6 mx-10 my-5 md:my-28 space-y-20">
-          <div id={1}>
-            <Overview />
+          <div className="space-y-5">
+            <div id={1}>
+              <Overview />
+            </div>
+            <div>
+              <Solutions />
+            </div>
           </div>
           <div>
             <DataMetrics />
@@ -105,22 +109,20 @@ export default function TuGo() {
           {/* <div>
             <Insights />
           </div> */}
-          <div>
+          {/* <div>
             <Assumption />
           </div>
           <div id={2}>
             <Opportunities />
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <CompetitiveAnalysis />
           </div>
           <div>
             <Surveys />
-          </div>
+          </div> */}
+
           <div id={3}>
-            <Solutions />
-          </div>
-          <div>
             <Impact />
           </div>
           <div>

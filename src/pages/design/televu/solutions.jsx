@@ -3,7 +3,6 @@ import { televu } from "../../../utils/televu";
 export default function Solutions() {
   return (
     <div>
-      <h3 className="text-xl uppercase">Solution</h3>
       <div className="md:mx-20 my-3 space-y-10">
         <div className="space-y-3">
           <p className="font-semibold">

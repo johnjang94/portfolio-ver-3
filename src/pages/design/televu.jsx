@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import { televu } from "../../utils/televu";
 import ContentNav from "../../components/contentNav";
 import Overview from "./televu/overview";
-import AtIssue from "./televu/at-issue";
-import Opportunity from "./televu/opportunities";
-import CompetitiveAnalysis from "./televu/comparative-analysis";
+// import AtIssue from "./televu/at-issue";
+// import Opportunity from "./televu/opportunities";
+// import CompetitiveAnalysis from "./televu/comparative-analysis";
 import Solutions from "./televu/solutions";
-import NextSteps from "./televu/next-steps";
+// import NextSteps from "./televu/next-steps";
 import OtherMenu from "../../components/footer2";
 import Retrospective from "./televu/retrospective";
-import Sketching from "./televu/sketching";
+// import Sketching from "./televu/sketching";
 import TheStory from "./televu/the-story";
-import Impact from "./televu/impact";
+// import Impact from "./televu/impact";
 
 export default function TeleVU() {
   const [currentSection, setCurrentSection] = useState(1);
@@ -55,6 +55,14 @@ export default function TeleVU() {
     <div>
       <section className="my-10 mx-auto">
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
+          <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
+            <h1>
+              Increasing the duration of the call by{" "}
+              <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
+                60%
+              </span>{" "}
+            </h1>
+          </div>
           <img
             src={televu.Demo}
             alt="Demo"
@@ -68,9 +76,8 @@ export default function TeleVU() {
           </h1>
           <div className="md:mx-44 space-y-5">
             <p className="px-8">
-              A telecommunication platform that aims to ease the burden of
-              hospitals across Canada during pandemic by offering remote
-              treatment to the clinicians and the patients.
+              We redesigned the internal communication portal to ensure smooth
+              video-call between clinicians and patients.
             </p>
           </div>
           <div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
@@ -106,10 +113,15 @@ export default function TeleVU() {
           <div id={1}>
             <TheStory />
           </div>
-          <div>
-            <Overview />
+          <div className="space-y-5">
+            <div id={2}>
+              <Overview />
+            </div>
+            <div>
+              <Solutions />
+            </div>
           </div>
-          <div>
+          {/* <div>
             <AtIssue />
           </div>
           <div id={2}>
@@ -121,16 +133,14 @@ export default function TeleVU() {
           <div>
             <Sketching />
           </div>
+
           <div id={3}>
-            <Solutions />
-          </div>
-          <div>
             <Impact />
           </div>
           <div>
             <NextSteps />
-          </div>
-          <div>
+          </div> */}
+          <div id={3}>
             <Retrospective />
           </div>
         </section>
