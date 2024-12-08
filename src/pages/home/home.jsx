@@ -138,22 +138,28 @@ export default function Home() {
               <p>
                 I design high-quality, user-focused solutions for B2B products
                 in SaaS, E-commerce or cloud-based PaaS platforms, with a unique
-                ability to identify technical gaps in designs thanks to my web
-                development experience.
+                ability to{" "}
+                <span className="underline">
+                  identify technical gaps in designs
+                </span>{" "}
+                thanks to my web development experience.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
                 I thrive in cross-functional teams, working in both waterfall or
-                agile environments, where my curiosity and ability to ask the
-                right questions often lead to better solutions.
+                agile environments, where my curiosity and ability to{" "}
+                <span className="underline">ask the right questions</span> often
+                lead to <span className="font-semibold">better solutions</span>.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
                 I find joy in hearing users describe my designs as
                 &#39;better&#39;, &#39;clear&#39; or &#39;understandable&#39;,
-                as it means I&#39;m one-step closer to the right solution.
+                as it means I&#39;m{" "}
+                <span className="underline">one-step closer</span> to the{" "}
+                <span className="font-semibold">right solution</span>.
               </p>
             </div>
           </div>
