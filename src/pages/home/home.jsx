@@ -117,7 +117,9 @@ export default function Home() {
           <div className="md:text-xl text-base mb-3 md:mb-0">
             <h1>I&#39;m a {currentMethod}</h1>
             <h1>
-              I help companies to foster strong and reliable relationships with
+              I help companies to foster{" "}
+              <span className="font-bold">strong</span> and{" "}
+              <span className="font-bold">reliable</span> relationships with
               their users using{" "}
               <span className="typewriter-text">{currentMethod2}</span>
             </h1>
@@ -129,27 +131,29 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="mt-12">
+        <div className="mt-10 md:my-12 md:pb-5">
           <h3 className="text-center md:text-2xl text-xl">Fun Facts</h3>
           <div className="md:grid md:grid-cols-3 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
             <div className="bg-white rounded-2xl p-3">
               <p>
-                I deliver high-quality, user-focused designs for (but not
-                limited to) B2B products in SaaS, E-commerce or cloud-based PaaS
-                platforms.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-3">
-              <p>
-                I have experience in working with small-sized teams, waterfall
-                or agile, while collaborating a lot with UX Researchers and Web
-                Developers.
+                I design high-quality, user-focused solutions for B2B products
+                in SaaS, E-commerce or cloud-based PaaS platforms, with a unique
+                ability to identify technical gaps in designs thanks to my web
+                development experience.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
-                I have development experience in web and mobile applications,
-                bringing practically usable product.
+                I thrive in cross-functional teams, working in both waterfall or
+                agile environments, where my curiosity and ability to ask the
+                right questions often lead to better solutions.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-3 h-full">
+              <p>
+                I find joy in hearing users describe my designs as
+                &#39;better&#39;, &#39;clear&#39; or &#39;understandable&#39;,
+                as it means I&#39;m one-step closer to the right solution.
               </p>
             </div>
           </div>
@@ -159,14 +163,14 @@ export default function Home() {
             to="/about"
             className="text-blue-500 hover:underline hover:cursor-pointer flex space-x-2 items-center"
           >
-            <button>More about me</button>
+            <button>Click here to learn more about me</button>
             <FaArrowRight />
           </Link>
         </div>
       </header>
-      <section className="md:mx-36 mx-12 space-y-10 mt-10">
+      <section className="md:mx-36 mx-12 space-y-10 py-14">
         <h3 className="text-center md:text-2xl text-base py-1">
-          Brief Overview of my previous projects
+          Hope you enjoy my design samples!
         </h3>
         <img
           src={home.Contributions}
@@ -178,17 +182,15 @@ export default function Home() {
           <h3 className="py-5 text-center md:text-2xl text-xl">
             So, what is the story of my design portfolio?
           </h3>
-
           {data.map((item) =>
             item.id === 1 ? (
-              <div
-                key={item.id}
-                className={`space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full ${
-                  item.id === 5 ? "w-full" : "w-auto"
-                }`}
-              >
-                <div className="md:w-[40vw] md:mx-auto">
-                  <Link to={item.link}>
+              <Link to={item.link} state={{ fromId: item.id }} key={item.id}>
+                <div
+                  className={`hover:cursor-pointer space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full ${
+                    item.id === 5 ? "w-full" : "w-auto"
+                  }`}
+                >
+                  <div className="md:w-[40vw] md:mx-auto">
                     <div className="bg-[#f6f6f6] md:py-3 rounded-xl">
                       <img
                         src={item.imgSrc}
@@ -196,22 +198,22 @@ export default function Home() {
                         className="rounded-xl mx-auto"
                       />
                     </div>
-                  </Link>
-                  <p className="font-bold">
-                    {item.icon} {item.title}
-                  </p>
-                  <div className="flex md:space-x-5 space-x-1">
-                    {item.category?.map((category, index) => (
-                      <span
-                        key={index}
-                        className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
-                      >
-                        {category}
-                      </span>
-                    ))}
+                    <p className="font-bold">
+                      {item.icon} {item.title}
+                    </p>
+                    <div className="flex md:space-x-5 space-x-1">
+                      {item.category?.map((category, index) => (
+                        <span
+                          key={index}
+                          className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
+                        >
+                          {category}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ) : null
           )}
         </div>
@@ -220,33 +222,30 @@ export default function Home() {
         {data
           .filter((item) => item.id !== 1)
           .map((item) => (
-            <div
-              key={item.id}
-              className="transition-transform duration-300 ease-in-out hover:-translate-y-2 space-y-3 p-2 rounded-xl w-full border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
-            >
-              <div className="p-3 rounded-xl bg-[#f6f6f6]">
-                <Link to={item.link} state={{ fromId: item.id }}>
+            <Link to={item.link} state={{ fromId: item.id }} key={item.id}>
+              <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 space-y-3 p-2 rounded-xl w-full border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
+                <div className="p-3 rounded-xl bg-[#f6f6f6]">
                   <img
                     src={item.imgSrc}
                     alt={item.imgAlt}
                     className="rounded-xl mx-auto md:h-[300px]"
                   />
-                </Link>
+                </div>
+                <p className="font-bold">
+                  {item.icon} {item.title}
+                </p>
+                <div className="flex md:space-x-5 space-x-1">
+                  {item.category.map((category, index) => (
+                    <span
+                      key={index}
+                      className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
+                    >
+                      {category}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <p className="font-bold">
-                {item.icon} {item.title}
-              </p>
-              <div className="flex md:space-x-5 space-x-1">
-                {item.category.map((category, index) => (
-                  <span
-                    key={index}
-                    className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
-                  >
-                    {category}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </Link>
           ))}
       </section>
     </div>

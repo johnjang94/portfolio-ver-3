@@ -79,7 +79,7 @@ export default function SAKHI() {
                 <p className="px-5">
                   We reintroduce unique and traditional Indian products for
                   extraordinary life events such as wedding, festival, etc. in a
-                  friendly way
+                  friendly way. I was focused on onboarding experience.
                 </p>
               </div>
               <div className="mx-5 my-10 text-black">

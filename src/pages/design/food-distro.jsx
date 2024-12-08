@@ -66,7 +66,8 @@ export default function Food() {
             <p className="md:w-4/6 mx-auto">
               We connected the locals to donate some food to each other to
               reduce the environmental pollution and increase social awareness
-              on genuine support.
+              on genuine support. I helped out in implementing search and filter
+              features.
             </p>
             <div className="flex items-center space-x-5 my-10 md:w-4/6 mx-auto">
               <p>My role</p>

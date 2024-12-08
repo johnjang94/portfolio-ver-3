@@ -109,7 +109,7 @@ export default function TeleVU() {
             pathname="/televu"
           />
         </div>
-        <section className="md:w-4/6 mx-10 my-5 md:my-28 space-y-20">
+        <section className="md:w-4/6 mx-8 md:mx-0 my-5 md:my-28 space-y-20">
           <div id={1}>
             <TheStory />
           </div>

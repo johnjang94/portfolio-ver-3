@@ -15,7 +15,6 @@ export default function ContentNav({ currentSection, pathname }) {
       updatedSections = [
         { id: 1, label: "Background" },
         { id: 2, label: "Overview" },
-        { id: 3, label: "Retrospect" },
       ];
     } else if (pathname === "/food-distro") {
       updatedSections = [

@@ -4,7 +4,7 @@ export default function Insight() {
   return (
     <div className="space-y-5">
       <h3 className="text-xl uppercase">Insight</h3>
-      <div className="md:mx-20 my-5 space-y-3">
+      <div className="md:mx-24 my-5 space-y-3">
         <p>We needed to know...</p>
         <p className="px-10">
           Q. What kind of management software do they use and does the software

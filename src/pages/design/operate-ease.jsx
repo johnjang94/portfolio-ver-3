@@ -87,10 +87,12 @@ export default function OPERATE() {
           <h1 className="text-center md:text-7xl text-lg my-5">OPERATE-EASE</h1>
           <div className="md:mx-44 space-y-5">
             <p className="px-8">
-              We are bringing innovation in the management of hotel rooms and
-              hotel restaurant services. The attempt to improve the internal
+              This is a project that is currently in-progress. We are bringing
+              an innovation in the management of hotel rooms and hotel
+              restaurant services. The attempt to improve the internal
               communication and to offer a better solution on how to accommodate
-              the guests is currently in-progress.
+              the guests is currently in-progress. I helped out in visualizing
+              inventory management process.
             </p>
           </div>
           <div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
