@@ -6,7 +6,7 @@ export default function Resume() {
       <p className="text-center mt-10 md:text-2xl">
         The following is my resume sample.
       </p>
-      <div className="my-10">
+      <div className="my-10 mx-12 md:mx-0">
         <img
           src="/product_designer.png"
           alt="Resume"
