@@ -25,11 +25,18 @@ export default function Summary() {
         </div>
         <div>
           <p className="font-semibold">Outcome</p>
-          <p className="px-8 py-5">
-            After we focused on onboarding experience and product detail page,
-            we have reached <span className="text-blue-500">3.5% CTR</span>{" "}
-            during the pilot phase.
-          </p>
+          <p className="px-8 py-5">The usability testing showed that</p>
+          <ul className="px-10 mx-3 list-disc">
+            <li>
+              <span className="text-blue-500">75% shoppers</span> found that the
+              design is <span className="text-blue-500">intuitive</span>
+            </li>
+            <li>
+              <span className="text-blue-500">80% shoppers</span> were able to{" "}
+              <span className="text-blue-500">identify</span> different types of
+              clothes and its proper usage
+            </li>
+          </ul>
         </div>
       </div>
     </div>
