@@ -67,15 +67,28 @@ export default function OPERATE() {
     <div>
       <section className="my-10 mx-auto">
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
-          <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
-            <h1>
-              Up to{" "}
-              <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
-                30% increase
-              </span>{" "}
-              in operation efficiency
+          <div className="text-white my-10">
+            <h1 className="text-center md:text-7xl text-lg my-5">
+              OPERATE-EASE
             </h1>
+            <div className="md:mx-44 space-y-5">
+              <p className="px-8">
+                This is a project that is currently in-progress. We are bringing
+                an innovation in the management of hotel rooms and hotel
+                restaurant services. The attempt to improve the internal
+                communication and to offer a better solution on how to
+                accommodate the guests is currently in-progress. I helped out in
+                visualizing inventory management process.
+              </p>
+            </div>
           </div>
+          {/* <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
+            <h1>
+              <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
+                Coming soon...
+              </span>{" "}
+            </h1>
+          </div> */}
           <img
             src={OperateEase.Demo}
             alt="Demo showcase"
@@ -84,17 +97,6 @@ export default function OPERATE() {
           />
         </div>
         <div className="md:mx-12">
-          <h1 className="text-center md:text-7xl text-lg my-5">OPERATE-EASE</h1>
-          <div className="md:mx-44 space-y-5">
-            <p className="px-8">
-              This is a project that is currently in-progress. We are bringing
-              an innovation in the management of hotel rooms and hotel
-              restaurant services. The attempt to improve the internal
-              communication and to offer a better solution on how to accommodate
-              the guests is currently in-progress. I helped out in visualizing
-              inventory management process.
-            </p>
-          </div>
           <div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
             <p>My role</p>
             <p className="font-bold">Associate Product Designer</p>
