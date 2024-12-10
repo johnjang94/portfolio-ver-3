@@ -14,33 +14,34 @@ export default function About() {
           <img
             src={MyIntroduction.About}
             alt="My profile"
-            className="mx-auto rounded-2xl 2xl:w-[500px] w-[350px]"
+            className="mx-auto rounded-2xl 2xl:w-[400px] w-[250px]"
           />
           <div>
             <div className="px-5 md:space-y-10 space-y-2 py-10 xl:py-12 md:mx-10 xl:mx-0">
               <div>
-                <h1 className="2xl:text-5xl md:text-3xl text-2xl 2xl:py-10 xl:py-5">
+                <h1 className="2xl:text-4xl md:text-3xl text-2xl 2xl:py-10 xl:py-5">
                   Who is John Jang?
                 </h1>
                 <div className="space-y-3">
                   <p>
-                    I am a Product Designer who carries slightly different
-                    titles like UX Designer, Web Designer or UX Engineer. I come
-                    up with unique solutions to challenges along with catchy
-                    stories. I enjoy hiking, road trips, and traveling overseas.
-                    To me, design is like hiking. It is a journey to find the
+                    I am a Product Designer (or a UX Designer) who comes up with
+                    unique solutions to challenges along with catchy stories. At
+                    times, I help out development team using my skill set in web
+                    development. I often travel around different places. It
+                    helps me to think about different types of creative ideas
+                    and activities. To me, design is like jumping into
+                    discovering these unknown paths. It is a journey to find the
                     right solution that helps everyone.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="px-5 space-y-2 md:mx-10 xl:mx-0">
+            {/* <div className="px-5 space-y-2 md:mx-10 xl:mx-0">
               <p className="font-bold">Current Role</p>
               <p>
-                I am a Product Designer at OPERATE-EASE, a start-up that is on a
-                mission to automate hospitality management.
+                I am a Product Designer at OPERATE-EASE, an independent SaaS project that seeks to automate hospitality management.
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
