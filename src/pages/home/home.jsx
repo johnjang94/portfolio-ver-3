@@ -12,7 +12,8 @@ const data = [
     imgSrc: home.OperateEase,
     imgAlt: "OperateEase",
     icon: "🔒",
-    title: "Reimagined hospitality management - OperateEase",
+    title: "Coming soon: OperateEase",
+    subtitle: "an innovative hospitality management platform",
     category: ["Product Design", "SaaS product", "start-up"],
     link: "/operate",
   },
@@ -207,6 +208,9 @@ export default function Home() {
                     <p className="font-bold">
                       {item.icon} {item.title}
                     </p>
+                    {item.subtitle && (
+                      <p className="font-bold">{item.subtitle}</p>
+                    )}
                     <div className="flex md:space-x-5 space-x-1">
                       {item.category?.map((category, index) => (
                         <span
