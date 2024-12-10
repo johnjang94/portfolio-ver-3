@@ -152,6 +152,8 @@ export default function Home() {
                 agile environments, where my curiosity and ability to{" "}
                 <span className="underline">ask the right questions</span> often
                 lead to <span className="font-semibold">better solutions</span>.
+                To me, collaboration is one of the biggest sources where great
+                ideas come to life.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
@@ -160,7 +162,8 @@ export default function Home() {
                 &#39;better&#39;, &#39;clear&#39; or &#39;understandable&#39;,
                 as it means I&#39;m{" "}
                 <span className="underline">one-step closer</span> to the{" "}
-                <span className="font-semibold">right solution</span>.
+                <span className="font-semibold">right solution</span>. To me,
+                clarity is elegance.
               </p>
             </div>
           </div>

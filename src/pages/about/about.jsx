@@ -10,7 +10,7 @@ export default function About() {
     <div>
       <div className="md:flex md:space-x-2 md:my-10 md:items-center md:justify-center text-center"></div>
       <div>
-        <div className="xl:flex xl:items-start md:w-4/6 md:mx-auto md:my-10 xl:gap-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6]">
+        <div className="xl:flex xl:items-center md:w-4/6 md:mx-auto mx-10 md:my-10 xl:gap-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6]">
           <img
             src={MyIntroduction.About}
             alt="My profile"
@@ -19,19 +19,26 @@ export default function About() {
           <div>
             <div className="px-5 md:space-y-10 space-y-2 py-10 xl:py-12 md:mx-10 xl:mx-0">
               <div>
-                <h1 className="2xl:text-4xl md:text-3xl text-2xl 2xl:py-10 xl:py-5">
+                <h1 className="2xl:text-4xl md:text-3xl text-2xl 2xl:py-10 py-5 xl:py-5">
                   Who is John Jang?
                 </h1>
                 <div className="space-y-3">
+                  <p className="font-bold">
+                    I&#39;m a Product Designer with a journey as unique as the
+                    challenges I solve.
+                  </p>
                   <p>
-                    I am a Product Designer (or a UX Designer) who comes up with
-                    unique solutions to challenges along with catchy stories. At
-                    times, I help out development team using my skill set in web
-                    development. I often travel around different places. It
-                    helps me to think about different types of creative ideas
-                    and activities. To me, design is like jumping into
-                    discovering these unknown paths. It is a journey to find the
-                    right solution that helps everyone.
+                    I didn&#39;t exactly start out in design — far from it. I
+                    began by exploring how visuals influence decision-making in
+                    a neuroscience lab and later found myself rethinking lesson
+                    materials as an ESL teacher during a pandemic. Through these
+                    experiences, I realized my passion wasn&#39;t just about
+                    solving problems but about creating something that feels
+                    thoughtful and refined. I&#39;m drawn to design that carries
+                    a sense of sophistication and elegance — where every detail
+                    tells a story and leaves a lasting impression. For me,
+                    design is a way to connect, inspire, and maybe even add a
+                    little beauty to the every day life.
                   </p>
                 </div>
               </div>
