@@ -16,15 +16,34 @@ export default function Overview() {
             <span className="underline">USD $1 trillion</span>, which is enough
             to feed about 3 billion people.
           </p>
+          <p className="px-5">
+            In this project, <span className="underline">Food Distro</span>, the
+            state government intends to promote food donations among locals and
+            reduce the pollution, caused due to the food waste, as well as
+            lowering the additional tax to process the waste.
+          </p>
+          <p className="p-5">
+            Please note that this project is currently{" "}
+            <span className="underline">on-going</span> and I have participated
+            as a UX Designer for a phase.
+          </p>
         </div>
         <div>
           <p className="font-semibold pt-5">Outcome</p>
-          <div className="flex items-end">
-            <p className="px-5 py-6">
-              During the pilot phase, the application has shown the potential to
-              match individuals <span className="text-blue-500">up to 30%</span>{" "}
-              to encourage the food donations to reduce the amount of food
-              waste.
+          <div className="space-y-3 py-3">
+            <p className="px-5">
+              From the usability testing,{" "}
+              <span className="text-blue-500">16 out of 18 participants</span>{" "}
+              were able to{" "}
+              <span className="text-blue-500">
+                successfully use the filter function
+              </span>{" "}
+              and be able to see a smaller list of providers on the map.
+            </p>
+            <p className="px-5">
+              The participants were{" "}
+              <span className="text-blue-500">able to check</span> the distance
+              from their location.
             </p>
           </div>
         </div>

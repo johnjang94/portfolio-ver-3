@@ -1,5 +1,5 @@
 // DEMO
-import Demo from "../assets/oe/demo/demo.gif";
+import Demo from "../assets/oe/demo/operation-ease.png";
 
 // INSIGHTS
 import Insights from "../assets/oe/insights/insight.png";

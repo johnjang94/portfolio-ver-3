@@ -12,8 +12,9 @@ const data = [
     imgSrc: home.OperateEase,
     imgAlt: "OperateEase",
     icon: "🔒",
-    title: "Coming soon: an innovative hospitality management platform",
-    subtitle: "",
+    title: "Coming soon: Inventory Optimization for Improved Management",
+    subtitle:
+      "Increasing real-time change detection for inventory management (room status + catering)",
     category: ["Product Design", "SaaS product", "start-up"],
     link: "/operate",
   },
@@ -22,7 +23,9 @@ const data = [
     imgSrc: home.Sakhi,
     imgAlt: "Sakhi",
     icon: "🔒",
-    title: "Designing a premium Indian luxury - The Sakhi",
+    title: "User-Centric E-commerce Design",
+    subtitle:
+      "Designed product contents for a premium Indian brand, The Sakhi, to raise CTR",
     category: ["Product Design", "E-commerce", "start-up"],
     link: "/sakhi",
   },
@@ -31,8 +34,10 @@ const data = [
     imgSrc: home.FoodDistro,
     imgAlt: "Food Distro",
     icon: "",
-    title: "Reduce the food waste - Food Distro",
-    category: ["UX/UI Design", "Mobile App", "Social Service"],
+    title: "Search Optimization for Enhanced Engagement",
+    subtitle:
+      "Low effort solution to improve search and reach out to each other",
+    category: ["UX/UI Design", "Non-Profit"],
     link: "/food-distro",
   },
   {
@@ -135,15 +140,15 @@ export default function Home() {
         <div className="mt-10 md:my-12 md:pb-5">
           <h3 className="text-center md:text-2xl text-xl">Fun Facts</h3>
           <div className="md:grid md:grid-cols-3 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
-            <div className="bg-white rounded-2xl p-3">
+            <div className="bg-white rounded-2xl p-3 h-full">
               <p>
                 I design high-quality, user-focused solutions for B2B products
                 in SaaS, E-commerce or cloud-based PaaS platforms, with a unique
                 ability to{" "}
                 <span className="underline">
                   identify technical gaps in designs
-                </span>{" "}
-                thanks to my web development experience.
+                </span>
+                .
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
@@ -152,8 +157,6 @@ export default function Home() {
                 agile environments, where my curiosity and ability to{" "}
                 <span className="underline">ask the right questions</span> often
                 lead to <span className="font-semibold">better solutions</span>.
-                To me, collaboration is one of the biggest sources where great
-                ideas come to life.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
@@ -162,8 +165,8 @@ export default function Home() {
                 &#39;better&#39;, &#39;clear&#39; or &#39;understandable&#39;,
                 as it means I&#39;m{" "}
                 <span className="underline">one-step closer</span> to the{" "}
-                <span className="font-semibold">right solution</span>. To me,
-                clarity is elegance.
+                <span className="font-semibold">right solution</span>. Clarity
+                is elegance.
               </p>
             </div>
           </div>
@@ -192,14 +195,11 @@ export default function Home() {
           <h3 className="py-5 text-center md:text-2xl text-xl">
             So, what is the story of my design portfolio?
           </h3>
-          {data.map((item) =>
-            item.id === 1 ? (
+          {data
+            .filter((item) => item.id === 1)
+            .map((item) => (
               <Link to={item.link} state={{ fromId: item.id }} key={item.id}>
-                <div
-                  className={`hover:cursor-pointer space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full ${
-                    item.id === 5 ? "w-full" : "w-auto"
-                  }`}
-                >
+                <div className="hover:cursor-pointer space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full">
                   <div className="md:w-[40vw] md:mx-auto">
                     <div className="bg-[#f6f6f6] md:py-3 rounded-xl">
                       <img
@@ -208,12 +208,14 @@ export default function Home() {
                         className="rounded-xl mx-auto"
                       />
                     </div>
-                    <p className="font-bold">
-                      {item.icon} {item.title}
-                    </p>
-                    {item.subtitle && (
-                      <p className="font-bold">{item.subtitle}</p>
-                    )}
+                    <div className="py-5">
+                      <p className="font-bold">
+                        {item.icon} {item.title}
+                      </p>
+                      {item.subtitle && (
+                        <p className="font-normal">{item.subtitle}</p>
+                      )}
+                    </div>
                     <div className="flex md:space-x-5 space-x-1">
                       {item.category?.map((category, index) => (
                         <span
@@ -227,39 +229,43 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
-            ) : null
-          )}
+            ))}
         </div>
       </section>
-      <section className="md:my-20 my-10 md:mx-36 mx-12 grid grid-cols-1 md:grid-cols-2 md:gap-20 space-y-10 md:space-y-0">
-        {data
-          .filter((item) => item.id !== 1)
-          .map((item) => (
-            <Link to={item.link} state={{ fromId: item.id }} key={item.id}>
-              <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 space-y-3 p-2 rounded-xl w-full border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
-                <div className="p-3 rounded-xl bg-[#f6f6f6]">
-                  <img
-                    src={item.imgSrc}
-                    alt={item.imgAlt}
-                    className="rounded-xl mx-auto md:h-[300px]"
-                  />
+      <section className="md:my-20 my-10 md:mx-36 mx-12 md:space-y-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 space-y-10 md:space-y-0">
+          {data
+            .filter((item) => item.id !== 1)
+            .map((item) => (
+              <Link to={item.link} state={{ fromId: item.id }} key={item.id}>
+                <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 space-y-3 p-2 rounded-xl w-full border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
+                  <div className="p-3 rounded-xl bg-[#f6f6f6]">
+                    <img
+                      src={item.imgSrc}
+                      alt={item.imgAlt}
+                      className="rounded-xl mx-auto md:h-[300px]"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <p className="font-bold">
+                      {item.icon} {item.title}
+                    </p>
+                    <p className="font-normal">{item.subtitle}</p>
+                  </div>
+                  <div className="flex md:space-x-5 space-x-1">
+                    {item.category.map((category, index) => (
+                      <span
+                        key={index}
+                        className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
+                      >
+                        {category}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="font-bold">
-                  {item.icon} {item.title}
-                </p>
-                <div className="flex md:space-x-5 space-x-1">
-                  {item.category.map((category, index) => (
-                    <span
-                      key={index}
-                      className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
-                    >
-                      {category}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+        </div>
       </section>
     </div>
   );

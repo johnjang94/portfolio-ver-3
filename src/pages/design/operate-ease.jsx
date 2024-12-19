@@ -66,50 +66,53 @@ export default function OPERATE() {
   return (
     <div>
       <section className="my-10 mx-auto">
-        <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
-          <div className="text-white my-10">
-            <h1 className="text-center md:text-7xl text-lg my-5">
-              OPERATE-EASE
-            </h1>
-            <div className="md:mx-44 space-y-5">
-              <p className="px-8">
-                This is a project that is currently in-progress. We are bringing
-                an innovation in the management of hotel rooms and hotel
-                restaurant services. The attempt to improve the internal
-                communication and to offer a better solution on how to
-                accommodate the guests is currently in-progress. I helped out in
-                visualizing inventory management process.
+        <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
+          <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl">
+            <div className="w-full my-20 space-y-5">
+              <h1 className="text-4xl text-center text-white">
+                Inventory Optimization for Improved Management
+              </h1>
+              <p className="text-white text-center">
+                Increasing real-time change detection for inventory management
+                (room occupancy and food/beverage storage)
               </p>
             </div>
+            <div className="space-y-5 w-full flex justify-center">
+              <img
+                src={OperateEase.Demo}
+                alt="Demo showcase"
+                className="rounded-xl mx-auto w-full"
+              />
+            </div>
           </div>
-          {/* <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
-            <h1>
-              <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
-                Coming soon...
-              </span>{" "}
-            </h1>
-          </div> */}
-          <img
-            src={OperateEase.Demo}
-            alt="Demo showcase"
-            width={800}
-            className="rounded-3xl mx-auto my-5"
-          />
-        </div>
-        <div className="md:mx-12">
-          <div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
-            <p>My role</p>
-            <p className="font-bold">Associate Product Designer</p>
-          </div>
-          <div className="space-y-10">
-            <div className="flex gap-10 md:mx-52 mx-8">
-              <p>Team</p>
+          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20">
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">My Role</p>
+              <p>Associate UX Designer</p>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Team</p>
               <ul>
-                <li>6 UX Designers</li>
-                <li>6 UX Researchers</li>
-                <li>6 Product Strategists</li>
-                <li>3 Project Management Associates</li>
+                <li>8 UX Designers</li>
+                <li>4 UX Researchers</li>
+                <li>2 Product Strategist</li>
+                <li>2 Web Developers</li>
+                <li>3 Project Management</li>
               </ul>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Tools</p>
+              <ul>
+                <li>Figma</li>
+                <li>Figjam</li>
+                <li>Miro</li>
+                <li>Slack</li>
+                <li>JIRA</li>
+              </ul>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Timeline</p>
+              <p>August 2024 ~ Present (20 Weeks)</p>
             </div>
           </div>
         </div>
@@ -137,7 +140,6 @@ export default function OPERATE() {
           </div>
           {isPasswordCorrect && (
             <div className="my-5 md:my-28 space-y-20">
-              {/* Additional content when the password is correct */}
               <div id={2}>
                 <TheStory />
               </div>
@@ -191,4 +193,47 @@ export default function OPERATE() {
       </footer>
     </div>
   );
+}
+
+{
+  /* <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
+<div className="text-white my-10">
+  <h1 className="text-center md:text-7xl text-lg my-5">
+    OPERATE-EASE
+  </h1>
+  <div className="md:mx-44 space-y-5">
+    <p className="px-8">
+      This is a project that is currently in-progress. We are bringing
+      an innovation in the management of hotel rooms and hotel
+      restaurant services. The attempt to improve the internal
+      communication and to offer a better solution on how to
+      accommodate the guests is currently in-progress. I helped out in
+      visualizing inventory management process.
+    </p>
+  </div>
+</div>
+<img
+  src={OperateEase.Demo}
+  alt="Demo showcase"
+  width={800}
+  className="rounded-3xl mx-auto my-5"
+/>
+</div>
+<div className="md:mx-12">
+<div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
+  <p>My role</p>
+  <p className="font-bold">Associate Product Designer</p>
+</div>
+<div className="space-y-10">
+  <div className="flex gap-10 md:mx-52 mx-8">
+    <p>Team</p>
+    <ul>
+      <li>6 UX Designers</li>
+      <li>6 UX Researchers</li>
+      <li>6 Product Strategists</li>
+      <li>3 Project Management Associates</li>
+    </ul>
+  </div>
+</div>
+</div> */
 }

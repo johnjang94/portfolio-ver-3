@@ -1,4 +1,4 @@
-import Demo from "../assets/food-distro/demo/demo.gif";
+import Demo from "../assets/food-distro/demo/foodDistro.png";
 import FoodWaste from "../assets/food-distro/problem-statement/food-waste.png";
 import Barriers from "../assets/food-distro/problem-statement/barriers.png";
 

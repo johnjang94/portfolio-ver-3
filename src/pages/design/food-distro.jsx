@@ -14,7 +14,7 @@ import Retrospective from "./food-distro/retrospective";
 import NextSteps from "./food-distro/next-steps";
 import StyleGuide from "./food-distro/style-guide";
 import MockUpPrototype from "./food-distro/mock-up-prototype";
-import Impact from "./food-distro/impact";
+// import Impact from "./food-distro/impact";
 
 export default function Food() {
   const [currentSection, setCurrentSection] = useState(1);
@@ -57,44 +57,53 @@ export default function Food() {
 
   return (
     <div>
-      <section className="my-10 mx-auto">
-        <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl text-white">
-          <div className="my-10">
-            <h1 className="text-center md:text-7xl text-lg my-5">
-              Food Distro
-            </h1>
-            <p className="md:w-4/6 mx-auto">
-              We connected the locals to donate some food to each other to
-              reduce the environmental pollution and increase social awareness
-              on genuine support. I helped out in implementing search and filter
-              features.
-            </p>
-            <div className="flex items-center space-x-5 my-10 md:w-4/6 mx-auto">
-              <p>My role</p>
-              <p className="font-bold">Associate UX/UI Designer</p>
+      <section className="my-10">
+        <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
+          <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl">
+            <div className="w-full my-20 space-y-5">
+              <h1 className="text-4xl text-center text-white">
+                Search Optimization for Enhanced Engagement
+              </h1>
+              <p className="text-white text-center">
+                Low effort solution to improve search for food and connect
+                locals
+              </p>
             </div>
-            <div className="space-y-10">
-              <div className="flex gap-10 md:mx-56">
-                <p>Team</p>
-                <ul>
-                  <li>5 UX Designers</li>
-                  <li>5 UX Researchers</li>
-                  <li>3 Product Strategist</li>
-                  <li>2 Project Management</li>
-                </ul>
-              </div>
-              <div className="flex gap-3 md:mx-56">
-                <p>Timeline</p>
-                <p>12 weeks</p>
-              </div>
+            <div className="space-y-5 w-full flex justify-center">
+              <img
+                src={foodDistro.Demo}
+                alt="Demo showcase"
+                className="rounded-xl mx-auto w-full"
+              />
             </div>
           </div>
-          <div className="md:mx-44 space-y-5">
-            <img
-              src={foodDistro.Demo}
-              alt="Demo showcase"
-              className="rounded-xl mx-auto w-64"
-            />
+          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20">
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">My Role</p>
+              <p>Associate UX Designer</p>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Team</p>
+              <ul>
+                <li>4 UX Designers</li>
+                <li>4 UX Researchers</li>
+                <li>4 Product Strategist</li>
+                <li>1 Project Management</li>
+              </ul>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Tools</p>
+              <ul>
+                <li>Figma</li>
+                <li>Figjam</li>
+                <li>Miro</li>
+                <li>Slack</li>
+              </ul>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Timeline</p>
+              <p>April ~ July 2023 (17 Weeks)</p>
+            </div>
           </div>
         </div>
       </section>
@@ -140,10 +149,10 @@ export default function Food() {
           <div>
             <MockUpPrototype />
           </div>
-          <div id={3}>
+          {/* <div >
             <Impact />
-          </div>
-          <div>
+          </div> */}
+          <div id={3}>
             <Retrospective />
           </div>
           <div>

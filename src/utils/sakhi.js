@@ -1,5 +1,5 @@
 // THE SAKHI DEMO
-import Demo from "../assets/sakhi/demo/new-product-detail.gif";
+import Demo from "../assets/sakhi/demo/sakhi.png";
 
 // COMPETITIVE ANALYSIS
 import competition from "../assets/sakhi/competitive-analysis/collection.png";
@@ -23,7 +23,7 @@ import Shopify from "../assets/sakhi/developers/code.png";
 // SOLUTION
 import Solution1 from "../assets/sakhi/solution/solution-1.png";
 import NavigationSolution from "../assets/sakhi/solution/navigation-solution.png";
-import Solution2 from "../assets/sakhi/solution/new-product-detail.gif";
+import Solution2 from "../assets/sakhi/solution/sakhi.png";
 
 export const sakhi = {
   Demo,

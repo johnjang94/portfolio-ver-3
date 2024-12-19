@@ -62,41 +62,51 @@ export default function SAKHI() {
     <div>
       <section>
         <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 rounded-xl mx-10 md:gap-3">
-          <div className="md:flex md:items-start md:px-3">
-            <div className="text-white md:w-3/6">
-              <h1 className="text-center md:text-5xl text-lg my-5">
-                THE SAKHI
+          <div className="md:grid md:grid-cols-2 py-20 items-center">
+            <div className="w-full my-20 space-y-5">
+              <h1 className="text-3xl text-center text-white">
+                User-Centric E-commerce Design
               </h1>
-              <div className="space-y-5">
-                <p className="px-5">
-                  We reintroduce unique and traditional Indian products for
-                  extraordinary life events such as wedding, festival, etc. in a
-                  friendly way. I was focused on onboarding experience.
-                </p>
-              </div>
-              <div className="mx-5 my-10 text-black">
-                <p>My role</p>
-                <p className="font-bold">Associate Product Designer</p>
-              </div>
-              <div className="space-y-10">
-                <div className="flex gap-10 mx-5 text-black">
-                  <p>Team</p>
-                  <ul>
-                    <li>2 UX Designers</li>
-                    <li>2 UX Researchers</li>
-                    <li>1 Product Strategist</li>
-                    <li>1 Project Management</li>
-                  </ul>
-                </div>
-              </div>
+              <p className="text-white text-center">
+                Designed product contents for a premium Indian brand to raise
+                CTR
+              </p>
             </div>
-            <div className="p-5">
+            <div className="space-y-5">
               <img
                 src={sakhi.Demo}
                 alt="Demo showcase"
-                width={750}
-                className="rounded-3xl mx-auto"
+                className="rounded-xl mx-auto w-full"
               />
+            </div>
+          </div>
+          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20">
+            <div className="flex space-x-10 mx-5 text-black">
+              <p className="font-bold">My Role</p>
+              <p>Associate UX Designer</p>
+            </div>
+            <div className="flex space-x-10 mx-5 text-black">
+              <p className="font-bold">Team</p>
+              <ul>
+                <li>2 UX Designers</li>
+                <li>2 UX Researchers</li>
+                <li>1 Product Strategist</li>
+                <li>1 Project Management</li>
+              </ul>
+            </div>
+            <div className="flex space-x-10 mx-5 text-black">
+              <p className="font-bold">Tools</p>
+              <ul>
+                <li>Figma</li>
+                <li>Figjam</li>
+                <li>Miro</li>
+                <li>Google Spreadsheet</li>
+                <li>Slack</li>
+              </ul>
+            </div>
+            <div className="flex space-x-10 mx-5 text-black">
+              <p className="font-bold">Timeline</p>
+              <p>June ~ October 2024 (21 Weeks)</p>
             </div>
           </div>
         </div>

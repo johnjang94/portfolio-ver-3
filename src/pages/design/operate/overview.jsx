@@ -20,6 +20,10 @@ export default function Overview() {
               <span className="text-red-500">slows</span> users
             </p>
           </div>
+          <p className="p-5">
+            In this project, <span className="underline">OperateEase</span>, as
+            a SaaS project intends to simplify the workflow of the operation.
+          </p>
         </div>
         <div>
           <p className="font-semibold">Outcome</p>

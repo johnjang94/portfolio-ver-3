@@ -22,6 +22,11 @@ export default function Summary() {
               most shoppers
             </p>
           </div>
+          <p className="p-5">
+            At <span className="underline">The Sakhi</span>, a shopper-focused
+            luxury brand app, intends to reduce the hassle of customs and
+            intends to deliver limited editions.
+          </p>
         </div>
         <div>
           <p className="font-semibold">Outcome</p>

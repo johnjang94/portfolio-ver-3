@@ -19,26 +19,17 @@ export default function About() {
           <div>
             <div className="px-5 md:space-y-10 space-y-2 py-10 xl:py-12 md:mx-10 xl:mx-0">
               <div>
-                <h1 className="2xl:text-4xl md:text-3xl text-2xl 2xl:py-10 py-5 xl:py-5">
-                  Who is John Jang?
-                </h1>
                 <div className="space-y-3">
-                  <p className="font-bold">
-                    I&#39;m a Product Designer with a journey as unique as the
-                    challenges I solve.
-                  </p>
+                  <h1 className="font-bold text-xl">
+                    A Designer shaped by Curiousity and Elegance
+                  </h1>
                   <p>
-                    I didn&#39;t exactly start out in design — far from it. I
-                    began by exploring how visuals influence decision-making in
-                    a neuroscience lab and later found myself rethinking lesson
-                    materials as an ESL teacher during a pandemic. Through these
-                    experiences, I realized my passion wasn&#39;t just about
-                    solving problems but about creating something that feels
-                    thoughtful and refined. I&#39;m drawn to design that carries
-                    a sense of sophistication and elegance — where every detail
-                    tells a story and leaves a lasting impression. For me,
-                    design is a way to connect, inspire, and maybe even add a
-                    little beauty to the every day life.
+                    I design with a focus on clarity, elegance, and thoughtful
+                    solutions. My approach is grounded in curiosity --- whether
+                    it is about refining user flows for dynamic SaaS platform or
+                    improving payment process for a Shopify E-commerce platform.
+                    I thrive on creating designs that feel intuitive, foster
+                    connection, and adapt seamlessly to real-world needs.
                   </p>
                 </div>
               </div>

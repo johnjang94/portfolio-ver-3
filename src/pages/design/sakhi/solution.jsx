@@ -34,11 +34,11 @@ export default function Solutions() {
             Since we are inviting shoppers unfamiliar with Indian products as
             well, we tried to implement simple layouts that is easy-to-follow.
           </p>
-          <div className="p-5 bg-white rounded-3xl mx-auto">
+          <div className="bg-white rounded-3xl mx-auto">
             <img
               src={sakhi.Solution2}
               alt="Re-imagined home page"
-              className="rounded-2xl"
+              className="rounded-2xl w-full"
             />
           </div>
         </div>
