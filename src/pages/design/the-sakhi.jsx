@@ -80,7 +80,7 @@ export default function SAKHI() {
               />
             </div>
           </div>
-          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20">
+          <div className="space-y-10 md:space-y-0 md:flex md:items-start justify-center md:gap-2 my-0 md:my-20">
             <div className="flex space-x-10 mx-5 text-black">
               <p className="font-bold">My Role</p>
               <p>Associate UX Designer</p>
