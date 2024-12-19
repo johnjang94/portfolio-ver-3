@@ -21,8 +21,8 @@ export default function Overview() {
             </p>
           </div>
           <p className="p-5">
-            In this project, <span className="underline">OperateEase</span>, as
-            a SaaS project intends to simplify the workflow of the operation.
+            In this SaaS project, <span className="underline">OperateEase</span>
+            , intends to simplify the workflow of the operation.
           </p>
         </div>
         <div>
