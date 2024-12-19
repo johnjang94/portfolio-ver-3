@@ -3,19 +3,12 @@ export default function Impact() {
     <div>
       <h3 className="text-xl uppercase">Impact</h3>
       <ul className="md:mx-20 my-3 space-y-5">
-        <li>
-          <span className="text-blue-500">3 out of 5 participants</span> thought
-          that new metric contents are{" "}
-          <span className="text-blue-500">fresh</span>.
-        </li>
-        <li>
-          2 participants thought that some of the terminologies that are used in
-          the product do not exactly match the image that they were thinking of.
-        </li>
-        <li>
-          one participant has pointed out that the amount of information needs
-          to be filtered depending on the role.
-        </li>
+        We are continuously iterating based on user testing feedback. Hoteliers
+        appreciate features like one-click access to room rates and instant
+        updates for bookings, changes, or cancellations. These improvements are
+        expected to boost user retention by 20% and reduce task completion time
+        by 15%, enhancing the overall experience by the time that the product
+        launches.
       </ul>
     </div>
   );

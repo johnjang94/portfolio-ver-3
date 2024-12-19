@@ -28,10 +28,23 @@ export default function Overview() {
         <div>
           <p className="font-semibold">Outcome</p>
           <p className="px-8 py-5">
-            <span className="underline">3 out of 5 participants</span> were{" "}
-            <span className="text-blue-500">optimistic</span> with new content
-            displays.
+            In the first round of usability testing, the participated hoteliers
+            have been able to carry out the following tasks:
           </p>
+          <ul className="space-y-3 mx-10 list-disc">
+            <li>
+              checked reports for the budget, room rates, catering services,
+              etc.
+            </li>
+            <li>adjusted the room rates</li>
+            <li>
+              found the partner business contacts and understood how to reach
+              out to the representatives
+            </li>
+            <li>
+              understood how to manually check-in and check-out if necessary
+            </li>
+          </ul>
         </div>
       </div>
     </div>

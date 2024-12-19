@@ -167,9 +167,6 @@ export default function OPERATE() {
               <div>
                 <MidFi />
               </div>
-              {/* <div>
-                <StyleGuide />
-              </div> */}
               <div id={3}>
                 <Impact />
               </div>
@@ -193,47 +190,4 @@ export default function OPERATE() {
       </footer>
     </div>
   );
-}
-
-{
-  /* <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
-<div className="text-white my-10">
-  <h1 className="text-center md:text-7xl text-lg my-5">
-    OPERATE-EASE
-  </h1>
-  <div className="md:mx-44 space-y-5">
-    <p className="px-8">
-      This is a project that is currently in-progress. We are bringing
-      an innovation in the management of hotel rooms and hotel
-      restaurant services. The attempt to improve the internal
-      communication and to offer a better solution on how to
-      accommodate the guests is currently in-progress. I helped out in
-      visualizing inventory management process.
-    </p>
-  </div>
-</div>
-<img
-  src={OperateEase.Demo}
-  alt="Demo showcase"
-  width={800}
-  className="rounded-3xl mx-auto my-5"
-/>
-</div>
-<div className="md:mx-12">
-<div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
-  <p>My role</p>
-  <p className="font-bold">Associate Product Designer</p>
-</div>
-<div className="space-y-10">
-  <div className="flex gap-10 md:mx-52 mx-8">
-    <p>Team</p>
-    <ul>
-      <li>6 UX Designers</li>
-      <li>6 UX Researchers</li>
-      <li>6 Product Strategists</li>
-      <li>3 Project Management Associates</li>
-    </ul>
-  </div>
-</div>
-</div> */
 }
