@@ -54,49 +54,47 @@ export default function TeleVU() {
   return (
     <div>
       <section className="my-10 mx-auto">
-        <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
-          <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
-            <h1>
-              Increasing the duration of the call by{" "}
-              <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
-                60%
-              </span>{" "}
-            </h1>
+        <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
+          <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl gap-10">
+            <div className="w-full my-20 space-y-5">
+              <h1 className="text-3xl text-center text-white">
+                Quality improvement for video-calls
+              </h1>
+              <p className="text-white text-center">
+                Next level controls for remote clinic sessions
+              </p>
+            </div>
+            <div className="space-y-5 w-full flex justify-center">
+              <img
+                src={televu.Demo}
+                alt="Demo showcase"
+                className="rounded-xl mx-auto w-full"
+              />
+            </div>
           </div>
-          <img
-            src={televu.Demo}
-            alt="Demo"
-            width={1200}
-            className="rounded-xl mx-auto"
-          />
-        </div>
-        <div className="md:mx-12">
-          <h1 className="text-center md:text-7xl text-lg my-5">
-            TELEVU INNOVATION
-          </h1>
-          <div className="md:mx-44 space-y-5">
-            <p className="px-8">
-              We redesigned the internal communication portal to ensure smooth
-              video-call between clinicians and patients.
-            </p>
-          </div>
-          <div className="flex items-center space-x-5 my-10 md:mx-52 mx-8">
-            <p>My role</p>
-            <p className="font-bold">UX/UI Designer</p>
-          </div>
-          <div className="space-y-10 md:mx-52 mx-8">
-            <div className="flex gap-10 text-black">
-              <p>Team</p>
+          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20">
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">My Role</p>
+              <p>Associate UX Designer</p>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Team</p>
               <ul>
-                <li>2 UX Designers</li>
-                <li>2 UX Researchers</li>
-                <li>1 Product Strategist</li>
-                <li>1 Project Management</li>
+                <li>4 UX Designers</li>
               </ul>
             </div>
-            <div className="flex gap-3 text-black">
-              <p>Timeline</p>
-              <p>8 weeks</p>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Tools</p>
+              <ul>
+                <li>Figma</li>
+                <li>Figjam</li>
+                <li>Miro</li>
+                <li>Discord</li>
+              </ul>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Timeline</p>
+              <p>June 2022 ~ August 2022 (8 Weeks)</p>
             </div>
           </div>
         </div>

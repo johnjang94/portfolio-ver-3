@@ -54,35 +54,36 @@ export default function TuGo() {
   return (
     <div>
       <section className="my-10 mx-auto">
-        <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
-          <div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
-            <h1>
-              Reducing the bounce-off rate{" "}
-              <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
-                down to 30%
-              </span>
-            </h1>
-            <h1>what is up with this travel insurance?</h1>
+        <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
+          <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl">
+            <div className="w-full my-20 space-y-5">
+              <h1 className="text-3xl text-center text-white">
+                Revamping insurance onboarding to increase retention rate
+              </h1>
+              <p className="text-white text-center">
+                Simplify navigation process to raise usability and aesthetic
+                appeal
+              </p>
+            </div>
+            <div className="space-y-5 w-full flex justify-center">
+              <img
+                src={tugoInsurance.Demo}
+                alt="Demo showcase"
+                className="rounded-xl mx-auto w-full"
+              />
+            </div>
           </div>
-          <img
-            src={tugoInsurance.Demo}
-            alt="Demo showcase"
-            width={800}
-            className="rounded-xl mx-auto m-5"
-          />
-        </div>
-        <div className="md:mx-14">
-          <h1 className="text-center md:text-7xl text-lg my-5">
-            TUGO INSURANCE
-          </h1>
-          <div className="md:mx-44 space-y-5 md:px-5">
-            <p className="px-12">
-              In this project, I was redesigning the onboarding and the
-              exploration experience of TuGo&#39;s insurance products.
-            </p>
-            <div className="flex items-center space-x-5 px-12">
-              <p>My role</p>
-              <p className="font-bold">Associate UX/UI Designer</p>
+          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20">
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">My Role</p>
+              <p>Associate UX Designer</p>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Tools</p>
+              <ul>
+                <li>Figma</li>
+                <li>Figjam</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -96,34 +97,16 @@ export default function TuGo() {
           />
         </div>
         <section className="md:w-4/6 mx-10 my-5 md:my-28 space-y-20">
-          <div className="space-y-5">
-            <div id={1}>
-              <Overview />
-            </div>
-            <div>
-              <Solutions />
-            </div>
+          <div id={1}>
+            <Overview />
           </div>
           <div>
             <DataMetrics />
           </div>
-          {/* <div>
-            <Insights />
-          </div> */}
-          {/* <div>
-            <Assumption />
-          </div>
           <div id={2}>
-            <Opportunities />
-          </div> */}
-          {/* <div>
-            <CompetitiveAnalysis />
+            <Solutions />
           </div>
           <div>
-            <Surveys />
-          </div> */}
-
-          <div id={3}>
             <Impact />
           </div>
           <div>
@@ -139,4 +122,39 @@ export default function TuGo() {
       </footer>
     </div>
   );
+}
+
+{
+  /* <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
+<div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
+  <h1>
+    Reducing the bounce-off rate{" "}
+    <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
+      down to 30%
+    </span>
+  </h1>
+  <h1>what is up with this travel insurance?</h1>
+</div>
+<img
+  src={tugoInsurance.Demo}
+  alt="Demo showcase"
+  width={800}
+  className="rounded-xl mx-auto m-5"
+/>
+</div>
+<div className="md:mx-14">
+<h1 className="text-center md:text-7xl text-lg my-5">
+  TUGO INSURANCE
+</h1>
+<div className="md:mx-44 space-y-5 md:px-5">
+  <p className="px-12">
+    In this project, I was redesigning the onboarding and the
+    exploration experience of TuGo&#39;s insurance products.
+  </p>
+  <div className="flex items-center space-x-5 px-12">
+    <p>My role</p>
+    <p className="font-bold">Associate UX/UI Designer</p>
+  </div>
+</div>
+</div> */
 }

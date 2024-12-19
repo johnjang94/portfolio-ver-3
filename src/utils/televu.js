@@ -1,5 +1,5 @@
 // TELEVU DEMO
-import Demo from "../assets/televu/demo/demo.gif";
+import Demo from "../assets/televu/demo/redesign-video.jpeg";
 
 // OPPORTUNITY
 import OriginalVideo from "../assets/televu/opportunity/original-video.jpeg";

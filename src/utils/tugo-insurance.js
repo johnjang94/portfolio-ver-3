@@ -1,4 +1,4 @@
-import Demo from "../assets/tugo/demo/demo.gif";
+import Demo from "../assets/tugo/demo/tugo.png";
 
 import Original from "../assets/tugo/opporunities/original-insurance.png";
 import Opportunity from "../assets/tugo/opporunities/opportunity.png";
