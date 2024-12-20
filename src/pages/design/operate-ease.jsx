@@ -13,7 +13,6 @@ import Solutions from "./operate/solutions";
 import Collaboration from "./operate/collaboration";
 import Impact from "./operate/impact";
 import Retrospective from "./operate/retrospective";
-// import StyleGuide from "./operate/style-guide";
 import OtherMenu from "../../components/footer2";
 import InitialSketch from "./operate/initial-sketch";
 import TheStory from "./operate/the-story";
@@ -62,6 +61,67 @@ export default function OPERATE() {
   const handleCorrectPassword = () => {
     setIsPasswordCorrect(true);
   };
+
+  const PublicContent = () => (
+    <div className="space-y-20">
+      <div id={1}>
+        <Overview />
+      </div>
+      <div>
+        <Solutions />
+      </div>
+      <div>
+        <Impact />
+      </div>
+    </div>
+  );
+
+  const PrivateContent = () => (
+    <div className="space-y-20">
+      <div id={1}>
+        <Overview />
+      </div>
+      <div>
+        <Solutions />
+      </div>
+      <div id={2}>
+        <TheStory />
+      </div>
+      <div>
+        <Insight />
+      </div>
+      <div>
+        <UserPersona />
+      </div>
+      <div>
+        <ProblemStatement />
+      </div>
+      <div>
+        <UserStory />
+      </div>
+      <div>
+        <CompetitiveAnalysis />
+      </div>
+      <div>
+        <Opportunity />
+      </div>
+      <div>
+        <InitialSketch />
+      </div>
+      <div>
+        <MidFi />
+      </div>
+      <div id={3}>
+        <Impact />
+      </div>
+      <div>
+        <Retrospective />
+      </div>
+      <div>
+        <Collaboration />
+      </div>
+    </div>
+  );
 
   return (
     <div>
@@ -129,55 +189,8 @@ export default function OPERATE() {
             <div className="hidden md:block"></div>
           )}
         </div>
-        <section className="md:w-4/6 mx-10 my-5 md:my-28 ">
-          <div className="space-y-5">
-            <div id={1}>
-              <Overview />
-            </div>
-            <div>
-              <Solutions />
-            </div>
-          </div>
-          {isPasswordCorrect && (
-            <div className="my-5 md:my-28 space-y-20">
-              <div id={2}>
-                <TheStory />
-              </div>
-              <div>
-                <Insight />
-              </div>
-              <div>
-                <UserPersona />
-              </div>
-              <div>
-                <ProblemStatement />
-              </div>
-              <div>
-                <UserStory />
-              </div>
-              <div>
-                <CompetitiveAnalysis />
-              </div>
-              <div>
-                <Opportunity />
-              </div>
-              <div>
-                <InitialSketch />
-              </div>
-              <div>
-                <MidFi />
-              </div>
-              <div id={3}>
-                <Impact />
-              </div>
-              <div>
-                <Retrospective />
-              </div>
-              <div>
-                <Collaboration />
-              </div>
-            </div>
-          )}
+        <section className="md:w-4/6 mx-10 my-5 md:my-28">
+          {isPasswordCorrect ? <PrivateContent /> : <PublicContent />}
         </section>
       </section>
       {!isPasswordCorrect && (
