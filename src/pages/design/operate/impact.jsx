@@ -6,8 +6,8 @@ export default function Impact() {
         Currently, hoteliers spend{" "}
         <span className="text-red-500 underline">an average of 10 minutes</span>{" "}
         resolving booking errors manually. By automating notifications and
-        real-time updates, we estimate{" "}
-        <span className="text-blue-500">up to 40% reduction</span> in
+        real-time updates in this project that is presently in-progress, we
+        estimate <span className="text-blue-500">up to 40% reduction</span> in
         error-related delays.
       </ul>
     </div>
