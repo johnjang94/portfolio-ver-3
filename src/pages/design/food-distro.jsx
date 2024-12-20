@@ -7,14 +7,14 @@ import ProblemStatement from "./food-distro/problem-statement";
 import UserPersona from "./food-distro/user-persona";
 import UserStory from "./food-distro/user-story";
 import Opportunity from "./food-distro/opportunity";
-import CompetitiveAnalysis from "./food-distro/competitive-analysis";
+// import CompetitiveAnalysis from "./food-distro/competitive-analysis";
 import Sketching from "./food-distro/sketching";
 import Solutions from "./food-distro/solutions";
 import Retrospective from "./food-distro/retrospective";
 import NextSteps from "./food-distro/next-steps";
 import StyleGuide from "./food-distro/style-guide";
 import MockUpPrototype from "./food-distro/mock-up-prototype";
-// import Impact from "./food-distro/impact";
+import Impact from "./food-distro/impact";
 
 export default function Food() {
   const [currentSection, setCurrentSection] = useState(1);
@@ -137,9 +137,9 @@ export default function Food() {
           <div id={2}>
             <Opportunity />
           </div>
-          <div>
+          {/* <div>
             <CompetitiveAnalysis />
-          </div>
+          </div> */}
           <div>
             <Sketching />
           </div>
@@ -149,10 +149,10 @@ export default function Food() {
           <div>
             <MockUpPrototype />
           </div>
-          {/* <div >
-            <Impact />
-          </div> */}
           <div id={3}>
+            <Impact />
+          </div>
+          <div>
             <Retrospective />
           </div>
           <div>

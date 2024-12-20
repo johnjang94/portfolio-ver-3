@@ -6,24 +6,17 @@ export default function Overview() {
         <div>
           <p className="font-semibold">At Issue</p>
           <p className="p-5">
-            Research indicates that{" "}
-            <span className="text-red-500">
-              roughly 1.3 billion tons of food
-            </span>{" "}
-            (which is about 1/3 of all kinds of food that is produced) is{" "}
-            <span className="text-red-500">wasted every year</span>. In terms of
-            budget, 1.3 billion tons is equivalent to the value of approximately{" "}
-            <span className="underline">USD $1 trillion</span>, which is enough
-            to feed about 3 billion people.
-          </p>
-          <p className="px-5">
-            In this project, <span className="underline">Food Distro</span>, the
-            state government intends to promote food donations among locals and
-            reduce the pollution, caused due to the food waste, as well as
-            lowering the additional tax to process the waste.
+            In a city with approximately 1.6 million residents, the annual food
+            waste problem amounts to about{" "}
+            <span className="text-red-500">1.3 billion tons</span>. This issue
+            arises due to nearly 1 out of 4 residents are not successful in
+            finding the right food they need, resulting in{" "}
+            <span className="text-red-500">20% fewer donations</span> over a
+            2-week period. To address this, I updated the search function to
+            help them find the food they were looking for more easily.
           </p>
           <p className="p-5">
-            Please note that this project is currently{" "}
+            Please note that this project, Food Distro, is currently{" "}
             <span className="underline">on-going</span> and I have participated
             as a UX Designer for a phase.
           </p>
@@ -33,17 +26,25 @@ export default function Overview() {
           <div className="space-y-3 py-3">
             <p className="px-5">
               From the usability testing,{" "}
-              <span className="text-blue-500">16 out of 18 participants</span>{" "}
-              were able to{" "}
+              <span className="text-blue-500">16 out of 18 participants</span>,{" "}
+              as a donation-receiver, were able to{" "}
               <span className="text-blue-500">
                 successfully use the filter function
               </span>{" "}
-              and be able to see a smaller list of providers on the map.
-            </p>
-            <p className="px-5">
-              The participants were{" "}
-              <span className="text-blue-500">able to check</span> the distance
-              from their location.
+              and{" "}
+              <span className="text-blue-500">
+                were able to find the products
+              </span>{" "}
+              they were looking for on the map in addition to learning about the
+              food-giver. They were able to find out{" "}
+              <span className="underline">
+                the freshness of the donated item
+              </span>
+              ,{" "}
+              <span className="underline">
+                the distance between the food-giver and themselves
+              </span>
+              , and <span className="underline">explore for more options</span>.
             </p>
           </div>
         </div>

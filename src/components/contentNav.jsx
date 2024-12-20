@@ -20,7 +20,7 @@ export default function ContentNav({ currentSection, pathname }) {
       updatedSections = [
         { id: 1, label: "Summary" },
         { id: 2, label: "Opportunity" },
-        { id: 3, label: "Takeaways" },
+        { id: 3, label: "Impact" },
       ];
     } else if (pathname === "/tugo-insurance") {
       updatedSections = [
