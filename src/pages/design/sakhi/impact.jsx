@@ -4,12 +4,15 @@ export default function Impact() {
       <h3 className="text-xl uppercase">Impact</h3>
       <div className="md:mx-20 my-3">
         <p className="px-5">
-          Based on records from Maze and additional interviews conducted after
-          usability testing on the new design — which focused on how users
-          interact with buttons to control product quantities, add items to the
-          shopping cart, and place orders — we received{" "}
-          <span className="text-blue-500">30% more positive feedback</span> on
-          the platform redesign.
+          Based on early usability testing and design improvements, we
+          anticipate a{" "}
+          <span className="text-blue-500">15-20% increase in CTR</span>. The
+          clearer holiday-based menu and simplified navigation are expected to
+          help shoppers quickly find the clothing they need,{" "}
+          <span className="text-blue-500">
+            resulting in more clicks and a higher likelihood of conversion
+          </span>
+          .
         </p>
       </div>
     </div>

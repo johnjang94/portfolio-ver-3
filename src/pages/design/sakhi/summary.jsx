@@ -4,44 +4,34 @@ export default function Summary() {
       <div className="md:mx-20 my-3 space-y-5">
         <div>
           <p className="font-semibold">At Issue</p>
-          <p className="p-5">
-            70% shoppers who visit online shopping platforms such as Zara,
-            Prada, H&M, etc. {""}
-            <span className="text-red-500">do not</span> find Indian platforms
-            as friendly because...
-          </p>
-          <div className="px-8 space-y-3">
-            <p>
-              Cause 1 | There are{" "}
-              <span className="text-red-500">too many menus</span> in navigation
-            </p>
-            <p>
-              Cause 2 | It is{" "}
-              <span className="text-red-500">yet difficult</span> to make a
-              connection between holidays and different types of clothes for
-              most shoppers
-            </p>
-          </div>
-          <p className="p-5">
-            At <span className="underline">The Sakhi</span>, a shopper-focused
-            luxury brand app, intends to reduce the hassle of customs and
-            intends to deliver limited editions.
+          <p className="py-5 px-8">
+            Many e-commerce platforms targeting Indian customers{" "}
+            <span className="text-red-500">struggle</span> with shoppers not
+            recognizing the connection between menu options and traditional
+            holidays. This causes{" "}
+            <span className="text-red-500">confusion</span> when{" "}
+            <span className="underline">selecting appropriate clothing</span>.
+            The Sakhi aims to solve this by{" "}
+            <span className="underline">
+              clearly linking menu items to specific holidays
+            </span>
+            , enabling shoppers to quickly identify and select clothing suitable
+            for the occasion.
           </p>
         </div>
         <div>
           <p className="font-semibold">Outcome</p>
-          <p className="px-8 py-5">The usability testing showed that</p>
-          <ul className="px-10 mx-3 list-disc">
-            <li>
-              <span className="text-blue-500">75% shoppers</span> found that the
-              design is <span className="text-blue-500">intuitive</span>
-            </li>
-            <li>
-              <span className="text-blue-500">80% shoppers</span> were able to{" "}
-              <span className="text-blue-500">identify</span> different types of
-              clothes and its proper usage
-            </li>
-          </ul>
+          <p className="px-8 py-5">
+            Usability testing showed that shoppers navigating at The Sakhi&#39;s
+            newly designed menu{" "}
+            <span className="underline">were able to select</span> appropriate
+            clothing{" "}
+            <span className="text-blue-500">
+              20% faster and with fewer errors
+            </span>{" "}
+            compared to similar e-commerce platforms. This led to a smoother
+            shopping experience and higher engagement.
+          </p>
         </div>
       </div>
     </div>

@@ -58,7 +58,6 @@ export default function SAKHI() {
     setIsPasswordCorrect(true);
   };
 
-  // Pre-password public content
   const PublicContent = () => (
     <div className="space-y-20">
       <div id={1}>
@@ -73,7 +72,6 @@ export default function SAKHI() {
     </div>
   );
 
-  // Full content after password verification
   const PrivateContent = () => (
     <div className="space-y-20">
       <div id={1}>
