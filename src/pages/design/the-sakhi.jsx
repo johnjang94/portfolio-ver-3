@@ -58,6 +58,57 @@ export default function SAKHI() {
     setIsPasswordCorrect(true);
   };
 
+  // Pre-password public content
+  const PublicContent = () => (
+    <div className="space-y-20">
+      <div id={1}>
+        <Summary />
+      </div>
+      <div>
+        <Solutions />
+      </div>
+      <div>
+        <Impact />
+      </div>
+    </div>
+  );
+
+  // Full content after password verification
+  const PrivateContent = () => (
+    <div className="space-y-20">
+      <div id={1}>
+        <Summary />
+      </div>
+      <div>
+        <Solutions />
+      </div>
+      <div>
+        <UserPersona />
+      </div>
+      <div id={2}>
+        <Insights />
+      </div>
+      <div>
+        <CompetitiveAnalysis />
+      </div>
+      <div>
+        <Opportunity />
+      </div>
+      <div>
+        <InitialSketch />
+      </div>
+      <div id={3}>
+        <Impact />
+      </div>
+      <div>
+        <Retrospective />
+      </div>
+      <div>
+        <NextSteps />
+      </div>
+    </div>
+  );
+
   return (
     <div>
       <section>
@@ -124,42 +175,7 @@ export default function SAKHI() {
           )}
         </div>
         <section className="md:w-4/6 mx-10 my-5 md:my-28">
-          <div className="space-y-5">
-            <div id={1}>
-              <Summary />
-            </div>
-            <div>
-              <Solutions />
-            </div>
-          </div>
-          {isPasswordCorrect && (
-            <div className="my-5 md:my-28 space-y-20">
-              <div>
-                <UserPersona />
-              </div>
-              <div id={2}>
-                <Insights />
-              </div>
-              <div>
-                <CompetitiveAnalysis />
-              </div>
-              <div>
-                <Opportunity />
-              </div>
-              <div>
-                <InitialSketch />
-              </div>
-              <div id={3}>
-                <Impact />
-              </div>
-              <div>
-                <Retrospective />
-              </div>
-              <div>
-                <NextSteps />
-              </div>
-            </div>
-          )}
+          {isPasswordCorrect ? <PrivateContent /> : <PublicContent />}
         </section>
       </section>
       {!isPasswordCorrect && (
