@@ -15,7 +15,6 @@ import Impact from "./operate/impact";
 import Retrospective from "./operate/retrospective";
 import OtherMenu from "../../components/footer2";
 import InitialSketch from "./operate/initial-sketch";
-import TheStory from "./operate/the-story";
 import MidFi from "./operate/mid-fi";
 
 export default function OPERATE() {
@@ -85,9 +84,6 @@ export default function OPERATE() {
         <Solutions />
       </div>
       <div id={2}>
-        <TheStory />
-      </div>
-      <div>
         <Insight />
       </div>
       <div>

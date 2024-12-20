@@ -2,13 +2,19 @@ import { OperateEase } from "../../../utils/operate";
 
 export default function UserPersona() {
   return (
-    <div>
-      <p className="md:mx-28 mt-5">
-        Regardless of the hotel size and rating, many hotelier managers have the
-        similar voice:
-      </p>
-      <p className="my-5 text-center text-red-500">
-        &#34;Inventory management is difficult to control.&#34;
+    <div className="space-y-5">
+      <p className="md:mx-28">
+        According to surveys and interviews we have conducted, we have come to
+        understand that the hoteliers found the inventory management as the core
+        activity of the management system. Specifically, we have identified that{" "}
+        <span className="underline">
+          the biggest challenge in inventory management
+        </span>{" "}
+        was{" "}
+        <span className="text-red-500">
+          the delay in real-time information delivery
+        </span>
+        .
       </p>
       <div className="bg-slate-300 md:mx-20 p-5 rounded-2xl">
         <img

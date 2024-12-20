@@ -11,7 +11,7 @@ export default function Overview() {
             <span className="text-red-500">booking errors</span> and{" "}
             <span className="text-red-500">inventory shortages</span>. To
             address this, I designed a dashboard with real-time updates and
-            notifications here in OperateEase.
+            notifications here at OperateEase.
           </p>
         </div>
         <div>
