@@ -6,20 +6,11 @@ export default function Overview() {
         <div>
           <p className="font-semibold">At Issue</p>
           <p className="p-5">
-            Many hotelier managers find the existing inventory management from
-            other brands{" "}
-            <span className="text-red-500">difficult to control</span>.
+            Hoteliers <span className="text-red-500">struggled</span> with
+            finding up-to-date room rates quickly, leading to{" "}
+            <span className="text-red-500">delays</span> in booking processes
+            and <span className="underline">customer dissatisfaction</span>.
           </p>
-          <div className="px-8 space-y-3">
-            <p>
-              Problem 1 | Navigation is{" "}
-              <span className="text-red-500">not straight-forward</span>
-            </p>
-            <p>
-              Problem 2 | Suspected irrelevant content{" "}
-              <span className="text-red-500">slows</span> users
-            </p>
-          </div>
           <p className="p-5">
             In this SaaS project, <span className="underline">OperateEase</span>
             , intends to simplify the workflow of the operation.

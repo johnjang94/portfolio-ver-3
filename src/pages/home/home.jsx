@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { home } from "../../utils/home";
 
 const methods = ["Product Designer.", "UX Designer.", "Web Designer."];
-const methods2 = ["user research.", "prototyping.", "usability tests."];
 
 const data = [
   {
@@ -91,32 +90,6 @@ export default function Home() {
     }
   }, [charIndex, methodIndex]);
 
-  const [currentMethod2, setCurrentMethod2] = useState("");
-  const [methodIndex2, setMethodIndex2] = useState(0);
-  const [charIndex2, setCharIndex2] = useState(0);
-
-  useEffect(() => {
-    if (methodIndex2 < methods2.length) {
-      if (charIndex2 < methods2[methodIndex2].length) {
-        const typingTimer = setTimeout(() => {
-          setCurrentMethod2(
-            (prev) => prev + methods2[methodIndex2][charIndex2]
-          );
-          setCharIndex2((prev) => prev + 1);
-        }, 100);
-
-        return () => clearTimeout(typingTimer);
-      } else {
-        const pauseTimer = setTimeout(() => {
-          setCurrentMethod2("");
-          setCharIndex2(0);
-          setMethodIndex2((prev) => (prev + 1) % methods2.length);
-        }, 2000);
-
-        return () => clearTimeout(pauseTimer);
-      }
-    }
-  }, [charIndex2, methodIndex2]);
   return (
     <div>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
@@ -124,13 +97,10 @@ export default function Home() {
           <h1 className="md:text-5xl text-2xl py-5">Hi, I&#39;m John Jang.</h1>
           <div className="md:text-xl text-base mb-3 md:mb-0">
             <h1>I&#39;m a {currentMethod}</h1>
-            <h1>
-              I help companies to foster{" "}
-              <span className="font-bold">strong</span> and{" "}
-              <span className="font-bold">reliable</span> relationships with
-              their users using{" "}
-              <span className="typewriter-text">{currentMethod2}</span>
-            </h1>
+            <p>
+              A designer with technical expertise, ensuring designs are not only
+              user-friendly but also feasible for implementation.
+            </p>
           </div>
           <div>
             <p className="my-5 text-base">
@@ -144,31 +114,22 @@ export default function Home() {
           <div className="md:grid md:grid-cols-3 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
-                I design high-quality, user-focused solutions for B2B products
-                in SaaS, E-commerce or cloud-based PaaS platforms, with a unique
-                ability to{" "}
-                <span className="underline">
-                  identify technical gaps in designs
-                </span>
-                .
+                If B2B design challenges were a sport, I would probably have a
+                few trophies by now.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
-                I thrive in cross-functional teams, working in both waterfall or
-                agile environments, where my curiosity and ability to{" "}
-                <span className="underline">ask the right questions</span> often
-                lead to <span className="font-semibold">better solutions</span>.
+                In cross-functional teams, I am like the curious detective —-
+                always asking questions, uncovering hidden insights, and making
+                the process way more fun.
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
-                I find joy in hearing users describe my designs as
-                &#39;better&#39;, &#39;clear&#39; or &#39;understandable&#39;,
-                as it means I&#39;m{" "}
-                <span className="underline">one-step closer</span> to the{" "}
-                <span className="font-semibold">right solution</span>. Clarity
-                is elegance.
+                I live for that moment when users say my designs are
+                &#39;better&#39; —- it&#39;s like I&#39;ve cracked the design
+                code... one step at a time!
               </p>
             </div>
           </div>
