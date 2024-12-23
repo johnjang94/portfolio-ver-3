@@ -13,8 +13,8 @@ export default function ContentNav({ currentSection, pathname }) {
 
     if (pathname === "/televu") {
       updatedSections = [
-        { id: 1, label: "Background" },
-        { id: 2, label: "Overview" },
+        { id: 1, label: "Overview" },
+        { id: 2, label: "Reflection" },
       ];
     } else if (pathname === "/food-distro") {
       updatedSections = [

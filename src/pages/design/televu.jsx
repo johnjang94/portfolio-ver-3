@@ -2,16 +2,9 @@ import { useEffect, useState } from "react";
 import { televu } from "../../utils/televu";
 import ContentNav from "../../components/contentNav";
 import Overview from "./televu/overview";
-// import AtIssue from "./televu/at-issue";
-// import Opportunity from "./televu/opportunities";
-// import CompetitiveAnalysis from "./televu/comparative-analysis";
 import Solutions from "./televu/solutions";
-// import NextSteps from "./televu/next-steps";
 import OtherMenu from "../../components/footer2";
 import Retrospective from "./televu/retrospective";
-// import Sketching from "./televu/sketching";
-import TheStory from "./televu/the-story";
-// import Impact from "./televu/impact";
 
 export default function TeleVU() {
   const [currentSection, setCurrentSection] = useState(1);
@@ -109,35 +102,13 @@ export default function TeleVU() {
         </div>
         <section className="md:w-4/6 mx-8 md:mx-0 my-5 md:my-28 space-y-20">
           <div id={1}>
-            <TheStory />
+            <Overview />
           </div>
           <div className="space-y-5">
-            <div id={2}>
-              <Overview />
-            </div>
             <div>
               <Solutions />
             </div>
           </div>
-          {/* <div>
-            <AtIssue />
-          </div>
-          <div id={2}>
-            <Opportunity />
-          </div>
-          <div>
-            <CompetitiveAnalysis />
-          </div>
-          <div>
-            <Sketching />
-          </div>
-
-          <div id={3}>
-            <Impact />
-          </div>
-          <div>
-            <NextSteps />
-          </div> */}
           <div id={3}>
             <Retrospective />
           </div>
