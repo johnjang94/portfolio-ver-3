@@ -5,7 +5,8 @@ export default function DataMetrics() {
       <div className="md:mx-20 space-y-5">
         <p className="font-semibold">Understanding the User Experience</p>
         <p className="px-10">
-          Finding the right insurance package is a huge relief to many
+          Finding <span className="underline">the right insurance package</span>{" "}
+          is <span className="text-blue-500">a huge relief</span> to many
           travelers.
         </p>
         <ul className="px-14 space-y-3 list-disc">

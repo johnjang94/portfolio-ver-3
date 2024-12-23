@@ -3,11 +3,8 @@ import { tugoInsurance } from "../../utils/tugo-insurance";
 import ContentNav from "../../components/contentNav";
 import Overview from "./tugo-insurance/overview";
 import DataMetrics from "./tugo-insurance/data-metrics";
-// import Assumption from "./tugo-insurance/assumption";
-// import Opportunities from "./tugo-insurance/opportunities";
-// import CompetitiveAnalysis from "./tugo-insurance/competitive-analysis";
-// import Surveys from "./tugo-insurance/surveys";
 import Solutions from "./tugo-insurance/solutions";
+import UsabilityTesting from "./tugo-insurance/usability-testing";
 import Impact from "./tugo-insurance/impact";
 import NextSteps from "./tugo-insurance/next-steps";
 import Retrospective from "./tugo-insurance/retrospective";
@@ -107,6 +104,9 @@ export default function TuGo() {
             <Solutions />
           </div>
           <div>
+            <UsabilityTesting />
+          </div>
+          <div>
             <Impact />
           </div>
           <div>
@@ -122,39 +122,4 @@ export default function TuGo() {
       </footer>
     </div>
   );
-}
-
-{
-  /* <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 p-5 rounded-xl">
-<div className="md:text-center space-y-2 md:text-3xl text-xl text-white py-10">
-  <h1>
-    Reducing the bounce-off rate{" "}
-    <span className=" bg-[#c6ff80] text-black p-2 rounded-2xl">
-      down to 30%
-    </span>
-  </h1>
-  <h1>what is up with this travel insurance?</h1>
-</div>
-<img
-  src={tugoInsurance.Demo}
-  alt="Demo showcase"
-  width={800}
-  className="rounded-xl mx-auto m-5"
-/>
-</div>
-<div className="md:mx-14">
-<h1 className="text-center md:text-7xl text-lg my-5">
-  TUGO INSURANCE
-</h1>
-<div className="md:mx-44 space-y-5 md:px-5">
-  <p className="px-12">
-    In this project, I was redesigning the onboarding and the
-    exploration experience of TuGo&#39;s insurance products.
-  </p>
-  <div className="flex items-center space-x-5 px-12">
-    <p>My role</p>
-    <p className="font-bold">Associate UX/UI Designer</p>
-  </div>
-</div>
-</div> */
 }

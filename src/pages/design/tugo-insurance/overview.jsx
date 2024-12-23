@@ -7,25 +7,16 @@ export default function Overview() {
           <p className="font-semibold">Problem</p>
           <div className="p-5 space-y-3">
             <p>
-              Travellers who are looking for a travel coverage find the
-              insurance products from TuGo Travel{" "}
-              <span className="text-red-500">not very comprehensive</span>{" "}
-              because...
-            </p>
-            <ul className="space-y-3 list-disc mx-5">
-              <li>
-                navigation is <span className="text-red-500">confusing</span>
-              </li>
-              <li>
-                the process to buy an insurance is{" "}
-                <span className="text-red-500">overwhelming</span>
-              </li>
-            </ul>
-            <p>
-              In this project, I have learned that{" "}
-              <span className="underline">TuGo Travel</span> as an insurance
-              company intends to reduce the stress of documentation by offering
-              competitive packages.
+              Travelers often feel overwhelmed to explore insurance packages at
+              TuGo Travel Insurance company due to{" "}
+              <span className="text-red-500">confusing navigation</span> and{" "}
+              <span className="text-red-500">a lack of clear information</span>.
+              The process of selecting the right package is not only{" "}
+              <span className="underline">time-consuming</span> but also{" "}
+              <span className="text-red-500 underliner">frustrating</span>,
+              leading to{" "}
+              <span className="text-red-500">a higher drop-off rate</span>{" "}
+              before purchase.
             </p>
           </div>
         </div>
