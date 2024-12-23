@@ -1,4 +1,4 @@
-export default function UsabilityTesting() {
+export default function Outcome() {
   return (
     <div>
       <h3 className="text-xl uppercase">Outcome</h3>

@@ -4,7 +4,7 @@ import ContentNav from "../../components/contentNav";
 import Overview from "./tugo-insurance/overview";
 import DataMetrics from "./tugo-insurance/data-metrics";
 import Solutions from "./tugo-insurance/solutions";
-import UsabilityTesting from "./tugo-insurance/usability-testing";
+import Outcome from "./tugo-insurance/outcome";
 import Impact from "./tugo-insurance/impact";
 import NextSteps from "./tugo-insurance/next-steps";
 import Retrospective from "./tugo-insurance/retrospective";
@@ -104,7 +104,7 @@ export default function TuGo() {
             <Solutions />
           </div>
           <div>
-            <UsabilityTesting />
+            <Outcome />
           </div>
           <div>
             <Impact />
