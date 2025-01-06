@@ -9,7 +9,7 @@ export default function Summary() {
             <span className="text-red-500">struggle</span> with shoppers not
             recognizing the connection between menu options and traditional
             holidays. This causes{" "}
-            <span className="text-red-500">confusion</span> when{" "}
+            <span className="text-red-500">confusion</span> among shoppers when{" "}
             <span className="underline">selecting appropriate clothing</span>.
             The Sakhi aims to solve this by{" "}
             <span className="underline">

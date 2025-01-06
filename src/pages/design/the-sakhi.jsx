@@ -118,7 +118,7 @@ export default function SAKHI() {
               </h1>
               <p className="text-white text-center">
                 Designed product contents for a premium Indian brand to raise
-                CTR
+                CTR by <span className="underline font-bold">20%</span>
               </p>
             </div>
             <div className="space-y-5">
