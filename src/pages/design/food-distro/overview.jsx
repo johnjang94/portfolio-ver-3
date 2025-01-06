@@ -12,8 +12,10 @@ export default function Overview() {
             arises due to nearly 1 out of 4 residents are not successful in
             finding the right food they need, resulting in{" "}
             <span className="text-red-500">20% fewer donations</span> over a
-            2-week period. To address this, I updated the search function to
-            help them find the food they were looking for more easily.
+            2-week period. To increase awareness in where residents can find or
+            donate the food on-demand, I updated the search function to
+            <span className="underline text-blue-500">help them find</span> the
+            food they were looking for more easily.
           </p>
           <p className="p-5">
             Please note that this project, Food Distro, is currently{" "}
