@@ -36,7 +36,7 @@ const data = [
     title: "Search optimization for enhanced engagement",
     subtitle:
       "Low effort solution to improve search and messaging for locals for social service mobile app, Food Distro",
-    category: ["UX/UI Design", "Non-Profit"],
+    category: ["UX/UI Design", "Mobile App Design", "Non-Profit"],
     link: "/food-distro",
   },
   {
@@ -47,7 +47,7 @@ const data = [
     title: "Revamping insurance UI to increase retention rate",
     subtitle:
       "Simplify navigation process to raise usability and aesthetics for a travel insurance company, TuGo Travel",
-    category: ["UX/UI Design", "Web Redesign"],
+    category: ["UX/UI Design", "Fin-tech", "Web Redesign"],
     link: "/tugo-insurance",
   },
   {
@@ -57,7 +57,7 @@ const data = [
     title: "Quality improvement for video-calls",
     subtitle:
       "Next level controls for remote clinic sessions for TeleVU Innovation",
-    category: ["UX/UI Design", "Web Redesign"],
+    category: ["UX/UI Design", "Health-tech", "Web Redesign"],
     link: "/televu",
   },
 ];
@@ -113,13 +113,7 @@ export default function Home() {
         </div>
         <div className="mt-10 md:my-12 md:pb-5">
           <h3 className="text-center md:text-2xl text-xl">Fun Facts</h3>
-          <div className="md:grid md:grid-cols-3 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
-            <div className="bg-white rounded-2xl p-3 h-full">
-              <p>
-                If B2B design challenges were a sport, I would probably have a
-                few trophies by now.
-              </p>
-            </div>
+          <div className="md:grid md:grid-cols-2 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
                 In cross-functional teams, I am like the curious detective —-

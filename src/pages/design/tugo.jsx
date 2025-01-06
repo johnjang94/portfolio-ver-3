@@ -59,7 +59,8 @@ export default function TuGo() {
               </h1>
               <p className="text-white text-center">
                 Simplify navigation process to raise usability and aesthetic
-                appeal
+                appeal and boost the conversation rate by{" "}
+                <span className="underline font-bold">5%</span>
               </p>
             </div>
             <div className="space-y-5 w-full flex justify-center">

@@ -5,7 +5,7 @@ export default function Impact() {
       <div className="md:mx-20 my-3 space-y-5">
         <p>
           By increasing the task success rate by{" "}
-          <span className="text-blue-500">20%</span>, I anticipate the boost in
+          <span className="text-blue-500">60%</span>, I anticipate the boost in
           the conversion around <span className="underline">5%</span>. The
           redesign not only simplifies the user experience but also paves the
           way for increased customer trust and repeat engagement.
