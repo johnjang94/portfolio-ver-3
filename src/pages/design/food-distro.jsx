@@ -66,7 +66,7 @@ export default function Food() {
               </h1>
               <p className="text-white text-center">
                 Low effort solution to improve search for food and connect
-                locals
+                locals by <span className="underline font-bold">15%</span>
               </p>
             </div>
             <div className="space-y-5 w-full flex justify-center">
