@@ -13,7 +13,7 @@ const data = [
     icon: "🔒",
     title: "Coming soon: Inventory optimization for improved management",
     subtitle:
-      "Increasing real-time change detection for inventory management (room status + catering)",
+      "Reducing missed-catering orders and recovering room-service losses",
     category: ["Product Design", "SaaS product", "start-up"],
     link: "/operate",
   },
