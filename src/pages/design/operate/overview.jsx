@@ -6,12 +6,21 @@ export default function Overview() {
         <div>
           <p className="font-semibold">At Issue</p>
           <p className="p-5">
-            Hoteliers <span className="text-red-500">missed</span>{" "}
-            <span className="underline">real-time updates</span>, leading to{" "}
-            <span className="text-red-500">booking errors</span> and{" "}
-            <span className="text-red-500">inventory shortages</span>. To
-            address this, I designed a dashboard with real-time updates and
-            notifications here at OperateEase.
+            Hoteliers who used other management systems (PMS + CMS){" "}
+            <span className="text-red-500">did not have flexibility</span> that
+            meet their expectations{" "}
+            <span className="underline">in rate adjustment</span> for booking
+            and catering services faced{" "}
+            <span className="text-red-500">
+              the loss of potential additional income of 15%
+            </span>{" "}
+            of their monthly base income and{" "}
+            <span className="text-red-500">inventory shortages</span> depending
+            on the platform. To recover the loss, I designed new management
+            dashboard for booking services with options for price adjustments
+            and new management dashboard for catering services along with
+            real-time updates and simplicity for both dashboards here at
+            OperateEase, an independent SaaS project.
           </p>
         </div>
         <div>

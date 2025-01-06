@@ -35,7 +35,7 @@ const data = [
     icon: "",
     title: "Search optimization for enhanced engagement",
     subtitle:
-      "Low effort solution to improve search and reach out to each other",
+      "Low effort solution to improve search and messaging for locals for social service mobile app, Food Distro",
     category: ["UX/UI Design", "Non-Profit"],
     link: "/food-distro",
   },
@@ -45,7 +45,8 @@ const data = [
     imgAlt: "TuGo",
     icon: "",
     title: "Revamping insurance UI to increase retention rate",
-    subtitle: "Simplify navigation process to raise usability and aesthetics",
+    subtitle:
+      "Simplify navigation process to raise usability and aesthetics for a travel insurance company, TuGo Travel",
     category: ["UX/UI Design", "Web Redesign"],
     link: "/tugo-insurance",
   },
@@ -54,7 +55,8 @@ const data = [
     imgSrc: home.TeleVU,
     imgAlt: "TeleVU",
     title: "Quality improvement for video-calls",
-    subtitle: "Next level controls for remote clinic sessions",
+    subtitle:
+      "Next level controls for remote clinic sessions for TeleVU Innovation",
     category: ["UX/UI Design", "Web Redesign"],
     link: "/televu",
   },

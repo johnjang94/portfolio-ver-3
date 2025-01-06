@@ -21,25 +21,20 @@ export default function About() {
               <div>
                 <div className="space-y-3">
                   <h1 className="font-bold text-xl">
-                    A Designer shaped by Curiousity and Elegance
+                    A Designer shaped by Curiosity and Elegance
                   </h1>
                   <p>
                     I design with a focus on clarity, elegance, and thoughtful
                     solutions. My approach is grounded in curiosity --- whether
-                    it is about refining user flows for dynamic SaaS platform or
-                    improving payment process for a Shopify E-commerce platform.
-                    I thrive on creating designs that feel intuitive, foster
-                    connection, and adapt seamlessly to real-world needs.
+                    it is about optimizing inventory management for dynamic SaaS
+                    platform or improving onboarding experience for a Shopify
+                    E-commerce platform. I thrive on creating designs that feel
+                    intuitive, foster connection, and adapt seamlessly to
+                    real-world needs.
                   </p>
                 </div>
               </div>
             </div>
-            {/* <div className="px-5 space-y-2 md:mx-10 xl:mx-0">
-              <p className="font-bold">Current Role</p>
-              <p>
-                I am a Product Designer at OPERATE-EASE, an independent SaaS project that seeks to automate hospitality management.
-              </p>
-            </div> */}
           </div>
         </div>
       </div>

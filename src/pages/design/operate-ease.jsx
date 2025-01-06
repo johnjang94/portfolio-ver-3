@@ -129,7 +129,11 @@ export default function OPERATE() {
                 Inventory Optimization for Improved Management
               </h1>
               <p className="text-white text-center">
-                Increasing real-time change detection for inventory management
+                Reducing missed catering orders by{" "}
+                <span className="font-bold underline">40%</span>
+                <br /> and recovering{" "}
+                <span className="font-bold underline">15%</span> in room service
+                losses <br />
                 (room occupancy and food/beverage storage)
               </p>
             </div>
