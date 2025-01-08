@@ -132,7 +132,7 @@ export default function OPERATE() {
                 Reducing missed catering orders by{" "}
                 <span className="font-bold underline">40%</span>
                 <br /> and recovering{" "}
-                <span className="font-bold underline">15%</span> in room service
+                <span className="font-bold underline">15%</span> in room booking
                 losses <br />
                 (room occupancy and food/beverage storage)
               </p>
@@ -172,7 +172,7 @@ export default function OPERATE() {
             </div>
             <div className="flex space-x-5 text-black">
               <p className="font-bold">Timeline</p>
-              <p>August 2024 ~ Present (20 Weeks)</p>
+              <p>August 2024 ~ Present</p>
             </div>
           </div>
         </div>

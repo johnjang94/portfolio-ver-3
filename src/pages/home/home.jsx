@@ -14,7 +14,7 @@ const data = [
     title: "Coming soon: Inventory optimization for improved management",
     subtitle:
       "Reducing missed-catering orders and recovering room-service losses",
-    category: ["Product Design", "SaaS product", "start-up"],
+    category: ["Product Design", "SaaS product"],
     link: "/operate",
   },
   {
@@ -140,16 +140,7 @@ export default function Home() {
           </Link>
         </div>
       </header>
-      <section className="md:mx-36 mx-12 space-y-10 py-14">
-        <h3 className="text-center md:text-2xl text-base py-1">
-          Hope you enjoy my design samples!
-        </h3>
-        <img
-          src={home.Contributions}
-          alt="Contribution"
-          width={1200}
-          className="mx-auto rounded-2xl"
-        />
+      <section className="md:mx-36 mx-12 space-y-10 py-14 md:py-0">
         <div>
           <h3 className="py-5 text-center md:text-2xl text-xl">
             So, what is the story of my design portfolio?

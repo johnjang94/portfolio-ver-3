@@ -20,29 +20,19 @@ export default function Overview() {
             dashboard for booking services with options for price adjustments
             and new management dashboard for catering services along with
             real-time updates and simplicity for both dashboards here at
-            OperateEase, an independent SaaS project.
+            OperateEase, an independent B2B SaaS project.
           </p>
         </div>
         <div>
           <p className="font-semibold">Outcome</p>
-          <p className="px-8 py-5">
-            During the first round of usability testing, participating hoteliers
-            successfully:
-          </p>
-          <ul className="space-y-3 mx-12 list-disc">
-            <li>
-              Checked reports for budgets, room rates, and catering services.
-            </li>
-            <li>Adjusted room rates effortlessly.</li>
-            <li>
-              Located partner business contacts and understood how to
-              communicate with representatives.
-            </li>
-            <li>
-              Learned how to manually process check-ins and check-outs when
-              needed.
-            </li>
-          </ul>
+          <div className="px-8 mt-10 py-5 flex items-center text-3xl justify-center space-x-64">
+            <p>80%</p>
+            <p>90%</p>
+          </div>
+          <div className="px-8 flex items-center mx-24 space-x-52 text-sm">
+            <p className="md:ml-20">positive remarks in live updates</p>
+            <p>of users said that it is smooth and easy to adjust the rates</p>
+          </div>
         </div>
       </div>
     </div>
