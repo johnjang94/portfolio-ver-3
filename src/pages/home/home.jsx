@@ -96,11 +96,13 @@ export default function Home() {
     <div>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
         <div className="p-10">
-          <h1 className="text-5xl py-5 text-blue-500">John Jang</h1>
+          <h1 className="md:text-5xl text-4xl py-5 text-blue-500">John Jang</h1>
           <div className="mb-3 md:mb-0">
             {/* <h1>I&#39;m a {currentMethod}</h1> */}
-            <h1 className="text-5xl text-blue-500">Product Designer</h1>
-            <p className="text-2xl font-semibold my-5">
+            <h1 className="md:text-5xl text-4xl text-blue-500">
+              Product Designer
+            </h1>
+            <p className="md:text-2xl text-xl font-semibold my-5">
               A curious-minded data-lover with a drive for elegance and
               simplicity
             </p>
@@ -147,7 +149,7 @@ export default function Home() {
       </header>
       <section className="md:mx-36 mx-12 space-y-10 py-14 md:py-0">
         <div>
-          <h3 className="py-5 text-center md:text-2xl text-xl">
+          <h3 className="py-5 text-center md:text-2xl">
             So, what is the story of my design portfolio?
           </h3>
           {data
