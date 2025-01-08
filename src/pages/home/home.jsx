@@ -11,10 +11,10 @@ const data = [
     imgSrc: home.OperateEase,
     imgAlt: "OperateEase",
     icon: "🔒",
-    title: "Coming soon: Inventory optimization for improved management",
+    title: "Inventory optimization for improved management",
     subtitle:
       "Reducing missed-catering orders and recovering room-service losses",
-    category: ["Product Design", "SaaS product"],
+    category: ["Product Design", "B2B", "SaaS product"],
     link: "/operate",
   },
   {
@@ -25,7 +25,7 @@ const data = [
     title: "User-Centric E-commerce Design",
     subtitle:
       "Designed product contents for a premium Indian brand, The Sakhi, to raise CTR",
-    category: ["Product Design", "E-commerce", "start-up"],
+    category: ["Product Design", "B2C", "E-commerce", "start-up"],
     link: "/sakhi",
   },
   {
@@ -67,7 +67,7 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [currentMethod, setCurrentMethod] = useState("");
+  const [, /*currentMethod*/ setCurrentMethod] = useState("");
   const [methodIndex, setMethodIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 
@@ -95,13 +95,20 @@ export default function Home() {
   return (
     <div>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
-        <div className="p-10 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6] rounded-2xl">
-          <h1 className="md:text-5xl text-2xl py-5">Hi, I&#39;m John Jang.</h1>
+        <div className="p-10">
+          <h1 className="md:text-5xl text-2xl py-5 text-blue-500">John Jang</h1>
           <div className="md:text-xl text-base mb-3 md:mb-0">
-            <h1>I&#39;m a {currentMethod}</h1>
+            {/* <h1>I&#39;m a {currentMethod}</h1> */}
+            <h1 className="md:text-5xl text-2xl text-blue-500">
+              Product Designer
+            </h1>
+            <p className="text-2xl font-semibold my-5">
+              A curious-minded data-lover with a drive for elegance and
+              simplicity
+            </p>
             <p>
-              A designer with technical expertise, ensuring designs are not only
-              user-friendly but also feasible for implementation.
+              Bringing cross-industry insights to create user-centered designs
+              that adapt, inspire, and deliver meaningful results
             </p>
           </div>
           <div>
