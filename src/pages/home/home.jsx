@@ -96,12 +96,10 @@ export default function Home() {
     <div>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
         <div className="p-10">
-          <h1 className="md:text-5xl text-2xl py-5 text-blue-500">John Jang</h1>
-          <div className="md:text-xl text-base mb-3 md:mb-0">
+          <h1 className="text-5xl py-5 text-blue-500">John Jang</h1>
+          <div className="mb-3 md:mb-0">
             {/* <h1>I&#39;m a {currentMethod}</h1> */}
-            <h1 className="md:text-5xl text-2xl text-blue-500">
-              Product Designer
-            </h1>
+            <h1 className="text-5xl text-blue-500">Product Designer</h1>
             <p className="text-2xl font-semibold my-5">
               A curious-minded data-lover with a drive for elegance and
               simplicity
