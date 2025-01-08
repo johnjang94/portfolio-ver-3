@@ -1,4 +1,4 @@
-import { OperateEase } from "../../../utils/operate";
+// import { OperateEase } from "../../../utils/operate";
 
 export default function CompetitiveAnalysis() {
   return (
@@ -14,16 +14,17 @@ export default function CompetitiveAnalysis() {
           <li className="mx-10">key statistics</li>
           <li className="mx-10">operation expenses</li>
         </ul>
-        <img
+        {/* <img
           src={OperateEase.Competition}
           alt="Competitive analysis"
           width={1200}
           className="rounded-2xl mx-auto"
-        />
+        /> */}
         <ul className="list-disc space-y-3 my-5">
           <p>
-            Still, they <span className="text-red-500">fall short</span> on the
-            following points despite the benefits:
+            ...and I have discovered that many existing platforms{" "}
+            <span className="text-red-500">fall short</span> on the following
+            points despite the benefits:
           </p>
           <li className="mx-10">
             overwhelming amount of information on the dashboard

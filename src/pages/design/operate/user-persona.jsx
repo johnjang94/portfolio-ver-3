@@ -2,7 +2,7 @@ import { OperateEase } from "../../../utils/operate";
 
 export default function UserPersona() {
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 -mt-10">
       <p className="md:mx-28">
         According to surveys and interviews we have conducted, we have come to
         understand that the hoteliers found the inventory management as the core

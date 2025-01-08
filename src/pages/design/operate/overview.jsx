@@ -5,7 +5,7 @@ export default function Overview() {
       <div className="md:mx-20 my-3 space-y-5">
         <div>
           <p className="font-semibold">At Issue</p>
-          <p className="p-5">
+          <p className="md:p-5 py-5">
             Hoteliers who used other management systems (PMS + CMS){" "}
             <span className="text-red-500">did not have flexibility</span> that
             meet their expectations{" "}
@@ -25,13 +25,17 @@ export default function Overview() {
         </div>
         <div>
           <p className="font-semibold">Outcome</p>
-          <div className="px-8 mt-10 py-5 flex items-center text-3xl justify-center space-x-64">
-            <p>80%</p>
-            <p>90%</p>
-          </div>
-          <div className="px-8 flex items-center mx-24 space-x-52 text-sm">
-            <p className="md:ml-20">positive remarks in live updates</p>
-            <p>of users said that it is smooth and easy to adjust the rates</p>
+          <div className="flex-col grid-cols-2 my-10">
+            <div className="text-3xl md:text-5xl flex items-center space-x-20 md:justify-center md:space-x-96">
+              <p>80%</p>
+              <p>90%</p>
+            </div>
+            <div className="flex items-center gap-5 text-sm md:mx-auto md:gap-0 md:space-x-48 md:justify-center my-3">
+              <p>positive remarks in live updates</p>
+              <p className="md:w-2/6">
+                of users said that it is smooth and easy to adjust the rates
+              </p>
+            </div>
           </div>
         </div>
       </div>

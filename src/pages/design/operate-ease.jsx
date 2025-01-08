@@ -125,7 +125,7 @@ export default function OPERATE() {
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
           <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl">
             <div className="w-full my-20 space-y-5">
-              <h1 className="text-4xl text-center text-white">
+              <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-white">
                 Inventory Optimization for Improved Management
               </h1>
               <p className="text-white text-center">

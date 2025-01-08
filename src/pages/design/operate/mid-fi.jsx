@@ -6,7 +6,7 @@ export default function MidFi() {
     <div>
       <h3 className="text-xl uppercase">Mid-Fi</h3>
       <div className="md:mx-20 my-5 space-y-5 list-decimal">
-        <p className="px-10">
+        <p className="md:px-10">
           The direction of the project changed during my iteration:
         </p>
         <div className="space-y-3 text-center">
