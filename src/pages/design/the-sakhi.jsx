@@ -113,13 +113,14 @@ export default function SAKHI() {
         <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 rounded-xl mx-10 md:gap-3">
           <div className="md:grid md:grid-cols-2 py-20 items-center">
             <div className="w-full my-20 space-y-5">
-              <h1 className="text-3xl text-center text-white">
+              <h1 className="md:text-4xl text-xl text-center text-white">
                 User-Centric E-commerce Design
               </h1>
-              <p className="text-white text-center">
-                Designed product contents for a premium Indian brand to raise
-                CTR by <span className="underline font-bold">20%</span>
-              </p>
+              <div className="space-y-1 py-10">
+                <p className="text-white md:text-3xl text-lg text-center underline">
+                  CTR by 20%
+                </p>
+              </div>
             </div>
             <div className="space-y-5">
               <img
