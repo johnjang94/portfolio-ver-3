@@ -36,34 +36,6 @@ export default function Overview() {
             </div>
           </div>
         </div>
-        {/*  */}
-        <div>
-          <p className="font-semibold pt-5">Outcome</p>
-          <div className="space-y-3 py-3">
-            <p className="px-5">
-              From the usability testing,{" "}
-              <span className="text-blue-500">16 out of 18 participants</span>,{" "}
-              as a donation-receiver, were able to{" "}
-              <span className="text-blue-500">
-                successfully use the filter function
-              </span>{" "}
-              and{" "}
-              <span className="text-blue-500">
-                were able to find the products
-              </span>{" "}
-              they were looking for on the map in addition to learning about the
-              food-giver. They were able to find out{" "}
-              <span className="underline">
-                the freshness of the donated item
-              </span>
-              ,{" "}
-              <span className="underline">
-                the distance between the food-giver and themselves
-              </span>
-              , and <span className="underline">explore for more options</span>.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
