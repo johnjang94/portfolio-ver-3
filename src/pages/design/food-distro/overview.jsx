@@ -25,6 +25,20 @@ export default function Overview() {
         </div>
         <div>
           <p className="font-semibold pt-5">Outcome</p>
+          <div className="flex-col grid-cols-2 my-10">
+            <div className="text-3xl md:text-5xl grid grid-cols-2 text-center">
+              <p>88%</p>
+              <p>85%</p>
+            </div>
+            <div className="text-sm grid grid-cols-2 my-3 text-center space-x-32">
+              <p>of users found the filter to be easy-to-use</p>
+              <p className="md:w-2/6">found review system reliable</p>
+            </div>
+          </div>
+        </div>
+        {/*  */}
+        <div>
+          <p className="font-semibold pt-5">Outcome</p>
           <div className="space-y-3 py-3">
             <p className="px-5">
               From the usability testing,{" "}

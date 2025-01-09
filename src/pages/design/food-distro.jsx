@@ -12,8 +12,8 @@ import Sketching from "./food-distro/sketching";
 import Solutions from "./food-distro/solutions";
 import Retrospective from "./food-distro/retrospective";
 import NextSteps from "./food-distro/next-steps";
-import StyleGuide from "./food-distro/style-guide";
-import MockUpPrototype from "./food-distro/mock-up-prototype";
+// import StyleGuide from "./food-distro/style-guide";
+// import MockUpPrototype from "./food-distro/mock-up-prototype";
 import Impact from "./food-distro/impact";
 
 export default function Food() {
@@ -64,10 +64,12 @@ export default function Food() {
               <h1 className="text-4xl text-center text-white">
                 Search Optimization for Enhanced Engagement
               </h1>
-              <p className="text-white text-center">
-                Low effort solution to improve search for food and connect
-                locals by <span className="underline font-bold">15%</span>
-              </p>
+              <div className="py-10 space-y-1">
+                <p className="text-white text-3xl text-center">
+                  Search improved by
+                </p>
+                <p className="text-white text-3xl text-center underline">15%</p>
+              </div>
             </div>
             <div className="space-y-5 w-full flex justify-center">
               <img
@@ -143,12 +145,12 @@ export default function Food() {
           <div>
             <Sketching />
           </div>
-          <div>
+          {/* <div>
             <StyleGuide />
           </div>
           <div>
             <MockUpPrototype />
-          </div>
+          </div> */}
           <div id={3}>
             <Impact />
           </div>
