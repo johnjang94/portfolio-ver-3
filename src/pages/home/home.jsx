@@ -15,6 +15,8 @@ const data = [
     subtitle:
       "Reducing missed-catering orders and recovering room-service losses",
     category: ["Product Design", "B2B", "SaaS product"],
+    percentage: ["40%", "15%"],
+    highlight: ["corrected order", "loss recovery"],
     link: "/operate",
   },
   {
@@ -187,14 +189,14 @@ export default function Home() {
                         <p className="font-normal">{item.subtitle}</p>
                       )}
                     </div>
-                    <div className="flex md:space-x-5 space-x-1">
-                      {item.category?.map((category, index) => (
-                        <span
-                          key={index}
-                          className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
-                        >
-                          {category}
+                    <div className="grid grid-cols-2 text-center">
+                      {item.percentage?.map((percentage, index) => (
+                        <span key={index} className="md:text-2xl text-lg">
+                          {percentage}
                         </span>
+                      ))}
+                      {item.highlight?.map((highlight, index) => (
+                        <span key={index}>{highlight}</span>
                       ))}
                     </div>
                   </div>
