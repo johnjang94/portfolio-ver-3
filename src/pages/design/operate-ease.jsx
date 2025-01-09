@@ -128,14 +128,26 @@ export default function OPERATE() {
               <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-white">
                 Inventory Optimization for Improved Management
               </h1>
-              <p className="text-white text-center">
-                Reducing missed catering orders by{" "}
-                <span className="font-bold underline">40%</span>
-                <br /> and recovering{" "}
-                <span className="font-bold underline">15%</span> in room booking
-                losses <br />
-                (room occupancy and food/beverage storage)
-              </p>
+              <div className="grid grid-cols-2 py-10">
+                <div>
+                  <p className="text-white text-center text-3xl">40%</p>
+                  <p className="text-white text-center text-3xl underline">
+                    Reduced
+                  </p>
+                  <p className="text-white text-center my-3">
+                    in missing catering orders
+                  </p>
+                </div>
+                <div>
+                  <p className="text-white text-center text-3xl">15%</p>
+                  <p className="text-white text-center text-3xl underline">
+                    Recovered
+                  </p>
+                  <p className="text-white text-center my-3">
+                    from room booking loss
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="space-y-5 w-full flex justify-center">
               <img
