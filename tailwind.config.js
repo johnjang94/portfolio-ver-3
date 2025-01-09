@@ -6,6 +6,8 @@ export default {
       animation: {
         "white-to-black": "white-to-black 5s ease-in-out forwards",
         "gradient-shift": "gradient-shift 2s ease infinite",
+        slide: "slide 4s infinite",
+        "slide-2s": "slide 4s infinite 2s",
       },
       backgroundImage: {
         glow: "url('/src/assets/accessory/background.png')",

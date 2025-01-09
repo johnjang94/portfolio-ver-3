@@ -100,18 +100,30 @@ export default function Home() {
             John Jang
           </h1>
           <div className="md:mb-0">
+            <div className="flex">
+              <div className="relative w-full h-14 overflow-hidden md:text-5xl text-2xl text-blue-500 font-bold">
+                <div className="absolute w-full animate-[slide_4s_infinite]">
+                  Product Designer
+                </div>
+                <div className="absolute w-full animate-[slide_4s_infinite_2s]">
+                  UX Engineer
+                </div>
+              </div>
+            </div>
             {/* <h1>I&#39;m a {currentMethod}</h1> */}
-            <h1 className="md:text-5xl text-2xl text-blue-500 font-bold">
+            {/* <h1 className="md:text-5xl text-2xl text-blue-500 font-bold">
               Product Designer
-            </h1>
-            <p className="md:text-2xl text-lg font-semibold my-5">
-              A curious-minded data-lover with a drive for elegance and
-              simplicity
-            </p>
-            <p>
-              Bringing cross-industry insights to create user-centered designs
-              that adapt, inspire, and deliver meaningful results
-            </p>
+            </h1> */}
+            <div className="space-y-5 md:my-5">
+              <p className="md:text-2xl text-lg font-semibold">
+                A curious-minded data-lover with a drive for elegance and
+                simplicity
+              </p>
+              <p>
+                Bringing cross-industry insights to create user-centered designs
+                that adapt, inspire, and deliver meaningful results
+              </p>
+            </div>
           </div>
           <div>
             <p className="my-5 text-sm text-teal-800">
