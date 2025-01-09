@@ -4,21 +4,27 @@ import App from "./App.jsx";
 import "./index.css";
 
 if (
-  import.meta.env.VITE_ENABLE_CLARITY === "true" &&
-  import.meta.env.VITE_CLARITY_ID
+  import.meta.env.VITE_ENABLE_GTAG === "true" &&
+  import.meta.env.VITE_GTAG_ID
 ) {
-  (function (c, l, a, r, i, t, y) {
-    c[a] =
-      c[a] ||
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    const f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l !== "dataLayer" ? `&l=${l}` : "";
+    j.async = true;
+    j.src = `https://www.googletagmanager.com/gtag/js?id=${i}${dl}`;
+    f.parentNode.insertBefore(j, f);
+
+    w.gtag =
+      w.gtag ||
       function () {
-        (c[a].q = c[a].q || []).push(arguments);
+        w.dataLayer.push(arguments);
       };
-    t = l.createElement(r);
-    t.async = 1;
-    t.src = "https://www.clarity.ms/tag/" + i;
-    y = l.getElementsByTagName(r)[0];
-    y.parentNode.insertBefore(t, y);
-  })(window, document, "clarity", "script", import.meta.env.VITE_CLARITY_ID);
+    w.gtag("js", new Date());
+    w.gtag("config", "G-CDJFZHVNQ8");
+  })(window, document, "script", "dataLayer", import.meta.env.VITE_GTAG_ID);
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(

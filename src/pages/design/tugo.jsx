@@ -54,13 +54,11 @@ export default function TuGo() {
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
           <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl">
             <div className="w-full my-20 space-y-5">
-              <h1 className="text-3xl text-center text-white">
+              <h1 className="md:text-3xl text-xl text-center text-white">
                 Revamping insurance onboarding to increase retention rate
               </h1>
-              <p className="text-white text-center">
-                Simplify navigation process to raise usability and aesthetic
-                appeal and boost the conversation rate by{" "}
-                <span className="underline font-bold">5%</span>
+              <p className="text-white text-center md:text-3xl underline py-10">
+                5% Boosted Conversion Rate
               </p>
             </div>
             <div className="space-y-5 w-full flex justify-center">
