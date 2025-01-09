@@ -23,7 +23,7 @@ if (
         w.dataLayer.push(arguments);
       };
     w.gtag("js", new Date());
-    w.gtag("config", "G-CDJFZHVNQ8");
+    w.gtag("config", i);
   })(window, document, "script", "dataLayer", import.meta.env.VITE_GTAG_ID);
 }
 
