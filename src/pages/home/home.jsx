@@ -1,9 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { home } from "../../utils/home";
-
-const methods = ["Product Designer.", "UX Designer.", "Web Designer."];
 
 const data = [
   {
@@ -28,6 +26,8 @@ const data = [
     subtitle:
       "Designed product contents for a premium Indian brand, The Sakhi, to raise CTR",
     category: ["Product Design", "B2C", "E-commerce", "start-up"],
+    percentage: ["20%", "75%"],
+    highlight: ["search optimization", "improved usability"],
     link: "/sakhi",
   },
   {
@@ -39,6 +39,8 @@ const data = [
     subtitle:
       "Low effort solution to improve search and messaging for locals for social service mobile app, Food Distro",
     category: ["UX/UI Design", "Mobile App Design", "Non-Profit"],
+    percentage: ["88%", "85%"],
+    highlight: ["improved filter", "increased system reliability"],
     link: "/food-distro",
   },
   {
@@ -69,31 +71,6 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [, /*currentMethod*/ setCurrentMethod] = useState("");
-  const [methodIndex, setMethodIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-
-  useEffect(() => {
-    if (methodIndex < methods.length) {
-      if (charIndex < methods[methodIndex].length) {
-        const typingTimer = setTimeout(() => {
-          setCurrentMethod((prev) => prev + methods[methodIndex][charIndex]);
-          setCharIndex((prev) => prev + 1);
-        }, 100);
-
-        return () => clearTimeout(typingTimer);
-      } else {
-        const pauseTimer = setTimeout(() => {
-          setCurrentMethod("");
-          setCharIndex(0);
-          setMethodIndex((prev) => (prev + 1) % methods.length);
-        }, 2000);
-
-        return () => clearTimeout(pauseTimer);
-      }
-    }
-  }, [charIndex, methodIndex]);
-
   return (
     <div>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
@@ -112,10 +89,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* <h1>I&#39;m a {currentMethod}</h1> */}
-            {/* <h1 className="md:text-5xl text-2xl text-blue-500 font-bold">
-              Product Designer
-            </h1> */}
             <div className="space-y-5 md:my-5">
               <p className="md:text-2xl text-lg font-semibold">
                 A curious-minded data-lover with a drive for elegance and
@@ -189,7 +162,7 @@ export default function Home() {
                         <p className="font-normal">{item.subtitle}</p>
                       )}
                     </div>
-                    <div className="grid grid-cols-2 text-center">
+                    <div className="grid grid-cols-2 text-center py-3">
                       {item.percentage?.map((percentage, index) => (
                         <span key={index} className="md:text-2xl text-lg">
                           {percentage}
@@ -233,6 +206,16 @@ export default function Home() {
                       >
                         {category}
                       </span>
+                    ))}
+                  </div>
+                  <div className="grid grid-cols-2 text-center py-3">
+                    {item.percentage?.map((percentage, index) => (
+                      <span key={index} className="md:text-2xl text-lg">
+                        {percentage}
+                      </span>
+                    ))}
+                    {item.highlight?.map((highlight, index) => (
+                      <span key={index}>{highlight}</span>
                     ))}
                   </div>
                 </div>
