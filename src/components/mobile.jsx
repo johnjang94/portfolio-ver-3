@@ -60,7 +60,7 @@ export default function Mobile({ pathname }) {
               <button className="p-2">about</button>
             </Link>
           </li>
-          <li
+          {/* <li
             className={`text-xl sm:text-base transition-transform duration-500 ease-in-out ${
               isMenuOpen
                 ? "translate-x-0 delay-[600ms]"
@@ -70,12 +70,12 @@ export default function Mobile({ pathname }) {
             <Link to="/resume" onClick={closeMenu}>
               <button className="p-2">resume</button>
             </Link>
-          </li>
+          </li> */}
           <li
             className={`text-xl sm:text-base transition-transform duration-500 ease-in-out ${
               isMenuOpen
-                ? "translate-x-0 delay-[800ms]"
-                : "-translate-x-full delay-[200ms]"
+                ? "translate-x-0 delay-[600ms]"
+                : "-translate-x-full delay-[400ms]"
             }`}
           >
             <Link to="/contact" onClick={closeMenu}>
