@@ -100,12 +100,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div>
+          {/* <div>
             <p className="my-5 text-sm text-teal-800">
               Currently, I&#39;m open to new Product Design or UX/UI Design
               roles!
             </p>
-          </div>
+          </div> */}
         </div>
         <div className="mt-10 md:my-12 md:pb-5">
           <h3 className="text-center md:text-2xl text-xl">Fun Facts</h3>
