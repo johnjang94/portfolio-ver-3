@@ -10,7 +10,7 @@ export default function About() {
     <div>
       <div className="md:flex md:space-x-2 md:my-10 md:items-center md:justify-center text-center"></div>
       <div>
-        <div className="xl:flex xl:items-center md:w-4/6 md:mx-auto mx-10 md:my-10 xl:gap-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 bg-gradient-to-br border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; bg-[#f6f6f6]">
+        <div className="xl:flex xl:items-center md:w-4/6 md:mx-auto mx-10 md:my-10 xl:gap-10 my-5 p-5 rounded-2xl space-y-5 md:space-y-0 border-white border-2 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px">
           <img
             src={MyIntroduction.About}
             alt="My profile"
@@ -20,6 +20,9 @@ export default function About() {
             <div className="px-5 md:space-y-10 space-y-2 py-10 xl:py-12 md:mx-10 xl:mx-0">
               <div>
                 <div className="space-y-3">
+                  <h1 className="text-3xl md:py-5 text-blue-500 font-bold">
+                    About me
+                  </h1>
                   <h1 className="font-bold text-xl">
                     A Designer shaped by Curiosity and Elegance
                   </h1>
@@ -40,7 +43,7 @@ export default function About() {
       <div className="md:w-4/6 md:mx-auto mx-10 my-20">
         <h2 className="font-bold py-3 text-2xl">My Design Principles</h2>
         <div className="md:grid md:grid-cols-3 md:gap-5 space-y-5 md:space-y-0">
-          <div className="bg-white rounded-xl p-2 space-y-3">
+          <div className="border-white border-2 rounded-xl p-2 space-y-3">
             <p className="font-semibold text-center underline">
               North Star Method
             </p>
@@ -50,7 +53,7 @@ export default function About() {
               bring together.
             </p>
           </div>
-          <div className="bg-white rounded-xl p-2 space-y-3">
+          <div className="border-white border-2 rounded-xl p-2 space-y-3">
             <p className="font-semibold text-center underline">Collaboration</p>
             <p>
               Collaboration is the key to success. I believe that, in a group
@@ -58,7 +61,7 @@ export default function About() {
               developers help us to build a good product.
             </p>
           </div>
-          <div className="bg-white rounded-xl p-2 space-y-3">
+          <div className="border-white border-2 rounded-xl p-2 space-y-3">
             <p className="font-semibold text-center underline">Communication</p>
             <p>
               I always do my best to keep everything open and transparent to
