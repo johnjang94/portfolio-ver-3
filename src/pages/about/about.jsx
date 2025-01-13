@@ -25,11 +25,9 @@ export default function About() {
                   </h1>
                   <p>
                     I design with a focus on clarity, elegance, and thoughtful
-                    solutions. My approach is grounded in curiosity --- whether
-                    it is about optimizing inventory management for dynamic SaaS
-                    platform or improving onboarding experience for a Shopify
-                    E-commerce platform. I thrive on creating designs that feel
-                    intuitive, foster connection, and adapt seamlessly to
+                    solutions. My approach is grounded in curiosity, and I
+                    follow visuals and data. I thrive on creating designs that
+                    feel intuitive, foster connection, and adapt seamlessly to
                     real-world needs.
                   </p>
                 </div>
