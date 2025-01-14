@@ -81,10 +81,13 @@ export default function Home() {
           <div className="md:mb-0">
             <div className="flex">
               <div className="relative w-full h-14 overflow-hidden md:text-5xl text-2xl text-blue-500 font-bold">
-                <div className="absolute w-full animate-[slide_4s_infinite]">
+                <div className="absolute w-full animate-slide-ux">
+                  UX Designer
+                </div>
+                <div className="absolute w-full animate-slide-product">
                   Product Designer
                 </div>
-                <div className="absolute w-full animate-[slide_4s_infinite_2s]">
+                <div className="absolute w-full animate-slide-engineer">
                   UX Engineer
                 </div>
               </div>
@@ -107,7 +110,7 @@ export default function Home() {
             </p>
           </div> */}
         </div>
-        <div className="mt-10 md:my-12 md:pb-5">
+        {/* <div className="mt-10 md:my-12 md:pb-5">
           <h3 className="text-center md:text-2xl text-xl">Fun Facts</h3>
           <div className="md:grid md:grid-cols-2 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
             <div className="bg-white rounded-2xl p-3 h-full">
@@ -125,7 +128,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="md:hidden flex justify-between">
           <Link
             to="/about"
