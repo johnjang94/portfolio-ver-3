@@ -5,12 +5,12 @@ export default function Solutions() {
     <div>
       <div className="md:mx-20 my-3 space-y-10">
         <div className="space-y-3">
-          <p className="font-semibold">Solution 1 | Re-imagined Elegance</p>
+          <p className="font-semibold">Solution 1 | Re-born Elegance</p>
           <ul className="px-10 space-y-3">
             <p>
-              We simplified navigation menu and created a few pages including
-              home page, product-display page, product detail, etc. that reflect
-              the brand&#39;s colors.
+              I designed a simple navigation menu and created a few pages
+              including home page, product-display page, product detail, etc.
+              that reflect the brand&#39;s colors.
             </p>
           </ul>
           <div className="p-5 bg-white rounded-3xl mx-auto">
@@ -31,8 +31,8 @@ export default function Solutions() {
         <div className="space-y-3">
           <p className="font-semibold">Solution 2 | Friendly Visuals</p>
           <p className="px-10">
-            Since we are inviting shoppers unfamiliar with Indian products as
-            well, we tried to implement simple layouts that is easy-to-follow.
+            I implemented an easy-to-follow layout for the shoppers to scan and
+            read briefly.
           </p>
           <div className="bg-white rounded-3xl mx-auto">
             <img
