@@ -3,16 +3,14 @@ import { televu } from "../../../utils/televu";
 export default function Solutions() {
   return (
     <div>
-      <div className="md:mx-20 my-3 space-y-10">
+      <div className="md:mx-20 space-y-10 -mt-16">
         <div className="space-y-3">
-          <p className="font-semibold">
+          <p className="px-8 font-semibold">
             Solution 1 | Navigation menu relocation
           </p>
-          <p className="px-10">
-            We have decided to relocate the menu for the smart glass to be
-            included in the smaller video-sharing screen and keep the menu for
-            the desktop browser at the bottom of the browser window to follow
-            the industry-standard
+          <p className="px-8">
+            Redesigned navigation with distinct visual cues for mobile and
+            desktop controls, ensuring clarity and intuitive use.
           </p>
           <div className="p-3 bg-white rounded-3xl">
             <img
@@ -23,11 +21,13 @@ export default function Solutions() {
           </div>
         </div>
         <div className="space-y-3">
-          <p className="font-semibold">Solution 2 | Improved Interaction</p>
-          <p className="px-10">
-            We have changed the UI to indicate who is available for a call and
-            added a notification to users that a call is initiated once the user
-            clicks call CTA
+          <p className="px-8 font-semibold">
+            Solution 2 | Improved Interaction
+          </p>
+          <p className="px-8">
+            I updated the UI to clearly indicate contacts that are available for
+            calls and added a notification to inform users when a call is
+            initiated after clicking the call CTA
           </p>
           <div className="p-3 bg-white rounded-3xl">
             <img

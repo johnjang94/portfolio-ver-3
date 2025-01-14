@@ -104,10 +104,8 @@ export default function TeleVU() {
           <div id={1}>
             <Overview />
           </div>
-          <div className="space-y-5">
-            <div>
-              <Solutions />
-            </div>
+          <div>
+            <Solutions />
           </div>
           <div id={3}>
             <Retrospective />

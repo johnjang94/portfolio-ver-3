@@ -1,6 +1,10 @@
 // TELEVU DEMO
 import Demo from "../assets/televu/demo/redesign-video.jpeg";
 
+// AT ISSUE
+import VIDEO from "../assets/televu/original/video.jpg";
+import CONTACT from "../assets/televu/original/contact.jpg";
+
 // OPPORTUNITY
 import OriginalVideo from "../assets/televu/opportunity/original-video.jpeg";
 import TwoNavigations from "../assets/televu/opportunity/two-navigations.jpeg";
@@ -18,6 +22,8 @@ import Initiated from "../assets/televu/solution/initiating.png";
 
 export const televu = {
   Demo,
+  VIDEO,
+  CONTACT,
   OriginalVideo,
   TwoNavigations,
   Sketches,
