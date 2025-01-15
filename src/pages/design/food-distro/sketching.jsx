@@ -13,7 +13,7 @@ export default function Sketching() {
           </p>
           <p>For this, I focused on three core features:</p>
         </div>
-        <ul className="px-10 list-disc space-y-5">
+        <ul className="md:px-10 list-disc space-y-5">
           <li>Distance</li>
           <p className="px-5">
             I have designed the ranges of distance in 20 miles of radius. This

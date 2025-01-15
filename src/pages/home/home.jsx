@@ -2,6 +2,9 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { home } from "../../utils/home";
+import { useState } from "react";
+
+const roles = ["UX Designer", "Product Designer", "UX Engineer"];
 
 const data = [
   {
@@ -38,7 +41,7 @@ const data = [
     title: "Search optimization for enhanced engagement",
     subtitle:
       "Low effort solution to improve search and messaging for locals for social service mobile app, Food Distro",
-    category: ["UX/UI Design", "Mobile App Design", "Non-Profit"],
+    category: ["Mobile App Design", "Non-Profit"],
     percentage: ["88%", "85%"],
     highlight: ["improved filter", "increased system reliability"],
     link: "/food-distro",
@@ -71,6 +74,14 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  const [currentRole, setCurrentRole] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000); // Change every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
@@ -81,14 +92,17 @@ export default function Home() {
           <div className="md:mb-0">
             <div className="flex">
               <div className="relative w-full h-14 overflow-hidden md:text-5xl text-2xl text-blue-500 font-bold">
-                <div className="absolute w-full animate-slide-ux">
-                  UX Designer
-                </div>
-                <div className="absolute w-full animate-slide-product">
-                  Product Designer
-                </div>
-                <div className="absolute w-full animate-slide-engineer">
-                  UX Engineer
+                <div className="scroll-container">
+                  {roles.map((role, index) => (
+                    <p
+                      key={index}
+                      className={`scroll-item ${
+                        index === currentRole ? "visible" : ""
+                      }`}
+                    >
+                      {role}
+                    </p>
+                  ))}
                 </div>
               </div>
             </div>

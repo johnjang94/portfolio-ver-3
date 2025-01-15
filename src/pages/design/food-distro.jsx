@@ -71,15 +71,16 @@ export default function Food() {
                 <p className="text-white text-3xl text-center underline">15%</p>
               </div>
             </div>
-            <div className="space-y-5 w-full flex justify-center">
+            <div className="space-y-5">
               <img
                 src={foodDistro.Demo}
                 alt="Demo showcase"
-                className="rounded-xl mx-auto w-full"
+                width={1200}
+                className="rounded-xl mx-auto"
               />
             </div>
           </div>
-          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20">
+          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20 mx-5">
             <div className="flex space-x-5 text-black">
               <p className="font-bold">My Role</p>
               <p>Associate UX Designer</p>

@@ -10,68 +10,26 @@ body {
   max-width: 1440px;
 }
 
-@keyframes slide-ux {
-  0%,
-  16.666% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-  33.333% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
+.scroll-container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
 }
 
-@keyframes slide-product {
-  0%,
-  33.333% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  33.334%,
-  50% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-  66.666% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
+.scroll-item {
+  position: absolute;
+  width: 100%;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
 }
 
-@keyframes slide-engineer {
-  0%,
-  66.666% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  66.667%,
-  83.333% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
+.scroll-item.visible {
+  transform: translateY(0%);
+  opacity: 1;
 }
 
-.animate-slide-ux {
-  animation: slide-ux 6s infinite;
-}
-
-.animate-slide-product {
-  animation: slide-product 6s infinite;
-}
-
-.animate-slide-engineer {
-  animation: slide-engineer 6s infinite;
+.scroll-item:not(.visible) {
+  transform: translateY(-100%);
+  opacity: 0;
 }

@@ -6,7 +6,7 @@ export default function Solutions() {
       <div className="md:mx-20 my-3 space-y-10">
         <div className="space-y-3">
           <p className="font-semibold">Solution 1</p>
-          <p className="px-10">
+          <p className="md:px-10">
             Donation-receivers can quickly look for available food givers around
             the area and get some detail on the item listing that the food giver
             has.
@@ -31,7 +31,7 @@ export default function Solutions() {
         </div>
         <div className="space-y-3">
           <p className="font-semibold">Solution 2</p>
-          <p className="px-10">
+          <p className="md:px-10">
             Both food-givers and donation-receivers can easily schedule a
             meet-up.
           </p>
@@ -55,7 +55,7 @@ export default function Solutions() {
         </div>
         <div className="space-y-3">
           <p className="font-semibold">Solution 3</p>
-          <p className="px-10">
+          <p className="md:px-10">
             Donation-receivers can leave a review on the food-givers to alert
             other donation-receivers about the freshness and the reliability on
             the particular food-giver.

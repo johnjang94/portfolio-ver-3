@@ -7,7 +7,7 @@ export default function NextSteps() {
           The impact of <span className="text-red-500">stigma</span> is{" "}
           <span className="text-red-500">real</span>
         </p>
-        <ul className="px-10 space-y-3">
+        <ul className="md:px-10 space-y-3">
           <li>
             the project needs to discover solutions to increase awareness
             through educational resources
@@ -20,7 +20,7 @@ export default function NextSteps() {
         <p>
           It would be great to have a team of developers joined in this project
         </p>
-        <ul className="px-10">
+        <ul className="md:px-10">
           <li>
             the current design technically yet remains as concepts. More
             perspectives may be discovered once the project includes developers
