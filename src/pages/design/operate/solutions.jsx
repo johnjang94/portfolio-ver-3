@@ -8,7 +8,7 @@ export default function Solutions() {
         <p className="md:px-10">
           I have designed a specialized dashboard that is simple and focused on
           the turnover for the rooms and room rates, as well as food /
-          beverages. Users can also check how much revenue is being generated
+          beverages. Users can also check how much profit is being generated
           every quarter.
         </p>
         <div className="gap-5 space-y-5 bg-slate-300 rounded-3xl p-5">
