@@ -20,6 +20,10 @@ import Navigation3 from "../assets/sakhi/sketch/navigation-3.png";
 // SHOPIFY DEVELOPERS
 import Shopify from "../assets/sakhi/developers/code.png";
 
+// A/B Testing
+import Version1 from "../assets/sakhi/ab-testing/Home-ver-1.png";
+import Version2 from "../assets/sakhi/ab-testing/Home-ver-2.png";
+
 // SOLUTION
 import Solution1 from "../assets/sakhi/solution/solution-1.png";
 import NavigationSolution from "../assets/sakhi/solution/navigation-solution.png";
@@ -38,6 +42,8 @@ export const sakhi = {
   Navigation2,
   Navigation3,
   Shopify,
+  Version1,
+  Version2,
   Solution1,
   NavigationSolution,
   Solution2,

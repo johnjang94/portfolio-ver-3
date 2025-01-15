@@ -4,10 +4,15 @@ export default function InitialSketch() {
   return (
     <div>
       <h3 className="text-xl uppercase">Sketch</h3>
+      <p className="md:text-xl font-semibold text-center my-3">
+        How do you attract the eyes?
+      </p>
       <div className="md:mx-20 my-5 space-y-5">
         <p>
-          To make sure that the design is clear and intuitive, I came up with
-          three different types of sketches for different pages.
+          The stakeholders, the colleagues, and I came to an agreement that The
+          Sakhi needs an attractive website to increase the traffic and to be
+          spotted. To make sure that the design is clear and intuitive, I came
+          up with three different types of sketches for different pages.
         </p>
         <p>
           One of the examples is home page. The idea is that the shoppers are

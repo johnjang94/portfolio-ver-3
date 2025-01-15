@@ -6,22 +6,24 @@ export default function Retrospective() {
         <p>
           Clear expectation are <span className="text-blue-500">vital</span>.
         </p>
-        <ul className="px-5 space-y-3">
-          <li className="px-5">
-            We had a bit of different perspectives on how the project flows
+        <ul className="md:px-5 space-y-3">
+          <li>
+            The design team for The Sakhi had an active discussion on which size
+            that we will design first (desktop vs mobile) because we wanted to
+            accommodate the user needs in the quickest way.
           </li>
-          <li className="px-5">
-            We were short on hands in research and this was a good opportunity
-            for me to pull my sleeves as a researcher and learn different
-            research techniques
+          <li>
+            The Sakhi were short on hands in the research team, so this was a
+            good opportunity for me to pull my sleeves to support the process of
+            research and learn different research techniques
           </li>
         </ul>
         <p>
           Shopify was a <span className="text-blue-500">new platform</span> to
           learn.
         </p>
-        <ul className="px-5 space-y-3">
-          <li className="px-5">
+        <ul className="md:px-5 space-y-3">
+          <li>
             I did not explicitly mention in the description, but this platform
             was built using Shopify. Even though I have some level of experience
             in web development, Shopify was a new tool that I was not familiar

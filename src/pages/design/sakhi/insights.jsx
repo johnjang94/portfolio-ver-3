@@ -8,10 +8,9 @@ export default function Insight() {
           <span className="text-red-500">is not resonating</span> with shoppers.
         </p>
         <p className="px-10">
-          <span className="text-red-500">65% of shoppers</span> at brands like
-          Fab India, Hatkay, Indya, or Kreeva {/* */}
-          <span className="text-red-500">doubt</span> the products&#39; value,
-          especially for one-time events like weddings or festivals.
+          <span className="text-red-500">65% of shoppers doubt</span> the
+          products&#39; value, especially for one-time events like weddings or
+          festivals at other brands.
         </p>
         <p className="font-semibold">
           Due to the challenges non-Indian shoppers face, they may{" "}
