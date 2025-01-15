@@ -20,7 +20,7 @@ export default function Password({ onCorrectPassword }) {
     <div className="py-10 md:w-3/6 w-5/6 mx-auto bg-slate-300 rounded-3xl">
       <h1 className="text-center text-3xl mt-10">NDA</h1>
       <div className="py-5 text-center">
-        <p>Please make your inquiry for the password.</p>
+        <p>Please check my resume for the password!</p>
       </div>
       <form
         className="flex items-center mb-3 w-4/6 mx-auto"
