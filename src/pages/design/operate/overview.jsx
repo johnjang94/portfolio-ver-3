@@ -10,7 +10,7 @@ export default function Overview() {
             self-employed individuals, such as those who use Airbnb services, to
             7-star hotels in terms of room management and catering services.
           </p>
-          <p className="md:p-5 py-5">
+          <p className="md:px-5">
             The project targets{" "}
             <span className="text-blue-500">a 20% reduction</span> in stock-outs
             and <span className="text-blue-500">a 15% improvement</span> in
@@ -19,7 +19,7 @@ export default function Overview() {
             efficiency.
           </p>
         </div>
-        <div>
+        <div className="py-10 md:py-0">
           <p className="font-semibold">Outcome</p>
           <div className="flex-col grid-cols-2 my-10">
             <div className="text-3xl md:text-5xl flex items-center space-x-20 md:justify-center md:space-x-96">

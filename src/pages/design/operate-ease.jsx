@@ -107,8 +107,8 @@ export default function OPERATE() {
     <div>
       <section className="my-10 mx-auto">
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
-          <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl">
-            <div className="w-full my-20 space-y-5">
+          <div className="md:grid md:grid-cols-2 md:py-20 py-10 items-center w-full max-w-6xl">
+            <div className="w-full md:my-20 my-5 space-y-5">
               <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-white">
                 Optimizing Inventory Management System
               </h1>
@@ -163,10 +163,10 @@ export default function OPERATE() {
               />
             </div>
           </div>
-          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20">
+          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20 mx-5 md:mx-0">
             <div className="flex space-x-5 text-black">
               <p className="font-bold">My Role</p>
-              <p>Associate UX Designer</p>
+              <p>Associate Product Designer</p>
             </div>
             <div className="flex space-x-5 text-black">
               <p className="font-bold">Team</p>

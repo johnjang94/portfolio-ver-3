@@ -3,7 +3,7 @@ import { OperateEase } from "../../../utils/operate";
 export default function Solutions() {
   return (
     <div>
-      <div className="md:mx-20 space-y-5">
+      <div className="md:mx-20 space-y-5 -mt-36 md:-mt-0">
         <p className="font-bold">Solution 1 | Minimalistic Design</p>
         <p className="md:px-10">
           I have designed a specialized dashboard that is simple and focused on
