@@ -15,7 +15,7 @@ const data = [
     title: "Inventory optimization for improved management",
     subtitle:
       "Reducing missed-catering orders and recovering room-service losses",
-    category: ["Product Design", "B2B", "SaaS product"],
+    category: ["B2B", "SaaS"],
     percentage: ["40%", "15%"],
     highlight: ["corrected order", "loss recovery"],
     link: "/operate",
@@ -124,25 +124,23 @@ export default function Home() {
             </p>
           </div> */}
         </div>
-        {/* <div className="mt-10 md:my-12 md:pb-5">
-          <h3 className="text-center md:text-2xl text-xl">Fun Facts</h3>
+        <div className="mt-10 md:my-12 md:pb-5">
+          <h3 className="text-center md:text-2xl text-xl">Tools & Skills</h3>
           <div className="md:grid md:grid-cols-2 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
-                In cross-functional teams, I am like the curious detective —-
-                always asking questions, uncovering hidden insights, and making
-                the process way more fun.
+                Figma, Miro, Wireframing, Sketching, Prototyping, Mock-ups,
+                Usability Testing, AI-modeling, HTML, CSS, JavaScript
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
-                I live for that moment when users say my designs are
-                &#39;better&#39; —- it&#39;s like I&#39;ve cracked the design
-                code... one step at a time!
+                User Interface Design, User Research, Business Analytics, Design
+                Thinking
               </p>
             </div>
           </div>
-        </div> */}
+        </div>
         <div className="md:hidden flex justify-between">
           <Link
             to="/about"
@@ -178,6 +176,16 @@ export default function Home() {
                       {item.subtitle && (
                         <p className="font-normal">{item.subtitle}</p>
                       )}
+                    </div>
+                    <div className="flex md:space-x-5 space-x-1">
+                      {item.category.map((category, index) => (
+                        <span
+                          key={index}
+                          className="bg-slate-400 rounded-lg md:px-2 px-1 py-1 text-white text-xs md:text-sm"
+                        >
+                          {category}
+                        </span>
+                      ))}
                     </div>
                     <div className="grid grid-cols-2 text-center py-3">
                       {item.percentage?.map((percentage, index) => (
