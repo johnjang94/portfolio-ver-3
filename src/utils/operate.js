@@ -3,6 +3,7 @@ import Demo from "../assets/oe/demo/operation-ease.png";
 
 // INSIGHTS
 import Insights from "../assets/oe/insights/insight.png";
+import Market from "../assets/oe/market-analysis/revenue.png";
 
 // USER PERSONA
 import Persona from "../assets/oe/user-persona/John.png";
@@ -36,6 +37,7 @@ import Color from "../assets/oe/developers/color.png";
 export const OperateEase = {
   Demo,
   Insights,
+  Market,
   Persona,
   Competition,
   Occupancy,

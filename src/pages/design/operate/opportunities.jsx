@@ -2,54 +2,38 @@ export default function Opportunity() {
   return (
     <div>
       <h3 className="text-xl uppercase">Opportunity</h3>
+      <p className="md:text-xl font-semibold text-center my-3">
+        What strategy did OperateEase choose?
+      </p>
+      <p className="px-20">
+        Part of the research included interviewing some hotelier managers who
+        are currently using a management system platform while operating their
+        businesses in Canada, the US, and Australia, and during this course, I
+        came up with different strategies along with OperateEase according to
+        the lessons we learnt as follows:
+      </p>
       <ul className="md:mx-20 my-5 space-y-5">
-        <li className="font-bold">Simplification</li>
-        {/* <p className="px-10">
-          After the tutorial from Pet Pooja (as shown above), I rather ended up
-          having some doubts such as...
+        <li className="font-bold">Flexible customizations on pricing</li>
+        <ul className="px-20 space-y-2">
+          <li>
+            OperateEase offers more customizations in pricing for the owners or
+            managers and to charge late check-out fees (with different types of
+            percentage limits).
+          </li>
+        </ul>
+
+        <li className="font-bold">Cheaper Services</li>
+        <p className="px-20">
+          OperateEase offers cheaper subscription offers to many hotelier
+          managers as their business sizes are not big.
         </p>
-        <p className="px-18 py-3 text-red-500">
-          If the design was straight-forward and intuitive, would the tutorial
-          have been necessary at all?
-        </p> */}
-        <div className="space-y-3">
-          <p className="md:px-10 font-semibold">
-            Possible Improvement 1 | Display only the essential information
-          </p>
-          <div className="hidden md:block">
-            <p className="px-20">
-              From the research process, we learned that the users want to be
-              able to <span className="underline">manage room prices</span>,
-              check on{" "}
-              <span className="underline">
-                the ratio of room availability vs occupied
-              </span>
-              , and <span className="underline">the record of sales</span> on
-              quarterly-basis (as the primary option) for hotel room management
-            </p>
-            <p className="px-20">
-              When it comes to the food / beverage inventory management, we
-              found out that they want to be{" "}
-              <span className="underline">automatically notified</span> on
-              low-stocks, ability to{" "}
-              <span className="underline">contact the partner business</span>,
-              and <span className="underline">adjust</span> the selling products{" "}
-              <span className="underline">based on the conversion rate</span>
-            </p>
-          </div>
-          <p className="md:px-10 font-semibold">
-            Possible Improvement 2 | Keep the minimalistic design
-          </p>
-          <div className="hidden md:block">
-            <p className="px-20">
-              I thought of grid system while utilizing white spaces as much as I
-              can. In addition, I wanted to keep everything accessible with just{" "}
-              <span className="underline">one simple-click</span> from the
-              dashboard because I was keeping in mind that this is a fast-paced
-              working environment
-            </p>
-          </div>
-        </div>
+
+        <li className="font-bold">Friendly to Beginners</li>
+        <p className="px-20">
+          OperateEase offers a simplified user interface to start-up business
+          owners and ensures that they clearly understand how each part of the
+          program works.
+        </p>
       </ul>
     </div>
   );

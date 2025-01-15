@@ -1,26 +1,19 @@
 export default function Overview() {
   return (
     <div>
-      <h3 className="text-xl">OVERVIEW</h3>
       <div className="md:mx-20 my-3 space-y-5">
         <div>
-          <p className="font-semibold">At Issue</p>
+          <p className="font-semibold">Business Goal and Product Vision</p>
           <p className="md:p-5 py-5">
-            Hoteliers who used other management systems (PMS + CMS){" "}
-            <span className="text-red-500">did not have flexibility</span> that
-            meet their expectations{" "}
-            <span className="underline">in rate adjustment</span> for booking
-            and catering services faced{" "}
-            <span className="text-red-500">
-              the loss of potential additional income of 15%
-            </span>{" "}
-            of their monthly base income and{" "}
-            <span className="text-red-500">inventory shortages</span> depending
-            on the platform. To recover the loss, I designed new management
-            dashboard for booking services with options for price adjustments
-            and new management dashboard for catering services along with
-            real-time updates and simplicity for both dashboards here at
-            OperateEase, an independent B2B SaaS project.
+            OperateEase, a B2B SaaS, cloud-based Enterprise project, aims to be
+            the go-to solution for hoteliers ranging from self-employed
+            individuals, such as Airbnb, to 7-star hotels in room management and
+            catering services. The project targets{" "}
+            <span className="text-blue-500">a 20% reduction</span> in stock-outs
+            and <span className="text-blue-500">a 15% improvement</span> in
+            inventory turnover within six months. The platform combines
+            intuitive design with advanced forecasting to enhance operational
+            efficiency.
           </p>
         </div>
         <div>

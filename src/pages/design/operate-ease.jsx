@@ -3,11 +3,7 @@ import { OperateEase } from "../../utils/operate";
 import ContentNav from "../../components/contentNav";
 import Password from "../../components/lock/password";
 import Overview from "./operate/overview";
-import Insight from "./operate/insights";
-import ProblemStatement from "./operate/problem-statement";
-import UserPersona from "./operate/user-persona";
-import UserStory from "./operate/user-story";
-import CompetitiveAnalysis from "./operate/competitive-analysis";
+import MarketAnalysis from "./operate/market-analysis";
 import Opportunity from "./operate/opportunities";
 import Solutions from "./operate/solutions";
 import Collaboration from "./operate/collaboration";
@@ -84,19 +80,7 @@ export default function OPERATE() {
         <Solutions />
       </div>
       <div id={2}>
-        <Insight />
-      </div>
-      <div>
-        <UserPersona />
-      </div>
-      <div>
-        <ProblemStatement />
-      </div>
-      <div>
-        <UserStory />
-      </div>
-      <div>
-        <CompetitiveAnalysis />
+        <MarketAnalysis />
       </div>
       <div>
         <Opportunity />
@@ -126,28 +110,50 @@ export default function OPERATE() {
           <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl">
             <div className="w-full my-20 space-y-5">
               <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-white">
-                Inventory Optimization for Improved Management
+                Optimizing Inventory Management System
               </h1>
-              <div className="grid grid-cols-2 py-10">
-                <div>
-                  <p className="text-white text-center text-3xl">40%</p>
-                  <p className="text-white text-center text-3xl underline">
-                    Reduced
-                  </p>
-                  <p className="text-white text-center my-3">
-                    in missing catering orders
-                  </p>
-                </div>
-                <div>
-                  <p className="text-white text-center text-3xl">15%</p>
-                  <p className="text-white text-center text-3xl underline">
-                    Recovered
-                  </p>
-                  <p className="text-white text-center my-3">
-                    from room booking loss
-                  </p>
+              <div className="hidden md:block">
+                <div className="grid grid-cols-2 gap-5">
+                  <div className="text-center space-y-3">
+                    <p className="text-white text-2xl">
+                      to reduce accidental catering orders by{" "}
+                    </p>
+                    <p className="underline bg-white rounded-2xl p-3 text-green-400 w-fit mx-auto">
+                      40%
+                    </p>
+                  </div>
+                  <div className="text-center space-y-3">
+                    <p className="text-white text-2xl">
+                      to recover the financial loss from late check-outs by{" "}
+                    </p>
+                    <p className="underline bg-white rounded-2xl p-3 text-green-400 w-fit mx-auto">
+                      15%
+                    </p>
+                  </div>
                 </div>
               </div>
+              {/*  */}
+              <div className="md:hidden block">
+                <div className="md:grid md:grid-cols-2 md:gap-5 space-y-5">
+                  <div className="text-center space-y-3">
+                    <p className="text-white">
+                      to reduce accidental catering orders by{" "}
+                    </p>
+                    <p className="underline bg-white rounded-2xl p-1 text-green-400 w-fit mx-auto">
+                      40%
+                    </p>
+                  </div>
+                  <div className="text-center space-y-3">
+                    <p className="text-white">
+                      to recover the financial loss from late check-outs by{" "}
+                    </p>
+                    <p className="underline bg-white rounded-2xl p-1 text-green-400 w-fit mx-auto">
+                      15%
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/*  */}
             </div>
             <div className="space-y-5 w-full flex justify-center">
               <img

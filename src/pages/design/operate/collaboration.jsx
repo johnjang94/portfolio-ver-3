@@ -13,14 +13,6 @@ export default function Collaboration() {
       <div className="md:mx-20 space-y-5">
         <div className="bg-slate-300 rounded-2xl p-5">
           <img
-            src={OperateEase.Zeplin}
-            alt="Zeplin"
-            width={800}
-            className="rounded-2xl mx-auto"
-          />
-        </div>
-        <div className="bg-slate-300 rounded-2xl p-5">
-          <img
             src={OperateEase.Color}
             alt="Color to CSS"
             width={800}

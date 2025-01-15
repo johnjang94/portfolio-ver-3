@@ -6,8 +6,10 @@ export default function Solutions() {
       <div className="md:mx-20 space-y-5">
         <p className="font-bold">Solution 1 | Minimalistic Design</p>
         <p className="md:px-10">
-          Users have a specialized, simple, and focused dashboard for different
-          types of inventory (room occupancy, Food & Beverage materials)
+          I have designed a specialized dashboard that is simple and focused on
+          the turnover for the rooms and room rates, as well as food /
+          beverages. Users can also check how much revenue is being generated
+          every quarter.
         </p>
         <div className="gap-5 space-y-5 bg-slate-300 rounded-3xl p-5">
           <img
@@ -25,9 +27,9 @@ export default function Solutions() {
           Solution 2 | Display of Essential Information
         </p>
         <p className="md:px-10">
-          Users can check / modify room rates, the cost on goods sold, list of
-          suppliers, order information, etc. on a click of a button from each
-          dashboard
+          In addition to the first solution, I have designed additional screens
+          to help the users understand the detail of total expenses that they
+          spend to keep up with operation.
         </p>
         <div className="bg-slate-300 rounded-3xl space-y-5 p-5">
           <img
