@@ -6,9 +6,12 @@ export default function Overview() {
           <p className="font-semibold">Business Goal and Product Vision</p>
           <p className="md:p-5 py-5">
             OperateEase, a B2B SaaS, cloud-based Enterprise project, aims to be
-            the go-to solution for hoteliers ranging from self-employed
-            individuals, such as those who use Airbnb services, to 7-star hotels
-            in room management and catering services. The project targets{" "}
+            the go-to management solution for hoteliers ranging from
+            self-employed individuals, such as those who use Airbnb services, to
+            7-star hotels in terms of room management and catering services.
+          </p>
+          <p className="md:p-5 py-5">
+            The project targets{" "}
             <span className="text-blue-500">a 20% reduction</span> in stock-outs
             and <span className="text-blue-500">a 15% improvement</span> in
             inventory turnover within six months. The platform combines
