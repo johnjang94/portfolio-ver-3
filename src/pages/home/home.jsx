@@ -12,7 +12,7 @@ const data = [
     imgSrc: home.OperateEase,
     imgAlt: "OperateEase",
     icon: "🔒",
-    title: "Inventory optimization for improved management",
+    title: "Inventory optimization for improved management by 40%",
     subtitle:
       "Reducing missed-catering orders and recovering room-service losses",
     category: ["B2B", "SaaS"],
@@ -119,13 +119,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* <div className="mt-10 md:my-12 md:pb-5">
+        <div className="mt-10 md:my-12 md:pb-5">
           <h3 className="text-center md:text-2xl text-xl">Tools & Skills</h3>
-          <div className="md:grid md:grid-cols-2 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
+          <div className="md:grid md:grid-cols-3 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
                 Figma, Miro, Wireframing, Sketching, Prototyping, Mock-ups,
-                Usability Testing, AI-modeling, HTML, CSS, JavaScript
+                Usability Testing, AI-Insight, HTML, CSS, JavaScript
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
@@ -134,8 +134,11 @@ export default function Home() {
                 Thinking
               </p>
             </div>
+            <div className="bg-white rounded-2xl p-3 h-full">
+              <p>Notion, JIRA, Trello, Google Analytics, Problem-Solving</p>
+            </div>
           </div>
-        </div> */}
+        </div>
         <div className="md:hidden flex justify-between">
           <Link
             to="/about"
