@@ -208,7 +208,11 @@ export default function OPERATE() {
           )}
         </div>
         <section className="md:w-4/6 mx-10 my-5 md:my-28">
-          {isPasswordCorrect ? <PrivateContent /> : <PublicContent />}
+          {isPasswordCorrect ? (
+            <PrivateContent isPasswordCorrect={isPasswordCorrect} />
+          ) : (
+            <PublicContent isPasswordCorrect={isPasswordCorrect} />
+          )}
         </section>
       </section>
       {!isPasswordCorrect && (

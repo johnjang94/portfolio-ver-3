@@ -19,10 +19,10 @@ export default function Retrospective() {
             mid-fidelity. The reason for the change was that we came to realize
             how complex the service becomes when we combine accommodation of the
             rooms and the catering services. The pivot was a good choice because
-            we were able to keeping our own statement that we will keep the
-            product easy-to-use. If we decided to combine everything in
-            all-in-one solution, I think that we might not have been able to
-            have the users clearly understand how things work.
+            we were able to stay true to our commitment to simplicity and ease
+            of use. If we decided to combine everything in all-in-one solution,
+            I think that we might not have been able to have the users clearly
+            understand how things work.
           </p>
         </ul>
       </div>

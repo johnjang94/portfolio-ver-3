@@ -16,16 +16,20 @@ export default function Opportunity() {
         <li className="font-bold">Flexible customizations on pricing</li>
         <ul className="px-20 space-y-2">
           <li>
-            OperateEase offers more customizations in pricing for the owners or
-            managers and to charge late check-out fees (with different types of
-            percentage limits).
+            OperateEase focused on flexible pricing customizations, allowing
+            hotel managers to adjust room rates, late check-out fees, and other
+            charges. This adaptability catered to both small Airbnb hosts and
+            luxury hotels, ensuring competitiveness. It also positioned the
+            platform for scalability to support future needs.
           </li>
         </ul>
 
         <li className="font-bold">Cheaper Services</li>
         <p className="px-20">
           OperateEase offers cheaper subscription offers to many hotelier
-          managers as their business sizes are not big.
+          managers whose business sizes are considered as small-scale to ensure
+          the accessibility for small-scale hoteliers, broadening the
+          platform&#39;s market reach while maintaining profitability.
         </p>
 
         <li className="font-bold">Friendly to Beginners</li>

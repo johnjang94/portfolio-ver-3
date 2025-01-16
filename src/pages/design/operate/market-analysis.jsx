@@ -6,21 +6,22 @@ export default function MarketAnalysis() {
       <h3 className="text-xl uppercase">Market Analysis</h3>
       <div className="md:mx-24 my-5 space-y-3">
         <p>
-          I conducted a general investigation on the revenue growth of a few
-          established hotel management platforms and found out that they grew up
-          approximately <span className="text-blue-500">18.16%</span> in average
-          every year for the past 5 years.
+          Market research revealed{" "}
+          <span className="text-blue-500">steady annual growth of 18.16%</span>{" "}
+          among leading hotel management platforms, driven by cloud-based
+          operations and third-party integrations. This insight shaped
+          OperateEase&#39;s strategic focus on offering{" "}
+          <span className="underline">
+            modular, subscription-based services
+          </span>{" "}
+          that could scale with the user&#39;s needs, creating a competitive
+          advantage in the market.
         </p>
         <img
           src={OperateEase.Market}
           alt="Market Analysis"
           className="rounded-2xl"
         />
-        <p>
-          During the research, I have discovered that many of them had diverse
-          business affiliations with third-party platforms and some of them were
-          even operating 100% cloud-based.
-        </p>
       </div>
     </div>
   );

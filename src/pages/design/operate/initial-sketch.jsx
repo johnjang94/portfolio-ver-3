@@ -13,14 +13,11 @@ export default function InitialSketch() {
           contacts for partner companies when stocks go low.
         </p>
         <p className="md:px-10">
-          During my initial sketch, I was primarily focused on displaying the
-          key metrics first because this allows the hoteliers, as users, to be
-          able to quickly track the activities.
-        </p>
-        <p className="md:px-10">
-          In addition, I considered technical aspects to ensure the data
-          visualization method aligned seamlessly with the backend architecture
-          and enhanced overall system efficiency during this process.
+          My initial sketch emphasized displaying key metrics, enabling
+          hoteliers to quickly track activities. In addition, I considered
+          technical aspects to ensure the data visualization method aligned
+          seamlessly with the backend architecture and enhanced overall system
+          efficiency during this process.
         </p>
         <div className="md:grid md:grid-cols-2 items-center gap-5 space-y-5 md:space-y-0">
           <div className="bg-slate-300 p-5 rounded-2xl">

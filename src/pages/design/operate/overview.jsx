@@ -5,18 +5,14 @@ export default function Overview() {
         <div>
           <p className="font-semibold">Business Goal and Product Vision</p>
           <p className="md:p-5 py-5">
-            OperateEase, a B2B SaaS, cloud-based Enterprise project, aims to be
-            the go-to management solution for hoteliers ranging from
-            self-employed individuals, such as those who use Airbnb services, to
-            7-star hotels in terms of room management and catering services.
-          </p>
-          <p className="md:px-5">
-            The project targets{" "}
-            <span className="text-blue-500">a 20% reduction</span> in stock-outs
-            and <span className="text-blue-500">a 15% improvement</span> in
-            inventory turnover within six months. The platform combines
-            intuitive design with advanced forecasting to enhance operational
-            efficiency.
+            OperateEase, as a B2B SaaS cloud-based enterprise project, aims to
+            revolutionize hotel management with scalability, user-friendly UI
+            for room management (room rate + room status) and for catering
+            services. Targeting a{" "}
+            <span className="underline">20% stock-out reduction</span> and a{" "}
+            <span className="underline">15% improvement</span> in turnover, it
+            combined advanced forecasting with a minimalistic interface to
+            address inefficiencies and improve user satisfaction.
           </p>
         </div>
         <div className="py-10 md:py-0">

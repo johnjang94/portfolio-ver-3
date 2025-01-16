@@ -1,5 +1,4 @@
 import { OperateEase } from "../../../utils/operate";
-import { FaArrowDown } from "react-icons/fa";
 
 export default function MidFi() {
   return (
@@ -7,13 +6,15 @@ export default function MidFi() {
       <h3 className="text-xl uppercase">Mid-Fi</h3>
       <div className="md:mx-20 my-5 space-y-5 list-decimal">
         <p className="md:px-10">
-          The direction of the project changed during my iteration:
+          Mid-fidelity testing revealed that combining all features into one
+          dashboard created <span className="text-red-500">confusion</span> and{" "}
+          <span className="text-red-500">increased cognitive load</span> for
+          users. I have decided to pivot to specialized dashboards, ensuring
+          that each interface remained{" "}
+          <span className="text-blue-500">simple and intuitive</span>. This
+          decision aligned with the business goal of the project to reduce
+          operational inefficiencies while maintaining ease of use.
         </p>
-        <div className="space-y-3 text-center">
-          <p>one dashboard for all-in-one service</p>
-          <FaArrowDown className="mx-auto" />
-          <p>multiple dashboards to specialize in each type of service</p>
-        </div>
         <div className="bg-slate-300 p-5 rounded-2xl">
           <img
             src={OperateEase.RoomDashboard}
