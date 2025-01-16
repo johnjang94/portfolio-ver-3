@@ -190,7 +190,7 @@ export default function OPERATE() {
             </div>
             <div className="flex space-x-5 text-black">
               <p className="font-bold">Timeline</p>
-              <p>August 2024 ~ Present</p>
+              <p>October 2024 ~ Present</p>
             </div>
           </div>
         </div>

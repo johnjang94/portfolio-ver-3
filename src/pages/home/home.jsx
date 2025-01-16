@@ -112,19 +112,14 @@ export default function Home() {
                 simplicity
               </p>
               <p>
-                Bringing cross-industry insights to create user-centered designs
-                that adapt, inspire, and deliver meaningful results
+                I deliver meaningful results with inspiring designs that
+                consider the business goals, the user needs, and the technical
+                feasibility.
               </p>
             </div>
           </div>
-          {/* <div>
-            <p className="my-5 text-sm text-teal-800">
-              Currently, I&#39;m open to new Product Design or UX/UI Design
-              roles!
-            </p>
-          </div> */}
         </div>
-        <div className="mt-10 md:my-12 md:pb-5">
+        {/* <div className="mt-10 md:my-12 md:pb-5">
           <h3 className="text-center md:text-2xl text-xl">Tools & Skills</h3>
           <div className="md:grid md:grid-cols-2 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
             <div className="bg-white rounded-2xl p-3 h-full">
@@ -140,7 +135,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="md:hidden flex justify-between">
           <Link
             to="/about"

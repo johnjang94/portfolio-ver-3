@@ -18,7 +18,7 @@ export default function Password({ onCorrectPassword }) {
 
   return (
     <div className="py-10 md:w-3/6 w-5/6 mx-auto bg-slate-300 rounded-3xl">
-      <h1 className="text-center text-3xl mt-10">NDA</h1>
+      <h1 className="text-center text-3xl mt-10">Want to know more?</h1>
       <div className="py-5 text-center">
         <p>Please check my resume for the password!</p>
       </div>

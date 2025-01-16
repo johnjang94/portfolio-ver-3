@@ -1,5 +1,5 @@
 // DEMO
-import About from "../assets/about/introduction/hiker.png";
+import About from "../assets/about/introduction/hiker.jpg";
 import Neuroscience from "../assets/about/introduction/eeg-testing-children.png";
 import Teacher from "../assets/about/introduction/teaching.png";
 import Challenge from "../assets/about/challenge/challenge.jpg";
