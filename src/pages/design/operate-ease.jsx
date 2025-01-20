@@ -118,14 +118,18 @@ export default function OPERATE() {
                     <p className="text-white text-2xl">
                       to reduce accidental catering orders by{" "}
                     </p>
-                    <p className="underline bg-white rounded-2xl p-3 text-green-400 w-fit mx-auto">
-                      40%
-                    </p>
                   </div>
                   <div className="text-center space-y-3">
                     <p className="text-white text-2xl">
                       to recover the financial loss from late check-outs by{" "}
                     </p>
+                  </div>
+                  <div>
+                    <p className="underline bg-white rounded-2xl p-3 text-green-400 w-fit mx-auto">
+                      40%
+                    </p>
+                  </div>
+                  <div>
                     <p className="underline bg-white rounded-2xl p-3 text-green-400 w-fit mx-auto">
                       15%
                     </p>

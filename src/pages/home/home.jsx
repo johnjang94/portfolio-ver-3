@@ -120,22 +120,29 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-10 md:my-12 md:pb-5">
-          <h3 className="text-center md:text-2xl text-xl">Tools & Skills</h3>
+          <div className="md:grid md:grid-cols-3 gap-10">
+            <h3 className="text-center md:text-2xl text-xl">Design Tools</h3>
+            <h3 className="text-center md:text-2xl text-xl">Tech Tools</h3>
+            <h3 className="text-center md:text-2xl text-xl">Applied Skills</h3>
+          </div>
           <div className="md:grid md:grid-cols-3 items-start py-10 gap-10 space-y-5 md:space-y-0 xl:h-28">
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
                 Figma, Miro, Wireframing, Sketching, Prototyping, Mock-ups,
-                Usability Testing, AI-Insight, HTML, CSS, JavaScript
+                Usability Testing, AI-Insight, Business Canvas
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
-                User Interface Design, User Research, Business Analytics, Design
-                Thinking
+                Notion, JIRA, Trello, Google Analytics, HTML, CSS, JavaScript
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
-              <p>Notion, JIRA, Trello, Google Analytics, Problem-Solving</p>
+              <p>
+                Analyze how users interact with designs, implement different
+                strategies to reach the target (i.e. raise CTR, SEO
+                optimization, improvised workflow, etc.)
+              </p>
             </div>
           </div>
         </div>
