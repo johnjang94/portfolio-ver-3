@@ -68,6 +68,9 @@ export default function OPERATE() {
       <div>
         <Impact />
       </div>
+      <div>
+        <Collaboration />
+      </div>
     </div>
   );
 

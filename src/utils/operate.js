@@ -31,6 +31,7 @@ import STYLE_GUIDE from "../assets/oe/style/style_guide.png";
 
 // DEVELOPERS
 import Developers from "../assets/oe/developers/css.png";
+import Developement from "../assets/oe/developers/development.png";
 import Zeplin from "../assets/oe/developers/zeplin.gif";
 import Color from "../assets/oe/developers/color.png";
 
@@ -51,6 +52,7 @@ export const OperateEase = {
   FoodDashboard,
   STYLE_GUIDE,
   Developers,
+  Developement,
   Zeplin,
   Color,
 };
