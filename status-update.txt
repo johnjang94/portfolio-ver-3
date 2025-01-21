@@ -1,3 +1,0 @@
-< Progress report >
-- On Sunday, June 2, 2024, I have spent about 10 hours to figure out how to connect Front-End and Back-End using Vercel and AWS.
-- On Monday, June 3, 2024, I have made a further progress by connecting both sides on the localhost. Now, the puzzle is how to actually deliver the service on the internet.
