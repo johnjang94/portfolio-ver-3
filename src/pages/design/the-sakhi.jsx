@@ -102,7 +102,7 @@ export default function SAKHI() {
                 Onboarding Experience
               </h1>
               <h1 className="md:text-4xl text-xl text-white rounded-2xl">
-                to drive a{" "}
+                to drive targeted{" "}
                 <span className="underline p-3 bg-white text-green-500 rounded-2xl">
                   20% CTR
                 </span>

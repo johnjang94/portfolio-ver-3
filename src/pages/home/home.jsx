@@ -12,12 +12,15 @@ const data = [
     imgSrc: home.OperateEase,
     imgAlt: "OperateEase",
     icon: "🔒",
-    title: "Inventory optimization for improved management by 40%",
+    title: "Inventory optimization for improved management",
     subtitle:
       "Reducing missed-catering orders and recovering room-service losses",
     category: ["B2B", "SaaS"],
-    percentage: ["40%", "15%"],
-    highlight: ["corrected order", "loss recovery"],
+    percentage: ["20%", "15%"],
+    highlight: [
+      "targeted reduction on incorrect orders",
+      "expected additional profit from delayed check-out penalties",
+    ],
     link: "/operate",
   },
   {
@@ -25,12 +28,12 @@ const data = [
     imgSrc: home.Sakhi,
     imgAlt: "Sakhi",
     icon: "",
-    title: "Reimagined onboarding experience to drive a 20% CTR",
+    title: "Reimagined onboarding experience to drive a targeted 20% CTR",
     subtitle:
       "Designed product contents for a direct in-store premium Indian brand, The Sakhi",
     category: ["B2C", "E-commerce", "start-up"],
     percentage: ["20%", "75%"],
-    highlight: ["search optimization", "improved usability"],
+    highlight: ["targeted search optimization", "targeted improved usability"],
     link: "/sakhi",
   },
   {
@@ -129,7 +132,8 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
                 Figma, Miro, Wireframing, Sketching, Prototyping, Mock-ups,
-                Usability Testing, AI-Insight, Business Canvas
+                Usability Testing, AI-Insight, Adobe Creative Cloud, Business
+                Canvas
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">

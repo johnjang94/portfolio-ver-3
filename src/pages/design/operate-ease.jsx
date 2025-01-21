@@ -119,17 +119,17 @@ export default function OPERATE() {
                 <div className="grid grid-cols-2 gap-5">
                   <div className="text-center space-y-3">
                     <p className="text-white text-2xl">
-                      to reduce accidental catering orders by{" "}
+                      to target stock-out reduction by{" "}
                     </p>
                   </div>
                   <div className="text-center space-y-3">
                     <p className="text-white text-2xl">
-                      to recover the financial loss from late check-outs by{" "}
+                      to improve the turnover rate by{" "}
                     </p>
                   </div>
                   <div>
                     <p className="underline bg-white rounded-2xl p-3 text-green-400 w-fit mx-auto">
-                      40%
+                      20%
                     </p>
                   </div>
                   <div>
