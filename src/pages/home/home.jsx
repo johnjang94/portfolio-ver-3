@@ -49,27 +49,6 @@ const data = [
     highlight: ["improved filter", "increased system reliability"],
     link: "/food-distro",
   },
-  // {
-  //   id: 4,
-  //   imgSrc: home.TuGo,
-  //   imgAlt: "TuGo",
-  //   icon: "",
-  //   title: "Revamping insurance UI to increase retention rate",
-  //   subtitle:
-  //     "Simplify navigation process to raise usability and aesthetics for a travel insurance company, TuGo Travel",
-  //   category: ["UX/UI Design", "Fin-tech", "Web Redesign"],
-  //   link: "/tugo-insurance",
-  // },
-  // {
-  //   id: 5,
-  //   imgSrc: home.TeleVU,
-  //   imgAlt: "TeleVU",
-  //   title: "Quality improvement for video-calls",
-  //   subtitle:
-  //     "Next level controls for remote clinic sessions for TeleVU Innovation",
-  //   category: ["UX/UI Design", "Health-tech", "Web Redesign"],
-  //   link: "/televu",
-  // },
 ];
 
 export default function Home() {
