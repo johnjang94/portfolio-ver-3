@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { CiHeart } from "react-icons/ci";
 
 import LogoBlack from "/logo-512.png";
 import LogoTransparent from "/logo--white.png";
@@ -70,6 +71,9 @@ export default function Banner() {
         </Link>
         <Link to="http://www.linkedin.com/in/johnjang94">
           <FaLinkedin className="text-blue-500" />
+        </Link>
+        <Link to="/email-template">
+          <CiHeart className="text-red-300" />
         </Link>
       </div>
     </div>

@@ -10,11 +10,12 @@ export default function Root() {
 
   return (
     <div>
-      {pathname != "/received" && <Navigation pathname={pathname} />}
+      {pathname != "/received" ||
+        (pathname != "/email-template" && <Navigation pathname={pathname} />)}
       <QueryClientProvider client={queryClient}>
         <Outlet />
       </QueryClientProvider>
-      {pathname != "/received" && <Banner />}
+      {pathname != "/received" || (pathname != "/email-template" && <Banner />)}
     </div>
   );
 }

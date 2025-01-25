@@ -20,6 +20,7 @@ import Received from "./pages/received";
 // Wrong link
 import NotFound from "./pages/notfound";
 import Resume from "./pages/resume/resume";
+import Template from "./pages/email/template";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
       { path: "/contact", element: <Contact /> },
       { path: "/resume", element: <Resume /> },
       { path: "/received", element: <Received /> },
+      { path: "/email-template", element: <Template /> },
       // For any wrong URL, redirect to:
       { path: "*", element: <NotFound /> },
     ],

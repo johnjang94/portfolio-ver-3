@@ -3,6 +3,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdOutlineSend } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import Template from "./email/template";
+import { createElement } from "react";
+import ReactDOMServer from "react-dom/server";
 
 export default function Contact() {
   useEffect(() => {
@@ -21,6 +24,14 @@ export default function Contact() {
   const onSubmit = async (data) => {
     try {
       setSubmitError(null);
+
+      const templateHtml = ReactDOMServer.renderToStaticMarkup(
+        createElement(Template, {
+          name: data.name,
+          inquiry: data.inquiry,
+        })
+      );
+
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_URL}/api/contact`,
         {
@@ -28,7 +39,7 @@ export default function Contact() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify({ ...data, templateHtml }),
         }
       );
 
