@@ -8,6 +8,7 @@ import LogoTransparent from "/logo--white.png";
 
 export default function Banner() {
   const location = useLocation();
+  const currentYear = new Date().getFullYear();
 
   const isNotRegistered = () => {
     const registeredPaths = [
@@ -24,6 +25,7 @@ export default function Banner() {
       "/contact",
       "/resume",
       "/lock",
+      "/access",
     ];
     return !registeredPaths.includes(location.pathname);
   };
@@ -62,7 +64,9 @@ export default function Banner() {
           <p className="text-[9px] md:text-base">
             Designed & Built by John Jang.
           </p>
-          <p className="text-[9px] md:text-base">All Rights Reserved. 2024</p>
+          <p className="text-[9px] md:text-base">
+            All Rights Reserved. {currentYear}
+          </p>
         </div>
       </div>
       <div className="flex space-x-3 text-3xl hover:cursor-pointer">

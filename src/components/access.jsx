@@ -22,7 +22,7 @@ export default function Access({ onCorrectPassword }) {
   };
 
   return (
-    <div className="flex justify-center items-center transform translate-x-[12px]">
+    <div className="flex justify-center items-center transform translate-x-[12px] my-28">
       <div className="py-10 md:w-[55vw] w-5/6 bg-slate-300 rounded-3xl">
         <h1 className="text-center text-3xl mt-10 text-red-500">
           Restricted Access
