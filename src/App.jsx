@@ -16,6 +16,8 @@ import OPERATE from "./pages/design/operate-ease";
 // Contact & Extra
 import Contact from "./pages/contact";
 import Received from "./pages/received";
+import Sending from "./pages/sending";
+import Retry from "./pages/retry";
 
 // Wrong link
 import NotFound from "./pages/notfound";
@@ -39,8 +41,11 @@ const router = createBrowserRouter([
       { path: "/operate", element: <OPERATE /> },
       // Other
       { path: "/contact", element: <Contact /> },
-      { path: "/resume", element: <Resume /> },
+      { path: "/sending", element: <Sending /> },
       { path: "/received", element: <Received /> },
+      { path: "/retry", element: <Retry /> },
+
+      { path: "/resume", element: <Resume /> },
       { path: "/email-template", element: <Template /> },
       // For any wrong URL, redirect to:
       { path: "*", element: <NotFound /> },

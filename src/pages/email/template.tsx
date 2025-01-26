@@ -14,18 +14,16 @@ export default function Template({ name, inquiry }) {
       </div>
       <div className="w-full max-w-lg mx-auto space-y-6">
         <h1 className="text-2xl font-bold">Hi, {name}!</h1>
+        <p className="text-lg">Thank you for reaching out to me!</p>
         <p className="text-lg">
-          Thank you for reaching out! This is to confirm that I have received
-          your inquiry regarding{" "}
+          This is to confirm that I have received your inquiry regarding{" "}
           <span className="font-semibold">{inquiry}</span>.
         </p>
         <p className="text-base">
-          I am going through your request and will respond within 1-2 business
-          days. Please note that this message is sent from an unmonitored
-          account, so we kindly ask that you do not reply directly to this
-          email.
+          I will get back to you within 1-2 business days.
         </p>
         <p className="text-base font-medium">Best regards,</p>
+        <p>John</p>
       </div>
     </div>
   );
