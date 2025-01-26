@@ -1,4 +1,3 @@
-import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { home } from "../../utils/home";
@@ -60,7 +59,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000); // Change every 3 seconds
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -101,7 +100,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="mt-10 md:my-12 md:pb-5">
+        <div className="mt-10 md:my-12 md:pb-5 hidden md:block">
           <div className="md:grid md:grid-cols-3 gap-10">
             <h3 className="text-center md:text-2xl text-xl">Design Tools</h3>
             <h3 className="text-center md:text-2xl text-xl">Tech Tools</h3>
@@ -129,14 +128,40 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="md:hidden flex justify-between">
-          <Link
-            to="/about"
-            className="text-blue-500 hover:underline hover:cursor-pointer flex space-x-2 items-center text-sm"
-          >
-            <button>Click here to learn more about me</button>
-            <FaArrowRight />
-          </Link>
+        {/*  */}
+        <div className="mt-10 md:my-12 md:pb-5 block md:hidden">
+          <div className="md:grid md:grid-cols-3 gap-10 space-y-5">
+            <div>
+              <h3 className="text-center md:text-2xl text-xl">Design Tools</h3>
+              <div className="bg-white rounded-2xl p-3 h-full">
+                <p>
+                  Figma, Miro, Wireframing, Sketching, Prototyping, Mock-ups,
+                  Usability Testing, AI-Insight, Adobe Creative Cloud, Business
+                  Canvas
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-center md:text-2xl text-xl">Tech Tools</h3>
+              <div className="bg-white rounded-2xl p-3 h-full">
+                <p>
+                  Notion, JIRA, Trello, Google Analytics, HTML, CSS, JavaScript
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-center md:text-2xl text-xl">
+                Applied Skills
+              </h3>
+              <div className="bg-white rounded-2xl p-3 h-full">
+                <p>
+                  Analyze how users interact with designs, implement different
+                  strategies to reach the target (i.e. raise CTR, SEO
+                  optimization, improvised workflow, etc.)
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
       <section className="md:mx-36 mx-12 space-y-10 py-14 md:py-0">

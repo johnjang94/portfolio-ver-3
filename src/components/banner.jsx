@@ -72,7 +72,7 @@ export default function Banner() {
         <Link to="http://www.linkedin.com/in/johnjang94">
           <FaLinkedin className="text-blue-500" />
         </Link>
-        <Link to="/email-template">
+        <Link to="/access">
           <FaHeart className="text-red-500" />
         </Link>
       </div>

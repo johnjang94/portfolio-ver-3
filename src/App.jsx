@@ -18,11 +18,12 @@ import Contact from "./pages/contact";
 import Received from "./pages/received";
 import Sending from "./pages/sending";
 import Retry from "./pages/retry";
+import Template from "./pages/email/template";
+import Access from "./components/access";
 
 // Wrong link
 import NotFound from "./pages/notfound";
 import Resume from "./pages/resume/resume";
-import Template from "./pages/email/template";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,7 @@ const router = createBrowserRouter([
 
       { path: "/resume", element: <Resume /> },
       { path: "/email-template", element: <Template /> },
+      { path: "/access", element: <Access /> },
       // For any wrong URL, redirect to:
       { path: "*", element: <NotFound /> },
     ],
