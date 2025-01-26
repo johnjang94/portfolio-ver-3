@@ -2,9 +2,6 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { MdOutlineSend } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import Template from "./email/template";
-import { createElement } from "react";
-import ReactDOMServer from "react-dom/server";
 
 export default function Contact() {
   useEffect(() => {
@@ -19,14 +16,7 @@ export default function Contact() {
   } = useForm();
 
   const onSubmit = (data) => {
-    const templateHtml = ReactDOMServer.renderToStaticMarkup(
-      createElement(Template, {
-        name: data.name,
-        inquiry: data.inquiry,
-      })
-    );
-
-    navigate("/sending", { state: { data: { ...data, templateHtml } } });
+    navigate("/sending", { state: { data } });
   };
 
   return (
