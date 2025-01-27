@@ -8,7 +8,7 @@ export default function ChatBot({ onClose }) {
   const [messages, setMessages] = useState([
     {
       role: "bot",
-      text: "Hello! Welcome to John's portfolio. How may I assist you today?",
+      text: "Hello! Welcome to my portfolio. How may I assist you today?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -79,7 +79,7 @@ export default function ChatBot({ onClose }) {
   return (
     <div className="fixed bottom-10 right-10 bg-white rounded-2xl shadow-lg w-80">
       <div className="flex justify-between items-center bg-slate-200 p-2 rounded-t-2xl">
-        <h2 className="text-lg font-bold">Ask me anything!</h2>
+        <h2 className="text-lg font-bold">Do you need help?</h2>
         <button onClick={onClose} className="text-red-500">
           ✖️
         </button>
@@ -92,8 +92,17 @@ export default function ChatBot({ onClose }) {
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={`text-${msg.role === "bot" ? "left" : "right"}`}
+            className={`flex items-start ${
+              msg.role === "bot" ? "justify-start" : "justify-end"
+            }`}
           >
+            {msg.role === "bot" && (
+              <img
+                src="/profile.jpeg"
+                alt="Bot Profile"
+                className="w-8 h-8 rounded-full mr-2"
+              />
+            )}
             <p
               className={`inline-block rounded-lg px-3 py-1 ${
                 msg.role === "bot"
