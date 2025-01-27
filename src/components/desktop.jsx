@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getLogoSrc, getTextColor } from "../../utils/nav-utils";
+import { getLogoSrc, getTextColor } from "../utils/nav-utils";
 
 Desktop.propTypes = {
   pathname: PropTypes.string.isRequired,
