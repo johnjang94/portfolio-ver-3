@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { home } from "../../utils/home";
 import { useState } from "react";
+import ChatBot from "../chatbot/chatbot-ai";
+import ChatButton from "../chatbot/chat-button";
 
 const roles = ["UX Designer", "Product Designer", "UX Engineer"];
 
@@ -61,6 +63,15 @@ export default function Home() {
       setCurrentRole((prev) => (prev + 1) % roles.length);
     }, 3000);
     return () => clearInterval(interval);
+  }, []);
+
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsChatOpen(true);
+    }, 3500);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -261,6 +272,8 @@ export default function Home() {
             ))}
         </div>
       </section>
+      <ChatButton onClick={() => setIsChatOpen(true)} />
+      {isChatOpen && <ChatBot onClose={() => setIsChatOpen(false)} />}
     </div>
   );
 }
