@@ -34,7 +34,6 @@ export default function ChatBot({ onClose }) {
       const data = await response.json();
       return data.response;
     } catch (error) {
-      console.error("Error fetching chatbot response:", error);
       return "Sorry, I encountered an error while trying to assist you.";
     }
   };
