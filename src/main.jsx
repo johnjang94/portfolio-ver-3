@@ -42,9 +42,9 @@ if (import.meta.env.VITE_ENABLE_GA === "true" && import.meta.env.VITE_GA_ID) {
 }
 
 if (
-  import.meta.env.VITE_ENABLE_HOTJAR === "true" &&
-  import.meta.env.VITE_HJID &&
-  import.meta.env.VITE_HJSV
+  import.meta.env.VITE_HOTJAR_ID &&
+  import.meta.env.VITE_HJSV &&
+  import.meta.env.VITE_ENABLE_HOTJAR === "true"
 ) {
   (function (h, o, t, j, a, r) {
     h.hj =
@@ -53,15 +53,15 @@ if (
         (h.hj.q = h.hj.q || []).push(arguments);
       };
     h._hjSettings = {
-      hjid: import.meta.env.VITE_HJID,
+      hjid: import.meta.env.VITE_HOTJAR_ID,
       hjsv: import.meta.env.VITE_HJSV,
     };
     a = o.getElementsByTagName("head")[0];
     r = o.createElement("script");
-    r.async = true;
-    r.src = `https://static.hotjar.com/c/hotjar-${h._hjSettings.hjid}.js?sv=${h._hjSettings.hjsv}`;
+    r.async = 1;
+    r.src = `${t}${h._hjSettings.hjid}${j}${h._hjSettings.hjsv}`;
     a.appendChild(r);
-  })(window, document);
+  })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
