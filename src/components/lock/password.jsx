@@ -17,9 +17,11 @@ export default function Password({ onCorrectPassword }) {
   };
 
   return (
-    <div className="flex justify-center items-center transform translate-x-[12px]">
-      <div className="py-10 md:w-[55vw] w-5/6 bg-slate-300 rounded-3xl">
-        <h1 className="text-center text-3xl mt-10">Want to know more?</h1>
+    <div className="flex justify-center items-center md:transform md:translate-x-[12px] px-10">
+      <div className="py-10 md:w-[55vw] w-full bg-slate-300 rounded-3xl">
+        <h1 className="text-center md:text-3xl text-xl mt-10">
+          Want to know more?
+        </h1>
         <div className="py-5 text-center">
           <p>Please check my resume for the password!</p>
         </div>

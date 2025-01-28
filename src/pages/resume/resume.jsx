@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getLogoSrc, getTextColor } from "../../utils/nav-utils";
 
-Desktop.propTypes = {
+Resume.propTypes = {
   pathname: PropTypes.string.isRequired,
 };
 
-export default function Desktop({ pathname }) {
+export default function Resume({ pathname }) {
   const logoSrc = getLogoSrc(pathname);
   const textColor = getTextColor(pathname);
 
@@ -18,11 +18,7 @@ export default function Desktop({ pathname }) {
   useEffect(() => {
     const referrer = document.referrer;
     const token = searchParams.get("token");
-    const allowedReferrers = [
-      "linkedin.com",
-      "indeed.com",
-      "portfolio-ver-3-n474q0s6d-johnjang94s-projects.vercel.app",
-    ];
+    const allowedReferrers = ["indeed.com", "portfolio-ver-3.vercel.app"];
 
     if (
       token === "secure-token" ||

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default function Solutions({ isPasswordCorrect }) {
   return (
     <div>
-      <div className="md:mx-20 space-y-5 -mt-36 md:-mt-0">
+      <div className="md:mx-20 space-y-5">
         <p className="font-bold">Solution 1 | Minimalistic Design</p>
         <p className="md:px-10">
           {isPasswordCorrect ? (
@@ -33,14 +33,12 @@ export default function Solutions({ isPasswordCorrect }) {
         <img
           src={OperateEase.Occupancy}
           alt="Room occupancy dashboard sketch"
-          width={1200}
-          className="mx-auto rounded-2xl"
+          className="mx-auto rounded-2xl w-full"
         />
         <img
           src={OperateEase.Food}
           alt="Food dashboard sketch"
-          width={1200}
-          className="mx-auto rounded-2xl"
+          className="mx-auto rounded-2xl w-full"
         />
       </div>
     </div>

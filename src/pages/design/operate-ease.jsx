@@ -63,10 +63,10 @@ export default function OPERATE() {
         <Overview />
       </div>
       <div>
-        <Solutions />
+        <Solutions isPasswordCorrect={false} />
       </div>
-      <div className="md:-mt-40">
-        <Impact />
+      <div>
+        <Impact isPasswordCorrect={false} />
       </div>
       <div>
         <Collaboration />
@@ -80,7 +80,7 @@ export default function OPERATE() {
         <Overview />
       </div>
       <div>
-        <Solutions />
+        <Solutions isPasswordCorrect={true} />
       </div>
       <div id={2}>
         <MarketAnalysis />
@@ -95,7 +95,7 @@ export default function OPERATE() {
         <MidFi />
       </div>
       <div id={3}>
-        <Impact />
+        <Impact isPasswordCorrect={true} />
       </div>
       <div>
         <Retrospective />

@@ -17,7 +17,7 @@ export default function Overview() {
         </div>
         <div className="py-10 md:py-0">
           <p className="font-semibold">Outcome</p>
-          <div className="flex-col grid-cols-2 my-10">
+          <div className="flex-col grid-cols-2 my-10 hidden md:block">
             <div className="text-3xl md:text-5xl flex items-center space-x-20 md:justify-center md:space-x-96">
               <p>80%</p>
               <p>90%</p>
@@ -27,6 +27,27 @@ export default function Overview() {
               <p className="md:w-2/6">
                 of users said that it is smooth and easy to adjust the rates
               </p>
+            </div>
+          </div>
+          {/*  */}
+          <div className="my-10 block md:hidden text-center space-y-10">
+            <div>
+              <div className="text-3xl md:text-5xl">
+                <p>80%</p>
+              </div>
+              <div>
+                <p>positive remarks in live updates</p>
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-5xl">
+                <p>90%</p>
+              </div>
+              <div>
+                <p>
+                  of users said that it is smooth and easy to adjust the rates
+                </p>
+              </div>
             </div>
           </div>
         </div>
