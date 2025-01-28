@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 export default function Impact() {
   return (
     <div>
-      <h3 className="text-xl uppercase">Impact</h3>
+      <h3 className="text-xl uppercase md:-mt-52">Impact</h3>
       <div className="md:mx-20 my-3 space-y-5">
         <p>Anticipated impacts are as follows:</p>
         <ul className="m-5 space-y-3">

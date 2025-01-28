@@ -58,14 +58,14 @@ export default function OPERATE() {
   };
 
   const PublicContent = () => (
-    <div className="space-y-20">
+    <div className="space-y-10">
       <div id={1}>
         <Overview />
       </div>
       <div>
         <Solutions />
       </div>
-      <div>
+      <div className="md:-mt-40">
         <Impact />
       </div>
       <div>
@@ -75,7 +75,7 @@ export default function OPERATE() {
   );
 
   const PrivateContent = () => (
-    <div className="space-y-20">
+    <div className="space-y-10">
       <div id={1}>
         <Overview />
       </div>
@@ -214,7 +214,7 @@ export default function OPERATE() {
             <div className="hidden md:block"></div>
           )}
         </div>
-        <section className="md:w-4/6 mx-10 my-5 md:my-28">
+        <section className="md:w-4/6 mx-10 my-5 md:my-10">
           {isPasswordCorrect ? (
             <PrivateContent isPasswordCorrect={isPasswordCorrect} />
           ) : (
