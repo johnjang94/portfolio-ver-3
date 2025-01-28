@@ -15,14 +15,12 @@ export default function Desktop({ pathname }) {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    const allowedReferrers = ["indeed.com", "portfolio-ver-3.vercel.app"];
-
-    const referrer = document.referrer;
+    const allowedHost = ["portfolio-ver-3.vercel.app", "indeed.com"];
     const token = searchParams.get("token");
 
     if (
       token === "secure-token" ||
-      (referrer && allowedReferrers.some((url) => referrer.includes(url)))
+      window.location.hostname.includes(allowedHost)
     ) {
       setShowResume(true);
     }
