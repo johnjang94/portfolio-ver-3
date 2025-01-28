@@ -4,7 +4,6 @@ import { home } from "../../utils/home";
 import { useState } from "react";
 import ChatBot from "../chatbot/chatbot-ai";
 import ChatButton from "../chatbot/chat-button";
-import { FcSurvey } from "react-icons/fc";
 
 const roles = ["UX Designer", "Product Designer", "UX Engineer"];
 
@@ -67,6 +66,13 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   // About Chatbot
   const [isChatOpen, setIsChatOpen] = useState(false);
   useEffect(() => {
@@ -74,47 +80,6 @@ export default function Home() {
       setIsChatOpen(true);
     }, 3500);
     return () => clearTimeout(timer);
-  }, []);
-
-  // Survey Pop-up
-  const [visitedHomepage, setVisitedHomepage] = useState(false);
-  const [visitedOtherPage, setVisitedOtherPage] = useState(false);
-  const [showSurveyPopup, setShowSurveyPopup] = useState(false);
-  const [showSurveyIcon, setShowSurveyIcon] = useState(false);
-  useEffect(() => {
-    const surveyCompleted = localStorage.getItem("surveyCompleted");
-
-    if (surveyCompleted) return;
-
-    if (location.pathname === "/") {
-      if (visitedOtherPage) {
-        setShowSurveyPopup(true);
-      } else {
-        setVisitedHomepage(true);
-      }
-    } else {
-      if (visitedHomepage) {
-        setVisitedOtherPage(true);
-      }
-    }
-  }, [visitedHomepage, visitedOtherPage]);
-
-  const completeSurvey = () => {
-    localStorage.setItem("surveyCompleted", "true");
-    setShowSurveyPopup(false);
-    setShowSurveyIcon(false);
-  };
-
-  const closeSurveyPopup = () => {
-    setShowSurveyPopup(false);
-    setShowSurveyIcon(true);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -315,38 +280,6 @@ export default function Home() {
             ))}
         </div>
       </section>
-      {showSurveyPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg w-96 p-6 text-center">
-            <h2 className="text-xl font-bold mb-4">Can I ask for 30s?</h2>
-            <p className="text-gray-700 mb-6">
-              I would really appreciate your two cents!
-            </p>
-            <div className="flex justify-center gap-4">
-              <button
-                onClick={closeSurveyPopup}
-                className="px-4 py-2 text-red-500 rounded-lg"
-              >
-                Not this time
-              </button>
-              <button
-                onClick={completeSurvey}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-green-500"
-              >
-                OK
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-      {showSurveyIcon && (
-        <div
-          className="fixed bottom-5 left-5 w-12 h-12 bg-blue-500 text-white flex items-center justify-center rounded-full shadow-lg cursor-pointer hover:bg-blue-600 z-50"
-          onClick={() => setShowSurveyPopup(true)}
-        >
-          <FcSurvey />
-        </div>
-      )}
 
       <ChatButton onClick={() => setIsChatOpen(true)} />
       {isChatOpen && <ChatBot onClose={() => setIsChatOpen(false)} />}
