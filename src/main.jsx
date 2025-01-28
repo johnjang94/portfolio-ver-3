@@ -41,6 +41,29 @@ if (import.meta.env.VITE_ENABLE_GA === "true" && import.meta.env.VITE_GA_ID) {
   gtag("config", import.meta.env.VITE_GA_ID);
 }
 
+if (
+  import.meta.env.VITE_ENABLE_HOTJAR === "true" &&
+  import.meta.env.VITE_HJID &&
+  import.meta.env.VITE_HJSV
+) {
+  (function (h, o, t, j, a, r) {
+    h.hj =
+      h.hj ||
+      function () {
+        (h.hj.q = h.hj.q || []).push(arguments);
+      };
+    h._hjSettings = {
+      hjid: import.meta.env.VITE_HJID,
+      hjsv: import.meta.env.VITE_HJSV,
+    };
+    a = o.getElementsByTagName("head")[0];
+    r = o.createElement("script");
+    r.async = true;
+    r.src = `https://static.hotjar.com/c/hotjar-${h._hjSettings.hjid}.js?sv=${h._hjSettings.hjsv}`;
+    a.appendChild(r);
+  })(window, document);
+}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
