@@ -28,18 +28,20 @@ export default function Solutions({ isPasswordCorrect }) {
             </>
           )}
         </p>
-        <div className="gap-5 space-y-5 bg-slate-300 rounded-3xl p-5">
-          <img
-            src={OperateEase.Occupancy}
-            alt="Room occupancy dashboard sketch"
-            className="mx-auto rounded-2xl"
-          />
-          <img
-            src={OperateEase.Food}
-            alt="Food dashboard sketch"
-            className="mx-auto rounded-2xl"
-          />
-        </div>
+      </div>
+      <div className="md:mx-20 md:-space-y-96 md:-mt-36">
+        <img
+          src={OperateEase.Occupancy}
+          alt="Room occupancy dashboard sketch"
+          width={1200}
+          className="mx-auto rounded-2xl"
+        />
+        <img
+          src={OperateEase.Food}
+          alt="Food dashboard sketch"
+          width={1200}
+          className="mx-auto rounded-2xl"
+        />
       </div>
     </div>
   );

@@ -14,8 +14,6 @@ import Competition from "../assets/oe/competitive-analysis/petpooja.gif";
 // ITERATIONS
 import Occupancy from "../assets/oe/iteration/occupancy.png";
 import Food from "../assets/oe/iteration/food.png";
-import Cost from "../assets/oe/iteration/cost.png";
-import Room from "../assets/oe/iteration/room.png";
 import Statistics from "../assets/oe/iteration/statistics.png";
 
 // SKETCH
@@ -43,8 +41,6 @@ export const OperateEase = {
   Competition,
   Occupancy,
   Food,
-  Cost,
-  Room,
   Statistics,
   InitialDrawing,
   Pricing,

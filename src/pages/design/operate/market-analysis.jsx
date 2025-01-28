@@ -2,7 +2,7 @@ import { OperateEase } from "../../../utils/operate";
 
 export default function MarketAnalysis() {
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 md:-mt-64">
       <h3 className="text-xl uppercase">Market Analysis</h3>
       <div className="md:mx-24 my-5 space-y-3">
         <p>
