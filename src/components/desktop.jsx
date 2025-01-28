@@ -15,14 +15,18 @@ export default function Desktop({ pathname }) {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    const allowedHost = ["portfolio-ver-3.vercel.app", "indeed.com"];
+    const allowedHost = "portfolio-ver-3.vercel.app";
     const token = searchParams.get("token");
+    console.log("Current hostname:", window.location.hostname);
 
     if (
       token === "secure-token" ||
       window.location.hostname.includes(allowedHost)
     ) {
+      console.log("Condition met, showing resume.");
       setShowResume(true);
+    } else {
+      console.log("Condition not met.");
     }
   }, [searchParams]);
 
