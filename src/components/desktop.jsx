@@ -15,11 +15,7 @@ export default function Desktop({ pathname }) {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    const allowedReferrers = [
-      "linkedin.com",
-      "indeed.com",
-      "portfolio-ver-3-n474q0s6d-johnjang94s-projects.vercel.app",
-    ];
+    const allowedReferrers = ["indeed.com", "portfolio-ver-3.vercel.app"];
 
     const referrer = document.referrer;
     const token = searchParams.get("token");
