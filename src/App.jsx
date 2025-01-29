@@ -25,10 +25,6 @@ import Access from "./components/access";
 import NotFound from "./pages/notfound";
 import Resume from "./pages/resume/resume";
 
-import { FcSurvey } from "react-icons/fc";
-import { useEffect } from "react";
-import { useState } from "react";
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,7 +45,7 @@ const router = createBrowserRouter([
       { path: "/sending", element: <Sending /> },
       { path: "/received", element: <Received /> },
       { path: "/retry", element: <Retry /> },
-
+      // Accessory
       { path: "/resume", element: <Resume /> },
       { path: "/email-template", element: <Template /> },
       { path: "/access", element: <Access /> },
@@ -60,79 +56,10 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  // Survey Pop-up
-  const [visitedHomepage, setVisitedHomepage] = useState(false);
-  const [visitedOtherPage, setVisitedOtherPage] = useState(false);
-  const [showSurveyPopup, setShowSurveyPopup] = useState(false);
-  const [showSurveyIcon, setShowSurveyIcon] = useState(false);
-  useEffect(() => {
-    console.log("Visited Homepage:", visitedHomepage);
-    console.log("Visited Other Page:", visitedOtherPage);
-
-    const surveyCompleted = localStorage.getItem("surveyCompleted");
-
-    if (surveyCompleted) return;
-
-    if (location.pathname === "/") {
-      if (visitedOtherPage) {
-        setShowSurveyPopup(true);
-      } else {
-        setVisitedHomepage(true);
-      }
-    } else {
-      if (visitedHomepage) {
-        setVisitedOtherPage(true);
-      }
-    }
-  }, [visitedHomepage, visitedOtherPage]);
-
-  const completeSurvey = () => {
-    localStorage.setItem("surveyCompleted", "true");
-    setShowSurveyPopup(false);
-    setShowSurveyIcon(false);
-  };
-
-  const closeSurveyPopup = () => {
-    setShowSurveyPopup(false);
-    setShowSurveyIcon(true);
-  };
-
   return (
     <div>
       <RouterProvider router={router} />
       <Analytics />
-      {showSurveyIcon && (
-        <div
-          className="fixed bottom-5 left-5 w-12 h-12 bg-blue-500 text-white flex items-center justify-center rounded-full shadow-lg cursor-pointer hover:bg-blue-600 z-50"
-          onClick={() => setShowSurveyPopup(true)}
-        >
-          <FcSurvey />
-        </div>
-      )}
-      {showSurveyPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg w-96 p-6 text-center">
-            <h2 className="text-xl font-bold mb-4">Can I ask for 30s?</h2>
-            <p className="text-gray-700 mb-6">
-              I would really appreciate your two cents!
-            </p>
-            <div className="flex justify-center gap-4">
-              <button
-                onClick={closeSurveyPopup}
-                className="px-4 py-2 text-red-500 rounded-lg"
-              >
-                Not this time
-              </button>
-              <button
-                onClick={completeSurvey}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-green-500"
-              >
-                OK
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

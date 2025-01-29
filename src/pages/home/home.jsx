@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { home } from "../../utils/home";
-import { useState } from "react";
 import ChatBot from "../chatbot/chatbot-ai";
 import ChatButton from "../chatbot/chat-button";
+import Main from "../../components/feedback/main";
 
 const roles = ["UX Designer", "Product Designer", "UX Engineer"];
 
@@ -53,11 +53,11 @@ const data = [
 ];
 
 export default function Home() {
+  const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // About Roles
   const [currentRole, setCurrentRole] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -66,21 +66,24 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // About Chatbot
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [hasVisitedHome, setHasVisitedHome] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsChatOpen(true);
-    }, 3500);
-    return () => clearTimeout(timer);
-  }, []);
+    if (!hasVisitedHome && location.pathname === "/") {
+      const chatTimeout = setTimeout(() => {
+        setIsChatOpen(true);
+        setHasVisitedHome(true);
+      }, 2000);
+      return () => clearTimeout(chatTimeout);
+    }
+  }, [hasVisitedHome, location.pathname]);
+
+  const closeChat = () => {
+    setIsChatOpen(false);
+  };
+
+  // Survey Pop-up
+  const [showSurveyPopup, setShowSurveyPopup] = useState(false);
 
   return (
     <div>
@@ -147,7 +150,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/*  */}
         <div className="mt-10 md:my-12 md:pb-5 block md:hidden">
           <div className="md:grid md:grid-cols-3 gap-10 space-y-5">
             <div>
@@ -280,9 +282,12 @@ export default function Home() {
             ))}
         </div>
       </section>
-
+      <Main
+        showSurveyPopup={showSurveyPopup}
+        setShowSurveyPopup={setShowSurveyPopup}
+      />
       <ChatButton onClick={() => setIsChatOpen(true)} />
-      {isChatOpen && <ChatBot onClose={() => setIsChatOpen(false)} />}
+      {isChatOpen && <ChatBot onClose={closeChat} />}
     </div>
   );
 }
