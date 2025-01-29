@@ -23,10 +23,7 @@ export default function Desktop({ pathname }) {
       token === "secure-token" ||
       window.location.hostname.includes(allowedHost)
     ) {
-      console.log("Condition met, showing resume.");
       setShowResume(true);
-    } else {
-      console.log("Condition not met.");
     }
   }, [searchParams]);
 
