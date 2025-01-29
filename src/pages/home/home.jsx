@@ -4,6 +4,7 @@ import { home } from "../../utils/home";
 import ChatBot from "../chatbot/chatbot-ai";
 import ChatButton from "../chatbot/chat-button";
 import Main from "../../components/feedback/main";
+import { FcSurvey } from "react-icons/fc";
 
 const roles = ["UX Designer", "Product Designer", "UX Engineer"];
 
@@ -82,8 +83,24 @@ export default function Home() {
     setIsChatOpen(false);
   };
 
-  // Survey Pop-up
   const [showSurveyPopup, setShowSurveyPopup] = useState(false);
+  const [showSurveyButton, setShowSurveyButton] = useState(false);
+  const [showMain, setShowMain] = useState(false);
+  useEffect(() => {
+    const mainTimeout = setTimeout(() => {
+      setShowMain(true);
+    }, 5000);
+
+    const surveyTimeout = setTimeout(() => {
+      setShowSurveyPopup(true);
+      setShowSurveyButton(true);
+    }, 7000);
+
+    return () => {
+      clearTimeout(mainTimeout);
+      clearTimeout(surveyTimeout);
+    };
+  }, []);
 
   return (
     <div>
@@ -282,10 +299,25 @@ export default function Home() {
             ))}
         </div>
       </section>
-      <Main
-        showSurveyPopup={showSurveyPopup}
-        setShowSurveyPopup={setShowSurveyPopup}
-      />
+      {showMain && (
+        <Main
+          showSurveyPopup={showSurveyPopup}
+          setShowSurveyPopup={setShowSurveyPopup}
+          onNotThisTime={() => setShowSurveyButton(true)}
+        />
+      )}
+      {showSurveyButton && (
+        <button
+          onClick={() => setShowSurveyPopup(true)}
+          className="fixed bottom-5 left-5 flex items-center bg-blue-500 text-white rounded-full shadow-lg 
+                   w-[48px] h-[48px] p-4 group transition-all duration-300 ease-in-out hover:w-auto hover:px-6 hover:bg-green-500"
+        >
+          <FcSurvey className="text-2xl flex-shrink-0 -ml-1" />
+          <span className="hidden group-hover:inline-block transition-opacity duration-300 ease-in-out">
+            Survey
+          </span>
+        </button>
+      )}
       <ChatButton onClick={() => setIsChatOpen(true)} />
       {isChatOpen && <ChatBot onClose={closeChat} />}
     </div>
