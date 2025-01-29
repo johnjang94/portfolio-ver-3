@@ -89,7 +89,7 @@ export default function Home() {
   useEffect(() => {
     const mainTimeout = setTimeout(() => {
       setShowMain(true);
-    }, 5000);
+    }, 6500);
 
     const surveyTimeout = setTimeout(() => {
       setShowSurveyPopup(true);
