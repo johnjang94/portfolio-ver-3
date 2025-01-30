@@ -98,7 +98,7 @@ export default function Home() {
     }
     return false;
   });
-  const [showSurveyIcon, setShowSurveyIcon] = useState(false);
+
   useEffect(() => {
     if (!hasClosedSurvey) {
       const timer = setTimeout(() => {
@@ -120,6 +120,7 @@ export default function Home() {
     };
   }, [showLanding]);
 
+  const [showSurveyIcon, setShowSurveyIcon] = useState(false);
   const [waveEffect, setWaveEffect] = useState(false);
   const handleLandingComplete = () => {
     setShowSurveyIcon(true);
@@ -382,7 +383,10 @@ export default function Home() {
       </section>
       <section>
         {/* CHATBOT */}
-        <ChatButton onClick={() => setIsChatOpen(true)} />
+        <ChatButton
+          onClick={() => setIsChatOpen(true)}
+          status={isChatOpen ? "open" : "closed"}
+        />
         {isChatOpen && <ChatBot onClose={handleChatClose} />}
       </section>
     </div>
