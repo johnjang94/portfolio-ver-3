@@ -23,11 +23,11 @@ export default function Detail() {
             userRole: data.userRole,
             otherRole: data.otherRole || "",
             foundWhatLookingFor: data.foundWhatLookingFor,
-            whatLookingFor: data.discoveryDescription || "",
-            improvementSuggestions: data.improvementSuggestion || "",
+            whatLookingFor: data.whatLookingFor || "",
+            improvementSuggestions: data.improvementSuggestions || "",
             reachSource: data.websiteSource,
           }),
-          credentials: "include",
+          mode: "cors",
         }
       );
 
