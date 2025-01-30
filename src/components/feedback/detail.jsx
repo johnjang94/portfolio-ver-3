@@ -27,6 +27,7 @@ export default function Detail() {
             improvementSuggestions: data.improvementSuggestion || "",
             reachSource: data.websiteSource,
           }),
+          credentials: "include",
         }
       );
 
