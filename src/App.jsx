@@ -4,6 +4,7 @@ import Root from "./pages/root";
 
 // Home page & About Me
 import Home from "./pages/home/home";
+import Home2 from "./pages/home/ho-me";
 import About from "./pages/about/about";
 
 // Design section
@@ -21,6 +22,12 @@ import Retry from "./pages/retry";
 import Template from "./pages/email/template";
 import Access from "./components/access";
 
+// Survey
+import Landing from "./components/feedback/landing";
+import Detail from "./components/feedback/detail";
+import Sent from "./components/feedback/sent";
+import Return from "./components/feedback/return";
+
 // Wrong link
 import NotFound from "./pages/notfound";
 import Resume from "./pages/resume/resume";
@@ -32,7 +39,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/home", element: <Home /> },
+      { path: "/ho-me", element: <Home2 /> },
       { path: "/about", element: <About /> },
       // Design section
       { path: "/televu", element: <TeleVU /> },
@@ -49,6 +56,11 @@ const router = createBrowserRouter([
       { path: "/resume", element: <Resume /> },
       { path: "/email-template", element: <Template /> },
       { path: "/access", element: <Access /> },
+      // Survey
+      { path: "/landing", element: <Landing /> },
+      { path: "/detail", element: <Detail /> },
+      { path: "/sent", element: <Sent /> },
+      { path: "/return", element: <Return /> },
       // For any wrong URL, redirect to:
       { path: "*", element: <NotFound /> },
     ],
@@ -57,10 +69,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
-      <RouterProvider router={router} />
+    <RouterProvider router={router}>
       <Analytics />
-    </div>
+    </RouterProvider>
   );
 }
 

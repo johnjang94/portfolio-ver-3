@@ -21,7 +21,7 @@ export default function OtherMenu() {
   return (
     <div className="flex items-center md:space-x-40 justify-center mx-8 md:mx-0">
       <div>
-        <Link to="/">
+        <Link to="/ho-me">
           <div className="flex items-center p-5 rounded-2xl gap-2 text-blue-500 bg-transparent hover:text-white hover:bg-gradient-to-br hover:from-blue-400 hover:to-transparent transition-all duration-2000 ease-in-out">
             <button>
               <HiMiniArrowLongLeft />

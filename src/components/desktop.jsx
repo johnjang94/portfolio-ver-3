@@ -33,13 +33,15 @@ export default function Desktop({ pathname }) {
     >
       <div>
         <Link
-          to="/home"
+          to="/ho-me"
           className="flex items-center space-x-5 hover:cursor-pointer"
         >
           <img src={logoSrc} alt="Logo" width={30} />
-          {pathname !== "/" && pathname !== "/home" && (
-            <p className="hover:text-blue-500">I am John Jang</p>
-          )}
+          {pathname !== "/" &&
+            pathname !== "/home" &&
+            pathname !== "/ho-me" && (
+              <p className="hover:text-blue-500">I am John Jang</p>
+            )}
         </Link>
       </div>
       <div className="flex space-x-5 items-center">

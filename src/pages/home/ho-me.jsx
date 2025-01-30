@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { home } from "../../utils/home";
 import ChatButton from "../chatbot/chat-button";
 import ChatBot from "../chatbot/chatbot-ai";
+import { FcSurvey } from "react-icons/fc";
+import Landing from "../../components/feedback/landing";
+import { motion, AnimatePresence } from "framer-motion";
 
 const roles = ["UX Designer", "Product Designer", "UX Engineer"];
 
@@ -56,8 +59,7 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const [hasClosedChat, setHasClosedChat] = useState(false);
+  // Role
   const [currentRole, setCurrentRole] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -66,12 +68,46 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  // Chatbot
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [hasClosedChat, setHasClosedChat] = useState(false);
   useEffect(() => {
     if (!hasClosedChat) {
       const chatTimeout = setTimeout(() => setIsChatOpen(true), 5000);
       return () => clearTimeout(chatTimeout);
     }
   }, [hasClosedChat]);
+
+  // Survey & Landing
+  const [showLanding, setShowLanding] = useState(false);
+  const [showSurveyIcon, setShowSurveyIcon] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLanding(true);
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const [waveEffect, setWaveEffect] = useState(false);
+  const handleLandingComplete = () => {
+    setShowSurveyIcon(true);
+    setWaveEffect(true);
+
+    requestAnimationFrame(() => {
+      setShowLanding(false);
+    });
+
+    setTimeout(() => {
+      setWaveEffect(false);
+    }, 300);
+  };
+
+  const handleToggleLanding = () => {
+    setShowSurveyIcon(false);
+    requestAnimationFrame(() => {
+      setShowLanding(true);
+    });
+  };
 
   return (
     <div>
@@ -269,6 +305,49 @@ export default function Home() {
               </Link>
             ))}
         </div>
+      </section>
+      <section className="relative">
+        {/* LANDING 화면 */}
+        <AnimatePresence>
+          {showLanding && (
+            <motion.div
+              key="landing"
+              initial={{ opacity: 0, scale: 0.9, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.5, y: 200 }}
+              transition={{ duration: 0.1, ease: "easeInOut" }}
+            >
+              <Landing
+                onComplete={handleLandingComplete}
+                waveEffect={waveEffect}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* SURVEY ICON */}
+        {showSurveyIcon && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
+            className="fixed bottom-10 left-10"
+          >
+            <motion.button
+              onClick={handleToggleLanding}
+              className="flex items-center bg-blue-500 text-white rounded-full shadow-lg 
+             w-[48px] h-[48px] p-4 group transition-all duration-300 ease-in-out 
+             hover:w-auto hover:px-6 hover:bg-green-500 relative"
+            >
+              <FcSurvey className="text-2xl flex-shrink-0 -ml-1" />
+              <span className="hidden group-hover:inline-block transition-opacity duration-300 ease-in-out">
+                Survey
+              </span>
+            </motion.button>
+          </motion.div>
+        )}
+      </section>
+      <section>
+        {/* CHATBOT */}
         <ChatButton onClick={() => setIsChatOpen(true)} />
         {isChatOpen && (
           <ChatBot

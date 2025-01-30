@@ -14,6 +14,7 @@ export default function Banner() {
     const registeredPaths = [
       "/",
       "/home",
+      "/ho-me",
       "/about",
       "/resume",
       "/televu",
@@ -55,7 +56,7 @@ export default function Banner() {
     <div
       className={`flex justify-between items-center px-10 py-10 ${backgroundColor}`}
     >
-      <Link to="/home">
+      <Link to="/ho-me">
         <img src={logo} alt="Logo" width={30} />
       </Link>
       <div className="flex space-x-1">

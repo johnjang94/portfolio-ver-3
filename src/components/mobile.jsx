@@ -45,7 +45,7 @@ export default function Mobile({ pathname }) {
                 : "-translate-x-full delay-[800ms]"
             }`}
           >
-            <Link to="/home" onClick={closeMenu}>
+            <Link to="/ho-me" onClick={closeMenu}>
               <button className="p-2">home</button>
             </Link>
           </li>
@@ -74,7 +74,7 @@ export default function Mobile({ pathname }) {
         </ul>
       </div>
 
-      <Link to="/home">
+      <Link to="/ho-me">
         <img src={logoSrc} alt="Logo" width={30} />
       </Link>
       <Link to="/contact">

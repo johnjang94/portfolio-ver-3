@@ -46,7 +46,7 @@ export default function Footer() {
         <h3 className="text-center text-3xl my-5">Explore Further</h3>
         <p className="text-center">CONTINUE YOUR JOURNEY</p>
         <div className="md: grid md:grid-cols-2 md:gap-16 justify-center md:flex my-5">
-          <Link to="/home">
+          <Link to="/ho-me">
             <button className="hover:bg-gray-200 hover:text-black rounded-xl hover:brightness-125 p-3">
               <img
                 src={DesignHome}
