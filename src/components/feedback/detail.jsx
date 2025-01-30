@@ -12,13 +12,23 @@ export default function Detail() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("https://your-backend-api.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/feedback`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userRole: data.userRole,
+            otherRole: data.otherRole || "",
+            foundWhatLookingFor: data.foundWhatLookingFor,
+            whatLookingFor: data.discoveryDescription || "",
+            improvementSuggestions: data.improvementSuggestion || "",
+            reachSource: data.websiteSource,
+          }),
+        }
+      );
 
       if (response.ok) {
         navigate("/sent");
