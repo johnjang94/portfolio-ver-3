@@ -27,7 +27,6 @@ export default function Detail() {
             improvementSuggestions: data.improvementSuggestions || "",
             reachSource: data.websiteSource,
           }),
-          mode: "cors",
         }
       );
 
