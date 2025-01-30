@@ -100,7 +100,7 @@ export default function Home() {
     if (!hasClosedSurvey) {
       const timer = setTimeout(() => {
         setShowLanding(true);
-      }, 10000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [hasClosedSurvey]);
