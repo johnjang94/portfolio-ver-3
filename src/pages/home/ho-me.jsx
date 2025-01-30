@@ -92,9 +92,12 @@ export default function Home() {
 
   // Survey & Landing
   const [showLanding, setShowLanding] = useState(false);
-  const [hasClosedSurvey, setHasClosedSurvey] = useState(
-    localStorage.getItem("surveyClosed") === "true"
-  );
+  const [hasClosedSurvey, setHasClosedSurvey] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("surveyClosed") === "true";
+    }
+    return false;
+  });
   const [showSurveyIcon, setShowSurveyIcon] = useState(false);
   useEffect(() => {
     if (!hasClosedSurvey) {
@@ -342,7 +345,7 @@ export default function Home() {
         <AnimatePresence>
           {showLanding && (
             <motion.div
-              key="landing"
+              key="landing-screen"
               initial={{ opacity: 0, scale: 0.9, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.5, y: 200 }}
