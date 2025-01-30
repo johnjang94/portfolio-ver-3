@@ -7,6 +7,8 @@ export default function Return() {
 
   const handleClose = () => {
     setIsOpen(false);
+    localStorage.setItem("surveyClosed", "true");
+    localStorage.setItem("chatClosed", "true");
     navigate("/ho-me");
   };
 

@@ -6,6 +6,8 @@ import ChatBot from "../chatbot/chatbot-ai";
 import { FcSurvey } from "react-icons/fc";
 import Landing from "../../components/feedback/landing";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
+import { useMemo } from "react";
 
 const roles = ["UX Designer", "Product Designer", "UX Engineer"];
 
@@ -69,24 +71,51 @@ export default function Home() {
   }, []);
 
   // Chatbot
+  const location = useLocation();
+  const surveyPaths = useMemo(() => ["/detail", "/sent", "/return"], []);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [hasClosedChat, setHasClosedChat] = useState(false);
+  const [hasClosedChat, setHasClosedChat] = useState(
+    localStorage.getItem("chatClosed") === "true"
+  );
   useEffect(() => {
-    if (!hasClosedChat) {
+    if (!hasClosedChat && !surveyPaths.includes(location.pathname)) {
       const chatTimeout = setTimeout(() => setIsChatOpen(true), 5000);
       return () => clearTimeout(chatTimeout);
     }
-  }, [hasClosedChat]);
+  }, [hasClosedChat, location.pathname, surveyPaths]);
+
+  const handleChatClose = () => {
+    setIsChatOpen(false);
+    setHasClosedChat(true);
+    localStorage.setItem("chatClosed", "true");
+  };
 
   // Survey & Landing
   const [showLanding, setShowLanding] = useState(false);
+  const [hasClosedSurvey, setHasClosedSurvey] = useState(
+    localStorage.getItem("surveyClosed") === "true"
+  );
   const [showSurveyIcon, setShowSurveyIcon] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLanding(true);
-    }, 10000);
-    return () => clearTimeout(timer);
-  }, []);
+    if (!hasClosedSurvey) {
+      const timer = setTimeout(() => {
+        setShowLanding(true);
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [hasClosedSurvey]);
+
+  useEffect(() => {
+    if (showLanding) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showLanding]);
 
   const [waveEffect, setWaveEffect] = useState(false);
   const handleLandingComplete = () => {
@@ -95,6 +124,8 @@ export default function Home() {
 
     requestAnimationFrame(() => {
       setShowLanding(false);
+      setHasClosedSurvey(true);
+      localStorage.setItem("surveyClosed", "true");
     });
 
     setTimeout(() => {
@@ -349,14 +380,7 @@ export default function Home() {
       <section>
         {/* CHATBOT */}
         <ChatButton onClick={() => setIsChatOpen(true)} />
-        {isChatOpen && (
-          <ChatBot
-            onClose={() => {
-              setIsChatOpen(false);
-              setHasClosedChat(true);
-            }}
-          />
-        )}
+        {isChatOpen && <ChatBot onClose={handleChatClose} />}
       </section>
     </div>
   );

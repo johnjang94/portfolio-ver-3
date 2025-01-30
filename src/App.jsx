@@ -1,4 +1,9 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import Root from "./pages/root";
 
@@ -32,40 +37,41 @@ import Return from "./components/feedback/return";
 import NotFound from "./pages/notfound";
 import Resume from "./pages/resume/resume";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <NotFound />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "/ho-me", element: <Home2 /> },
-      { path: "/about", element: <About /> },
-      // Design section
-      { path: "/televu", element: <TeleVU /> },
-      { path: "/food-distro", element: <Food /> },
-      { path: "/tugo-insurance", element: <TuGo /> },
-      { path: "/sakhi", element: <SAKHI /> },
-      { path: "/operate", element: <OPERATE /> },
-      // Other
-      { path: "/contact", element: <Contact /> },
-      { path: "/sending", element: <Sending /> },
-      { path: "/received", element: <Received /> },
-      { path: "/retry", element: <Retry /> },
-      // Accessory
-      { path: "/resume", element: <Resume /> },
-      { path: "/email-template", element: <Template /> },
-      { path: "/access", element: <Access /> },
-      // Survey
-      { path: "/landing", element: <Landing /> },
-      { path: "/detail", element: <Detail /> },
-      { path: "/sent", element: <Sent /> },
-      { path: "/return", element: <Return /> },
-      // For any wrong URL, redirect to:
-      { path: "*", element: <NotFound /> },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />} errorElement={<NotFound />}>
+      {/* Main Routes */}
+      <Route index element={<Home />} />
+      <Route path="ho-me" element={<Home2 />} />
+      <Route path="about" element={<About />} />
+
+      {/* Design Section */}
+      <Route path="televu" element={<TeleVU />} />
+      <Route path="food-distro" element={<Food />} />
+      <Route path="tugo-insurance" element={<TuGo />} />
+      <Route path="sakhi" element={<SAKHI />} />
+      <Route path="operate" element={<OPERATE />} />
+
+      {/* Contact & Extra */}
+      <Route path="contact" element={<Contact />} />
+      <Route path="sending" element={<Sending />} />
+      <Route path="received" element={<Received />} />
+      <Route path="retry" element={<Retry />} />
+      <Route path="resume" element={<Resume />} />
+      <Route path="email-template" element={<Template />} />
+      <Route path="access" element={<Access />} />
+
+      {/* Survey - Modal 방식으로 변경 */}
+      <Route path="landing" element={<Landing />} modal />
+      <Route path="detail" element={<Detail />} modal />
+      <Route path="sent" element={<Sent />} modal />
+      <Route path="return" element={<Return />} modal />
+
+      {/* Fallback */}
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  )
+);
 
 function App() {
   return (
