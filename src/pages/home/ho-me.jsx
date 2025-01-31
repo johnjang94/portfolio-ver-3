@@ -90,53 +90,49 @@ export default function Home() {
     localStorage.setItem("chatClosed", "true");
   };
 
-  // Survey & Landing
   const [showLanding, setShowLanding] = useState(false);
-  const [hasClosedSurvey, setHasClosedSurvey] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("surveyClosed") === "true";
-    }
-    return false;
-  });
+  const [showSurveyIcon, setShowSurveyIcon] = useState(false);
+  const [waveEffect, setWaveEffect] = useState(false);
 
   useEffect(() => {
-    if (!hasClosedSurvey) {
-      const timer = setTimeout(() => {
+    const surveyStatus = localStorage.getItem("surveyClosed");
+
+    if (surveyStatus === "true") {
+      setShowLanding(false);
+      setShowSurveyIcon(false);
+    } else if (surveyStatus === "dismissed") {
+      setShowLanding(false);
+      setShowSurveyIcon(true);
+    } else {
+      setTimeout(() => {
         setShowLanding(true);
       }, 2000);
-      return () => clearTimeout(timer);
     }
-  }, [hasClosedSurvey]);
+  }, []);
 
   useEffect(() => {
-    if (showLanding) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
+    document.body.style.overflow = showLanding ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [showLanding]);
 
-  const [showSurveyIcon, setShowSurveyIcon] = useState(false);
-  const [waveEffect, setWaveEffect] = useState(false);
   const handleLandingComplete = (confirmed) => {
     setShowSurveyIcon(true);
     setWaveEffect(true);
 
-    requestAnimationFrame(() => {
-      setShowLanding(false);
-      if (confirmed) {
-        setHasClosedSurvey(true);
-        localStorage.setItem("surveyClosed", "true");
-      }
-    });
-
     setTimeout(() => {
       setWaveEffect(false);
     }, 300);
+
+    setShowLanding(false);
+
+    if (confirmed) {
+      setShowSurveyIcon(false);
+      localStorage.setItem("surveyClosed", "true");
+    } else {
+      localStorage.setItem("surveyClosed", "dismissed");
+    }
   };
 
   const handleToggleLanding = () => {
@@ -355,7 +351,7 @@ export default function Home() {
               transition={{ duration: 0.1, ease: "easeInOut" }}
             >
               <Landing
-                onComplete={(confirmed) => handleLandingComplete(confirmed)}
+                onComplete={handleLandingComplete}
                 waveEffect={waveEffect}
               />
             </motion.div>
