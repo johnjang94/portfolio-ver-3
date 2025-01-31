@@ -122,14 +122,16 @@ export default function Home() {
 
   const [showSurveyIcon, setShowSurveyIcon] = useState(false);
   const [waveEffect, setWaveEffect] = useState(false);
-  const handleLandingComplete = () => {
+  const handleLandingComplete = (confirmed) => {
     setShowSurveyIcon(true);
     setWaveEffect(true);
 
     requestAnimationFrame(() => {
       setShowLanding(false);
-      setHasClosedSurvey(true);
-      localStorage.setItem("surveyClosed", "true");
+      if (confirmed) {
+        setHasClosedSurvey(true);
+        localStorage.setItem("surveyClosed", "true");
+      }
     });
 
     setTimeout(() => {
@@ -353,7 +355,7 @@ export default function Home() {
               transition={{ duration: 0.1, ease: "easeInOut" }}
             >
               <Landing
-                onComplete={handleLandingComplete}
+                onComplete={(confirmed) => handleLandingComplete(confirmed)}
                 waveEffect={waveEffect}
               />
             </motion.div>
