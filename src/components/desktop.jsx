@@ -17,7 +17,7 @@ export default function Desktop({ pathname }) {
   useEffect(() => {
     const allowedHost =
       new URL(import.meta.env.VITE_FRONTEND_URL).hostname ||
-      import.meta.env.VITE_FRONTEND_TEST_URL;
+      new URL(import.meta.env.VITE_FRONTEND_TEST_URL).hostname;
     const token = searchParams.get("token");
     console.log("Current hostname:", window.location.hostname);
 

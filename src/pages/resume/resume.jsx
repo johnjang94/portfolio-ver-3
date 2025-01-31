@@ -27,7 +27,7 @@ export default function Resume() {
       <div className="my-10 mx-12 md:mx-0">
         <iframe
           src="/sample_resume.pdf"
-          width="100%"
+          width="80%"
           height="800px"
           className="mx-auto rounded-3xl"
         />
