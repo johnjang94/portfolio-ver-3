@@ -26,7 +26,7 @@ export default function Resume() {
       </div>
       <div className="my-10 mx-12 md:mx-0">
         <img
-          src="/product_designer.png"
+          src="/sample_resume.pdf"
           alt="Resume"
           width={1250}
           className="mx-auto rounded-3xl"

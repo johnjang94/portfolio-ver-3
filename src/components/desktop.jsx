@@ -15,7 +15,9 @@ export default function Desktop({ pathname }) {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    const allowedHost = "portfolio-ver-3.vercel.app";
+    const allowedHost =
+      import.meta.env.VITE_FRONTEND_URL ||
+      import.meta.env.VITE_FRONTEND_TEST_URL;
     const token = searchParams.get("token");
     console.log("Current hostname:", window.location.hostname);
 
