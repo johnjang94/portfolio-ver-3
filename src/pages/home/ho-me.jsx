@@ -77,12 +77,12 @@ export default function Home() {
   const [hasClosedChat, setHasClosedChat] = useState(
     localStorage.getItem("chatClosed") === "true"
   );
+
   useEffect(() => {
-    if (!hasClosedChat && !surveyPaths.includes(location.pathname)) {
-      const chatTimeout = setTimeout(() => setIsChatOpen(true), 5000);
-      return () => clearTimeout(chatTimeout);
-    }
-  }, [hasClosedChat, location.pathname, surveyPaths]);
+    console.log("Current Path:", location.pathname);
+    console.log("Survey Paths:", surveyPaths);
+    console.log("Chat Closed Status:", hasClosedChat);
+  }, [location, surveyPaths, hasClosedChat]);
 
   const handleChatClose = () => {
     setIsChatOpen(false);
