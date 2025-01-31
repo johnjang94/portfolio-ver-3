@@ -87,7 +87,7 @@ export default function TeleVU() {
             </div>
             <div className="flex space-x-5 text-black">
               <p className="font-bold">Timeline</p>
-              <p>June 2022 ~ August 2022 (8 Weeks)</p>
+              <p>From June 2022 (for 8 Weeks)</p>
             </div>
           </div>
         </div>

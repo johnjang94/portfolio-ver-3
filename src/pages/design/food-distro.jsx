@@ -105,7 +105,7 @@ export default function Food() {
             </div>
             <div className="flex space-x-5 text-black">
               <p className="font-bold">Timeline</p>
-              <p>April ~ July 2023 (17 Weeks)</p>
+              <p>From April 2023 (for 17 Weeks)</p>
             </div>
           </div>
         </div>

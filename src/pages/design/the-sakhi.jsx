@@ -142,7 +142,7 @@ export default function SAKHI() {
             </div>
             <div className="flex space-x-10 mx-5 text-black">
               <p className="font-bold">Timeline</p>
-              <p>June ~ October 2024 (21 Weeks)</p>
+              <p>From June 2024 (for 21 Weeks)</p>
             </div>
           </div>
         </div>
