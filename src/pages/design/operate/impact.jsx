@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 
-export default function Impact() {
+export default function Impact({ isPasswordCorrect }) {
+  const headingClass = `text-xl uppercase ${
+    !isPasswordCorrect ? "md:-mt-52" : ""
+  }`;
   return (
     <div>
-      <h3 className="text-xl uppercase md:-mt-52">Impact</h3>
+      <h3 className={headingClass}>Impact</h3>
       <div className="md:mx-20 my-3 space-y-5">
         <p>Anticipated impacts are as follows:</p>
         <ul className="m-5 space-y-3">

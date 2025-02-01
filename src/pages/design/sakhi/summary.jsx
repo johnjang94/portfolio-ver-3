@@ -8,17 +8,17 @@ export default function Summary() {
           </p>
           <div className="py-5 space-y-3 md:px-8">
             <p>
-              The vision for <span className="font-bold">The Sakhi</span> was to
-              establish itself as a leading e-commerce platform for premium
-              Indian clothes by delivering a seamless, user-first shopping
-              experience for the age group between Gen Z and Millenials. The
-              business aimed to achieve a{" "}
-              <span className="underline">20% click-through rate</span> and{" "}
-              <span className="underline">increase revenue by 15% </span> within
-              six months post-launch. To accomplish this, the vision was to
-              deliver a user-centric platform that bridges elegant brand
-              identity with functional usability, catering to both domestic and
-              international shoppers.
+              The vision for the client was to establish itself as a leading
+              e-commerce platform for premium Indian clothes by delivering a
+              seamless, user-first shopping experience for the age group between
+              Gen Z and Millenials. For illustrative purposes only, I have set a
+              hypothetical target of achieving around a{" "}
+              <span className="underline">20% click-through rate</span> and a{" "}
+              <span className="underline">15% revenue boost</span> within six
+              months post-launch (not an officially confirmed KPI). To
+              accomplish this, the vision was to deliver a user-centric platform
+              that bridges elegant brand identity with functional usability,
+              catering to both domestic and international shoppers.
             </p>
           </div>
         </div>

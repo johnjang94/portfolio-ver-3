@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
+
 import ContentNav from "../../components/contentNav";
-import Summary from "./sakhi/summary";
-import CompetitiveAnalysis from "./sakhi/competitive-analysis";
-// import Insights from "./sakhi/insights";
-// import UserPersona from "./sakhi/user-persona";
-import Opportunity from "./sakhi/opportunity";
-import Solutions from "./sakhi/solution";
-import Impact from "./sakhi/impact";
-import { sakhi } from "../../utils/sakhi";
-import Retrospective from "./sakhi/retrospective";
-import NextSteps from "./sakhi/next-steps";
+import Password from "../../components/lock/password";
 import OtherMenu from "../../components/footer2";
+
+import { sakhi } from "../../utils/sakhi";
+
+import Summary from "./sakhi/summary";
+import Solutions from "./sakhi/solution";
+import CompetitiveAnalysis from "./sakhi/competitive-analysis";
+import Opportunity from "./sakhi/opportunity";
 import InitialSketch from "./sakhi/sketching";
 import ABTesting from "./sakhi/ab-testing";
+import Impact from "./sakhi/impact";
+import Retrospective from "./sakhi/retrospective";
+import NextSteps from "./sakhi/next-steps";
 
 export default function SAKHI() {
   const [currentSection, setCurrentSection] = useState(1);
+  const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -53,6 +56,27 @@ export default function SAKHI() {
     };
   }, []);
 
+  const handleCorrectPassword = () => {
+    setIsPasswordCorrect(true);
+  };
+
+  const PublicContent = () => (
+    <div className="space-y-20">
+      <div id={1}>
+        <Summary />
+      </div>
+      <div>
+        <Solutions />
+      </div>
+      <div id={2}>
+        <CompetitiveAnalysis />
+      </div>
+      <div id={3}>
+        <Impact />
+      </div>
+    </div>
+  );
+
   const PrivateContent = () => (
     <div className="space-y-20">
       <div id={1}>
@@ -61,12 +85,6 @@ export default function SAKHI() {
       <div>
         <Solutions />
       </div>
-      {/* <div>
-        <UserPersona />
-      </div> */}
-      {/* <div >
-        <Insights />
-      </div> */}
       <div id={2}>
         <CompetitiveAnalysis />
       </div>
@@ -148,17 +166,30 @@ export default function SAKHI() {
         </div>
       </section>
       <section className="md:flex md:flex-1">
-        <div className="md:w-[15vw]">
-          <ContentNav
-            currentSection={currentSection}
-            isDemoApplicable={false}
-            pathname="/sakhi"
-          />
+        <div className={isPasswordCorrect ? "" : "md:w-[15vw]"}>
+          {isPasswordCorrect ? (
+            <ContentNav
+              currentSection={currentSection}
+              isDemoApplicable={false}
+              pathname="/sakhi"
+            />
+          ) : (
+            <div className="hidden md:block"></div>
+          )}
         </div>
         <section className="md:w-4/6 mx-10 my-5 md:my-28">
-          <PrivateContent />
+          {isPasswordCorrect ? (
+            <PrivateContent isPasswordCorrect={isPasswordCorrect} />
+          ) : (
+            <PublicContent isPasswordCorrect={isPasswordCorrect} />
+          )}
         </section>
       </section>
+      {!isPasswordCorrect && (
+        <section className="w-full">
+          <Password onCorrectPassword={handleCorrectPassword} />
+        </section>
+      )}
       <footer className="my-5">
         <OtherMenu />
       </footer>
