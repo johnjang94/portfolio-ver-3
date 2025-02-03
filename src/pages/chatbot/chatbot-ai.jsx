@@ -32,9 +32,14 @@ export default function ChatBot({ onClose }) {
       }
 
       const data = await response.json();
+
+      if (data.response.trim() === "warm-up-test") {
+        return null;
+      }
+
       return data.response;
     } catch (error) {
-      return "Sorry, I encountered an error while trying to assist you.";
+      return "I'm sorry, but my response capability is currently limited due to network issue.";
     }
   };
 
