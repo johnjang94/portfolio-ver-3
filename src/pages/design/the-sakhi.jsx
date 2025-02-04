@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 import ContentNav from "../../components/contentNav";
 import Password from "../../components/lock/password";
@@ -111,6 +112,15 @@ export default function SAKHI() {
 
   return (
     <div>
+      <Head>
+        <title>The Sakhi</title>
+        <meta
+          name="description"
+          content="An Indian e-commerce that I increased the user engagement by 80% by improvising the navigation."
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <section>
         <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 rounded-xl mx-10 md:gap-3">
           <div className="md:grid md:grid-cols-2 md:py-20 py-5 items-center">

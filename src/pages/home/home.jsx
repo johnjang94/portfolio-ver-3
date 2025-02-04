@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { home } from "../../utils/home";
 import ChatButton from "../chatbot/chat-button";
 import ChatBot from "../chatbot/chatbot-ai";
+import Head from "next/head";
 
 const roles = ["UX Designer", "Product Designer", "UX Engineer"];
 
@@ -75,6 +76,15 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <title>Home page - John Jang&#39;s Portfolio</title>
+        <meta
+          name="description"
+          content="Welcome to my website. I provide creative solutions that span UX, product design, and front-end technologies with a user-centered approach."
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <header className="lg:my-24 mx-auto px-5 md:px-0 lg:w-[80vw] w-11/12 mt-20 mb-82 2xl:my-28">
         <div className="p-10">
           <h1 className="md:text-5xl text-2xl md:py-5 text-blue-500 font-bold">
