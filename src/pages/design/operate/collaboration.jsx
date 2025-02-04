@@ -4,7 +4,7 @@ export default function Collaboration() {
   return (
     <div>
       <h3 className="text-xl uppercase">For Developers</h3>
-      <p className="md:mx-20 my-5">
+      <p className="md:mx-20 my-5 space-y-5 md:space-y-0">
         Along with my colleagues, I created the navigation and the buttons in
         the{" "}
         <button className="text-blue-500 hover:underline">
