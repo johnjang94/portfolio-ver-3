@@ -28,10 +28,10 @@ import FoodDashboard from "../assets/oe/iteration/food-dashboard-explained.png";
 import STYLE_GUIDE from "../assets/oe/style/style_guide.png";
 
 // DEVELOPERS
-import Developers from "../assets/oe/developers/css.png";
-import Developement from "../assets/oe/developers/development.png";
-import Zeplin from "../assets/oe/developers/zeplin.gif";
-import Color from "../assets/oe/developers/color.png";
+import Navigation from "../assets/oe/developers/navigation.png";
+import Buttons from "../assets/oe/developers/buttons.png";
+import Colour from "../assets/oe/developers/color.png";
+import CSS from "../assets/oe/developers/css.png";
 
 export const OperateEase = {
   Demo,
@@ -47,8 +47,8 @@ export const OperateEase = {
   RoomDashboard,
   FoodDashboard,
   STYLE_GUIDE,
-  Developers,
-  Developement,
-  Zeplin,
-  Color,
+  Navigation,
+  Buttons,
+  Colour,
+  CSS,
 };
