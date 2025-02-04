@@ -28,9 +28,14 @@ export default function Landing({ onComplete }) {
         ))}
       </div>
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white rounded-lg shadow-lg w-96 p-6 text-center popup">
-          <h2 className="text-xl font-bold mb-4">Can I ask for your 30s?</h2>
-          <p className="text-gray-700 mb-6">I would love to hear from you!</p>
+        <div className="bg-white rounded-lg shadow-lg w-96 p-6 popup">
+          <h2 className="text-xl font-bold mb-4 text-center">
+            Can I ask for your feedback?
+          </h2>
+          <p className="text-gray-700 mb-6 mx-auto w-5/6 text-base">
+            <span className="font-bold">30s</span> is all it takes. <br />
+            wanna hear from you!
+          </p>
           <div className="flex justify-center gap-4">
             <button
               onClick={() => {
