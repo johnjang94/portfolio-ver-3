@@ -2,8 +2,8 @@ import { sakhi } from "../../../utils/sakhi";
 
 export default function CompetitiveAnalysis() {
   return (
-    <div className="space-y-5 py-5">
-      <h3 className="text-xl uppercase">Insight</h3>
+    <div className="space-y-5 py-5 md:mx-20">
+      <h3 className="text-xl uppercase">The Market</h3>
       <div className="md:mx-20 space-y-5">
         <p>Along with my colleagues, I found out the following facts:</p>
         <ul className="list-disc md:mx-14 mx-5 space-y-3">

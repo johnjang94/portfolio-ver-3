@@ -1,6 +1,6 @@
 export default function Retrospective() {
   return (
-    <div>
+    <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">Final Thoughts & Takeaways</h3>
       <div className="md:mx-20 my-5 space-y-5">
         <p>

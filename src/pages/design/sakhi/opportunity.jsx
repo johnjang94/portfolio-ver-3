@@ -1,6 +1,6 @@
 export default function Opportunity() {
   return (
-    <div>
+    <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">Opportunity</h3>
       <p className="md:text-xl font-semibold text-center my-3">
         What strategy did The Sakhi choose?

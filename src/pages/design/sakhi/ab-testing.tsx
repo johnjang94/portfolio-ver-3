@@ -3,7 +3,7 @@ import { sakhi } from "../../../utils/sakhi";
 
 export default function ABTesting() {
   return (
-    <div>
+    <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">A/B Testing</h3>
       <div className="md:grid md:grid-cols-2 md:gap-5 my-5 space-y-5 md:space-y-0">
         <img src={sakhi.Version1} alt="version 1" className="rounded-2xl" />

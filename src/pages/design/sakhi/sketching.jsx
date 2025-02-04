@@ -2,7 +2,7 @@ import { sakhi } from "../../../utils/sakhi";
 
 export default function InitialSketch() {
   return (
-    <div>
+    <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">Sketch</h3>
       <p className="md:text-xl font-semibold text-center my-3">
         How do you attract the eyes?

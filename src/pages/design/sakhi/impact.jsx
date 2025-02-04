@@ -1,6 +1,6 @@
 export default function Impact() {
   return (
-    <div>
+    <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">Impact</h3>
       <div className="md:mx-20 my-3">
         <p className="md:px-10">
