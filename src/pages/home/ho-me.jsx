@@ -167,13 +167,12 @@ export default function Home() {
             </div>
             <div className="space-y-5 md:my-5">
               <p className="md:text-2xl text-lg font-semibold">
-                A curious-minded data-lover with a drive for elegance and
-                simplicity
+                A curious data-lover driven by elegant simplicity.
               </p>
               <p>
-                I deliver meaningful results with inspiring designs that
-                consider the business goals, the user needs, and the technical
-                feasibility.
+                I craft design strategies that blend data insights with creative
+                innovation to boost business performance and enhance user
+                experiences.
               </p>
             </div>
           </div>
