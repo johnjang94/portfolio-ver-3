@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useEffect, useState } from "react";
 import OtherMenu from "../../components/footer2";
 import { foodDistro } from "../../utils/food-distro";
@@ -58,15 +57,6 @@ export default function Food() {
 
   return (
     <div>
-      <Head>
-        <title>Project Food Distro</title>
-        <meta
-          name="description"
-          content="A donation project that I designed a filter to help the donation-receivers to find appropriate food-donors to their needs."
-        />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <section className="my-10">
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
           <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl">

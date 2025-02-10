@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Head from "next/head";
 
 import ContentNav from "../../components/contentNav";
 import Password from "../../components/lock/password";
@@ -112,28 +111,22 @@ export default function SAKHI() {
 
   return (
     <div>
-      <Head>
-        <title>The Sakhi</title>
-        <meta
-          name="description"
-          content="An Indian e-commerce that I increased the user engagement by 80% by improvising the navigation."
-        />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <section>
         <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 rounded-xl mx-10 md:gap-3">
           <div className="md:grid md:grid-cols-2 md:py-20 py-5 items-center">
             <div className="w-full md:my-20 my-10 space-y-5 text-center md:m-5">
-              <h1 className="md:text-4xl text-xl text-white">Reimagined</h1>
-              <h1 className="md:text-4xl text-xl text-white rounded-2xl">
-                Onboarding Experience
+              <h1 className="md:text-4xl text-xl text-white">
+                Simplifying Complexity
               </h1>
               <h1 className="md:text-4xl text-xl text-white rounded-2xl">
-                to drive targeted{" "}
+                Data-Driven Menu Overhaul to Enhance User Engagement and
+              </h1>
+              <h1 className="md:text-4xl text-xl text-white rounded-2xl">
+                Target a{" "}
                 <span className="underline p-3 bg-white text-green-500 rounded-2xl">
-                  20% CTR
-                </span>
+                  20%
+                </span>{" "}
+                Conversion Lift
               </h1>
             </div>
             <div className="space-y-5">

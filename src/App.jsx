@@ -4,6 +4,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { Analytics } from "@vercel/analytics/react";
 import Root from "./pages/root";
 
@@ -75,9 +76,11 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <RouterProvider router={router}>
-      <Analytics />
-    </RouterProvider>
+    <HelmetProvider>
+      <RouterProvider router={router}>
+        <Analytics />
+      </RouterProvider>
+    </HelmetProvider>
   );
 }
 

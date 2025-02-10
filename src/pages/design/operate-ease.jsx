@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useEffect, useState } from "react";
 import { OperateEase } from "../../utils/operate";
 import ContentNav from "../../components/contentNav";
@@ -109,15 +108,6 @@ export default function OPERATE() {
 
   return (
     <div>
-      <Head>
-        <title>Operate-Ease</title>
-        <meta
-          name="description"
-          content="B2B SaaS hotelier project that I improved 40% of the task efficiency, and reduced manual errors by 20%"
-        />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <section className="my-10 mx-auto">
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
           <div className="md:grid md:grid-cols-2 md:py-20 py-10 items-center w-full max-w-6xl">
