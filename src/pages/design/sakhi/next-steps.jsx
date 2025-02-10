@@ -1,14 +1,15 @@
 export default function NextSteps() {
   return (
-    <div>
-      <h3 className="text-xl uppercase">Next Steps</h3>
-      <div className="md:mx-20 my-3 space-y-3">
-        <p className="font-semibold">Mobile Application</p>
-        <p className="md:mx-10">
-          We were initially focused on building the web application. It also
-          came to our attention that many shoppers wish to shop products on
-          their mobile phones. Considering that, we may need to continue with
-          mobile designs as well.
+    <div className="space-y-5 py-5 md:mx-20">
+      <h3 className="text-xl uppercase">Next Step</h3>
+      <div className="md:mx-20 my-5 space-y-5">
+        <h1>Annotation Note</h1>
+        <p className="md:mx-5">
+          I did not have an adequate amount of time to complete the annotation
+          note for Shopify developer to understand how to build the new shopping
+          application for the client. When the future teammate reaches out, I am
+          willing to walk through the project and explain how to communicate
+          with the developer.
         </p>
       </div>
     </div>

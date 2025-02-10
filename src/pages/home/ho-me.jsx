@@ -33,12 +33,11 @@ const data = [
     imgSrc: home.Sakhi,
     imgAlt: "Sakhi",
     icon: "",
-    title: "Reimagined onboarding experience to drive a targeted 20% CTR",
-    subtitle:
-      "Designed product contents for a direct in-store premium Indian brand, The Sakhi",
+    title: "Simplifying Complexity",
+    subtitle: "Menu overhaul, targeting a 20% conversion lift",
     category: ["B2C", "E-commerce", "start-up"],
     percentage: ["20%", "75%"],
-    highlight: ["targeted search optimization", "targeted improved usability"],
+    highlight: ["targeted lift", "of new users found descriptions helpful"],
     link: "/sakhi",
   },
   {

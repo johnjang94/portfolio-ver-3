@@ -1,29 +1,24 @@
 import { useEffect, useState } from "react";
 
 import ContentNav from "../../components/contentNav";
-import Password from "../../components/lock/password";
 import OtherMenu from "../../components/footer2";
 
 import { sakhi } from "../../utils/sakhi";
 
 import Summary from "./sakhi/summary";
+import Issue from "./sakhi/issue";
 import Solutions from "./sakhi/solution";
-import CompetitiveAnalysis from "./sakhi/competitive-analysis";
-import Opportunity from "./sakhi/opportunity";
-import InitialSketch from "./sakhi/sketching";
-import ABTesting from "./sakhi/ab-testing";
 import Impact from "./sakhi/impact";
 import Retrospective from "./sakhi/retrospective";
 import NextSteps from "./sakhi/next-steps";
 
 export default function SAKHI() {
-  const [currentSection, setCurrentSection] = useState(1);
-  const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
+  const [currentSection, setCurrentSection] = useState("1");
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const sectionIds = [{ id: 1 }, { id: 2 }, { id: 3 }];
+    const sectionIds = ["1", "2"];
 
     const options = {
       root: null,
@@ -56,48 +51,18 @@ export default function SAKHI() {
     };
   }, []);
 
-  const handleCorrectPassword = () => {
-    setIsPasswordCorrect(true);
-  };
-
   const PublicContent = () => (
     <div className="space-y-20">
-      <div id={1}>
+      <div id="1">
         <Summary />
       </div>
       <div>
+        <Issue />
+      </div>
+      <div id="2">
         <Solutions />
       </div>
-      <div id={2}>
-        <CompetitiveAnalysis />
-      </div>
-      <div id={3}>
-        <Impact />
-      </div>
-    </div>
-  );
-
-  const PrivateContent = () => (
-    <div className="space-y-20">
-      <div id={1}>
-        <Summary />
-      </div>
       <div>
-        <Solutions />
-      </div>
-      <div id={2}>
-        <CompetitiveAnalysis />
-      </div>
-      <div>
-        <Opportunity />
-      </div>
-      <div>
-        <InitialSketch />
-      </div>
-      <div>
-        <ABTesting />
-      </div>
-      <div id={3}>
         <Impact />
       </div>
       <div>
@@ -115,14 +80,14 @@ export default function SAKHI() {
         <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 rounded-xl mx-10 md:gap-3">
           <div className="md:grid md:grid-cols-2 md:py-20 py-5 items-center">
             <div className="w-full md:my-20 my-10 space-y-5 text-center md:m-5">
-              <h1 className="md:text-4xl text-xl text-white">
+              <h1 className="md:text-4xl text-xl text-white underline">
                 Simplifying Complexity
               </h1>
               <h1 className="md:text-4xl text-xl text-white rounded-2xl">
-                Data-Driven Menu Overhaul to Enhance User Engagement and
+                Menu Overhaul Targeting
               </h1>
               <h1 className="md:text-4xl text-xl text-white rounded-2xl">
-                Target a{" "}
+                a{" "}
                 <span className="underline p-3 bg-white text-green-500 rounded-2xl">
                   20%
                 </span>{" "}
@@ -169,30 +134,17 @@ export default function SAKHI() {
         </div>
       </section>
       <section className="md:flex md:flex-1">
-        <div className={isPasswordCorrect ? "" : "md:w-[15vw]"}>
-          {isPasswordCorrect ? (
-            <ContentNav
-              currentSection={currentSection}
-              isDemoApplicable={false}
-              pathname="/sakhi"
-            />
-          ) : (
-            <div className="hidden md:block"></div>
-          )}
+        <div>
+          <ContentNav
+            currentSection={currentSection}
+            isDemoApplicable={false}
+            pathname="/sakhi"
+          />
         </div>
         <section className="md:w-4/6 mx-10 my-5 md:my-28">
-          {isPasswordCorrect ? (
-            <PrivateContent isPasswordCorrect={isPasswordCorrect} />
-          ) : (
-            <PublicContent isPasswordCorrect={isPasswordCorrect} />
-          )}
+          <PublicContent />
         </section>
       </section>
-      {!isPasswordCorrect && (
-        <section className="w-full">
-          <Password onCorrectPassword={handleCorrectPassword} />
-        </section>
-      )}
       <footer className="my-5">
         <OtherMenu />
       </footer>
