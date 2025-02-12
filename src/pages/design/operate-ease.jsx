@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import { OperateEase } from "../../utils/operate";
 import ContentNav from "../../components/contentNav";
 import Password from "../../components/lock/password";
-import Overview from "./operate/overview";
-import MarketAnalysis from "./operate/market-analysis";
-import Opportunity from "./operate/opportunities";
-import Solutions from "./operate/solutions";
-import Collaboration from "./operate/collaboration";
-import Impact from "./operate/impact";
-import Retrospective from "./operate/retrospective";
 import OtherMenu from "../../components/footer2";
-import InitialSketch from "./operate/initial-sketch";
-import MidFi from "./operate/mid-fi";
+
+import Summary from "./operate/summary";
+import Issue from "./operate/issue";
+import Solutions from "./operate/solutions";
+import Impact from "./operate/impact";
+import Collaboration from "./operate/developers";
+import Business from "./operate/busines";
+import Sketch from "./operate/initial-sketch";
+import ForDevelopers from "./operate/developers";
+import Reflection from "./operate/retrospective";
 
 export default function OPERATE() {
   const [currentSection, setCurrentSection] = useState(1);
@@ -19,9 +20,7 @@ export default function OPERATE() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
     const sectionIds = [{ id: 1 }, { id: 2 }, { id: 3 }];
-
     const options = {
       root: null,
       rootMargin: "0px",
@@ -53,6 +52,12 @@ export default function OPERATE() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isPasswordCorrect) {
+      window.scrollTo(0, 0);
+    }
+  }, [isPasswordCorrect]);
+
   const handleCorrectPassword = () => {
     setIsPasswordCorrect(true);
   };
@@ -60,13 +65,16 @@ export default function OPERATE() {
   const PublicContent = () => (
     <div className="space-y-10">
       <div id={1}>
-        <Overview />
+        <Summary isNdaLocked={true} />
       </div>
       <div>
-        <Solutions isPasswordCorrect={false} />
+        <Issue isNdaLocked={true} />
       </div>
       <div>
-        <Impact isPasswordCorrect={false} />
+        <Solutions />
+      </div>
+      <div>
+        <Impact />
       </div>
       <div>
         <Collaboration />
@@ -77,31 +85,28 @@ export default function OPERATE() {
   const PrivateContent = () => (
     <div className="space-y-10">
       <div id={1}>
-        <Overview />
+        <Business />
+      </div>
+      <div>
+        <Summary isNdaLocked={false} />
+      </div>
+      <div>
+        <Issue isNdaLocked={false} />
+      </div>
+      <div>
+        <Sketch />
       </div>
       <div>
         <Solutions isPasswordCorrect={true} />
       </div>
-      <div id={2}>
-        <MarketAnalysis />
-      </div>
       <div>
-        <Opportunity />
-      </div>
-      <div>
-        <InitialSketch />
-      </div>
-      <div>
-        <MidFi />
-      </div>
-      <div id={3}>
         <Impact isPasswordCorrect={true} />
       </div>
       <div>
-        <Retrospective />
+        <ForDevelopers />
       </div>
       <div>
-        <Collaboration />
+        <Reflection />
       </div>
     </div>
   );
@@ -110,94 +115,21 @@ export default function OPERATE() {
     <div>
       <section className="my-10 mx-auto">
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
-          <div className="md:grid md:grid-cols-2 md:py-20 py-10 items-center w-full max-w-6xl">
+          <div className="md:grid md:grid-cols-2 md:py-20 py-10 items-center mx-10 gap-10">
             <div className="w-full md:my-20 my-5 space-y-5">
-              <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-white">
-                Optimizing Inventory Management System
+              <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-green-400 p-2 rounded-2xl bg-white">
+                20% Efficiency Boost
               </h1>
-              <div className="hidden md:block">
-                <div className="grid grid-cols-2 gap-5">
-                  <div className="text-center space-y-3">
-                    <p className="text-white text-2xl">
-                      to target stock-out reduction by{" "}
-                    </p>
-                  </div>
-                  <div className="text-center space-y-3">
-                    <p className="text-white text-2xl">
-                      to improve the turnover rate by{" "}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="underline bg-white rounded-2xl p-3 text-green-400 w-fit mx-auto">
-                      20%
-                    </p>
-                  </div>
-                  <div>
-                    <p className="underline bg-white rounded-2xl p-3 text-green-400 w-fit mx-auto">
-                      15%
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/*  */}
-              <div className="md:hidden block">
-                <div className="md:grid md:grid-cols-2 md:gap-5 space-y-5">
-                  <div className="text-center space-y-3">
-                    <p className="text-white">
-                      to reduce accidental catering orders by{" "}
-                    </p>
-                    <p className="underline bg-white rounded-2xl p-1 text-green-400 w-fit mx-auto">
-                      40%
-                    </p>
-                  </div>
-                  <div className="text-center space-y-3">
-                    <p className="text-white">
-                      to recover the financial loss from late check-outs by{" "}
-                    </p>
-                    <p className="underline bg-white rounded-2xl p-1 text-green-400 w-fit mx-auto">
-                      15%
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/*  */}
+              <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-white">
+                with a new B2B SaaS Inventory Management Platform
+              </h1>
             </div>
             <div className="space-y-5 w-full flex justify-center">
               <img
                 src={OperateEase.Demo}
                 alt="Demo showcase"
-                className="rounded-xl mx-auto w-full"
+                className="rounded-xl mx-auto w-[2000px]"
               />
-            </div>
-          </div>
-          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 md:my-20 mx-5 md:mx-0">
-            <div className="flex space-x-5 text-black">
-              <p className="font-bold">My Role</p>
-              <p>Associate Product Designer</p>
-            </div>
-            <div className="flex space-x-5 text-black">
-              <p className="font-bold">Team</p>
-              <ul>
-                <li>8 UX Designers</li>
-                <li>4 UX Researchers</li>
-                <li>2 Product Strategist</li>
-                <li>2 Web Developers</li>
-                <li>3 Project Management</li>
-              </ul>
-            </div>
-            <div className="flex space-x-5 text-black">
-              <p className="font-bold">Tools</p>
-              <ul>
-                <li>Figma</li>
-                <li>Figjam</li>
-                <li>Miro</li>
-                <li>Slack</li>
-                <li>JIRA</li>
-              </ul>
-            </div>
-            <div className="flex space-x-5 text-black">
-              <p className="font-bold">Timeline</p>
-              <p>October 2024 ~ Present</p>
             </div>
           </div>
         </div>
@@ -215,11 +147,7 @@ export default function OPERATE() {
           )}
         </div>
         <section className="md:w-4/6 mx-10 my-5 md:my-10">
-          {isPasswordCorrect ? (
-            <PrivateContent isPasswordCorrect={isPasswordCorrect} />
-          ) : (
-            <PublicContent isPasswordCorrect={isPasswordCorrect} />
-          )}
+          {isPasswordCorrect ? <PrivateContent /> : <PublicContent />}
         </section>
       </section>
       {!isPasswordCorrect && (

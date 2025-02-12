@@ -1,10 +1,10 @@
 import { OperateEase } from "../../../utils/operate";
 
-export default function Collaboration() {
+export default function Developers() {
   return (
-    <div>
+    <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">For Developers</h3>
-      <p className="md:mx-20 my-5 space-y-5 md:space-y-0">
+      <p className="md:mx-20 my-3">
         Along with my colleagues, I created the navigation and the buttons in
         the{" "}
         <button className="text-blue-500 hover:underline">
@@ -21,7 +21,7 @@ export default function Collaboration() {
         to help web developers to build the product with less amount of
         challenges.
       </p>
-      <div className="md:grid md:grid-cols-2 gap-10">
+      <div className="space-y-5">
         <div className="bg-slate-300 rounded-2xl p-5">
           <img
             src={OperateEase.Navigation}
