@@ -9,15 +9,16 @@ export default function ChatBot({ onClose }) {
   const routeKey = location.pathname.substring(1);
   const pathMessages = {
     "/operate":
-      "Do you have any questions about this hotel management project?",
+      "Want to dive deeper into our hotel management strategy? Ask your detailed questions!",
     "/sakhi":
-      "Do you have any questions about Indian luxury clothing e-commerce project?",
+      "Curious about the nuanced design of our Indian luxury clothing platform? Let's discuss!",
     "/food-distro":
-      "Do you have any questions about locals donating food project?",
+      "Ready to explore the finer points of our local food donation project? Ask away!",
   };
+
   const defaultMessage =
     pathMessages[location.pathname] ||
-    "Hello! Welcome to my portfolio. How may I assist you today?";
+    "Welcome to my portfolio —-- ask me deep questions on blending data with creativity, navigating design challenges, and turning diverse insights into innovation.";
   const projectMapping = {
     "/operate": {
       name: "Hotel Management Project",
