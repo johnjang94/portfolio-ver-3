@@ -1,20 +1,56 @@
 import { useEffect, useState } from "react";
-import OtherMenu from "../../components/footer2";
+
 import { foodDistro } from "../../utils/food-distro";
-import ContentNav from "../../components/contentNav";
+
 import Overview from "./food-distro/overview";
+import Solutions from "./food-distro/solutions";
+
 import ProblemStatement from "./food-distro/problem-statement";
 import UserPersona from "./food-distro/user-persona";
 import UserStory from "./food-distro/user-story";
 import Opportunity from "./food-distro/opportunity";
-// import CompetitiveAnalysis from "./food-distro/competitive-analysis";
 import Sketching from "./food-distro/sketching";
-import Solutions from "./food-distro/solutions";
+import Impact from "./food-distro/impact";
+
 import Retrospective from "./food-distro/retrospective";
 import NextSteps from "./food-distro/next-steps";
-// import StyleGuide from "./food-distro/style-guide";
-// import MockUpPrototype from "./food-distro/mock-up-prototype";
-import Impact from "./food-distro/impact";
+
+import ContentNav from "../../components/contentNav";
+import ChatButton from "../chatbot/chat-button";
+import ChatBot from "../chatbot/chatbot-ai";
+import OtherMenu from "../../components/footer2";
+
+function ChatWidget() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [hasClosedChat, setHasClosedChat] = useState(
+    localStorage.getItem("chatClosed") === "true"
+  );
+
+  useEffect(() => {
+    if (!hasClosedChat && !isChatOpen) {
+      const timer = setTimeout(() => {
+        setIsChatOpen(true);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [hasClosedChat, isChatOpen]);
+
+  const handleChatClose = () => {
+    setIsChatOpen(false);
+    setHasClosedChat(true);
+    localStorage.setItem("chatClosed", "true");
+  };
+
+  return (
+    <section>
+      <ChatButton
+        onClick={() => setIsChatOpen(true)}
+        status={isChatOpen ? "open" : "closed"}
+      />
+      {isChatOpen && <ChatBot onClose={handleChatClose} />}
+    </section>
+  );
+}
 
 export default function Food() {
   const [currentSection, setCurrentSection] = useState(1);
@@ -23,7 +59,6 @@ export default function Food() {
     window.scrollTo(0, 0);
 
     const sectionIds = [{ id: 1 }, { id: 2 }, { id: 3 }];
-
     const options = {
       root: null,
       rootMargin: "0px",
@@ -38,19 +73,15 @@ export default function Food() {
       });
     }, options);
 
-    sectionIds.forEach((id) => {
+    sectionIds.forEach(({ id }) => {
       const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-      }
+      if (element) observer.observe(element);
     });
 
     return () => {
-      sectionIds.forEach((id) => {
+      sectionIds.forEach(({ id }) => {
         const element = document.getElementById(id);
-        if (element) {
-          observer.unobserve(element);
-        }
+        if (element) observer.unobserve(element);
       });
     };
   }, []);
@@ -110,7 +141,7 @@ export default function Food() {
           </div>
         </div>
       </section>
-      {/* Main content */}
+
       <section className="md:flex md:flex-1 gap-10">
         <div>
           <ContentNav
@@ -140,18 +171,9 @@ export default function Food() {
           <div id={2}>
             <Opportunity />
           </div>
-          {/* <div>
-            <CompetitiveAnalysis />
-          </div> */}
           <div>
             <Sketching />
           </div>
-          {/* <div>
-            <StyleGuide />
-          </div>
-          <div>
-            <MockUpPrototype />
-          </div> */}
           <div id={3}>
             <Impact />
           </div>
@@ -162,7 +184,9 @@ export default function Food() {
             <NextSteps />
           </div>
         </section>
+        <ChatWidget />
       </section>
+
       <footer>
         <OtherMenu />
       </footer>
