@@ -13,6 +13,40 @@ import Sketch from "./operate/initial-sketch";
 import Developers from "./operate/developers";
 import Reflection from "./operate/retrospective";
 import MidFi from "./operate/mid-fi";
+import ChatButton from "../chatbot/chat-button";
+import ChatBot from "../chatbot/chatbot-ai";
+
+function ChatWidget() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [hasClosedChat, setHasClosedChat] = useState(
+    localStorage.getItem("chatClosed") === "true"
+  );
+
+  useEffect(() => {
+    if (!hasClosedChat && !isChatOpen) {
+      const timer = setTimeout(() => {
+        setIsChatOpen(true);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [hasClosedChat, isChatOpen]);
+
+  const handleChatClose = () => {
+    setIsChatOpen(false);
+    setHasClosedChat(true);
+    localStorage.setItem("chatClosed", "true");
+  };
+
+  return (
+    <section>
+      <ChatButton
+        onClick={() => setIsChatOpen(true)}
+        status={isChatOpen ? "open" : "closed"}
+      />
+      {isChatOpen && <ChatBot onClose={handleChatClose} />}
+    </section>
+  );
+}
 
 export default function OPERATE() {
   const [currentSection, setCurrentSection] = useState(1);
@@ -35,19 +69,15 @@ export default function OPERATE() {
       });
     }, options);
 
-    sectionIds.forEach((id) => {
+    sectionIds.forEach(({ id }) => {
       const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-      }
+      if (element) observer.observe(element);
     });
 
     return () => {
-      sectionIds.forEach((id) => {
+      sectionIds.forEach(({ id }) => {
         const element = document.getElementById(id);
-        if (element) {
-          observer.unobserve(element);
-        }
+        if (element) observer.unobserve(element);
       });
     };
   }, []);
@@ -167,6 +197,7 @@ export default function OPERATE() {
           </div>
         </div>
       </section>
+
       <section className="md:flex md:flex-1">
         <div className={isPasswordCorrect ? "" : "md:w-[15vw]"}>
           {isPasswordCorrect ? (
@@ -183,11 +214,15 @@ export default function OPERATE() {
           {isPasswordCorrect ? <PrivateContent /> : <PublicContent />}
         </section>
       </section>
+
       {!isPasswordCorrect && (
         <section className="w-full">
           <Password onCorrectPassword={handleCorrectPassword} />
         </section>
       )}
+
+      <ChatWidget />
+
       <footer className="my-5">
         <OtherMenu />
       </footer>

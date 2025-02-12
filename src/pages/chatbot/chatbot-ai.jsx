@@ -1,86 +1,113 @@
 import PropTypes from "prop-types";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { IoIosSend } from "react-icons/io";
-
+import { useLocation } from "react-router-dom";
 import websiteContent from "./website-content";
 
 export default function ChatBot({ onClose }) {
-  const [messages, setMessages] = useState([
-    {
-      role: "bot",
-      text: "Hello! Welcome to my portfolio. How may I assist you today?",
+  const location = useLocation();
+  const routeKey = location.pathname.substring(1);
+  const pathMessages = {
+    "/operate":
+      "Do you have any questions about this hotel management project?",
+    "/sakhi":
+      "Do you have any questions about Indian luxury clothing e-commerce project?",
+    "/food-distro":
+      "Do you have any questions about locals donating food project?",
+  };
+  const defaultMessage =
+    pathMessages[location.pathname] ||
+    "Hello! Welcome to my portfolio. How may I assist you today?";
+  const projectMapping = {
+    "/operate": {
+      name: "Hotel Management Project",
+      keywords: ["hotel", "management", "operate", "efficiency"],
     },
+    "/sakhi": {
+      name: "Indian Luxury Clothing E-commerce Project",
+      keywords: ["sakhi", "clothing", "fashion", "luxury"],
+    },
+    "/food-distro": {
+      name: "Locals Donating Food Project",
+      keywords: ["food", "donation", "donate", "locals"],
+    },
+  };
+  const [messages, setMessages] = useState([
+    { role: "bot", text: defaultMessage },
   ]);
   const [input, setInput] = useState("");
   const messageContainerRef = useRef(null);
-
   const fetchChatGPTResponse = async (input) => {
     try {
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_URL}/api/chat`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ userId: "unique-user-id", message: input }),
         }
       );
-
-      if (!response.ok) {
+      if (!response.ok)
         throw new Error("Failed to fetch response from the server.");
-      }
-
       const data = await response.json();
-
-      if (data.response.trim() === "warm-up-test") {
-        return null;
-      }
-
+      if (data.response.trim() === "warm-up-test") return null;
       return data.response;
     } catch (error) {
-      return "I'm sorry, but my response capability is currently limited due to network issue.";
+      return "I'm sorry, but my response capability is currently limited due to network issues.";
     }
   };
-
   const handleSendMessage = async () => {
     if (!input.trim()) return;
-
-    const userMessage = { role: "user", text: input.trim() };
+    const trimmedInput = input.trim();
+    const userMessage = { role: "user", text: trimmedInput };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
-
-    const faqMatch = websiteContent.faq.find((faq) =>
-      input.toLowerCase().includes(faq.question.toLowerCase())
+    const globalFaqs = websiteContent.faq.filter((faq) => {
+      if (Array.isArray(faq.route)) {
+        return faq.route.includes(location.pathname);
+      }
+      return faq.route === location.pathname;
+    });
+    const projectFaqs = websiteContent[routeKey] || [];
+    const currentFaqs = [...globalFaqs, ...projectFaqs];
+    const faqMatch = currentFaqs.find((faq) =>
+      trimmedInput.toLowerCase().includes(faq.question.toLowerCase())
     );
-
     if (faqMatch) {
       setMessages((prev) => [...prev, { role: "bot", text: faqMatch.answer }]);
       return;
     }
-
-    const botResponse = await fetchChatGPTResponse(input.trim());
-
+    for (const [path, info] of Object.entries(projectMapping)) {
+      if (location.pathname !== path) {
+        for (const keyword of info.keywords) {
+          if (trimmedInput.toLowerCase().includes(keyword.toLowerCase())) {
+            setMessages((prev) => [
+              ...prev,
+              {
+                role: "bot",
+                text: `Although I am happy to answer your question, this question is more related to ${info.name}, so I would like to suggest you to redirect yourself to ${path} and ask me again.`,
+              },
+            ]);
+            return;
+          }
+        }
+      }
+    }
+    const botResponse = await fetchChatGPTResponse(trimmedInput);
     setMessages((prev) => [...prev, { role: "bot", text: botResponse }]);
   };
-
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleSendMessage();
-    }
+    if (e.key === "Enter") handleSendMessage();
   };
-
   const scrollToBottom = useCallback(() => {
     if (messageContainerRef.current) {
       messageContainerRef.current.scrollTop =
         messageContainerRef.current.scrollHeight;
     }
   }, []);
-
   useEffect(() => {
     scrollToBottom();
   }, [messages, scrollToBottom]);
-
   return (
     <div className="fixed bottom-10 right-10 bg-white rounded-2xl shadow-lg w-80">
       <div className="flex justify-between items-center bg-slate-200 p-2 rounded-t-2xl">
@@ -89,7 +116,6 @@ export default function ChatBot({ onClose }) {
           ✖️
         </button>
       </div>
-
       <div
         ref={messageContainerRef}
         className="h-64 overflow-y-scroll border-t p-4 space-y-5"
@@ -120,7 +146,6 @@ export default function ChatBot({ onClose }) {
           </div>
         ))}
       </div>
-
       <div className="border-t mx-4 my-4">
         <div className="flex mt-2">
           <input
