@@ -17,14 +17,13 @@ const data = [
     imgSrc: home.OperateEase,
     imgAlt: "OperateEase",
     icon: "🔒",
-    title: "Inventory optimization for improved management",
-    subtitle:
-      "Reducing missed-catering orders and recovering room-service losses",
+    title: "20% Efficiency Boost",
+    subtitle: "with a new B2B SaaS Inventory Management Platform",
     category: ["B2B", "SaaS"],
-    percentage: ["20%", "15%"],
+    percentage: ["40%", "90%"],
     highlight: [
-      "targeted reduction on incorrect orders",
-      "expected additional profit from delayed check-out penalties",
+      "expected improvement in operation efficiency",
+      "of participants found it easy-to-use ",
     ],
     link: "/operate",
   },
@@ -113,9 +112,9 @@ export default function Home() {
                 A curious data-lover driven by elegant simplicity.
               </p>
               <p>
-                I craft design strategies that blend data insights with creative
-                innovation to boost business performance and enhance user
-                experiences.
+                I craft design with strategies that blend data insights and
+                creative innovation to boost business performance and enhance
+                user experiences.
               </p>
             </div>
           </div>

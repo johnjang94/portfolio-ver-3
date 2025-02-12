@@ -4,7 +4,7 @@ export default function Developers() {
   return (
     <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">For Developers</h3>
-      <p className="md:mx-20 my-3">
+      <p className="md:mx-8 my-3">
         Along with my colleagues, I created the navigation and the buttons in
         the{" "}
         <button className="text-blue-500 hover:underline">

@@ -2,10 +2,10 @@ import { OperateEase } from "../../../utils/operate";
 
 export default function MidFi() {
   return (
-    <div>
+    <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">Mid-Fi</h3>
-      <div className="md:mx-20 my-5 space-y-5 list-decimal">
-        <p className="md:px-10">
+      <div className="md:mx-8 my-5 space-y-5 list-decimal">
+        <p>
           Mid-fidelity testing revealed that combining all features into one
           dashboard created <span className="text-red-500">confusion</span> and{" "}
           <span className="text-red-500">increased cognitive load</span> for

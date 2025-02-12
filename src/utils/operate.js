@@ -4,6 +4,9 @@ import Demo from "../assets/oe/demo/operation-ease.png";
 // BUSINESS
 import Business from "../assets/oe/business/business-model.png";
 
+// ISSUE
+import Interviewees from "../assets/oe/issue/participants.png";
+
 // SKETCH
 import InitialDrawing from "../assets/oe/sketch/dashboard-sketch.jpeg";
 import Pricing from "../assets/oe/sketch/pricing.jpeg";
@@ -25,6 +28,7 @@ import CSS from "../assets/oe/developers/css.png";
 export const OperateEase = {
   Demo,
   Business,
+  Interviewees,
   InitialDrawing,
   Pricing,
   RoomDashboard,

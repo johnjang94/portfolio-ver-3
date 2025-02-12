@@ -2,17 +2,17 @@ import { OperateEase } from "../../../utils/operate";
 
 export default function InitialSketch() {
   return (
-    <div>
+    <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">Initial Sketch</h3>
-      <div className="md:mx-20 my-5 space-y-5 list-decimal">
-        <p className="md:px-10">
+      <div className="md:mx-8 my-5 space-y-5 list-decimal">
+        <p>
           Having said that, I have pulled up my sleeves to help the design team
           (specifically focused on) for the inventory dashboard. I have decided
           to cover room availability, room rates, turnover ratio for the rooms,
           stock status for the packaged food and beverage, and showing the
           contacts for partner companies when stocks go low.
         </p>
-        <p className="md:px-10">
+        <p>
           My initial sketch emphasized displaying key metrics, enabling
           hoteliers to quickly track activities. In addition, I considered
           technical aspects to ensure the data visualization method aligned

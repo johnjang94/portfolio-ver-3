@@ -8,11 +8,11 @@ import Summary from "./operate/summary";
 import Issue from "./operate/issue";
 import Solutions from "./operate/solutions";
 import Impact from "./operate/impact";
-import Collaboration from "./operate/developers";
-import Business from "./operate/busines";
+import Business from "./operate/business";
 import Sketch from "./operate/initial-sketch";
-import ForDevelopers from "./operate/developers";
+import Developers from "./operate/developers";
 import Reflection from "./operate/retrospective";
+import MidFi from "./operate/mid-fi";
 
 export default function OPERATE() {
   const [currentSection, setCurrentSection] = useState(1);
@@ -70,14 +70,14 @@ export default function OPERATE() {
       <div>
         <Issue isNdaLocked={true} />
       </div>
-      <div>
-        <Solutions />
+      <div id={2}>
+        <Solutions isNdaLocked={true} />
       </div>
       <div>
         <Impact />
       </div>
-      <div>
-        <Collaboration />
+      <div id={3}>
+        <Developers />
       </div>
     </div>
   );
@@ -97,13 +97,16 @@ export default function OPERATE() {
         <Sketch />
       </div>
       <div>
-        <Solutions isPasswordCorrect={true} />
+        <MidFi />
+      </div>
+      <div id={2}>
+        <Solutions isNdaLocked={false} />
       </div>
       <div>
-        <Impact isPasswordCorrect={true} />
+        <Impact />
       </div>
-      <div>
-        <ForDevelopers />
+      <div id={3}>
+        <Developers />
       </div>
       <div>
         <Reflection />
@@ -115,8 +118,8 @@ export default function OPERATE() {
     <div>
       <section className="my-10 mx-auto">
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
-          <div className="md:grid md:grid-cols-2 md:py-20 py-10 items-center mx-10 gap-10">
-            <div className="w-full md:my-20 my-5 space-y-5">
+          <div className="md:grid md:grid-cols-2 py-10 items-center mx-10 gap-10">
+            <div className="w-full my-5 space-y-5">
               <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-green-400 p-2 rounded-2xl bg-white">
                 20% Efficiency Boost
               </h1>
@@ -130,6 +133,36 @@ export default function OPERATE() {
                 alt="Demo showcase"
                 className="rounded-xl mx-auto w-[2000px]"
               />
+            </div>
+          </div>
+          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 mx-5 md:mx-0">
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">My Role</p>
+              <p>Associate Product Designer</p>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Team</p>
+              <ul>
+                <li>8 UX Designers</li>
+                <li>4 UX Researchers</li>
+                <li>2 Product Strategist</li>
+                <li>2 Web Developers</li>
+                <li>3 Project Management</li>
+              </ul>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Tools</p>
+              <ul>
+                <li>Figma</li>
+                <li>Figjam</li>
+                <li>Miro</li>
+                <li>Slack</li>
+                <li>JIRA</li>
+              </ul>
+            </div>
+            <div className="flex space-x-5 text-black">
+              <p className="font-bold">Timeline</p>
+              <p>October 2024 ~ Present</p>
             </div>
           </div>
         </div>

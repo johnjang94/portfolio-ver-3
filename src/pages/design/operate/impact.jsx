@@ -2,7 +2,7 @@ export default function Impact() {
   return (
     <div className="space-y-5 py-5 md:mx-20">
       <h3 className="text-xl uppercase">Impact</h3>
-      <div className="md:mx-20 my-3">
+      <div className="md:mx-8 my-3">
         <p className="my-5">
           Based on iterative testing and user feedback, the new platform is
           projected to:

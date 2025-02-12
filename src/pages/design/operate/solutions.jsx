@@ -1,8 +1,7 @@
-// import { OperateEase } from "../../../utils/operate";
-
 import { OperateEase } from "../../../utils/operate";
+import PropTypes from "prop-types";
 
-export default function Solutions() {
+export default function Solutions({ isNdaLocked = true }) {
   return (
     <div>
       <div className="md:mx-20 space-y-5">
@@ -76,10 +75,16 @@ export default function Solutions() {
         alt="MVP"
         className="my-5 p-2 rounded-2xl bg-white mx-20"
       />
-      <p className="my-10 text-center">
-        Please note: the progress of sketches are available via{" "}
-        <span className="text-red-500">NDA access</span>.
-      </p>
+      {isNdaLocked && (
+        <p className="my-10 text-center">
+          Please note: the progress of sketches are available via{" "}
+          <span className="text-red-500">NDA access</span>.
+        </p>
+      )}
     </div>
   );
 }
+
+Solutions.propTypes = {
+  isNdaLocked: PropTypes.bool,
+};
