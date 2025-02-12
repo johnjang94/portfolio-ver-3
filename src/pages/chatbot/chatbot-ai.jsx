@@ -15,13 +15,14 @@ export default function ChatBot({ onClose }) {
     "/food-distro":
       "Ready to explore the finer points of our local food donation project? Ask away!",
   };
-
   const defaultMessage =
     pathMessages[location.pathname] ||
     "Welcome to my portfolio —-- ask me deep questions on blending data with creativity, navigating design challenges, and turning diverse insights into innovation.";
   const projectMapping = {
     "/operate": {
       name: "Hotel Management Project",
+      description:
+        "This Hotel Management Project is a comprehensive solution designed to streamline hotel operations. It offers a SaaS platform with a user-friendly dashboard, real-time data visualization, and features aimed at enhancing operational efficiency.",
       keywords: [
         "hotel",
         "management",
@@ -40,6 +41,8 @@ export default function ChatBot({ onClose }) {
     },
     "/sakhi": {
       name: "Indian Luxury Clothing E-commerce Project",
+      description:
+        "This project focuses on building a luxurious e-commerce experience for Indian clothing, emphasizing cultural insights and a refined user interface.",
       keywords: [
         "sakhi",
         "clothing",
@@ -58,6 +61,8 @@ export default function ChatBot({ onClose }) {
     },
     "/food-distro": {
       name: "Locals Donating Food Project",
+      description:
+        "This project enables locals to donate food with ease, featuring intuitive search, mapping, and scheduling tools to enhance the donation experience.",
       keywords: [
         "food",
         "donation",
@@ -77,6 +82,15 @@ export default function ChatBot({ onClose }) {
       ],
     },
   };
+  const projectInquiryPhrases = [
+    "tell me about the project",
+    "what is this project about",
+    "explain the project",
+    "project details",
+    "describe the project",
+    "what does this project do",
+    "project overview",
+  ];
   const [messages, setMessages] = useState([
     { role: "bot", text: defaultMessage },
   ]);
@@ -108,9 +122,8 @@ export default function ChatBot({ onClose }) {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     const globalFaqs = websiteContent.faq.filter((faq) => {
-      if (Array.isArray(faq.route)) {
+      if (Array.isArray(faq.route))
         return faq.route.includes(location.pathname);
-      }
       return faq.route === location.pathname;
     });
     const projectFaqs = websiteContent[routeKey] || [];
@@ -120,6 +133,17 @@ export default function ChatBot({ onClose }) {
     );
     if (faqMatch) {
       setMessages((prev) => [...prev, { role: "bot", text: faqMatch.answer }]);
+      return;
+    }
+    if (
+      projectMapping[location.pathname] &&
+      projectInquiryPhrases.some((phrase) =>
+        trimmedInput.toLowerCase().includes(phrase)
+      )
+    ) {
+      const project = projectMapping[location.pathname];
+      const response = project.description || `This is the ${project.name}.`;
+      setMessages((prev) => [...prev, { role: "bot", text: response }]);
       return;
     }
     for (const [path, info] of Object.entries(projectMapping)) {
