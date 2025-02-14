@@ -98,12 +98,19 @@ export default function ChatBot({ onClose }) {
   const messageContainerRef = useRef(null);
   const fetchChatGPTResponse = async (input) => {
     try {
+      const projectContext =
+        projectMapping[location.pathname]?.description || "";
+      const enhancedMessage = `Project Context: ${projectContext}\nUser Question: ${input}`;
+
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_URL}/api/chat`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ userId: "unique-user-id", message: input }),
+          body: JSON.stringify({
+            userId: "unique-user-id",
+            message: enhancedMessage,
+          }),
         }
       );
       if (!response.ok)
@@ -115,6 +122,7 @@ export default function ChatBot({ onClose }) {
       return "I'm sorry, but my response capability is currently limited due to network issues.";
     }
   };
+
   const handleSendMessage = async () => {
     if (!input.trim()) return;
     const trimmedInput = input.trim();
