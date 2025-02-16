@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function QuickFeedback() {
+export default function Feedback() {
   const {
     register,
     handleSubmit,
@@ -67,7 +67,14 @@ export default function QuickFeedback() {
     switch (currentStep) {
       case 1:
         return (
-          <div className={baseClasses}>
+          <form
+            className={baseClasses}
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const valid = await trigger(["professionalRole", "otherRole"]);
+              if (valid) nextStep(2);
+            }}
+          >
             <p>
               1. What is your current role, and if applicable, which
               organization (company or school) are you affiliated with?
@@ -109,20 +116,32 @@ export default function QuickFeedback() {
               {...register("organization")}
             />
             <button
-              type="button"
-              onClick={async () => {
-                const valid = await trigger(["professionalRole", "otherRole"]);
-                if (valid) nextStep(2);
-              }}
+              type="submit"
               className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
             >
               Next
             </button>
-          </div>
+          </form>
         );
       case 2:
         return (
-          <div className={baseClasses}>
+          <form
+            className={baseClasses}
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const rating = getValues("candidateProfileRating");
+              if (!rating) {
+                await trigger("candidateProfileRating");
+                return;
+              }
+              if (["excellent", "good"].includes(rating)) {
+                nextStep(3);
+              } else {
+                const valid = await trigger("candidateDesiredType");
+                if (valid) navigate("/sent");
+              }
+            }}
+          >
             <p>2. How well does my portfolio match your expectation?</p>
             <div className="flex gap-4">
               {["excellent", "good", "average", "poor"].map((val) => (
@@ -143,7 +162,6 @@ export default function QuickFeedback() {
                 {errors.candidateProfileRating.message}
               </p>
             )}
-
             {["average", "poor"].includes(watch("candidateProfileRating")) && (
               <>
                 <p className="mt-4">
@@ -165,33 +183,24 @@ export default function QuickFeedback() {
                 )}
               </>
             )}
-
             <button
-              type="button"
-              onClick={async () => {
-                const rating = getValues("candidateProfileRating");
-                if (!rating) {
-                  await trigger("candidateProfileRating");
-                  return;
-                }
-
-                if (["excellent", "good"].includes(rating)) {
-                  nextStep(3);
-                } else {
-                  const valid = await trigger("candidateDesiredType");
-                  if (!valid) return;
-                  navigate("/sent");
-                }
-              }}
+              type="submit"
               className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
             >
               Next
             </button>
-          </div>
+          </form>
         );
       case 3:
         return (
-          <div className={baseClasses}>
+          <form
+            className={baseClasses}
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const valid = await trigger("culturalFit");
+              if (valid) nextStep(4);
+            }}
+          >
             <p>
               3. How well do my projects reflect the cultural values you
               prioritize?
@@ -218,20 +227,23 @@ export default function QuickFeedback() {
               <p className="text-red-500">{errors.culturalFit.message}</p>
             )}
             <button
-              type="button"
-              onClick={async () => {
-                const valid = await trigger("culturalFit");
-                if (valid) nextStep(4);
-              }}
+              type="submit"
               className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
             >
               Next
             </button>
-          </div>
+          </form>
         );
       case 4:
         return (
-          <div className={baseClasses}>
+          <form
+            className={baseClasses}
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const valid = await trigger("likedProject");
+              if (valid) nextStep(5);
+            }}
+          >
             <p>4. Which project did you like the most? (Select one)</p>
             <select
               className="w-full p-2 border rounded"
@@ -252,20 +264,26 @@ export default function QuickFeedback() {
               <p className="text-red-500">{errors.likedProject.message}</p>
             )}
             <button
-              type="button"
-              onClick={async () => {
-                const valid = await trigger("likedProject");
-                if (valid) nextStep(5);
-              }}
+              type="submit"
               className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
             >
               Next
             </button>
-          </div>
+          </form>
         );
       case 5:
         return (
-          <div className={baseClasses}>
+          <form
+            className={baseClasses}
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const valid = await trigger([
+                "improvableProject",
+                "improvementDetails",
+              ]);
+              if (valid) nextStep(6);
+            }}
+          >
             <p>
               5. Which project could be improved? (Select a project and specify
               what was unclear or raised questions, and why)
@@ -302,23 +320,22 @@ export default function QuickFeedback() {
               </p>
             )}
             <button
-              type="button"
-              onClick={async () => {
-                const valid = await trigger([
-                  "improvableProject",
-                  "improvementDetails",
-                ]);
-                if (valid) nextStep(6);
-              }}
+              type="submit"
               className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
             >
               Next
             </button>
-          </div>
+          </form>
         );
       case 6:
         return (
-          <div className={baseClasses}>
+          <form
+            className={baseClasses}
+            onSubmit={(e) => {
+              e.preventDefault();
+              nextStep(7);
+            }}
+          >
             <p>
               6. Any additional materials you&#39;d recommend including
               (optional)?
@@ -335,17 +352,16 @@ export default function QuickFeedback() {
               </p>
             )}
             <button
-              type="button"
-              onClick={() => nextStep(7)}
+              type="submit"
               className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
             >
               Next
             </button>
-          </div>
+          </form>
         );
       case 7:
         return (
-          <div className={baseClasses}>
+          <form className={baseClasses} onSubmit={handleSubmit(onSubmit)}>
             <p>May I ask for your contact?</p>
             <input
               type="text"
@@ -389,8 +405,7 @@ export default function QuickFeedback() {
             )}
             <div className="flex gap-4 mt-4">
               <button
-                type="button"
-                onClick={handleSubmit(onSubmit)}
+                type="submit"
                 className="flex-1 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
               >
                 Submit
@@ -406,7 +421,7 @@ export default function QuickFeedback() {
                 Skip
               </button>
             </div>
-          </div>
+          </form>
         );
       default:
         return null;

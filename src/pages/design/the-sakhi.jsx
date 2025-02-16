@@ -11,6 +11,40 @@ import Solutions from "./sakhi/solution";
 import Impact from "./sakhi/impact";
 import Retrospective from "./sakhi/retrospective";
 import NextSteps from "./sakhi/next-steps";
+import ChatButton from "../chatbot/chat-button";
+import ChatBot from "../chatbot/chatbot-ai";
+
+function ChatWidget() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [hasClosedChat, setHasClosedChat] = useState(
+    localStorage.getItem("chatClosed") === "true"
+  );
+
+  useEffect(() => {
+    if (!hasClosedChat && !isChatOpen) {
+      const timer = setTimeout(() => {
+        setIsChatOpen(true);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [hasClosedChat, isChatOpen]);
+
+  const handleChatClose = () => {
+    setIsChatOpen(false);
+    setHasClosedChat(true);
+    localStorage.setItem("chatClosed", "true");
+  };
+
+  return (
+    <section>
+      <ChatButton
+        onClick={() => setIsChatOpen(true)}
+        status={isChatOpen ? "open" : "closed"}
+      />
+      {isChatOpen && <ChatBot onClose={handleChatClose} />}
+    </section>
+  );
+}
 
 export default function SAKHI() {
   const [currentSection, setCurrentSection] = useState("1");
@@ -144,6 +178,9 @@ export default function SAKHI() {
         <section className="md:w-4/6 mx-10 my-5 md:my-28">
           <PublicContent />
         </section>
+      </section>
+      <section>
+        <ChatWidget />
       </section>
       <footer className="my-5">
         <OtherMenu />
