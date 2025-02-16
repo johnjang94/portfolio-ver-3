@@ -144,7 +144,6 @@ export default function QuickFeedback() {
               </p>
             )}
 
-            {/* Show follow-up question if rating is average or poor */}
             {["average", "poor"].includes(watch("candidateProfileRating")) && (
               <>
                 <p className="mt-4">
@@ -320,7 +319,10 @@ export default function QuickFeedback() {
       case 6:
         return (
           <div className={baseClasses}>
-            <p>6. Any additional materials you&#39;d recommend including?</p>
+            <p>
+              6. Any additional materials you&#39;d recommend including
+              (optional)?
+            </p>
             <textarea
               className="w-full p-2 border rounded"
               placeholder="Optional suggestions..."
@@ -344,15 +346,23 @@ export default function QuickFeedback() {
       case 7:
         return (
           <div className={baseClasses}>
-            <p>
-              Please enter your name and email address so we can send you a
-              thank you email for completing the survey.
-            </p>
+            <p>May I ask for your contact?</p>
             <input
               type="text"
               className="w-full p-2 border rounded mt-2"
               placeholder="Your Name"
-              {...register("userName")}
+              {...register("userName", {
+                validate: (value) => {
+                  const email = getValues("userEmail");
+                  if (
+                    (value === "" && email !== "") ||
+                    (value !== "" && email === "")
+                  ) {
+                    return "Please fill in your name and email correctly";
+                  }
+                  return true;
+                },
+              })}
             />
             {errors.userName && (
               <p className="text-red-500">{errors.userName.message}</p>
@@ -361,18 +371,41 @@ export default function QuickFeedback() {
               type="email"
               className="w-full p-2 border rounded mt-2"
               placeholder="Your Email"
-              {...register("userEmail")}
+              {...register("userEmail", {
+                validate: (value) => {
+                  const name = getValues("userName");
+                  if (
+                    (value === "" && name !== "") ||
+                    (value !== "" && name === "")
+                  ) {
+                    return "Please fill in your name and email correctly";
+                  }
+                  return true;
+                },
+              })}
             />
             {errors.userEmail && (
               <p className="text-red-500">{errors.userEmail.message}</p>
             )}
-            <button
-              type="button"
-              onClick={handleSubmit(onSubmit)}
-              className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
-            >
-              Submit
-            </button>
+            <div className="flex gap-4 mt-4">
+              <button
+                type="button"
+                onClick={handleSubmit(onSubmit)}
+                className="flex-1 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
+              >
+                Submit
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const currentData = getValues();
+                  onSubmit({ ...currentData, userName: "", userEmail: "" });
+                }}
+                className="flex-1 py-2 text-blue-500 border border-blue-500 hover:bg-blue-50 rounded"
+              >
+                Skip
+              </button>
+            </div>
           </div>
         );
       default:
