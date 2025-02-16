@@ -46,7 +46,7 @@ export default function QuickFeedback() {
       answer.includes(keyword)
     );
     if (!matchesKeyword) {
-      navigate("/return");
+      navigate("/sent");
     } else {
       nextStep(2.2);
     }
@@ -55,7 +55,7 @@ export default function QuickFeedback() {
   const handleQ2FollowUp = async () => {
     const valid = await trigger("candidateLackingFeedback");
     if (!valid) return;
-    navigate("/return");
+    navigate("/sent");
   };
 
   const onSubmit = async (data) => {
@@ -90,9 +90,8 @@ export default function QuickFeedback() {
 
   const baseClasses = `transition-transform duration-500 ${animationClasses}`;
 
-  // survey 취소 함수 (검은색 배경 클릭 시 호출)
   const cancelSurvey = () => {
-    navigate("/return");
+    navigate("/ho-me");
   };
 
   const renderStep = () => {
