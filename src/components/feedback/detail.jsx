@@ -144,20 +144,7 @@ export default function QuickFeedback() {
                 {errors.candidateProfileRating.message}
               </p>
             )}
-            {["excellent", "good"].includes(
-              getValues("candidateProfileRating")
-            ) && (
-              <button
-                type="button"
-                onClick={async () => {
-                  const valid = await trigger("candidateProfileRating");
-                  if (valid) nextStep(3);
-                }}
-                className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
-              >
-                Next
-              </button>
-            )}
+            {/* 추가 질문: 'average' 또는 'poor' 선택 시 보이도록 */}
             {["average", "poor"].includes(
               getValues("candidateProfileRating")
             ) && (
@@ -176,22 +163,29 @@ export default function QuickFeedback() {
                     {errors.candidateDesiredType.message}
                   </p>
                 )}
-                <button
-                  type="button"
-                  onClick={async () => {
-                    const valid = await trigger([
-                      "candidateProfileRating",
-                      "candidateDesiredType",
-                    ]);
-                    if (!valid) return;
-                    navigate("/sent");
-                  }}
-                  className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
-                >
-                  Next
-                </button>
               </div>
             )}
+            <button
+              type="button"
+              onClick={async () => {
+                const rating = getValues("candidateProfileRating");
+                let valid;
+                if (["average", "poor"].includes(rating)) {
+                  valid = await trigger([
+                    "candidateProfileRating",
+                    "candidateDesiredType",
+                  ]);
+                } else {
+                  valid = await trigger("candidateProfileRating");
+                }
+                if (valid) {
+                  nextStep(3);
+                }
+              }}
+              className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
+            >
+              Next
+            </button>
           </div>
         );
       case 3:
@@ -324,20 +318,16 @@ export default function QuickFeedback() {
       case 6:
         return (
           <div className={baseClasses}>
-            <p>6. Any additional materials you&#39;d recommend including?</p>
+            <p>
+              6. Any additional materials you&#39;d recommend including?
+              (Optional)
+            </p>
             <textarea
               className="w-full p-2 border rounded"
               placeholder="Optional suggestions..."
-              {...register("additionalMaterials", {
-                required: "This field is required",
-              })}
+              {...register("additionalMaterials")}
               rows="2"
             />
-            {errors.additionalMaterials && (
-              <p className="text-red-500">
-                {errors.additionalMaterials.message}
-              </p>
-            )}
             <button
               type="button"
               onClick={() => nextStep(7)}
@@ -351,14 +341,14 @@ export default function QuickFeedback() {
         return (
           <div className={baseClasses}>
             <p>
-              Please enter your name and email address so that I can send you a
-              thank you email for completing the survey.
+              7. (Optional) Please enter your name and email address so that I
+              can send you a thank you email for completing the survey.
             </p>
             <input
               type="text"
               className="w-full p-2 border rounded mt-2"
-              placeholder="Your Name"
-              {...register("userName", { required: "Please enter your name" })}
+              placeholder="Your Name (optional)"
+              {...register("userName")}
             />
             {errors.userName && (
               <p className="text-red-500">{errors.userName.message}</p>
@@ -366,10 +356,8 @@ export default function QuickFeedback() {
             <input
               type="email"
               className="w-full p-2 border rounded mt-2"
-              placeholder="Your Email"
-              {...register("userEmail", {
-                required: "Please enter your email",
-              })}
+              placeholder="Your Email (optional)"
+              {...register("userEmail")}
             />
             {errors.userEmail && (
               <p className="text-red-500">{errors.userEmail.message}</p>
