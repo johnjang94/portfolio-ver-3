@@ -70,13 +70,12 @@ export default function QuickFeedback() {
           <div className={baseClasses}>
             <p>
               1. What is your current role, and if applicable, which
-              organization (i.e. company, school, non-profit) are you affiliated
-              with?
+              organization (company or school) are you affiliated with?
             </p>
             <select
               className="w-full p-2 border rounded"
               {...register("professionalRole", {
-                required: "Please select your role",
+                required: "Please select your role from the following options",
               })}
             >
               <option value="">Select your role</option>
@@ -93,7 +92,7 @@ export default function QuickFeedback() {
                 <input
                   type="text"
                   className="w-full p-2 border rounded mt-2"
-                  placeholder="If Freelancer, specify your expertise; if Student, specify your school."
+                  placeholder="If you are a freelancer, please specify your expertise; if you are a student, please specify your school."
                   {...register("otherRole", {
                     required: "This field is required",
                   })}
@@ -106,7 +105,7 @@ export default function QuickFeedback() {
             <input
               type="text"
               className="w-full p-2 border rounded mt-2"
-              placeholder="If affiliated with a specific organization, enter its name (optional)."
+              placeholder="If you are affiliated with a specific organization, could you please identify the group? (optional)."
               {...register("organization")}
             />
             <button
@@ -124,7 +123,7 @@ export default function QuickFeedback() {
       case 2:
         return (
           <div className={baseClasses}>
-            <p>2. How well does my portfolio match your ideal candidate?</p>
+            <p>2. How well does my portfolio match your expectation?</p>
             <div className="flex gap-4">
               {["excellent", "good", "average", "poor"].map((val) => (
                 <label key={val} className="flex items-center gap-2">
@@ -144,12 +143,14 @@ export default function QuickFeedback() {
                 {errors.candidateProfileRating.message}
               </p>
             )}
-            {/* 추가 질문: 'average' 또는 'poor' 선택 시 보이도록 */}
-            {["average", "poor"].includes(
-              getValues("candidateProfileRating")
-            ) && (
-              <div className="mt-4">
-                <p>What qualities have you been looking for?</p>
+
+            {/* Show follow-up question if rating is average or poor */}
+            {["average", "poor"].includes(watch("candidateProfileRating")) && (
+              <>
+                <p className="mt-4">
+                  Could you please explain further on what qualities you were
+                  looking for?
+                </p>
                 <input
                   type="text"
                   className="w-full p-2 border rounded"
@@ -163,23 +164,24 @@ export default function QuickFeedback() {
                     {errors.candidateDesiredType.message}
                   </p>
                 )}
-              </div>
+              </>
             )}
+
             <button
               type="button"
               onClick={async () => {
                 const rating = getValues("candidateProfileRating");
-                let valid;
-                if (["average", "poor"].includes(rating)) {
-                  valid = await trigger([
-                    "candidateProfileRating",
-                    "candidateDesiredType",
-                  ]);
-                } else {
-                  valid = await trigger("candidateProfileRating");
+                if (!rating) {
+                  await trigger("candidateProfileRating");
+                  return;
                 }
-                if (valid) {
+
+                if (["excellent", "good"].includes(rating)) {
                   nextStep(3);
+                } else {
+                  const valid = await trigger("candidateDesiredType");
+                  if (!valid) return;
+                  navigate("/sent");
                 }
               }}
               className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
@@ -318,16 +320,18 @@ export default function QuickFeedback() {
       case 6:
         return (
           <div className={baseClasses}>
-            <p>
-              6. Any additional materials you&#39;d recommend including?
-              (Optional)
-            </p>
+            <p>6. Any additional materials you&#39;d recommend including?</p>
             <textarea
               className="w-full p-2 border rounded"
               placeholder="Optional suggestions..."
               {...register("additionalMaterials")}
               rows="2"
             />
+            {errors.additionalMaterials && (
+              <p className="text-red-500">
+                {errors.additionalMaterials.message}
+              </p>
+            )}
             <button
               type="button"
               onClick={() => nextStep(7)}
@@ -341,13 +345,13 @@ export default function QuickFeedback() {
         return (
           <div className={baseClasses}>
             <p>
-              7. (Optional) Please enter your name and email address so that I
-              can send you a thank you email for completing the survey.
+              Please enter your name and email address so we can send you a
+              thank you email for completing the survey.
             </p>
             <input
               type="text"
               className="w-full p-2 border rounded mt-2"
-              placeholder="Your Name (optional)"
+              placeholder="Your Name"
               {...register("userName")}
             />
             {errors.userName && (
@@ -356,7 +360,7 @@ export default function QuickFeedback() {
             <input
               type="email"
               className="w-full p-2 border rounded mt-2"
-              placeholder="Your Email (optional)"
+              placeholder="Your Email"
               {...register("userEmail")}
             />
             {errors.userEmail && (
