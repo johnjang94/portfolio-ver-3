@@ -2,15 +2,6 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const portfolioKeywords = [
-  "data",
-  "design",
-  "innovation",
-  "creativity",
-  "strategy",
-  "efficiency",
-];
-
 export default function QuickFeedback() {
   const {
     register,
@@ -24,8 +15,6 @@ export default function QuickFeedback() {
   const [currentStep, setCurrentStep] = useState(1);
   const [transition, setTransition] = useState("incoming");
   const professionalRole = watch("professionalRole");
-  const rating = watch("candidateProfileRating");
-  const candidateDesiredType = watch("candidateDesiredType") || "";
 
   const nextStep = (next) => {
     setTransition("outgoing");
@@ -36,26 +25,6 @@ export default function QuickFeedback() {
         setTransition("incoming");
       }, 50);
     }, 500);
-  };
-
-  const handleQ2Additional = async () => {
-    const valid = await trigger("candidateDesiredType");
-    if (!valid) return;
-    const answer = getValues("candidateDesiredType").toLowerCase();
-    const matchesKeyword = portfolioKeywords.some((keyword) =>
-      answer.includes(keyword)
-    );
-    if (!matchesKeyword) {
-      navigate("/sent");
-    } else {
-      nextStep(2.2);
-    }
-  };
-
-  const handleQ2FollowUp = async () => {
-    const valid = await trigger("candidateLackingFeedback");
-    if (!valid) return;
-    navigate("/sent");
   };
 
   const onSubmit = async (data) => {
@@ -101,7 +70,8 @@ export default function QuickFeedback() {
           <div className={baseClasses}>
             <p>
               1. What is your current role, and if applicable, which
-              organization (company or school) are you affiliated with?
+              organization (i.e. company, school, non-profit) are you affiliated
+              with?
             </p>
             <select
               className="w-full p-2 border rounded"
@@ -154,9 +124,7 @@ export default function QuickFeedback() {
       case 2:
         return (
           <div className={baseClasses}>
-            <p>
-              2. How well does my portfolio match your ideal candidate profile?
-            </p>
+            <p>2. How well does my portfolio match your ideal candidate?</p>
             <div className="flex gap-4">
               {["excellent", "good", "average", "poor"].map((val) => (
                 <label key={val} className="flex items-center gap-2">
@@ -176,9 +144,25 @@ export default function QuickFeedback() {
                 {errors.candidateProfileRating.message}
               </p>
             )}
-            {["average", "poor"].includes(rating) && (
+            {["excellent", "good"].includes(
+              getValues("candidateProfileRating")
+            ) && (
+              <button
+                type="button"
+                onClick={async () => {
+                  const valid = await trigger("candidateProfileRating");
+                  if (valid) nextStep(3);
+                }}
+                className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
+              >
+                Next
+              </button>
+            )}
+            {["average", "poor"].includes(
+              getValues("candidateProfileRating")
+            ) && (
               <div className="mt-4">
-                <p>Please describe the candidate profile you were targeting.</p>
+                <p>What qualities have you been looking for?</p>
                 <input
                   type="text"
                   className="w-full p-2 border rounded"
@@ -192,122 +176,22 @@ export default function QuickFeedback() {
                     {errors.candidateDesiredType.message}
                   </p>
                 )}
-                {portfolioKeywords.some((keyword) =>
-                  candidateDesiredType.toLowerCase().includes(keyword)
-                ) && (
-                  <div className="mt-4">
-                    <p>
-                      Based on your previous answer, please indicate which
-                      aspect of my portfolio you feel remains insufficient.
-                    </p>
-                    <input
-                      type="text"
-                      className="w-full p-2 border rounded"
-                      placeholder="Your feedback here..."
-                      {...register("candidateLackingFeedback", {
-                        required: "This field is required",
-                      })}
-                    />
-                    {errors.candidateLackingFeedback && (
-                      <p className="text-red-500">
-                        {errors.candidateLackingFeedback.message}
-                      </p>
-                    )}
-                  </div>
-                )}
+                <button
+                  type="button"
+                  onClick={async () => {
+                    const valid = await trigger([
+                      "candidateProfileRating",
+                      "candidateDesiredType",
+                    ]);
+                    if (!valid) return;
+                    navigate("/sent");
+                  }}
+                  className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
+                >
+                  Next
+                </button>
               </div>
             )}
-            <button
-              type="button"
-              onClick={async () => {
-                if (
-                  ["excellent", "good"].includes(
-                    getValues("candidateProfileRating")
-                  )
-                ) {
-                  const valid = await trigger("candidateProfileRating");
-                  if (!valid) return;
-                  nextStep(3);
-                } else {
-                  const valid = await trigger([
-                    "candidateProfileRating",
-                    "candidateDesiredType",
-                  ]);
-                  if (!valid) return;
-                  const answer = getValues(
-                    "candidateDesiredType"
-                  ).toLowerCase();
-                  const matches = portfolioKeywords.some((keyword) =>
-                    answer.includes(keyword)
-                  );
-                  if (matches) {
-                    const validFeedback = await trigger(
-                      "candidateLackingFeedback"
-                    );
-                    if (!validFeedback) return;
-                  }
-                  navigate("/return");
-                }
-              }}
-              className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
-            >
-              Next
-            </button>
-          </div>
-        );
-      case 2.1:
-        return (
-          <div className={baseClasses}>
-            <p>Please describe the candidate profile you were targeting.</p>
-            <input
-              type="text"
-              className="w-full p-2 border rounded"
-              placeholder="Your answer here..."
-              {...register("candidateDesiredType", {
-                required: "This field is required",
-              })}
-            />
-            {errors.candidateDesiredType && (
-              <p className="text-red-500">
-                {errors.candidateDesiredType.message}
-              </p>
-            )}
-            <button
-              type="button"
-              onClick={handleQ2Additional}
-              className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
-            >
-              Next
-            </button>
-          </div>
-        );
-      case 2.2:
-        return (
-          <div className={baseClasses}>
-            <p>
-              Based on your previous answer, please indicate which aspect of my
-              portfolio you feel remains insufficient.
-            </p>
-            <input
-              type="text"
-              className="w-full p-2 border rounded"
-              placeholder="Your feedback here..."
-              {...register("candidateLackingFeedback", {
-                required: "This field is required",
-              })}
-            />
-            {errors.candidateLackingFeedback && (
-              <p className="text-red-500">
-                {errors.candidateLackingFeedback.message}
-              </p>
-            )}
-            <button
-              type="button"
-              onClick={handleQ2FollowUp}
-              className="mt-4 w-full py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
-            >
-              Next
-            </button>
           </div>
         );
       case 3:
@@ -440,7 +324,7 @@ export default function QuickFeedback() {
       case 6:
         return (
           <div className={baseClasses}>
-            <p>6. Any additional materials you’d recommend including?</p>
+            <p>6. Any additional materials you&#39;d recommend including?</p>
             <textarea
               className="w-full p-2 border rounded"
               placeholder="Optional suggestions..."
@@ -467,7 +351,7 @@ export default function QuickFeedback() {
         return (
           <div className={baseClasses}>
             <p>
-              Please enter your name and email address so we can send you a
+              Please enter your name and email address so that I can send you a
               thank you email for completing the survey.
             </p>
             <input
