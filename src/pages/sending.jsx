@@ -13,13 +13,15 @@ export default function Sending() {
       }
       const data = location.state.data;
       const formPayload = new FormData();
+
       Object.entries(data).forEach(([key, value]) => {
         if (key === "attachment") {
-          if (value) formPayload.append(key, value);
+          if (value) formPayload.append("file", value);
         } else {
           formPayload.append(key, value);
         }
       });
+
       try {
         const response = await fetch(
           `${import.meta.env.VITE_BACKEND_URL}/api/contact`,
@@ -28,6 +30,7 @@ export default function Sending() {
             body: formPayload,
           }
         );
+
         if (response.ok) {
           navigate("/received");
         } else {
@@ -38,6 +41,7 @@ export default function Sending() {
         navigate("/retry");
       }
     };
+
     sendRequest();
   }, [location.state, navigate]);
 
