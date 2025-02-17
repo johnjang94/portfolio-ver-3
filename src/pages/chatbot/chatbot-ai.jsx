@@ -101,7 +101,6 @@ export default function ChatBot({ onClose }) {
       const projectContext =
         projectMapping[location.pathname]?.description || "";
       const enhancedMessage = `Project Context: ${projectContext}\nUser Question: ${input}`;
-
       const response = await fetch(
         `${import.meta.env.VITE_BACKEND_URL}/api/chat`,
         {
@@ -122,7 +121,10 @@ export default function ChatBot({ onClose }) {
       return "I'm sorry, but my response capability is currently limited due to network issues.";
     }
   };
-
+  const containsWholeWord = (text, word) => {
+    const regex = new RegExp(`\\b${word}\\b`, "i");
+    return regex.test(text);
+  };
   const handleSendMessage = async () => {
     if (!input.trim()) return;
     const trimmedInput = input.trim();
@@ -154,10 +156,24 @@ export default function ChatBot({ onClose }) {
       setMessages((prev) => [...prev, { role: "bot", text: response }]);
       return;
     }
+    const currentProject = projectMapping[location.pathname];
+    const currentProjectKeywords = currentProject
+      ? currentProject.keywords
+      : [];
+    const currentProjectMatch = currentProjectKeywords.some((keyword) =>
+      containsWholeWord(trimmedInput.toLowerCase(), keyword.toLowerCase())
+    );
+    if (currentProjectMatch) {
+      const botResponse = await fetchChatGPTResponse(trimmedInput);
+      setMessages((prev) => [...prev, { role: "bot", text: botResponse }]);
+      return;
+    }
     for (const [path, info] of Object.entries(projectMapping)) {
       if (location.pathname !== path) {
         for (const keyword of info.keywords) {
-          if (trimmedInput.toLowerCase().includes(keyword.toLowerCase())) {
+          if (
+            containsWholeWord(trimmedInput.toLowerCase(), keyword.toLowerCase())
+          ) {
             setMessages((prev) => [
               ...prev,
               {
