@@ -11,14 +11,15 @@ export default function Sending() {
         navigate("/retry");
         return;
       }
-
       const data = location.state.data;
       const formPayload = new FormData();
-
       Object.entries(data).forEach(([key, value]) => {
-        formPayload.append(key, value);
+        if (key === "attachment") {
+          if (value) formPayload.append(key, value);
+        } else {
+          formPayload.append(key, value);
+        }
       });
-
       try {
         const response = await fetch(
           `${import.meta.env.VITE_BACKEND_URL}/api/contact`,
@@ -27,7 +28,6 @@ export default function Sending() {
             body: formPayload,
           }
         );
-
         if (response.ok) {
           navigate("/received");
         } else {
@@ -38,7 +38,6 @@ export default function Sending() {
         navigate("/retry");
       }
     };
-
     sendRequest();
   }, [location.state, navigate]);
 
@@ -46,7 +45,7 @@ export default function Sending() {
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-white bg-opacity-80">
       <div className="h-16 w-16 border-4 border-t-4 border-gray-300 rounded-full animate-spin border-t-green-400"></div>
       <p className="mt-4 text-lg text-gray-700">
-        Please wait, I am processing your request...
+        Please wait, I am currently processing your request...
       </p>
     </div>
   );
