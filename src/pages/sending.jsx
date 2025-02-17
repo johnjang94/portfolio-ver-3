@@ -11,14 +11,12 @@ export default function Sending() {
         navigate("/retry");
         return;
       }
-      const data = location.state.data;
-      const formPayload = new FormData();
 
-      Object.entries(data).forEach(([key, value]) => {
-        if (key === "attachment") {
-          if (value) formPayload.append("file", value);
-        } else {
-          formPayload.append(key, value);
+      const data = location.state.data;
+      const formDataToSend = new FormData();
+      Object.keys(data).forEach((key) => {
+        if (data[key] !== null) {
+          formDataToSend.append(key, data[key]);
         }
       });
 
@@ -27,7 +25,7 @@ export default function Sending() {
           `${import.meta.env.VITE_BACKEND_URL}/api/contact`,
           {
             method: "POST",
-            body: formPayload,
+            body: formDataToSend,
           }
         );
 
@@ -49,7 +47,7 @@ export default function Sending() {
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-white bg-opacity-80">
       <div className="h-16 w-16 border-4 border-t-4 border-gray-300 rounded-full animate-spin border-t-green-400"></div>
       <p className="mt-4 text-lg text-gray-700">
-        Please wait, I am currently processing your request...
+        Please wait, I am currently processing your request.
       </p>
     </div>
   );

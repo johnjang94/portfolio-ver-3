@@ -1,71 +1,148 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import {
+  Editor,
+  EditorState,
+  RichUtils,
+  Modifier,
+  AtomicBlockUtils,
+} from "draft-js";
+import { stateToHTML } from "draft-js-export-html";
+import "draft-js/dist/Draft.css";
+import {
+  FaBold,
+  FaItalic,
+  FaUnderline,
+  FaLink,
+  FaImage,
+  FaPalette,
+  FaTextHeight,
+  FaQuoteLeft,
+  FaListOl,
+  FaListUl,
+  FaIndent,
+  FaOutdent,
+} from "react-icons/fa";
+
+const customStyleMap = {};
+function addStyle(styleKey, styleValue) {
+  if (!customStyleMap[styleKey]) {
+    customStyleMap[styleKey] = styleValue;
+  }
+}
 
 export default function Contact() {
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const [color, setColor] = useState("#000000");
+  const [fontSize, setFontSize] = useState(14);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    jobTitle: "",
-    otherJobTitle: "",
-    selfEmployed: "",
-    organizationType: "",
-    inquiryTitle: "",
-    inquiryMessage: "",
+    Occupation: "",
+    Other: "",
+    SelfEmployed: "",
+    Organization: "",
+    Inquiry: "",
+    Message: "",
     attachment: null,
   });
-  const navigate = useNavigate();
 
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, false] }],
-      ["bold", "italic", "underline", "strike"],
-      [{ color: [] }, { background: [] }],
-      [{ list: "ordered" }, { list: "bullet" }],
-      [{ align: [] }],
-      ["link", "image"],
-      ["clean"],
-    ],
-  };
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "jobTitle") {
-      setFormData((prev) => ({
-        ...prev,
-        jobTitle: value,
-        otherJobTitle: "",
-        selfEmployed: "",
-      }));
-    } else if (name === "otherJobTitle") {
-      setFormData((prev) => ({
-        ...prev,
-        otherJobTitle: value,
-        selfEmployed:
-          value.toLowerCase() === "freelancer" ? prev.selfEmployed : "",
-      }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
-    }
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e) =>
     setFormData((prev) => ({ ...prev, attachment: e.target.files[0] }));
+
+  const handleEditorChange = (newEditorState) => {
+    setEditorState(newEditorState);
+    const html = stateToHTML(newEditorState.getCurrentContent());
+    setFormData((prev) => ({ ...prev, Message: html }));
   };
 
-  const handleQuillChange = (value) => {
-    setFormData((prev) => ({ ...prev, inquiryMessage: value }));
+  const toggleInlineStyle = (style) => {
+    setEditorState(RichUtils.toggleInlineStyle(editorState, style));
+  };
+
+  const onColorChange = (e) => {
+    const newColor = e.target.value;
+    setColor(newColor);
+    const styleKey = `COLOR_${newColor}`;
+    addStyle(styleKey, { color: newColor });
+    toggleInlineStyle(styleKey);
+  };
+
+  const onFontSizeChange = (e) => {
+    const newSize = parseInt(e.target.value, 10);
+    setFontSize(newSize);
+    const styleKey = `FONTSIZE_${newSize}`;
+    addStyle(styleKey, { fontSize: newSize });
+    toggleInlineStyle(styleKey);
+  };
+
+  const promptForLink = () => {
+    const url = window.prompt("Enter URL");
+    if (!url) return;
+    const selection = editorState.getSelection();
+    const contentState = editorState.getCurrentContent();
+    const contentStateWithEntity = contentState.createEntity(
+      "LINK",
+      "MUTABLE",
+      { url }
+    );
+    const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
+    const newContentState = Modifier.applyEntity(
+      contentStateWithEntity,
+      selection,
+      entityKey
+    );
+    setEditorState(
+      EditorState.push(editorState, newContentState, "apply-entity")
+    );
+  };
+
+  const promptForImage = () => {
+    const url = window.prompt("Enter image URL");
+    if (!url) return;
+    const contentState = editorState.getCurrentContent();
+    const contentStateWithEntity = contentState.createEntity(
+      "IMAGE",
+      "IMMUTABLE",
+      { src: url }
+    );
+    const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
+    const newEditorState = AtomicBlockUtils.insertAtomicBlock(
+      editorState,
+      entityKey,
+      " "
+    );
+    setEditorState(newEditorState);
+  };
+
+  const handleIndent = () => {
+    alert("Indent 기능은 직접 구현해야 합니다.");
+  };
+  const handleOutdent = () => {
+    alert("Outdent 기능은 직접 구현해야 합니다.");
+  };
+
+  const handleBlockType = (blockType) => {
+    setEditorState(RichUtils.toggleBlockType(editorState, blockType));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     navigate("/sending", { state: { data: formData } });
   };
 
   return (
     <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-4 space-y-4">
-      <h1 className="text-center my-10 text-2xl">Let&#39;s stay in-touch!</h1>
+      <h1 className="text-center my-10 text-2xl">Let&#39;s stay in touch!</h1>
+
       <div>
         <label htmlFor="name" className="block mb-1">
           Name
@@ -80,6 +157,7 @@ export default function Contact() {
           className="w-full border p-2 rounded"
         />
       </div>
+
       <div>
         <label htmlFor="email" className="block mb-1">
           Email
@@ -94,105 +172,159 @@ export default function Contact() {
           className="w-full border p-2 rounded"
         />
       </div>
+
       <div>
-        <label htmlFor="jobTitle" className="block mb-1">
-          Your occupation
-        </label>
-        <select
-          id="jobTitle"
-          name="jobTitle"
-          required
-          value={formData.jobTitle}
-          onChange={handleChange}
-          className="w-full border p-2 rounded"
-        >
-          <option value="">-- Select --</option>
-          <option value="recruiter">Recruiter</option>
-          <option value="ux designer">UX Designer</option>
-          <option value="product designer">Product Designer</option>
-          <option value="senior designer">Senior Designer</option>
-          <option value="head hunter">Head Hunter</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      {formData.jobTitle === "other" && (
-        <div>
-          <label htmlFor="otherJobTitle" className="block mb-1">
-            Please specify
-          </label>
-          <input
-            id="otherJobTitle"
-            name="otherJobTitle"
-            type="text"
-            required
-            value={formData.otherJobTitle}
-            onChange={handleChange}
-            className="w-full border p-2 rounded"
-          />
-        </div>
-      )}
-      {formData.jobTitle === "other" &&
-        formData.otherJobTitle.toLowerCase() === "freelancer" && (
-          <div>
-            <label htmlFor="selfEmployed" className="block mb-1">
-              Are you self-employed?
-            </label>
-            <select
-              id="selfEmployed"
-              name="selfEmployed"
-              required
-              value={formData.selfEmployed}
-              onChange={handleChange}
-              className="w-full border p-2 rounded"
-            >
-              <option value="">-- Select --</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-        )}
-      <div>
-        <label htmlFor="organizationType" className="block mb-1">
-          Company / Organization
-        </label>
-        <select
-          id="organizationType"
-          name="organizationType"
-          required
-          value={formData.organizationType}
-          onChange={handleChange}
-          className="w-full border p-2 rounded"
-        >
-          <option value="">-- Select --</option>
-          <option value="company">Company</option>
-          <option value="recruiting agency">Recruiting Agency</option>
-          <option value="non-profit">Non-profit</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="inquiryTitle" className="block mb-1">
-          Inquiry Title
+        <label htmlFor="Occupation" className="block mb-1">
+          Occupation
         </label>
         <input
-          id="inquiryTitle"
-          name="inquiryTitle"
+          id="Occupation"
+          name="Occupation"
           type="text"
           required
-          value={formData.inquiryTitle}
+          value={formData.Occupation}
           onChange={handleChange}
           className="w-full border p-2 rounded"
         />
       </div>
+
       <div>
-        <label className="block mb-1">Inquiry Message</label>
-        <ReactQuill
-          value={formData.inquiryMessage}
-          onChange={handleQuillChange}
-          modules={modules}
-          className="bg-white border rounded shadow-lg"
+        <label htmlFor="Organization" className="block mb-1">
+          Organization
+        </label>
+        <input
+          id="Organization"
+          name="Organization"
+          type="text"
+          required
+          value={formData.Organization}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
         />
       </div>
+
+      <div>
+        <label htmlFor="Inquiry" className="block mb-1">
+          Inquiry
+        </label>
+        <input
+          id="Inquiry"
+          name="Inquiry"
+          type="text"
+          required
+          value={formData.Inquiry}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="Message" className="block mb-1">
+          Message
+        </label>
+        {/* 리치 텍스트 툴바: 아이콘과 인풋만 표시 */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "10px",
+            gap: "5px",
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => toggleInlineStyle("BOLD")}
+            title="Bold"
+          >
+            <FaBold />
+          </button>
+          <button
+            type="button"
+            onClick={() => toggleInlineStyle("ITALIC")}
+            title="Italic"
+          >
+            <FaItalic />
+          </button>
+          <button
+            type="button"
+            onClick={() => toggleInlineStyle("UNDERLINE")}
+            title="Underline"
+          >
+            <FaUnderline />
+          </button>
+          <button type="button" onClick={promptForLink} title="Insert Link">
+            <FaLink />
+          </button>
+          <button type="button" onClick={promptForImage} title="Insert Image">
+            <FaImage />
+          </button>
+          <div
+            title="Font Color"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            <FaPalette />
+            <input
+              type="color"
+              value={color}
+              onChange={onColorChange}
+              style={{ marginLeft: "2px" }}
+            />
+          </div>
+          <div
+            title="Font Size"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            <FaTextHeight />
+            <select
+              value={fontSize}
+              onChange={onFontSizeChange}
+              style={{ marginLeft: "2px" }}
+            >
+              {[12, 14, 16, 18, 24, 32, 48].map((size) => (
+                <option key={size} value={size}>
+                  {size}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button
+            type="button"
+            onClick={() => handleBlockType("blockquote")}
+            title="Blockquote"
+          >
+            <FaQuoteLeft />
+          </button>
+          <button
+            type="button"
+            onClick={() => handleBlockType("ordered-list-item")}
+            title="Ordered List"
+          >
+            <FaListOl />
+          </button>
+          <button
+            type="button"
+            onClick={() => handleBlockType("unordered-list-item")}
+            title="Unordered List"
+          >
+            <FaListUl />
+          </button>
+          <button type="button" onClick={handleIndent} title="Indent">
+            <FaIndent />
+          </button>
+          <button type="button" onClick={handleOutdent} title="Outdent">
+            <FaOutdent />
+          </button>
+        </div>
+        <div className="border p-2 rounded min-h-[150px] bg-white">
+          <Editor
+            editorState={editorState}
+            onChange={handleEditorChange}
+            customStyleMap={customStyleMap}
+            placeholder="Write your message..."
+          />
+        </div>
+      </div>
+
       <div>
         <label htmlFor="attachment" className="block mb-1">
           Attachment (optional)
@@ -205,6 +337,7 @@ export default function Contact() {
           className="w-full"
         />
       </div>
+
       <div className="flex justify-end">
         <button
           type="submit"

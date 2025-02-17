@@ -59,6 +59,10 @@ export default function Landing({ onComplete }) {
   );
 }
 
+Landing.defaultProps = {
+  onComplete: () => {},
+};
+
 Landing.propTypes = {
   onComplete: PropTypes.func.isRequired,
 };
