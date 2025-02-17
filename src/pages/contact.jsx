@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-export default function ContactForm() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,6 +15,7 @@ export default function ContactForm() {
     inquiryMessage: "",
     attachment: null,
   });
+  const navigate = useNavigate();
 
   const modules = {
     toolbar: [
@@ -58,7 +60,7 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted data:", formData);
+    navigate("/sending", { state: { data: formData } });
   };
 
   return (
