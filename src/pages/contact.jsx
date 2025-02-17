@@ -1,108 +1,216 @@
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { MdOutlineSend } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
-export default function Contact() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    jobTitle: "",
+    otherJobTitle: "",
+    selfEmployed: "",
+    organizationType: "",
+    inquiryTitle: "",
+    inquiryMessage: "",
+    attachment: null,
   });
 
-  const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, false] }],
+      ["bold", "italic", "underline", "strike"],
+      [{ color: [] }, { background: [] }],
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ align: [] }],
+      ["link", "image"],
+      ["clean"],
+    ],
+  };
 
-  const onSubmit = (data) => {
-    navigate("/sending", { state: { data } });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "jobTitle") {
+      setFormData((prev) => ({
+        ...prev,
+        jobTitle: value,
+        otherJobTitle: "",
+        selfEmployed: "",
+      }));
+    } else if (name === "otherJobTitle") {
+      setFormData((prev) => ({
+        ...prev,
+        otherJobTitle: value,
+        selfEmployed:
+          value.toLowerCase() === "freelancer" ? prev.selfEmployed : "",
+      }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleFileChange = (e) => {
+    setFormData((prev) => ({ ...prev, attachment: e.target.files[0] }));
+  };
+
+  const handleQuillChange = (value) => {
+    setFormData((prev) => ({ ...prev, inquiryMessage: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Submitted data:", formData);
   };
 
   return (
-    <div className="md:my-5 my-28 md:py-4 px-10">
-      <h1 className="md:text-3xl text-lg md:my-5 my-20 text-center">
-        Stay in touch with me!
-      </h1>
-      <div className="w-full max-w-lg mx-auto">
-        <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <div className="mb-4">
-            <label htmlFor="name">Name</label>
-            <br />
-            <input
-              {...register("name", { required: "Name is required" })}
-              id="name"
-              type="text"
-              className="w-full rounded-lg p-1"
-            />
-            {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-            )}
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="email">Email</label>
-            <br />
-            <input
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address",
-                },
-              })}
-              id="email"
-              type="email"
-              className="w-full rounded-lg p-1"
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.email.message}
-              </p>
-            )}
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="topic">What would you like to talk about?</label>
-            <br />
-            <input
-              {...register("inquiry", { required: "This field is required" })}
-              type="text"
-              id="inquiry"
-              className="w-full rounded-lg p-1"
-            />
-            {errors.inquiry && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.inquiry.message}
-              </p>
-            )}
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="message">Your Message</label>
-            <br />
-            <textarea
-              {...register("message", { required: "Message is required" })}
-              id="message"
-              className="w-full h-[30vh] rounded-lg p-1"
-            />
-            {errors.message && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.message.message}
-              </p>
-            )}
-          </div>
-
-          <div className="flex justify-end">
-            <button
-              type="submit"
-              className="p-2 bg-blue-400 rounded-xl text-center flex items-center gap-2"
-            >
-              Send <MdOutlineSend />
-            </button>
-          </div>
-        </form>
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-4 space-y-4">
+      <h1 className="text-center my-10 text-2xl">Let&#39;s stay in-touch!</h1>
+      <div>
+        <label htmlFor="name" className="block mb-1">
+          Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+        />
       </div>
-    </div>
+      <div>
+        <label htmlFor="email" className="block mb-1">
+          Email
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+        />
+      </div>
+      <div>
+        <label htmlFor="jobTitle" className="block mb-1">
+          Your occupation
+        </label>
+        <select
+          id="jobTitle"
+          name="jobTitle"
+          required
+          value={formData.jobTitle}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+        >
+          <option value="">-- Select --</option>
+          <option value="recruiter">Recruiter</option>
+          <option value="ux designer">UX Designer</option>
+          <option value="product designer">Product Designer</option>
+          <option value="senior designer">Senior Designer</option>
+          <option value="head hunter">Head Hunter</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      {formData.jobTitle === "other" && (
+        <div>
+          <label htmlFor="otherJobTitle" className="block mb-1">
+            Please specify
+          </label>
+          <input
+            id="otherJobTitle"
+            name="otherJobTitle"
+            type="text"
+            required
+            value={formData.otherJobTitle}
+            onChange={handleChange}
+            className="w-full border p-2 rounded"
+          />
+        </div>
+      )}
+      {formData.jobTitle === "other" &&
+        formData.otherJobTitle.toLowerCase() === "freelancer" && (
+          <div>
+            <label htmlFor="selfEmployed" className="block mb-1">
+              Are you self-employed?
+            </label>
+            <select
+              id="selfEmployed"
+              name="selfEmployed"
+              required
+              value={formData.selfEmployed}
+              onChange={handleChange}
+              className="w-full border p-2 rounded"
+            >
+              <option value="">-- Select --</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        )}
+      <div>
+        <label htmlFor="organizationType" className="block mb-1">
+          Company / Organization
+        </label>
+        <select
+          id="organizationType"
+          name="organizationType"
+          required
+          value={formData.organizationType}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+        >
+          <option value="">-- Select --</option>
+          <option value="company">Company</option>
+          <option value="recruiting agency">Recruiting Agency</option>
+          <option value="non-profit">Non-profit</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="inquiryTitle" className="block mb-1">
+          Inquiry Title
+        </label>
+        <input
+          id="inquiryTitle"
+          name="inquiryTitle"
+          type="text"
+          required
+          value={formData.inquiryTitle}
+          onChange={handleChange}
+          className="w-full border p-2 rounded"
+        />
+      </div>
+      <div>
+        <label className="block mb-1">Inquiry Message</label>
+        <ReactQuill
+          value={formData.inquiryMessage}
+          onChange={handleQuillChange}
+          modules={modules}
+          className="bg-white border rounded shadow-lg"
+        />
+      </div>
+      <div>
+        <label htmlFor="attachment" className="block mb-1">
+          Attachment (optional)
+        </label>
+        <input
+          id="attachment"
+          name="attachment"
+          type="file"
+          onChange={handleFileChange}
+          className="w-full"
+        />
+      </div>
+      <div className="flex justify-end">
+        <button
+          type="submit"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
   );
 }
