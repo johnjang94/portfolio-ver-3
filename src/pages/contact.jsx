@@ -58,31 +58,9 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, inquiryMessage: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    const formPayload = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      formPayload.append(key, value);
-    });
-
-    try {
-      const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/contact`,
-        {
-          method: "POST",
-          body: formPayload,
-        }
-      );
-      if (response.ok) {
-        navigate("/received");
-      } else {
-        navigate("/retry");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      navigate("/retry");
-    }
+    navigate("/sending", { state: { data: formData } });
   };
 
   return (

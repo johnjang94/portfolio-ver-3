@@ -13,8 +13,8 @@ export default function Sending() {
       }
 
       const data = location.state.data;
-
       const formPayload = new FormData();
+
       Object.entries(data).forEach(([key, value]) => {
         formPayload.append(key, value);
       });
