@@ -48,12 +48,14 @@ function ChatWidget() {
 }
 
 export default function OPERATE() {
-  const [currentSection, setCurrentSection] = useState(1);
+  const [currentSection, setCurrentSection] = useState("1");
   const [isNdaLocked, setIsNdaLocked] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const sectionIds = [{ id: 1 }, { id: 2 }, { id: 3 }];
+
+    const sectionIds = ["1", "2"];
+
     const options = {
       root: null,
       rootMargin: "0px",
@@ -68,31 +70,29 @@ export default function OPERATE() {
       });
     }, options);
 
-    sectionIds.forEach(({ id }) => {
+    sectionIds.forEach((id) => {
       const element = document.getElementById(id);
-      if (element) observer.observe(element);
+      if (element) {
+        observer.observe(element);
+      }
     });
 
     return () => {
-      sectionIds.forEach(({ id }) => {
+      sectionIds.forEach((id) => {
         const element = document.getElementById(id);
-        if (element) observer.unobserve(element);
+        if (element) {
+          observer.unobserve(element);
+        }
       });
     };
   }, []);
-
-  useEffect(() => {
-    if (!isNdaLocked) {
-      window.scrollTo(0, 0);
-    }
-  }, [isNdaLocked]);
 
   const handleCorrectPassword = () => {
     setIsNdaLocked(false);
   };
 
   const PublicContent = () => (
-    <div className="space-y-10">
+    <div className="space-y-20">
       <div id={1}>
         <Issue />
       </div>
@@ -105,14 +105,14 @@ export default function OPERATE() {
       <div>
         <Impact />
       </div>
-      <div id={3}>
+      <div>
         <Developers />
       </div>
     </div>
   );
 
   const PrivateContent = () => (
-    <div className="space-y-10">
+    <div className="space-y-20">
       <div id={1}>
         <Issue />
       </div>
@@ -131,7 +131,7 @@ export default function OPERATE() {
       <div>
         <Impact />
       </div>
-      <div id={3}>
+      <div>
         <Developers />
       </div>
       <div>
@@ -143,54 +143,57 @@ export default function OPERATE() {
   return (
     <div>
       <section className="my-10 mx-auto">
-        <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
-          <div className="md:grid md:grid-cols-2 py-10 items-center mx-10 gap-10">
-            <div className="w-full my-5 space-y-5">
-              <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-green-400 p-2 rounded-2xl bg-white">
+        <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 rounded-xl mx-10 md:gap-3">
+          <div className="md:grid md:grid-cols-2 md:py-20 py-5 items-center">
+            <div className="w-full md:my-20 my-10 space-y-5 text-center md:m-5">
+              <h1 className="md:text-4xl text-xl text-white underline">
                 20% Efficiency Boost
               </h1>
-              <h1 className="md:text-4xl text-xl font-bold md:font-normal text-center text-white">
+              <h1 className="md:text-4xl text-xl text-white rounded-2xl">
                 with a new B2B SaaS Inventory Management Platform
               </h1>
             </div>
-            <div className="space-y-5 w-full flex justify-center">
+            <div className="space-y-5">
               <img
                 src={OperateEase.Demo}
                 alt="Demo showcase"
-                className="rounded-xl mx-auto w-[2000px]"
+                className="rounded-xl mx-auto w-full"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="flex justify-center">
-        <div className="max-w-[1000px] w-full">
-          {!isNdaLocked ? (
-            <div className="md:flex">
-              <div className="md:w-[15vw]">
-                <ContentNav
-                  currentSection={currentSection}
-                  isDemoApplicable={false}
-                  pathname="/operate"
-                />
-              </div>
-              <div className="w-full">
-                <PrivateContent />
-              </div>
-            </div>
-          ) : (
-            <>
-              <div className="w-full">
-                <PublicContent />
-              </div>
-              <div className="w-full">
-                <Password onCorrectPassword={handleCorrectPassword} />
-              </div>
-            </>
+      <div className="flex justify-start">
+        <div
+          className={`hidden md:block md:w-[200px] md:sticky md:top-[120px] h-screen transition-opacity duration-500 ${
+            isNdaLocked ? "opacity-0 invisible" : "opacity-100 visible"
+          }`}
+        >
+          {!isNdaLocked && (
+            <ContentNav
+              currentSection={currentSection}
+              isDemoApplicable={false}
+              pathname="/operate"
+            />
           )}
         </div>
-      </section>
+
+        <div className="w-full flex">
+          <div className="max-w-[1000px] w-full">
+            <div className="w-full">
+              {isNdaLocked ? (
+                <>
+                  <PublicContent />
+                  <Password onCorrectPassword={handleCorrectPassword} />
+                </>
+              ) : (
+                <PrivateContent />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
 
       <ChatWidget />
 
