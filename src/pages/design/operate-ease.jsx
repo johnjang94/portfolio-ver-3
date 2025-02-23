@@ -4,7 +4,6 @@ import ContentNav from "../../components/contentNav";
 import Password from "../../components/lock/password";
 import OtherMenu from "../../components/footer2";
 
-import Summary from "./operate/summary";
 import Issue from "./operate/issue";
 import Solutions from "./operate/solutions";
 import Impact from "./operate/impact";
@@ -50,7 +49,7 @@ function ChatWidget() {
 
 export default function OPERATE() {
   const [currentSection, setCurrentSection] = useState(1);
-  const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
+  const [isNdaLocked, setIsNdaLocked] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -83,22 +82,22 @@ export default function OPERATE() {
   }, []);
 
   useEffect(() => {
-    if (isPasswordCorrect) {
+    if (!isNdaLocked) {
       window.scrollTo(0, 0);
     }
-  }, [isPasswordCorrect]);
+  }, [isNdaLocked]);
 
   const handleCorrectPassword = () => {
-    setIsPasswordCorrect(true);
+    setIsNdaLocked(false);
   };
 
   const PublicContent = () => (
     <div className="space-y-10">
       <div id={1}>
-        <Summary isNdaLocked={true} />
+        <Issue />
       </div>
       <div>
-        <Issue isNdaLocked={true} />
+        <Business isNdaLocked={true} />
       </div>
       <div id={2}>
         <Solutions isNdaLocked={true} />
@@ -115,13 +114,10 @@ export default function OPERATE() {
   const PrivateContent = () => (
     <div className="space-y-10">
       <div id={1}>
-        <Business />
+        <Issue />
       </div>
       <div>
-        <Summary isNdaLocked={false} />
-      </div>
-      <div>
-        <Issue isNdaLocked={false} />
+        <Business isNdaLocked={false} />
       </div>
       <div>
         <Sketch />
@@ -165,61 +161,36 @@ export default function OPERATE() {
               />
             </div>
           </div>
-          <div className="space-y-10 md:space-y-0 md:flex md:flex-wrap md:items-start justify-center md:gap-10 my-0 mx-5 md:mx-0">
-            <div className="flex space-x-5 text-black">
-              <p className="font-bold">My Role</p>
-              <p>Associate Product Designer</p>
-            </div>
-            <div className="flex space-x-5 text-black">
-              <p className="font-bold">Team</p>
-              <ul>
-                <li>8 UX Designers</li>
-                <li>4 UX Researchers</li>
-                <li>2 Product Strategist</li>
-                <li>2 Web Developers</li>
-                <li>3 Project Management</li>
-              </ul>
-            </div>
-            <div className="flex space-x-5 text-black">
-              <p className="font-bold">Tools</p>
-              <ul>
-                <li>Figma</li>
-                <li>Figjam</li>
-                <li>Miro</li>
-                <li>Slack</li>
-                <li>JIRA</li>
-              </ul>
-            </div>
-            <div className="flex space-x-5 text-black">
-              <p className="font-bold">Timeline</p>
-              <p>October 2024 ~ Present</p>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section className="md:flex md:flex-1">
-        <div className={isPasswordCorrect ? "" : "md:w-[15vw]"}>
-          {isPasswordCorrect ? (
-            <ContentNav
-              currentSection={currentSection}
-              isDemoApplicable={false}
-              pathname="/operate"
-            />
+      <section className="flex justify-center">
+        <div className="max-w-[1000px] w-full">
+          {!isNdaLocked ? (
+            <div className="md:flex">
+              <div className="md:w-[15vw]">
+                <ContentNav
+                  currentSection={currentSection}
+                  isDemoApplicable={false}
+                  pathname="/operate"
+                />
+              </div>
+              <div className="w-full">
+                <PrivateContent />
+              </div>
+            </div>
           ) : (
-            <div className="hidden md:block"></div>
+            <>
+              <div className="w-full">
+                <PublicContent />
+              </div>
+              <div className="w-full">
+                <Password onCorrectPassword={handleCorrectPassword} />
+              </div>
+            </>
           )}
         </div>
-        <section className="md:w-4/6 mx-10 my-5 md:my-10">
-          {isPasswordCorrect ? <PrivateContent /> : <PublicContent />}
-        </section>
       </section>
-
-      {!isPasswordCorrect && (
-        <section className="w-full">
-          <Password onCorrectPassword={handleCorrectPassword} />
-        </section>
-      )}
 
       <ChatWidget />
 

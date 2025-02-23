@@ -6,15 +6,27 @@ export default function Summary() {
           <p className="font-semibold md:text-xl uppercase">Summary</p>
           <div className="py-5 space-y-3 md:px-8">
             <p>
-              In this project, I led a data-driven menu overhaul for the
-              client&#39;s e-commerce platform, aiming to simplify complexity
-              and target a{" "}
-              <span className="font-bold">20% conversion lift</span>. By
-              redesigning the navigation and key pages, we sought to create a
-              user-first experience that clarified the brand&#39;s premium
-              identity and cultural narrative. Early usability testing confirmed
-              improved engagement metrics — demonstrating the impact of a
-              simplified interface on user behavior.
+              In this project, I crafted onboarding experience for an e-commerce
+              platform called The Sakhi which was in beta phase. The Sakhi is an
+              Indian e-commerce platform that ships Indian traditional clothes
+              and jewelries directly from the manufacturers in India to the
+              customers here in Canada — resolving the complex issue of customs
+              and lifting off the heavy expenses that the shoppers usually need
+              to pay for the logistics.
+            </p>
+            <p>
+              Despite the platform in beta version, the usability testing showed
+              that 8 out of 11 participants{" "}
+              <span className="text-red-500">
+                were not willing to purchase anything
+              </span>{" "}
+              from the client&#39;s website. Having said that, I aimed to
+              simplify the complexity of the menus as a part of contribution to
+              the client&#39;s objective:{" "}
+              <span className="font-bold">20% conversion lift</span>. After the
+              first round of research, sketching, and producing high-fidelity
+              designs, I conducted the usability testing on the new design which
+              returned me the following improved outcomes:
             </p>
           </div>
         </div>

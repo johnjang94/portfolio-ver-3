@@ -87,16 +87,16 @@ export default function SAKHI() {
 
   const PublicContent = () => (
     <div className="space-y-20">
-      <div id="1">
+      <div id={1}>
+        <Issue />
+      </div>
+      <div>
         <Summary />
       </div>
       <div>
-        <Issue />
-      </div>
-      <div id="2">
         <Solutions />
       </div>
-      <div>
+      <div id={2}>
         <Impact />
       </div>
       <div>

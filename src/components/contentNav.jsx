@@ -29,9 +29,8 @@ export default function ContentNav({ currentSection, pathname }) {
       ];
     } else if (pathname === "/sakhi") {
       updatedSections = [
-        { id: 1, label: "Summary" },
-        { id: 2, label: "Insights" },
-        { id: 3, label: "Impact" },
+        { id: 1, label: "At Issue" },
+        { id: 2, label: "Impact" },
       ];
     } else if (pathname === "/operate") {
       updatedSections = [
