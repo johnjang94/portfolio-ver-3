@@ -92,15 +92,10 @@ export default function Food() {
         <div className="bg-gradient-to-b from-slate-500 to-transparent mx-10 rounded-xl text-white flex flex-col items-center justify-center">
           <div className="md:grid md:grid-cols-2 py-20 items-center w-full max-w-6xl">
             <div className="w-full my-20 space-y-5">
-              <h1 className="text-4xl text-center text-white">
-                Search Optimization for Enhanced Engagement
+              <h1 className="text-3xl text-center text-white">
+                Reduce bounce-off rate down to{" "}
+                <span className="underline">10%</span>
               </h1>
-              <div className="py-10 space-y-1">
-                <p className="text-white text-3xl text-center">
-                  Search improved by
-                </p>
-                <p className="text-white text-3xl text-center underline">15%</p>
-              </div>
             </div>
             <div className="space-y-5">
               <img

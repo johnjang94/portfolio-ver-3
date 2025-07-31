@@ -9,22 +9,17 @@ import { Helmet } from "react-helmet-async";
 export { Home as Page, prerender };
 const prerender = true;
 
-const roles = ["UX Designer", "Product Designer", "UX Engineer"];
+const roles = ["Product Designer", "UX Engineer"];
 
 const data = [
   {
     id: 1,
     imgSrc: home.OperateEase,
     imgAlt: "OperateEase",
-    icon: "🔒",
+    icon: "",
     title: "20% Efficiency Boost",
     subtitle: "with a new B2B SaaS Inventory Management Platform",
-    category: ["B2B", "SaaS"],
-    percentage: ["40%", "90%"],
-    highlight: [
-      "expected improvement in operation efficiency",
-      "of participants found it easy-to-use ",
-    ],
+    category: ["B2B", "SaaS", "140 cups of chocolate chill"],
     link: "/operate",
   },
   {
@@ -32,11 +27,13 @@ const data = [
     imgSrc: home.Sakhi,
     imgAlt: "Sakhi",
     icon: "",
-    title: "Simplifying Complexity",
-    subtitle: "Menu overhaul, targeting a 20% conversion lift",
-    category: ["B2C", "E-commerce", "start-up"],
-    percentage: ["20%", "75%"],
-    highlight: ["targeted lift", "of new users found descriptions helpful"],
+    title: "increase conversion rate up to 20%",
+    subtitle: "by redesigning navigation menu",
+    outcome: [
+      "During pre-launch usability testing, 4 out of 5 participants took an average of 30 seconds to find proper clothes which is about 5% faster than the old version.",
+      "30% of the participants wished that there were more explanations on the categories.",
+    ],
+    category: ["B2C", "E-commerce", "start-up", "147 cups of chocolate chill"],
     link: "/sakhi",
   },
   {
@@ -44,12 +41,13 @@ const data = [
     imgSrc: home.FoodDistro,
     imgAlt: "Food Distro",
     icon: "",
-    title: "Search optimization for enhanced engagement",
-    subtitle:
-      "Low effort solution to improve search and messaging for locals for social service mobile app, Food Distro",
-    category: ["Mobile App Design", "Non-Profit"],
-    percentage: ["88%", "85%"],
-    highlight: ["improved filter", "increased system reliability"],
+    title: "reduce bounce-off rate down to 10%",
+    subtitle: "by implementing texting and search locals",
+    outcome: [
+      "Results from the initial usability testing indicated that 3 out of 5 participants found texting and arrangements were essential features.",
+      "at least 20% of the participants mentioned to place a penalty if users repeat no-shows.",
+    ],
+    category: ["Mobile App Design", "Non-Profit", "60 cups of chocolate chill"],
     link: "/food-distro",
   },
 ];
@@ -79,7 +77,7 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>Home - John Jang&#39;s Portfolio</title>
+        <title>My Journey</title>
         <meta
           name="description"
           content="UX Designer / Product Designer with experience in B2B SaaS, E-commerce, Non-Profit, etc."
@@ -109,12 +107,7 @@ export default function Home() {
             </div>
             <div className="space-y-5 md:my-5">
               <p className="md:text-2xl text-lg font-semibold">
-                A curious data-lover driven by elegant simplicity.
-              </p>
-              <p>
-                I craft design with strategies that blend data insights and
-                creative innovation to boost business performance and enhance
-                user experiences.
+                I imagine and I build it.
               </p>
             </div>
           </div>
@@ -129,8 +122,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-3 h-full">
               <p>
                 Figma, Miro, Wireframing, Sketching, Prototyping, Mock-ups,
-                Usability Testing, AI-Insight, Adobe Creative Cloud, Business
-                Canvas
+                Usability Testing, AI-Insight, Business Canvas
               </p>
             </div>
             <div className="bg-white rounded-2xl p-3 h-full">
@@ -154,8 +146,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl p-3 h-full">
                 <p>
                   Figma, Miro, Wireframing, Sketching, Prototyping, Mock-ups,
-                  Usability Testing, AI-Insight, Adobe Creative Cloud, Business
-                  Canvas
+                  Usability Testing, AI-Insight, Business Canvas
                 </p>
               </div>
             </div>
@@ -185,13 +176,37 @@ export default function Home() {
       <section className="md:mx-36 mx-12 space-y-10 py-14 md:py-0">
         <div>
           <h3 className="py-5 text-center md:text-2xl text-xl">
-            So, what is the story of my design portfolio?
+            How did it all start?
           </h3>
+          <div className="flex items-start gap-3">
+            <img
+              src={home.Teacher}
+              alt="Teacher"
+              width={600}
+              className="rounded-xl"
+            />
+            <div className="space-y-5 my-20">
+              <p className="text-xl font-bold text-center">
+                Teaching remotely during COVID era
+              </p>
+              <div className="mx-auto justify-center text-start w-11/12">
+                <p>
+                  I needed to find ways to keep the students being engaged which
+                  led me to think about the learning experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p className="py-5 mt-20 text-center">
+            ...and I opened my eyes in the world of UX Design
+          </p>
           {data
             .filter((item) => item.id === 1)
             .map((item) => (
               <Link to={item.link} state={{ fromId: item.id }} key={item.id}>
-                <div className="hover:cursor-pointer space-y-3 p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full">
+                <div className="hover:cursor-pointer p-2 rounded-xl border-white border-2 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] hover:-translate-y-2 transition-transform duration-300 ease-in-out w-full">
                   <div className="md:w-[40vw] md:mx-auto">
                     <div className="bg-[#f6f6f6] md:py-3 rounded-xl">
                       <img
@@ -200,15 +215,25 @@ export default function Home() {
                         className="rounded-xl mx-auto"
                       />
                     </div>
-                    <div className="py-5">
+                    <div className="py-3">
                       <p className="font-bold">
-                        {item.icon} {item.title}
+                        {item.icon} Goal: {item.title}
                       </p>
                       {item.subtitle && (
                         <p className="font-normal">{item.subtitle}</p>
                       )}
                     </div>
-                    <div className="flex md:space-x-5 space-x-1">
+                    <div className="py-3">
+                      <p className="font-bold">Outcome:</p>
+                      <ul className="mx-5 text-sm">
+                        <li>
+                          During pre-launch usability testing, 6 out of 10
+                          participants thought that the dashboard displayed
+                          analytics in very simple ways.{" "}
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="flex md:space-x-5 space-x-1 my-3">
                       {item.category.map((category, index) => (
                         <span
                           key={index}
@@ -216,16 +241,6 @@ export default function Home() {
                         >
                           {category}
                         </span>
-                      ))}
-                    </div>
-                    <div className="grid grid-cols-2 text-center py-3">
-                      {item.percentage?.map((percentage, index) => (
-                        <span key={index} className="md:text-2xl text-lg">
-                          {percentage}
-                        </span>
-                      ))}
-                      {item.highlight?.map((highlight, index) => (
-                        <span key={index}>{highlight}</span>
                       ))}
                     </div>
                   </div>
@@ -248,11 +263,23 @@ export default function Home() {
                       className="rounded-xl mx-auto md:h-[300px]"
                     />
                   </div>
-                  <div className="p-2">
+                  <div>
                     <p className="font-bold">
-                      {item.icon} {item.title}
+                      {item.icon} Goal: {item.title}
                     </p>
                     <p className="font-normal">{item.subtitle}</p>
+                  </div>
+                  <div className="py-3">
+                    <p className="font-bold">Outcome:</p>
+                    <ul className="mx-5 text-sm space-y-2">
+                      {Array.isArray(item.outcome) ? (
+                        item.outcome.map((out, index) => (
+                          <li key={index}>{out}</li>
+                        ))
+                      ) : (
+                        <li>{item.outcome}</li>
+                      )}
+                    </ul>
                   </div>
                   <div className="flex md:space-x-5 space-x-1">
                     {item.category.map((category, index) => (
@@ -262,16 +289,6 @@ export default function Home() {
                       >
                         {category}
                       </span>
-                    ))}
-                  </div>
-                  <div className="grid grid-cols-2 text-center py-3">
-                    {item.percentage?.map((percentage, index) => (
-                      <span key={index} className="md:text-2xl text-lg">
-                        {percentage}
-                      </span>
-                    ))}
-                    {item.highlight?.map((highlight, index) => (
-                      <span key={index}>{highlight}</span>
                     ))}
                   </div>
                 </div>

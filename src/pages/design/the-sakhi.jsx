@@ -4,8 +4,6 @@ import ContentNav from "../../components/contentNav";
 import OtherMenu from "../../components/footer2";
 
 import { sakhi } from "../../utils/sakhi";
-
-import Summary from "./sakhi/summary";
 import Issue from "./sakhi/issue";
 import Solutions from "./sakhi/solution";
 import Impact from "./sakhi/impact";
@@ -91,9 +89,6 @@ export default function SAKHI() {
         <Issue />
       </div>
       <div>
-        <Summary />
-      </div>
-      <div>
         <Solutions />
       </div>
       <div id={2}>
@@ -114,18 +109,9 @@ export default function SAKHI() {
         <div className="bg-gradient-to-b from-slate-500 to-transparent my-10 rounded-xl mx-10 md:gap-3">
           <div className="md:grid md:grid-cols-2 md:py-20 py-5 items-center">
             <div className="w-full md:my-20 my-10 space-y-5 text-center md:m-5">
-              <h1 className="md:text-4xl text-xl text-white underline">
-                Simplifying Complexity
-              </h1>
-              <h1 className="md:text-4xl text-xl text-white rounded-2xl">
-                Menu Overhaul Targeting
-              </h1>
-              <h1 className="md:text-4xl text-xl text-white rounded-2xl">
-                a{" "}
-                <span className="underline p-3 bg-white text-green-500 rounded-2xl">
-                  20%
-                </span>{" "}
-                Conversion Lift
+              <h1 className="md:text-3xl text-xl text-white">
+                Increase the conversation rate up to{" "}
+                <span className="underline">20%</span>
               </h1>
             </div>
             <div className="space-y-5">

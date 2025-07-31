@@ -1,4 +1,4 @@
-import { LuThumbsUp } from "react-icons/lu";
+// import { LuThumbsUp } from "react-icons/lu";
 import { LuThumbsDown } from "react-icons/lu";
 
 export default function Issue() {
@@ -7,7 +7,7 @@ export default function Issue() {
       <h3 className="text-xl uppercase">At Issue</h3>
       <div className="space-y-5 md:mx-8">
         <p className="font-bold text-center">What was the problem?</p>
-        <p>
+        {/* <p>
           I conducted the market research using 1:1 interviews with the
           small-medium business owners and managers as well as the
           well-established brands in hotel industry to uncover how they use the
@@ -16,9 +16,9 @@ export default function Issue() {
           benefits. I had a chance to discuss on 5 different well-established
           brands with a total of 8 participants (4 from Canada and 4 from the
           United States).
-        </p>
+        </p> */}
         <ul className="space-y-3">
-          <li className="flex space-x-2 items-start">
+          {/* <li className="flex space-x-2 items-start">
             <LuThumbsUp className="text-green-500 shrink-0" />
             <span>
               <span className="font-bold">
@@ -26,7 +26,7 @@ export default function Issue() {
               </span>{" "}
               with the management platforms they use.
             </span>
-          </li>
+          </li> */}
           <li className="flex space-x-2 items-start">
             <LuThumbsDown className="text-red-500 shrink-0" />
             <span>

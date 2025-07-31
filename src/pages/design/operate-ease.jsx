@@ -1,17 +1,14 @@
 import { useEffect, useState } from "react";
 import { OperateEase } from "../../utils/operate";
 import ContentNav from "../../components/contentNav";
-import Password from "../../components/lock/password";
 import OtherMenu from "../../components/footer2";
 
 import Issue from "./operate/issue";
 import Solutions from "./operate/solutions";
 import Impact from "./operate/impact";
 import Business from "./operate/business";
-import Sketch from "./operate/initial-sketch";
 import Developers from "./operate/developers";
 import Reflection from "./operate/retrospective";
-import MidFi from "./operate/mid-fi";
 import ChatButton from "../chatbot/chat-button";
 import ChatBot from "../chatbot/chatbot-ai";
 
@@ -49,7 +46,6 @@ function ChatWidget() {
 
 export default function OPERATE() {
   const [currentSection, setCurrentSection] = useState("1");
-  const [isNdaLocked, setIsNdaLocked] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -87,10 +83,6 @@ export default function OPERATE() {
     };
   }, []);
 
-  const handleCorrectPassword = () => {
-    setIsNdaLocked(false);
-  };
-
   const PublicContent = () => (
     <div className="space-y-20">
       <div id={1}>
@@ -101,32 +93,6 @@ export default function OPERATE() {
       </div>
       <div id={2}>
         <Solutions isNdaLocked={true} />
-      </div>
-      <div>
-        <Impact />
-      </div>
-      <div>
-        <Developers />
-      </div>
-    </div>
-  );
-
-  const PrivateContent = () => (
-    <div className="space-y-20">
-      <div id={1}>
-        <Issue />
-      </div>
-      <div>
-        <Business isNdaLocked={false} />
-      </div>
-      <div>
-        <Sketch />
-      </div>
-      <div>
-        <MidFi />
-      </div>
-      <div id={2}>
-        <Solutions isNdaLocked={false} />
       </div>
       <div>
         <Impact />
@@ -147,9 +113,9 @@ export default function OPERATE() {
           <div className="md:grid md:grid-cols-2 md:py-20 py-5 items-center">
             <div className="w-full md:my-20 my-10 space-y-5 text-center md:m-5">
               <h1 className="md:text-4xl text-xl text-white underline">
-                20% Efficiency Boost
+                20% efficiency boost
               </h1>
-              <h1 className="md:text-4xl text-xl text-white rounded-2xl">
+              <h1 className="md:text-2xl text-xl text-white rounded-2xl">
                 with a new B2B SaaS Inventory Management Platform
               </h1>
             </div>
@@ -166,30 +132,20 @@ export default function OPERATE() {
 
       <div className="flex justify-start">
         <div
-          className={`hidden md:block md:w-[200px] md:sticky md:top-[120px] h-screen transition-opacity duration-500 ${
-            isNdaLocked ? "opacity-0 invisible" : "opacity-100 visible"
+          className={`hidden md:block md:w-[200px] md:sticky md:top-[120px] h-screen transition-opacity duration-500
           }`}
         >
-          {!isNdaLocked && (
-            <ContentNav
-              currentSection={currentSection}
-              isDemoApplicable={false}
-              pathname="/operate"
-            />
-          )}
+          <ContentNav
+            currentSection={currentSection}
+            isDemoApplicable={false}
+            pathname="/operate"
+          />
         </div>
 
         <div className="w-full flex">
           <div className="max-w-[1000px] w-full">
             <div className="w-full">
-              {isNdaLocked ? (
-                <>
-                  <PublicContent />
-                  <Password onCorrectPassword={handleCorrectPassword} />
-                </>
-              ) : (
-                <PrivateContent />
-              )}
+              <PublicContent />
             </div>
           </div>
         </div>

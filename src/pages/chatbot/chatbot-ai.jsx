@@ -9,15 +9,15 @@ export default function ChatBot({ onClose }) {
   const routeKey = location.pathname.substring(1);
   const pathMessages = {
     "/operate":
-      "Want to dive deeper into our hotel management strategy? Ask your detailed questions!",
+      "Do you have any question regarding how I have contributed in coming out with the design for the hotel managers?",
     "/sakhi":
-      "Curious about the nuanced design of our Indian luxury clothing platform? Let's discuss!",
+      "Are you familiar with Indian clothes at all? If not, let's talk about it!",
     "/food-distro":
-      "Ready to explore the finer points of our local food donation project? Ask away!",
+      "Did you know that the US has a platform that shares food supplies that works better than the food bank? Curious to know how? Ask away!",
   };
   const defaultMessage =
     pathMessages[location.pathname] ||
-    "Welcome to my portfolio —-- ask me deep questions on blending data with creativity, navigating design challenges, and turning diverse insights into innovation.";
+    "Welcome to my portfolio —-- please feel free to ask me any questions about the projects I have done, about me, or any question in general :)";
   const projectMapping = {
     "/operate": {
       name: "Hotel Management Project",
@@ -84,12 +84,16 @@ export default function ChatBot({ onClose }) {
   };
   const projectInquiryPhrases = [
     "tell me about the project",
+    "what was your motive to join this project",
     "what is this project about",
     "explain the project",
     "project details",
     "describe the project",
     "what does this project do",
     "project overview",
+    "how does this project help the company",
+    "what were the challenges you faced during this project?",
+    "why was the renovation necessary?",
   ];
   const [messages, setMessages] = useState([
     { role: "bot", text: defaultMessage },
@@ -204,7 +208,7 @@ export default function ChatBot({ onClose }) {
   return (
     <div className="fixed bottom-10 right-10 bg-white rounded-2xl shadow-lg w-80">
       <div className="flex justify-between items-center bg-slate-200 p-2 rounded-t-2xl">
-        <h2 className="text-lg font-bold">Do you need help?</h2>
+        <h2 className="text-lg font-bold">How can I help you?</h2>
         <button onClick={onClose} className="text-red-500">
           ✖️
         </button>
