@@ -134,6 +134,11 @@ const websiteContent = {
         "I coordinated with UX Research team and discovered a few different factors that act as road-blockers for locals to donate each other. I tried to think how locals can donate easier considering the conditions of distance, time-arrangements, freshness of the food, etc. I allowed the users to be able to search for particular grocery item and be able to match up with the locals who are willing to donate the item to them.",
     },
     {
+      question: "What was your motive to join this project?",
+      answer:
+        "This project was one of my first projects that I was given an opportunity to practice my design skills in real life. I joined as a volunteer and wanted to gain more experience as a designer.",
+    },
+    {
       question:
         "How did your initial research and user interviews influence the decision to include features like distance filters, specific food type filters, and the map-based exploration?",
       answer:
