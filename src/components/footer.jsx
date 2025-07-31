@@ -39,7 +39,7 @@ export default function Footer() {
   return (
     <div
       ref={footerRef}
-      className="text-white mt-20 pt-12 pb-5 transition-opacity duration-500"
+      className="mt-20 pt-12 pb-5 transition-opacity duration-500"
       style={{ backgroundColor: `rgba(0, 0, 0, ${opacity})` }}
     >
       <section className="text-center">

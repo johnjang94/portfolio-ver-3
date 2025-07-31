@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 
 import LogoBlack from "/logo-512.png";
@@ -73,9 +72,6 @@ export default function Banner() {
       <div className="flex space-x-3 text-3xl hover:cursor-pointer">
         <Link to="https://github.com/johnjang94">
           <FaGithub />
-        </Link>
-        <Link to="http://www.linkedin.com/in/johnjang94">
-          <FaLinkedin className="text-blue-500" />
         </Link>
         <Link to="/access">
           <FaHeart className="text-red-500" />
